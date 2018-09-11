@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>HTML与CSS学习记录 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="《HTML与CSS进阶教程读书笔记》  HTML基础知识HTML与XHTMLHTML指超文本标记语言，是构成网页文档的主要语言。我们常说的HTML指HTML4.01。 XHTML指扩展的超文本标记语言，是XML风格的、更严格、更纯净的HTML。 两者的主要区别：  XHTML标签必须闭合。 XHTML标签和属性必须小写。 XHTML标签属性必须加引号。 XHTML标签用id属性代替name属性。">
+<meta name="keywords" content="HTML,CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML与CSS学习记录">
+<meta property="og:url" content="http://blog.zmj97.top/2018/09/10/HTML与CSS学习记录/index.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="《HTML与CSS进阶教程读书笔记》  HTML基础知识HTML与XHTMLHTML指超文本标记语言，是构成网页文档的主要语言。我们常说的HTML指HTML4.01。 XHTML指扩展的超文本标记语言，是XML风格的、更严格、更纯净的HTML。 两者的主要区别：  XHTML标签必须闭合。 XHTML标签和属性必须小写。 XHTML标签属性必须加引号。 XHTML标签用id属性代替name属性。">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=5ad0ba6a0c7b02080c9c37e752e9deeb/0824ab18972bd407012c41327d899e510eb30911.jpg">
+<meta property="og:image" content="https://gss0.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=6cdf3ae9fbfaaf5184b689b9bc64b8d6/1b4c510fd9f9d72ac29d82d2d22a2834359bbb00.jpg">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_1.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_2.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_3.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_4.gif">
+<meta property="og:image" content="http://www.w3school.com.cn/i/ct_css_margin_collapsing.gif">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536639853274&di=16c88d63b9118620ba546c2f6237b78c&imgtype=0&src=http%3A%2F%2Fpic.orsoon.com%2Fuploads%2Fallimg%2F24631428484696.png">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1536641005969&di=02e6a2469281303e926eb8878cf64db9&imgtype=0&src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fw%3D480%2Fsign%3D00237679845494ee87220e111df7e0e1%2Fa686c9177f3e67093ac0b23933c79f3df9dc5530.jpg">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1537245373&di=c7455fbd6881b1a07ae8ac81a79f474e&imgtype=jpg&er=1&src=http%3A%2F%2Fwww.w3cplus.com%2Fsites%2Fdefault%2Ffiles%2Fblogs%2F2018%2F1808%2Fz-index-15.png">
+<meta property="og:updated_time" content="2018-09-11T05:22:03.434Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HTML与CSS学习记录">
+<meta name="twitter:description" content="《HTML与CSS进阶教程读书笔记》  HTML基础知识HTML与XHTMLHTML指超文本标记语言，是构成网页文档的主要语言。我们常说的HTML指HTML4.01。 XHTML指扩展的超文本标记语言，是XML风格的、更严格、更纯净的HTML。 两者的主要区别：  XHTML标签必须闭合。 XHTML标签和属性必须小写。 XHTML标签属性必须加引号。 XHTML标签用id属性代替name属性。">
+<meta name="twitter:image" content="https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=5ad0ba6a0c7b02080c9c37e752e9deeb/0824ab18972bd407012c41327d899e510eb30911.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.zmj97.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-HTML与CSS学习记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/10/HTML与CSS学习记录/" class="article-date">
+  <time datetime="2018-09-10T06:04:59.000Z" itemprop="datePublished">2018-09-10</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      HTML与CSS学习记录
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#HTML基础知识"><span class="toc-number">1.</span> <span class="toc-text">HTML基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML与XHTML"><span class="toc-number">1.1.</span> <span class="toc-text">HTML与XHTML</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#id和class"><span class="toc-number">1.2.</span> <span class="toc-text">id和class</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#标题栏小图标"><span class="toc-number">1.3.</span> <span class="toc-text">标题栏小图标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#语义化"><span class="toc-number">2.</span> <span class="toc-text">语义化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#标题语义化"><span class="toc-number">2.1.</span> <span class="toc-text">标题语义化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片语义化"><span class="toc-number">2.2.</span> <span class="toc-text">图片语义化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#alt属性和title属性"><span class="toc-number">2.2.1.</span> <span class="toc-text">alt属性和title属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#figure元素和figcaption元素"><span class="toc-number">2.2.2.</span> <span class="toc-text">figure元素和figcaption元素</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表格语义化"><span class="toc-number">2.3.</span> <span class="toc-text">表格语义化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单语义化"><span class="toc-number">2.4.</span> <span class="toc-text">表单语义化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#label标签"><span class="toc-number">2.4.1.</span> <span class="toc-text">label标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#fieldset标签和legend标签"><span class="toc-number">2.4.2.</span> <span class="toc-text">fieldset标签和legend标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他语义化"><span class="toc-number">2.5.</span> <span class="toc-text">其他语义化</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#换行符"><span class="toc-number">2.5.1.</span> <span class="toc-text">换行符\</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#无序列表ul"><span class="toc-number">2.5.2.</span> <span class="toc-text">无序列表ul</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#strong-标签和em标签"><span class="toc-number">2.5.3.</span> <span class="toc-text">strong 标签和em标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#del标签和ins标签"><span class="toc-number">2.5.4.</span> <span class="toc-text">del标签和ins标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#img标签"><span class="toc-number">2.5.5.</span> <span class="toc-text">img标签</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#语义化验证"><span class="toc-number">2.6.</span> <span class="toc-text">语义化验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTML5舍弃的标签"><span class="toc-number">2.7.</span> <span class="toc-text">HTML5舍弃的标签</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS基础知识"><span class="toc-number">3.</span> <span class="toc-text">CSS基础知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS单位"><span class="toc-number">3.1.</span> <span class="toc-text">CSS单位</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#px"><span class="toc-number">3.1.1.</span> <span class="toc-text">px</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#"><span class="toc-number">3.1.2.</span> <span class="toc-text">%</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#em"><span class="toc-number">3.1.3.</span> <span class="toc-text">em</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rem"><span class="toc-number">3.1.4.</span> <span class="toc-text">rem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS特性"><span class="toc-number">3.2.</span> <span class="toc-text">CSS特性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承性"><span class="toc-number">3.2.1.</span> <span class="toc-text">继承性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#层叠性"><span class="toc-number">3.2.2.</span> <span class="toc-text">层叠性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS优先级"><span class="toc-number">3.3.</span> <span class="toc-text">CSS优先级</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#引用方式"><span class="toc-number">3.3.1.</span> <span class="toc-text">引用方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承方式"><span class="toc-number">3.3.2.</span> <span class="toc-text">继承方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定样式"><span class="toc-number">3.3.3.</span> <span class="toc-text">指定样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#继承样式和和指定样式"><span class="toc-number">3.3.4.</span> <span class="toc-text">继承样式和和指定样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#important"><span class="toc-number">3.3.5.</span> <span class="toc-text">!important</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS引入方式"><span class="toc-number">3.4.</span> <span class="toc-text">CSS引入方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS选择器"><span class="toc-number">3.5.</span> <span class="toc-text">CSS选择器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS规范"><span class="toc-number">4.</span> <span class="toc-text">CSS规范</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#命名规范"><span class="toc-number">4.1.</span> <span class="toc-text">命名规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS文件命名"><span class="toc-number">4.1.1.</span> <span class="toc-text">CSS文件命名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#id和class命名"><span class="toc-number">4.1.2.</span> <span class="toc-text">id和class命名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#书写规范"><span class="toc-number">4.2.</span> <span class="toc-text">书写规范</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#注释规范"><span class="toc-number">4.3.</span> <span class="toc-text">注释规范</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#顶部注释"><span class="toc-number">4.3.1.</span> <span class="toc-text">顶部注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块注释"><span class="toc-number">4.3.2.</span> <span class="toc-text">模块注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#简单注释"><span class="toc-number">4.3.3.</span> <span class="toc-text">简单注释</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-reset"><span class="toc-number">4.4.</span> <span class="toc-text">CSS reset</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#盒子模型"><span class="toc-number">5.</span> <span class="toc-text">盒子模型</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#外边距叠加"><span class="toc-number">5.1.</span> <span class="toc-text">外边距叠加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#负margin"><span class="toc-number">5.2.</span> <span class="toc-text">负margin</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow"><span class="toc-number">5.3.</span> <span class="toc-text">overflow</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#display属性"><span class="toc-number">6.</span> <span class="toc-text">display属性</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#块元素"><span class="toc-number">6.1.</span> <span class="toc-text">块元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inline元素"><span class="toc-number">6.2.</span> <span class="toc-text">inline元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#inline-block元素"><span class="toc-number">6.3.</span> <span class="toc-text">inline-block元素</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#display-table-cell"><span class="toc-number">6.4.</span> <span class="toc-text">display: table-cell</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#去除inline-block元素间距"><span class="toc-number">6.5.</span> <span class="toc-text">去除inline-block元素间距</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#文本效果"><span class="toc-number">7.</span> <span class="toc-text">文本效果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#text-indent"><span class="toc-number">7.1.</span> <span class="toc-text">text-indent</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#text-align"><span class="toc-number">7.2.</span> <span class="toc-text">text-align</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#line-height"><span class="toc-number">7.3.</span> <span class="toc-text">line-height</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vertical-align"><span class="toc-number">7.4.</span> <span class="toc-text">vertical-align</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#取值"><span class="toc-number">7.4.1.</span> <span class="toc-text">取值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-number">7.4.2.</span> <span class="toc-text">应用</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#表单效果"><span class="toc-number">8.</span> <span class="toc-text">表单效果</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#radio与checkbox"><span class="toc-number">8.1.</span> <span class="toc-text">radio与checkbox</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#textarea"><span class="toc-number">8.2.</span> <span class="toc-text">textarea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单对齐"><span class="toc-number">8.3.</span> <span class="toc-text">表单对齐</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文档流"><span class="toc-number">8.4.</span> <span class="toc-text">文档流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#浮动"><span class="toc-number">8.5.</span> <span class="toc-text">浮动</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#清除浮动"><span class="toc-number">8.6.</span> <span class="toc-text">清除浮动</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定位布局"><span class="toc-number">9.</span> <span class="toc-text">定位布局</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#属性值"><span class="toc-number">9.1.</span> <span class="toc-text">属性值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#z-index属性"><span class="toc-number">9.2.</span> <span class="toc-text">z-index属性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS图形"><span class="toc-number">10.</span> <span class="toc-text">CSS图形</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#性能优化"><span class="toc-number">11.</span> <span class="toc-text">性能优化</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#属性缩写"><span class="toc-number">11.1.</span> <span class="toc-text">属性缩写</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS压缩"><span class="toc-number">11.2.</span> <span class="toc-text">CSS压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#图片压缩"><span class="toc-number">11.3.</span> <span class="toc-text">图片压缩</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#高性能的选择器"><span class="toc-number">11.4.</span> <span class="toc-text">高性能的选择器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#CSS技巧"><span class="toc-number">12.</span> <span class="toc-text">CSS技巧</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#水平居中"><span class="toc-number">12.1.</span> <span class="toc-text">水平居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#垂直居中"><span class="toc-number">12.2.</span> <span class="toc-text">垂直居中</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#CSS-Sprite"><span class="toc-number">12.3.</span> <span class="toc-text">CSS Sprite</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Icon-Font图标"><span class="toc-number">12.4.</span> <span class="toc-text">Icon Font图标</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#重要概念"><span class="toc-number">13.</span> <span class="toc-text">重要概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#包含块"><span class="toc-number">13.1.</span> <span class="toc-text">包含块</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#层叠上下文"><span class="toc-number">13.2.</span> <span class="toc-text">层叠上下文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BFC和IFC"><span class="toc-number">13.3.</span> <span class="toc-text">BFC和IFC</span></a></li></ol></li></ol> 
+          </div> 
+        
+        <p>《HTML与CSS进阶教程读书笔记》</p>
+<hr>
+<h1 id="HTML基础知识"><a href="#HTML基础知识" class="headerlink" title="HTML基础知识"></a>HTML基础知识</h1><h2 id="HTML与XHTML"><a href="#HTML与XHTML" class="headerlink" title="HTML与XHTML"></a>HTML与XHTML</h2><p>HTML指超文本标记语言，是构成网页文档的主要语言。我们常说的HTML指HTML4.01。</p>
+<p>XHTML指扩展的超文本标记语言，是XML风格的、更严格、更纯净的HTML。</p>
+<p>两者的主要区别：</p>
+<ul>
+<li>XHTML标签必须闭合。</li>
+<li>XHTML标签和属性必须小写。</li>
+<li>XHTML标签属性必须加引号。</li>
+<li>XHTML标签用id属性代替name属性。</li>
+</ul>
+<h2 id="id和class"><a href="#id和class" class="headerlink" title="id和class"></a>id和class</h2><p>由于id属性具有唯一性，因此W3C建议，对于页面关键的结构或大结构，才能使用id属性，其他地方使用class属性。</p>
+<p><u>因为搜索引擎是根据标签的语义和id属性来识别的，因此id属性的使用和命名都需要谨慎。</u></p>
+<p>一般来说，定义多个class的目的在于：一个class抽取公共样式，一个class定义单独样式。</p>
+<h2 id="标题栏小图标"><a href="#标题栏小图标" class="headerlink" title="标题栏小图标"></a>标题栏小图标</h2><p>在<code>head</code>标签内加入：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"shortcut icon"</span> <span class="attr">type</span>=<span class="string">"image/x-icon"</span> <span class="attr">href</span>=<span class="string">"图标路径.ico"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<p>其中<code>rel</code>和<code>type</code>是固定属性不用更改，只需要修改图片路径即可。</p>
+<h1 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h1><p>HTML的精髓在于标签的语义。搜索引擎根据HTML代码识别页面结构。</p>
+<p>编写语意结构良好的页面的好处：</p>
+<ul>
+<li>利于开发调试和后期维护。</li>
+<li>利于搜索引擎优化。</li>
+</ul>
+<p>应优先使用正确的语义化标签，如果没有语义化标签可用，再考虑div或者span等无语义标签。</p>
+<h2 id="标题语义化"><a href="#标题语义化" class="headerlink" title="标题语义化"></a>标题语义化</h2><p>h1-h6是标题标签，相比于其他标签，它们在搜索引擎优化（SEO）中占有相当重要的地位。</p>
+<p>一般用到h4，h5和h6权重和普通标签差不多，很少使用。</p>
+<p>对于标题语义化，我们需要注意的是：</p>
+<ul>
+<li>一个页面只能有一个h1标签。</li>
+<li>h1-h6之间不要出现断层。</li>
+<li>不要用标题标签来定义样式（如为了加粗字体而为文本加上标题标签）。</li>
+<li>不要用div来代替标题标签。</li>
+</ul>
+<p>div是无语义的标签，如果使用div代替标题标签会使网页在SEO中丢失大量权重。</p>
+<h2 id="图片语义化"><a href="#图片语义化" class="headerlink" title="图片语义化"></a>图片语义化</h2><h3 id="alt属性和title属性"><a href="#alt属性和title属性" class="headerlink" title="alt属性和title属性"></a>alt属性和title属性</h3><p>alt是给搜索引擎看的，title是给用户看的。</p>
+<p>搜索引擎根据alt属性或上下文判断图片内容。</p>
+<p>因此<strong>img标签必须添加alt属性。</strong></p>
+<h3 id="figure元素和figcaption元素"><a href="#figure元素和figcaption元素" class="headerlink" title="figure元素和figcaption元素"></a>figure元素和figcaption元素</h3><p>对于图片+图注的效果，使用figure和figcaption来增强图片语义化。</p>
+<p>例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">figure</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"xxx"</span> <span class="attr">alt</span>=<span class="string">"xxx"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">figcaption</span>&gt;</span>这是一个图注<span class="tag">&lt;/<span class="name">figcaption</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">figure</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>更详细的介绍可以看<a href="https://www.w3cplus.com/html5/quick-tip-the-right-way-to-use-figure-and-figcaption-elements.html" target="_blank" rel="noopener">这一篇博客</a>。</p>
+<h2 id="表格语义化"><a href="#表格语义化" class="headerlink" title="表格语义化"></a>表格语义化</h2><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>table</td>
+<td>表格</td>
+</tr>
+<tr>
+<td>caption</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>thead</td>
+<td>表头（语义划分）</td>
+</tr>
+<tr>
+<td>tbody</td>
+<td>表身（语义划分）</td>
+</tr>
+<tr>
+<td>tfoot</td>
+<td>表尾（语义划分）</td>
+</tr>
+<tr>
+<td>tr</td>
+<td>行</td>
+</tr>
+<tr>
+<td>th</td>
+<td>表头单元格</td>
+</tr>
+<tr>
+<td>td</td>
+<td>表格单元格</td>
+</tr>
+</tbody>
+</table>
+<h2 id="表单语义化"><a href="#表单语义化" class="headerlink" title="表单语义化"></a>表单语义化</h2><h3 id="label标签"><a href="#label标签" class="headerlink" title="label标签"></a>label标签</h3><p>label标签的for属性有两个作用：</p>
+<ul>
+<li>语义上绑定了label元素和表单元素。（\<label for="*element_id*">）</label></li>
+<li>当我们点击label中的文本时，其关联的表单元素也会获得焦点。</li>
+</ul>
+<p>例：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"rdo"</span> <span class="attr">name</span>=<span class="string">"rdo"</span> <span class="attr">type</span>=<span class="string">"radio"</span> /&gt;</span><span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"rdo"</span>&gt;</span>单选框<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="fieldset标签和legend标签"><a href="#fieldset标签和legend标签" class="headerlink" title="fieldset标签和legend标签"></a>fieldset标签和legend标签</h3><p>fieldset标签用于给表单元素进行分组并绘制一个边框，legend标签用于定义某一组表单的标题。</p>
+<p>例如这个<a href="http://www.runoob.com/tags/tag-fieldset.html" target="_blank" rel="noopener">例子</a>：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">legend</span>&gt;</span>Personalia:<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></span><br><span class="line">    Name: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    Email: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br><span class="line">    Date of birth: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>作用：</p>
+<ul>
+<li>增强表单语义。</li>
+<li>可以使用fieldset标签的disabled属性来禁用整个组中的表单元素。</li>
+</ul>
+<h2 id="其他语义化"><a href="#其他语义化" class="headerlink" title="其他语义化"></a>其他语义化</h2><h3 id="换行符"><a href="#换行符" class="headerlink" title="换行符\"></a>换行符\<br></h3><p>W3C标准规定，\<br>标签只能用于段落中的换行。即只能用于p标签内部。</p>
+<h3 id="无序列表ul"><a href="#无序列表ul" class="headerlink" title="无序列表ul"></a>无序列表ul</h3><p>对于列表型数据，不建议使用div实现，而应用无序列表或有序列表实现。</p>
+<p>为了实现外观效果，一般使用无序列表而不是有序列表。</p>
+<h3 id="strong-标签和em标签"><a href="#strong-标签和em标签" class="headerlink" title="strong 标签和em标签"></a>strong 标签和em标签</h3><p>W3C对这两个标签赋予了“强调”的语义。</p>
+<p>可以在CSS中重新定义它们的样式而不会改变它们的语义。</p>
+<h3 id="del标签和ins标签"><a href="#del标签和ins标签" class="headerlink" title="del标签和ins标签"></a>del标签和ins标签</h3><p>这两个标签一般是配合使用表示更新文本：“delete”和“insert”，被删除的文本和被更新的文本。</p>
+<p>一般会用CSS重新定义它们的样式。</p>
+<p><a href="http://www.runoob.com/tags/tag-del.html" target="_blank" rel="noopener">实例链接</a></p>
+<h3 id="img标签"><a href="#img标签" class="headerlink" title="img标签"></a>img标签</h3><p>对于什么时候使用img标签，什么时候使用背景图片，应该根据HTML的语义来判断。</p>
+<ul>
+<li><p>img标签：作为HTML的一部分，希望被搜索引擎识别。</p>
+</li>
+<li><p>背景图片： 只起到修饰作用，不希望被搜索引擎识别。</p>
+</li>
+</ul>
+<h2 id="语义化验证"><a href="#语义化验证" class="headerlink" title="语义化验证"></a>语义化验证</h2><p>通过去掉CSS样式，观察页面是否还有很好的可读性来判断一个页面是否语义良好。</p>
+<h2 id="HTML5舍弃的标签"><a href="#HTML5舍弃的标签" class="headerlink" title="HTML5舍弃的标签"></a>HTML5舍弃的标签</h2><p>下边这些已经被舍弃的标签(仅为了定义样式的标签和很少使用或已经被新标签代替的标签)应停止使用：</p>
+<ul>
+<li>\<acronym>  定义首字母缩写，应用abbr代替。</acronym></li>
+<li>\<applet> 定义嵌入的applet，应用object代替。</applet></li>
+<li>\<basefont></li>
+<li>\<big></big></li>
+<li>\<center></center></li>
+<li>\<dir> 定义目录列表，应用ul代替。</dir></li>
+<li>\<font></font></li>
+<li>\<frame></li>
+<li>\<frameset></frameset></li>
+<li>\<noframes></noframes></li>
+<li>\<strike></strike></li>
+<li>\<tt></tt></li>
+</ul>
+<h1 id="CSS基础知识"><a href="#CSS基础知识" class="headerlink" title="CSS基础知识"></a>CSS基础知识</h1><h2 id="CSS单位"><a href="#CSS单位" class="headerlink" title="CSS单位"></a>CSS单位</h2><h3 id="px"><a href="#px" class="headerlink" title="px"></a>px</h3><p>pixel，像素，一个图片或计算机屏幕中最小的点。</p>
+<h3 id=""><a href="#" class="headerlink" title="%"></a>%</h3><p>CSS中支持百分比的属性：</p>
+<ul>
+<li><strong>width、height、font-size</strong>，它们的百分比是相对于父元素的“相同元素”的值来计算的。</li>
+<li><strong>line-height</strong>，它的百分比是相对于<strong>父元素</strong>的<strong>font-size</strong>值来计算的。</li>
+<li><strong>vertical-align</strong>，它的百分比是相对于<strong>当前元素</strong>继承的<strong>line-height</strong>值来计算的。</li>
+</ul>
+<h3 id="em"><a href="#em" class="headerlink" title="em"></a>em</h3><p>1em等于当前元素的以px为单位的font-size值，</p>
+<p>若当前元素的font-size值没有定义，则从父元素继承，</p>
+<p>若当前元素的所有祖先元素都没有定义font-size，则继承浏览器默认的font-size值：16px。</p>
+<p><u>使用em的小技巧：</u>首行缩进使用 <code>text-indent: 2em</code>实现。</p>
+<h3 id="rem"><a href="#rem" class="headerlink" title="rem"></a>rem</h3><p>CSS3新引入的单位，指相对根元素（即html元素）的字体大小。</p>
+<h2 id="CSS特性"><a href="#CSS特性" class="headerlink" title="CSS特性"></a>CSS特性</h2><h3 id="继承性"><a href="#继承性" class="headerlink" title="继承性"></a>继承性</h3><p>指子元素继承了父元素的某些样式属性。</p>
+<p>在CSS中，具有继承性的样式有三大类：</p>
+<ul>
+<li><strong>文本</strong>相关属性： font–family，font-size，font-style，font-weight，font，line-height，text-align，text-indent，word-spacing。</li>
+<li><strong>列表</strong>相关属性： list-style-image，list-style-position，list-style-type，list-style。</li>
+<li><strong>颜色</strong>相关属性： color。</li>
+</ul>
+<h3 id="层叠性"><a href="#层叠性" class="headerlink" title="层叠性"></a>层叠性</h3><p>“后者居上”原则。</p>
+<p>CSS的层叠性指样式的覆盖。对于具有<strong>相同权重</strong>的<strong>相同属性</strong>，以最后定义的值为准。</p>
+<h2 id="CSS优先级"><a href="#CSS优先级" class="headerlink" title="CSS优先级"></a>CSS优先级</h2><h3 id="引用方式"><a href="#引用方式" class="headerlink" title="引用方式"></a>引用方式</h3><p>行内样式&gt;(内部样式=外部样式)</p>
+<p>若同时存在权重相同内部样式和外部样式，则以最后引入的样式为准。</p>
+<h3 id="继承方式"><a href="#继承方式" class="headerlink" title="继承方式"></a>继承方式</h3><p>以最近的祖先元素为准。</p>
+<h3 id="指定样式"><a href="#指定样式" class="headerlink" title="指定样式"></a>指定样式</h3><p>常见的伪元素——:before、:after、:first-letter、:first-line。</p>
+<p>常见的伪类——:hover、:first-child等。</p>
+<p>常用的选择器优先级：行内样式&gt;id选择器&gt;class选择器&gt;元素选择器。</p>
+<p>选择器权值表：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>权值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>通配符</td>
+<td>0</td>
+</tr>
+<tr>
+<td>伪元素</td>
+<td>1</td>
+</tr>
+<tr>
+<td>元素选择器</td>
+<td>1</td>
+</tr>
+<tr>
+<td>class选择器</td>
+<td>10</td>
+</tr>
+<tr>
+<td>伪类</td>
+<td>10</td>
+</tr>
+<tr>
+<td>属性选择器</td>
+<td>10</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>100</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="继承样式和和指定样式"><a href="#继承样式和和指定样式" class="headerlink" title="继承样式和和指定样式"></a>继承样式和和指定样式</h3><p>指定样式权重更高。</p>
+<h3 id="important"><a href="#important" class="headerlink" title="!important"></a>!important</h3><p>权值最高，不推荐使用。</p>
+<h2 id="CSS引入方式"><a href="#CSS引入方式" class="headerlink" title="CSS引入方式"></a>CSS引入方式</h2><ul>
+<li>导入样式表（加载html后加载css，不推荐）</li>
+<li>外部样式表（link标签）</li>
+<li>内部样式表（style标签）</li>
+<li>行内样式表</li>
+</ul>
+<h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><p>CSS出去基本的选择器（元素选择器、id选择器、class选择器、群组或分组选择器），</p>
+<p>还有<u>层次选择器</u>：</p>
+<table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>M N</td>
+<td>后代选择器，选择M元素所有内部后代N元素</td>
+</tr>
+<tr>
+<td>M&gt;N</td>
+<td>子代选择器，选择M元素所有内部子代N元素</td>
+</tr>
+<tr>
+<td>M~N</td>
+<td>兄弟选择器，选择M元素所有同级N元素</td>
+</tr>
+<tr>
+<td>M+N</td>
+<td>相邻选择器，选择M元素相邻的下一个同级元素</td>
+</tr>
+</tbody>
+</table>
+<h1 id="CSS规范"><a href="#CSS规范" class="headerlink" title="CSS规范"></a>CSS规范</h1><h2 id="命名规范"><a href="#命名规范" class="headerlink" title="命名规范"></a>命名规范</h2><h3 id="CSS文件命名"><a href="#CSS文件命名" class="headerlink" title="CSS文件命名"></a>CSS文件命名</h3><p>开发阶段按照功能模块划分CSS文件。</p>
+<table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>reset.css</td>
+<td>重置样式，重置元素默认样式</td>
+</tr>
+<tr>
+<td>global.css</td>
+<td>全局样式，全站公用，定义页面基础样式</td>
+</tr>
+<tr>
+<td>themes.css</td>
+<td>主题样式，用于实现换肤功能</td>
+</tr>
+<tr>
+<td>module.css</td>
+<td>模块样式，用于模块的样式</td>
+</tr>
+<tr>
+<td>master.css</td>
+<td>母版样式，用于母版页的样式</td>
+</tr>
+<tr>
+<td>columes.css</td>
+<td>专栏样式，用于专栏的样式</td>
+</tr>
+<tr>
+<td>forms.css</td>
+<td>表单样式，用于表单的样式</td>
+</tr>
+<tr>
+<td>mend.css</td>
+<td>补丁样式，用于维护、修改的样式</td>
+</tr>
+<tr>
+<td>print.css</td>
+<td>打印样式，用于打印的样式</td>
+</tr>
+</tbody>
+</table>
+<h3 id="id和class命名"><a href="#id和class命名" class="headerlink" title="id和class命名"></a>id和class命名</h3><p>建议使用中划线命名，例如<code>column-title</code>。</p>
+<p>为了避免class命名的重复，一般取父元素的class名作为前缀，例如<code>column-title</code>。</p>
+<table>
+<thead>
+<tr>
+<th>网页主体部分</th>
+<th>命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>最外层</td>
+<td>wrapper(一般用于包裹整个页面)</td>
+</tr>
+<tr>
+<td>头部</td>
+<td>header</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>content</td>
+</tr>
+<tr>
+<td>侧栏</td>
+<td>sidebar</td>
+</tr>
+<tr>
+<td>栏目</td>
+<td>column</td>
+</tr>
+<tr>
+<td>热点</td>
+<td>hot</td>
+</tr>
+<tr>
+<td>新闻</td>
+<td>news</td>
+</tr>
+<tr>
+<td>下载</td>
+<td>download</td>
+</tr>
+<tr>
+<td>标志</td>
+<td>logo</td>
+</tr>
+<tr>
+<td>导航条</td>
+<td>nav</td>
+</tr>
+<tr>
+<td>主体</td>
+<td>main</td>
+</tr>
+<tr>
+<td>左侧</td>
+<td>main-left</td>
+</tr>
+<tr>
+<td>右侧</td>
+<td>main-right</td>
+</tr>
+<tr>
+<td>底部</td>
+<td>footer</td>
+</tr>
+<tr>
+<td>友情链接</td>
+<td>friendlink</td>
+</tr>
+<tr>
+<td>加入我们</td>
+<td>joinus</td>
+</tr>
+<tr>
+<td>版权</td>
+<td>copyright</td>
+</tr>
+<tr>
+<td>服务</td>
+<td>service</td>
+</tr>
+<tr>
+<td>登录</td>
+<td>login</td>
+</tr>
+<tr>
+<td>注册</td>
+<td>register</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>导航部分</th>
+<th>命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>主导航</td>
+<td>main-nav</td>
+</tr>
+<tr>
+<td>子导航</td>
+<td>sub-nav</td>
+</tr>
+<tr>
+<td>边导航</td>
+<td>side-nav</td>
+</tr>
+<tr>
+<td>左导航</td>
+<td>leftside-nav</td>
+</tr>
+<tr>
+<td>右导航</td>
+<td>rightside-nav</td>
+</tr>
+<tr>
+<td>顶导航</td>
+<td>top-nav</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>菜单部分</th>
+<th>命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>菜单</td>
+<td>menu</td>
+</tr>
+<tr>
+<td>子菜单</td>
+<td>submenu</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>其他</th>
+<th>命名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标题</td>
+<td>title</td>
+</tr>
+<tr>
+<td>摘要</td>
+<td>summary</td>
+</tr>
+<tr>
+<td>登录条</td>
+<td>loginbar</td>
+</tr>
+<tr>
+<td>搜索</td>
+<td>search</td>
+</tr>
+<tr>
+<td>标签页</td>
+<td>tab</td>
+</tr>
+<tr>
+<td>广告</td>
+<td>banner</td>
+</tr>
+<tr>
+<td>小技巧</td>
+<td>tips</td>
+</tr>
+<tr>
+<td>图标</td>
+<td>icon</td>
+</tr>
+<tr>
+<td>法律声明</td>
+<td>siteinfolegal</td>
+</tr>
+<tr>
+<td>网站地图</td>
+<td>sitemap</td>
+</tr>
+<tr>
+<td>工具条</td>
+<td>tool、toolbar</td>
+</tr>
+<tr>
+<td>首页</td>
+<td>homepage</td>
+</tr>
+<tr>
+<td>子页</td>
+<td>subpage</td>
+</tr>
+<tr>
+<td>合作伙伴</td>
+<td>partner</td>
+</tr>
+<tr>
+<td>帮助</td>
+<td>help</td>
+</tr>
+<tr>
+<td>指南</td>
+<td>guide</td>
+</tr>
+<tr>
+<td>滚动</td>
+<td>scroll</td>
+</tr>
+<tr>
+<td>提示信息</td>
+<td>msg</td>
+</tr>
+<tr>
+<td>投票</td>
+<td>vote</td>
+</tr>
+<tr>
+<td>相关文章</td>
+<td>related</td>
+</tr>
+<tr>
+<td>文章列表</td>
+<td>list</td>
+</tr>
+</tbody>
+</table>
+<h2 id="书写规范"><a href="#书写规范" class="headerlink" title="书写规范"></a>书写规范</h2><p>对于功能代码，应该集中放在一起，</p>
+<p>对于其他代码，应按照如下顺序：</p>
+<ol>
+<li>影响文档流属性（布局属性）——display，position，float，clear等</li>
+<li>自身盒模型属性——width，height，padding，margin，border，overflow等</li>
+<li>文本性属性——font，line-height，text-align，text-indent，vertical-align等</li>
+<li>装饰性属性——color，background-color，opacity等</li>
+<li>其他属性——cursor，content，list-style，quotes等</li>
+</ol>
+<p>例如：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#main</span> &#123;</span><br><span class="line">  <span class="comment">/* 影响文档流属性 */</span></span><br><span class="line">  <span class="attribute">display</span>: inline-block;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="comment">/* 盒子模型属性 */</span></span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">2px</span> solid gray;</span><br><span class="line">  <span class="comment">/* 文本性属性 */</span></span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">text-indent</span>: <span class="number">2em</span>;</span><br><span class="line">  <span class="comment">/* 装饰性属性 */</span></span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">background-color</span>: red;</span><br><span class="line">  <span class="comment">/* 其他属性 */</span></span><br><span class="line">  <span class="attribute">cursor</span>: pointer;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h2><p>由于压缩工具会删除所有的注释，因此有时为了保留版权声明等注释信息，需要在注释内容前加一个叹号，如<code>/*! 注释内容 */</code>，这样压缩工具就不会删除这条注释信息。</p>
+<h3 id="顶部注释"><a href="#顶部注释" class="headerlink" title="顶部注释"></a>顶部注释</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> *@description:说明</span></span><br><span class="line"><span class="comment"> *@author:作者</span></span><br><span class="line"><span class="comment"> *@update:更新时间，如2018-09-10 17:42</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h3 id="模块注释"><a href="#模块注释" class="headerlink" title="模块注释"></a>模块注释</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 导航部分，开始 */</span></span><br><span class="line">......</span><br><span class="line"><span class="comment">/* 导航部分，结束 */</span></span><br></pre></td></tr></table></figure>
+<h3 id="简单注释"><a href="#简单注释" class="headerlink" title="简单注释"></a>简单注释</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 单行注释 */</span></span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*多行注释</span></span><br><span class="line"><span class="comment"> *多行注释</span></span><br><span class="line"><span class="comment"> *多行注释</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
+<h2 id="CSS-reset"><a href="#CSS-reset" class="headerlink" title="CSS reset"></a>CSS reset</h2><p>重置样式，去除元素在浏览器中的默认样式。</p>
+<p>是否使用CSS reset根据实际开发需求而定。</p>
+<h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><p><img src="https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=5ad0ba6a0c7b02080c9c37e752e9deeb/0824ab18972bd407012c41327d899e510eb30911.jpg" alt="标准盒子模型"></p>
+<p><img src="https://gss0.baidu.com/9fo3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=6cdf3ae9fbfaaf5184b689b9bc64b8d6/1b4c510fd9f9d72ac29d82d2d22a2834359bbb00.jpg" alt="IE盒子模型"></p>
+<h2 id="外边距叠加"><a href="#外边距叠加" class="headerlink" title="外边距叠加"></a>外边距叠加</h2><p>又称为“margin叠加”，指当两个外边距相遇时会“合二为一”。叠加后的外边距为两个外边距的最大值。</p>
+<p><u>只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并。</u></p>
+<p>以下图片均来自<a href="http://www.w3school.com.cn/css/css_margin_collapsing.asp" target="_blank" rel="noopener">w3school</a></p>
+<p><img src="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_1.gif" alt="同级元素"></p>
+<p><img src="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_2.gif" alt="父子元素"></p>
+<p><img src="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_3.gif" alt="空元素1"></p>
+<p><img src="http://www.w3school.com.cn/i/ct_css_margin_collapsing_example_4.gif" alt="空元素2"></p>
+<p><img src="http://www.w3school.com.cn/i/ct_css_margin_collapsing.gif" alt="外边距合并的意义"></p>
+<h2 id="负margin"><a href="#负margin" class="headerlink" title="负margin"></a>负margin</h2><ul>
+<li>当margin-top或者margin-left为负数时，<strong>当前元素</strong>会被拉向指定方向。</li>
+<li>当margin-bottom或者margin-right为负数时，<strong>后续元素</strong>会被拉向指定方向。</li>
+</ul>
+<p><a href="https://www.jianshu.com/p/549aaa5fabaa" target="_blank" rel="noopener">这里有一篇文章</a>讲得不错，可以参考一下。</p>
+<p><a href="https://www.cnblogs.com/star91/p/5773436.html" target="_blank" rel="noopener">圣杯布局、双飞翼布局</a>就是利用这个实现的。</p>
+<h2 id="overflow"><a href="#overflow" class="headerlink" title="overflow"></a>overflow</h2><p>当浮动引起父元素高度塌陷时，可以为父元素加上<code>overflow: hidden</code>来清除浮动。</p>
+<h1 id="display属性"><a href="#display属性" class="headerlink" title="display属性"></a>display属性</h1><table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inline</td>
+<td>行内元素</td>
+</tr>
+<tr>
+<td>block</td>
+<td>块元素</td>
+</tr>
+<tr>
+<td>inline-block</td>
+<td>行内块元素</td>
+</tr>
+<tr>
+<td>table</td>
+<td>以表格形式显示，类似于table元素</td>
+</tr>
+<tr>
+<td>table-row</td>
+<td>以表格行形式显示，类似于tr元素</td>
+</tr>
+<tr>
+<td>table-cell</td>
+<td>以表格单元格形式显示，类似于td元素</td>
+</tr>
+<tr>
+<td>none</td>
+<td>隐藏元素</td>
+</tr>
+</tbody>
+</table>
+<h2 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h2><ul>
+<li>独占一行</li>
+<li>内部可以容纳其他块元素或行元素</li>
+<li>可以定义width和height</li>
+<li>可以定义四个方向的margin</li>
+</ul>
+<h2 id="inline元素"><a href="#inline元素" class="headerlink" title="inline元素"></a>inline元素</h2><ul>
+<li>可以与其他行内元素位于同一行</li>
+<li>可以容纳行内元素，但不能容纳块元素</li>
+<li>无法定义width和height</li>
+<li>可以定义margin-left和margin-right，不能定义margin-top和margin-bottom</li>
+</ul>
+<h2 id="inline-block元素"><a href="#inline-block元素" class="headerlink" title="inline-block元素"></a>inline-block元素</h2><ul>
+<li>可以定义width和height</li>
+<li>可以与其他行内元素位于同一行</li>
+</ul>
+<p>常见的inline-block元素：img元素和input元素</p>
+<h2 id="display-table-cell"><a href="#display-table-cell" class="headerlink" title="display: table-cell"></a>display: table-cell</h2><p>可以用于实现：</p>
+<ul>
+<li><a href="https://www.jianshu.com/p/a7ee7dd60166" target="_blank" rel="noopener">图片垂直居中</a>于元素</li>
+<li>等高布局</li>
+<li>自动平均划分元素，并在同一行显示</li>
+</ul>
+<h2 id="去除inline-block元素间距"><a href="#去除inline-block元素间距" class="headerlink" title="去除inline-block元素间距"></a>去除inline-block元素间距</h2><p>在父元素中添加<code>font-size: 0</code></p>
+<h1 id="文本效果"><a href="#文本效果" class="headerlink" title="文本效果"></a>文本效果</h1><table>
+<thead>
+<tr>
+<th>文本属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>text-decoration</td>
+<td>下划线、删除线、顶划线</td>
+</tr>
+<tr>
+<td>text-transform</td>
+<td>文本大小写</td>
+</tr>
+<tr>
+<td>font-variant</td>
+<td>将英文文本转换为小型大写字母</td>
+</tr>
+<tr>
+<td>text-indent</td>
+<td>段落首行缩进</td>
+</tr>
+<tr>
+<td>text-align</td>
+<td>文本水平对齐</td>
+</tr>
+<tr>
+<td>vertical-align</td>
+<td>文本垂直对齐</td>
+</tr>
+<tr>
+<td>line-height</td>
+<td>行高</td>
+</tr>
+<tr>
+<td>letter-spacing</td>
+<td>字距</td>
+</tr>
+<tr>
+<td>word-spacing</td>
+<td>词距</td>
+</tr>
+</tbody>
+</table>
+<h2 id="text-indent"><a href="#text-indent" class="headerlink" title="text-indent"></a>text-indent</h2><p>可以使用    <code>text-indent: -9999px;</code>来隐藏文本。</p>
+<h2 id="text-align"><a href="#text-align" class="headerlink" title="text-align"></a>text-align</h2><p>主要使用的值为left、right、center，对文字、inline元素、inline-block元素都起作用，对块元素不起作用。</p>
+<p>利用<code>margin: 0 auto</code>实现块元素的水平居中。</p>
+<p><code>text-align: center</code>在父元素中定义，<code>margin: 0 auto</code>在当前元素中定义。</p>
+<h2 id="line-height"><a href="#line-height" class="headerlink" title="line-height"></a>line-height</h2><p>关于顶线、中线、基线、底线可以自行查阅。</p>
+<p>行高（line-height）指的是两行基线之间的距离。</p>
+<ul>
+<li>将height和line-height设为相同值可以实现文字垂直居中。</li>
+<li>当取值为%或者em时，是相对与父元素的font-size计算的。</li>
+<li>当取值为无单位数字时，是相对于当前元素的font-size计算的。</li>
+</ul>
+<h2 id="vertical-align"><a href="#vertical-align" class="headerlink" title="vertical-align"></a>vertical-align</h2><p>vertical-align对inline、inline-block、table-cell元素有效，对块元素无效。</p>
+<p>用于定义<u>周围的文字、inline元素、inline-block元素</u>相对于该元素<strong>基线</strong>的垂直对齐方式。</p>
+<p>可以取负长度值和百分比值。</p>
+<h3 id="取值"><a href="#取值" class="headerlink" title="取值"></a>取值</h3><ol>
+<li><p>负值 ： <code>vertical-align: -2px</code>指的是该元素相对于基线向下偏移2px；</p>
+</li>
+<li><p>百分比 ： 相对于当前元素继承的line-height值计算的，也是该元素相对于基线偏移的值；</p>
+</li>
+<li><p><a href="http://www.runoob.com/cssref/pr-pos-vertical-align.html" target="_blank" rel="noopener">关键字</a> （前四个比较常用）：</p>
+<p>| 值           | 描述                                           |<br>| ———— | ———————————————- |<br>| <strong>top</strong>      | 把元素的顶端与行中最高元素的顶端对齐           |<br>| <strong>middle</strong>   | 把此元素放置在父元素的中部。                   |<br>| <strong>baseline</strong> | 默认。元素放置在父元素的基线上。               |<br>| <strong>bottom</strong>   | 把元素的底端与行中最低的元素的顶端对齐。       |<br>| text-top     | 把元素的顶端与父元素字体的顶端对齐             |<br>| text-bottom  | 把元素的底端与父元素字体的底端对齐。           |<br>| sub          | 垂直对齐文本的下标。                           |<br>| super        | 垂直对齐文本的上标                             |<br>| inherit      | 规定应该从父元素继承 vertical-align 属性的值。 |</p>
+</li>
+</ol>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li>为img添加<code>vertical-align: middle</code>可以实现图片与周围的文字居中对齐</li>
+<li>要使块元素（如div）也可以使用此属性，可以为其先定义<code>display: table-cell</code></li>
+</ul>
+<h1 id="表单效果"><a href="#表单效果" class="headerlink" title="表单效果"></a>表单效果</h1><h2 id="radio与checkbox"><a href="#radio与checkbox" class="headerlink" title="radio与checkbox"></a>radio与checkbox</h2><p>默认情况下由于是基线对齐因此视觉上会感觉单选框或复选框旁边的文字比它们低，这个时候可以使用vertical-align来让他们垂直居中对齐。</p>
+<p>可以使用关键字，也可以使用数值。</p>
+<h2 id="textarea"><a href="#textarea" class="headerlink" title="textarea"></a>textarea</h2><ul>
+<li>可以使用max-width和max-height来限制拖拽大小</li>
+<li>可以使用<code>resize: none</code>来禁止拖拽</li>
+</ul>
+<p>要使textarea在不同浏览器中具有相同的外观，可以：</p>
+<ul>
+<li>使用CSS的width和height定义大小</li>
+<li>使用<code>overflow: auto</code>来定义textarea滚动条自适应</li>
+</ul>
+<h2 id="表单对齐"><a href="#表单对齐" class="headerlink" title="表单对齐"></a>表单对齐</h2><p>书上给了<strong>注册</strong>的例子：</p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1536639853274&amp;di=16c88d63b9118620ba546c2f6237b78c&amp;imgtype=0&amp;src=http%3A%2F%2Fpic.orsoon.com%2Fuploads%2Fallimg%2F24631428484696.png" alt="图片来源于网络"></p>
+<p>实现方法：</p>
+<ol>
+<li>每一行表单分为左栏加若干右栏<ol>
+<li>所有行的左栏长度相等</li>
+<li>所有行的右栏所有盒子长度之和相等</li>
+<li>左栏一般为一个label，右栏为若干文本框</li>
+</ol>
+</li>
+<li>所有左栏和右栏盒子都设为左浮动</li>
+<li>左栏添加属性<code>text-align: right</code>使得文字右对齐</li>
+<li>每一行左栏盒子长度加上所有右栏盒子长度之和等于行宽</li>
+<li>每一行由一个p包裹住，并为p添加<code>overflow: hidden</code>来清除浮动</li>
+</ol>
+<p>然后我又去看了一下各网站的<strong>登录</strong>界面，基本上是一个icon+一个input的模式：</p>
+<p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1536641005969&amp;di=02e6a2469281303e926eb8878cf64db9&amp;imgtype=0&amp;src=http%3A%2F%2Fd.hiphotos.baidu.com%2Fexp%2Fw%3D480%2Fsign%3D00237679845494ee87220e111df7e0e1%2Fa686c9177f3e67093ac0b23933c79f3df9dc5530.jpg" alt="图片来源于网络"></p>
+<p>实现方法：</p>
+<ul>
+<li>icon使用<code>position: absolute</code>脱离文档流并盖在input上</li>
+<li>input将padding-left调到合适大小使得输入框不被icon盖住</li>
+</ul>
+<p>#　浮动布局</p>
+<h2 id="文档流"><a href="#文档流" class="headerlink" title="文档流"></a>文档流</h2><p>简单来说就是元素在页面中出现的先后顺序。</p>
+<ul>
+<li>正常文档流 ： “normal flow”，指默认情况下页面元素的布局情况。</li>
+<li>脱离文档流：脱离正常文档流。要改变正常文档流，使用浮动和定位方法。</li>
+</ul>
+<h2 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h2><p>可以使元素移到左边或者右边，并且允许后边的文字和元素环绕着它。</p>
+<p>浮动后使用margin来定义和其他元素之间的间距。</p>
+<p>绝对定位的元素忽略float属性。</p>
+<p>float的取值表如下，默认为<strong>none</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>left</td>
+<td>元素向左浮动。</td>
+</tr>
+<tr>
+<td>right</td>
+<td>元素向右浮动。</td>
+</tr>
+<tr>
+<td>none</td>
+<td>默认值。元素不浮动，并会显示在其在文本中出现的位置。</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>规定应该从父元素继承 float 属性的值。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>当一个元素添加float属性为left或者right时，它将变为block类型。</li>
+<li>浮动元素脱离正常文档流，若其height大于父元素的height或者父元素的height未定义，会造成父元素高度塌陷。可以为父元素添加<code>overflow: hidden</code>来解决。</li>
+<li><p>若父元素和子元素都是浮动元素，则父元素会自适应地包含子元素。</p>
+</li>
+<li><p>若兄弟元素不是浮动元素，由于浮动元素脱离文档流，可能会出现覆盖等情况。</p>
+</li>
+</ul>
+<h2 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h2><ul>
+<li><code>clear: both</code>，用于浮动元素后边的元素，表示两边不允许出现浮动元素。</li>
+<li><code>overflow: hidden</code>，用于浮动元素的父元素，但会隐藏超出父元素的内容部分。</li>
+<li>实际开发中，更经常使用<code>:after</code>伪元素结合<code>clear: both</code>来实现。</li>
+<li>为了兼容ie，为父元素添加<code>zoom: 1</code>来消除浮动。</li>
+</ul>
+<h1 id="定位布局"><a href="#定位布局" class="headerlink" title="定位布局"></a>定位布局</h1><h2 id="属性值"><a href="#属性值" class="headerlink" title="属性值"></a><a href="http://www.runoob.com/cssref/pr-class-position.html" target="_blank" rel="noopener">属性值</a></h2><table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.runoob.com/css/css-positioning.html#position-static" target="_blank" rel="noopener">static</a></td>
+<td><u>默认值</u>。没有定位，元素出现在正常的流中（忽略 top, bottom, left, right 或者 z-index 声明）。</td>
+</tr>
+<tr>
+<td><a href="http://www.runoob.com/css/css-positioning.html#position-absolute" target="_blank" rel="noopener">absolute</a></td>
+<td>生成绝对定位的元素，相对于 <u>static 定位以外的第一个父元素</u>进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</td>
+</tr>
+<tr>
+<td><a href="http://www.runoob.com/css/css-positioning.html#position-fixed" target="_blank" rel="noopener">fixed</a></td>
+<td>生成固定定位的元素，相对于<u>浏览器窗口</u>进行定位。元素的位置通过 “left”, “top”, “right” 以及 “bottom” 属性进行规定。</td>
+</tr>
+<tr>
+<td><a href="http://www.runoob.com/css/css-positioning.html#position-relative" target="_blank" rel="noopener">relative</a></td>
+<td>生成相对定位的元素，相对于<u>其正常位置</u>进行定位。因此，”left:20” 会向元素的 LEFT 位置添加 20 像素。</td>
+</tr>
+<tr>
+<td><a href="http://www.runoob.com/css/css-positioning.html#position-sticky" target="_blank" rel="noopener">sticky</a></td>
+<td>粘性定位，该定位基于用户滚动的位置。它的行为就像 position:relative; 而当页面滚动超出目标区域时，它的表现就像 position:fixed;，它会固定在目标位置。<strong>注意:</strong> Internet Explorer, Edge 15 及更早 IE 版本不支持 sticky 定位。 Safari 需要使用 -webkit- prefix (查看以下实例)。</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>规定应该从父元素继承 position 属性的值。</td>
+</tr>
+<tr>
+<td>initial</td>
+<td>设置该属性为默认值，详情查看 <a href="http://www.runoob.com/cssref/css-inherit.html" target="_blank" rel="noopener">CSS initial 关键字</a>。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>absolute会将元素转换为块元素。</li>
+<li>若想要子元素相对于父元素定位，一般给父元素添加<code>position: relative</code>，给子元素定义<code>position: absolute</code>来实现。祖先元素同理。</li>
+</ul>
+<h2 id="z-index属性"><a href="#z-index属性" class="headerlink" title="z-index属性"></a>z-index属性</h2><p>默认情况下设置z-index无效，只有当元素定义position为relative、absolute、fixed时才会激活，z-index值越大，其堆叠顺序越高，越靠上（z方向上的靠上）。</p>
+<h1 id="CSS图形"><a href="#CSS图形" class="headerlink" title="CSS图形"></a>CSS图形</h1><p>由于图片大小比较大，数据传输量大且一张图片会引发一次HTTP请求，因此对徐图形效果，一般更倾向于用CSS实现。</p>
+<p>这里有一篇<a href="https://www.w3cplus.com/css/css-simple-shapes-cheat-sheet" target="_blank" rel="noopener">CSS制作图形速查表</a>总结得比较全面，可以参考。</p>
+<p>另外对于带有边框的图形，一般是用大小不同的两个相同图形实现，小的覆盖在大的上边。</p>
+<h1 id="性能优化"><a href="#性能优化" class="headerlink" title="性能优化"></a>性能优化</h1><h2 id="属性缩写"><a href="#属性缩写" class="headerlink" title="属性缩写"></a>属性缩写</h2><ul>
+<li><p>border：<code>border: 1px solid red</code></p>
+<ul>
+<li>若不想要底边框，可以加上<code>border-bottom: 0</code></li>
+<li>若只想要底边框，可以<code>border-bottom: 1px solid red</code></li>
+</ul>
+</li>
+<li><p>padding： </p>
+<ul>
+<li><code>padding: 10px</code>指上右下左均为10px</li>
+<li><code>padding: 10px 20px</code>指上下为10px，左右为20px</li>
+<li><code>padding: 10px 20px 30px 40px</code>的顺序为上右下左，从上开始按照顺时针顺序</li>
+</ul>
+</li>
+<li><p>margin： 类似于padding</p>
+</li>
+<li>background： <code>background: url(&#39;xxx.jpg&#39;) no-repeat 80px 40px</code>,最后为background-position</li>
+<li><p>font： <code>font: &quot;微软雅黑&quot; 12px/1.5em bold</code></p>
+<ul>
+<li>顺序为<code>font-family</code>、<code>font-size</code>、<code>line-height</code>、<code>font-weight</code></li>
+<li>简写形式必须指定<code>font-family</code>和<code>font-size</code>的值，其他属性没有指定则为默认值</li>
+<li>简写形式中<code>font-size</code>和<code>line-height</code>之间需要加入一个斜杠<code>/</code></li>
+</ul>
+</li>
+<li><p>color： 十六进制的颜色值若每两位值相同，可以缩写一半，比如<code>color: #112233</code>可以缩写为<code>color: #123</code></p>
+</li>
+</ul>
+<p>##　语法压缩</p>
+<ul>
+<li>当一个CSS规则只有一两个属性的时候，使用横向书写</li>
+<li>可以省略最后一个属性的分号</li>
+<li>background-image、cursor等属性url()中的路径不用加引号</li>
+<li>如果某一个属性值为0，则不需要加单位</li>
+<li>如果某一个属性值是以0为开头的小数，可以吧0省略</li>
+<li>使用群组选择器合并相同样式</li>
+<li>若同一个父元素的多个子元素都定义了相同的可继承属性，把这些属性定义在父元素中来精简代码</li>
+</ul>
+<h2 id="CSS压缩"><a href="#CSS压缩" class="headerlink" title="CSS压缩"></a>CSS压缩</h2><p>书中推荐了两个在线的压缩工具：<a href="https://csscompressor.com" target="_blank" rel="noopener">CSS Compressor</a> 和 <a href="http://tool.oschina.net/jscompress" target="_blank" rel="noopener">YUI Compressor</a></p>
+<p>以YUI Compressor为例，它会对CSS文件执行如下操作：</p>
+<ul>
+<li>删除所有注释</li>
+<li>删除无用空白符</li>
+<li>删除结尾分号</li>
+<li>删除属性值为0的单位</li>
+<li>删除以0开头的小数前的0</li>
+<li>合并相似属性（属性缩写）</li>
+<li>将RGB颜色转换为十六进制颜色</li>
+</ul>
+<h2 id="图片压缩"><a href="#图片压缩" class="headerlink" title="图片压缩"></a>图片压缩</h2><p>书中推荐的图片压缩工具：</p>
+<p>在线的<a href="https://www.jpegmini.com" target="_blank" rel="noopener">JPEGmini</a>和<a href="https://tinypng.com" target="_blank" rel="noopener">TinyPNG</a>以及本地的<a href="https://imageoptim.com/versions.html" target="_blank" rel="noopener">ImageOptim</a></p>
+<h2 id="高性能的选择器"><a href="#高性能的选择器" class="headerlink" title="高性能的选择器"></a>高性能的选择器</h2><p>浏览器对选择器规则是从右到左进行解析的。</p>
+<p>CSS选择的匹配效率：</p>
+<ol>
+<li>id选择器</li>
+<li>class选择器</li>
+<li>元素选择器</li>
+<li>相邻选择器</li>
+<li>子选择器</li>
+<li>后代选择器</li>
+<li>通配符选择器</li>
+<li>属性选择器</li>
+<li>伪类选择器</li>
+</ol>
+<p>因此在使用选择器时应注意：</p>
+<ul>
+<li>尽量不要使用通配符</li>
+<li>不要在id选择器和class选择器前添加元素名</li>
+<li>选择器最好不要超过三层，靠右的选择条件应尽可能精确</li>
+<li>避免使用后代选择器，尽量少使用子选择器</li>
+</ul>
+<h1 id="CSS技巧"><a href="#CSS技巧" class="headerlink" title="CSS技巧"></a>CSS技巧</h1><h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><ul>
+<li>文字、inline元素和inline-*元素： <code>text-align: center</code></li>
+<li>块元素： <code>margin: 0 auto</code></li>
+</ul>
+<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><ul>
+<li>行内块元素使用<code>vertical-align: middle</code></li>
+<li>块元素将display改为table-cell然后使用vertical-align</li>
+<li>多行文字使用一个标签将文字包起来并设为table-cell，然后再设置vertical-align</li>
+<li>单行文字设置line-height和height属性值相同来实现</li>
+</ul>
+<h2 id="CSS-Sprite"><a href="#CSS-Sprite" class="headerlink" title="CSS Sprite"></a>CSS Sprite</h2><p>又称为CSS精灵或CSS<strong>雪碧图</strong>，它将零散的小背景图合并成一张大背景图，然后再利用background-position属性进行定位从而现实小背景图。</p>
+<p>使用CSS Sprite技术时，需要注意：</p>
+<ul>
+<li>在开发后期而不是开发前期使用此技术</li>
+<li>有条理地组织图片顺序，应将小背景图按照类别、风格、大小等分门别类地放好</li>
+<li>控制雪碧图的大小，当图片大小小于200KB时传输时间是差不多的，因此雪碧图应控制在200KB以内</li>
+</ul>
+<p>书中推荐了两个CSS Sprite工具：<a href="http://css.spritegen.com/" target="_blank" rel="noopener">CSS Sprite Generator</a> 和 <a href="http://www.spritecow.com/" target="_blank" rel="noopener">Sprite Cow</a></p>
+<h2 id="Icon-Font图标"><a href="#Icon-Font图标" class="headerlink" title="Icon Font图标"></a>Icon Font图标</h2><p>使用字体文件实现小图标效果，从而减少图片的使用。</p>
+<p>推荐的Icon Font网站：<a href="http://www.iconfont.cn/" target="_blank" rel="noopener">http://www.iconfont.cn/</a></p>
+<p>网站上就有<a href="http://www.iconfont.cn/help/detail?spm=a313x.7781069.1998910419.d0091c141&amp;helptype=code" target="_blank" rel="noopener">使用教程</a></p>
+<h1 id="重要概念"><a href="#重要概念" class="headerlink" title="重要概念"></a>重要概念</h1><h2 id="包含块"><a href="#包含块" class="headerlink" title="包含块"></a>包含块</h2><p>containing block，决定一个元素大小和定位的元素。</p>
+<p>时视觉格式化模型中的一个重要概念，与CSS盒子模型类似。其作用主要是为其内部的后代元素提供一个参考。</p>
+<ul>
+<li>根元素（HTML元素）没有父元素，它存在的包含块被称为初始包含块</li>
+<li>定位为fixed的元素的包含块为浏览器窗口</li>
+<li>定位为是static和relative的元素的包含块是它最近的块级（block、inline-block或table-cell）祖先元素创建的</li>
+<li>定位为absolute的元素的包含块是它最近的定位不是static的祖先元素，可以是块元素也可以是行内元素</li>
+</ul>
+<h2 id="层叠上下文"><a href="#层叠上下文" class="headerlink" title="层叠上下文"></a>层叠上下文</h2><p><img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1537245373&amp;di=c7455fbd6881b1a07ae8ac81a79f474e&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fwww.w3cplus.com%2Fsites%2Fdefault%2Ffiles%2Fblogs%2F2018%2F1808%2Fz-index-15.png" alt="层叠级别图"></p>
+<p>一个元素在z轴上的堆叠顺序：</p>
+<ul>
+<li>层叠级别越大越靠上</li>
+<li>同等层叠级别，后边的堆叠在前边的上边（后来者居上）</li>
+<li>不同的层叠上下文比较的是父级层叠上下文，与自身无关</li>
+</ul>
+<h2 id="BFC和IFC"><a href="#BFC和IFC" class="headerlink" title="BFC和IFC"></a>BFC和IFC</h2><p>BFC： block formatting context， 块级格式上下文</p>
+<p>IFC： inline formatting context， 行级格式上下文</p>
+<p>若一个元素具备以下任何一个条件，则会创造创造一个新的BFC：</p>
+<ul>
+<li>根元素</li>
+<li>float属性不是none</li>
+<li>position属性是absolute或fixed</li>
+<li>overflow属性值不是visible</li>
+<li>display属性为inline-block、table-caption、table-cell</li>
+</ul>
+<p>W3C描述BFC的特点为：</p>
+<ul>
+<li>在一个BFC中，盒子从顶端开始垂直一个接着一个地排列。两个相邻盒子之间的垂直间距有margin决定。<strong>同一个BFC中</strong>，两个相邻块盒子之间<strong>垂直方向上的外边距</strong>会叠加。</li>
+<li>在一个BFC中，每一个盒子的左外边界（margin-left）会紧贴着容器的border-left，右边同理，即使存在浮动元素也是如此。</li>
+</ul>
+<p>可以得到结论：</p>
+<ol>
+<li>在一个BFC内部，盒子会在垂直方向上一个接着一个地排列</li>
+<li>在一个BFC内部，相邻的margin-top、margin-bottom会叠加</li>
+<li>在一个BFC内部，每一个盒子的左外边界（margin-left）会紧贴着容器（包含盒子）的border-left，即使存在浮动元素也是如此</li>
+<li>在一个BFC内部，如果存在内部元素是一个新的BFC，并且存在内部元素是浮动元素，则这个新的BFC的区域不会与浮动元素的区域重叠</li>
+<li>BFC就是页面上一个隔离的盒子，该盒子内部的子元素不会影响到外边的元素</li>
+<li>计算一个BFC的高度时，其内部浮动元素的高度也会计算其中</li>
+</ol>
+<p>BFC的用途：</p>
+<ul>
+<li>创建BFC来避免垂直外边距叠加（例如使用div将一个盒子包起来并给这个div添加overflow属性）</li>
+<li>创建BFC来清除浮动（为父元素添加<code>overflow: hidden</code>，利用结论第六条）</li>
+<li>创建BFC来实现<a href="https://blog.csdn.net/michael8512/article/details/76473835" target="_blank" rel="noopener">自适应布局</a></li>
+</ul>
+<hr>
+<p>好了到这里，这本书就看完了，一些细节的东西了解到了很多，下面开始看html5+css3。</p>
+<p>- 2018 - 09 - 11 -</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.zmj97.top/2018/09/10/HTML与CSS学习记录/" data-id="cjlx9rtyp00057bag99map85p" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2018/09/04/JavaScript原型链-prototype与-proto/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript原型链:prototype与__proto__</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+  
+  <!-- Gitment评论插件通用代码 -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '{{ page.date }}',
+  owner: "MIKQUEENGE",//github用户名
+  repo: "MIKQUEENGE.github.io",//用户存储评论的github项目名称
+  oauth: {
+    client_id: "228c27f8095999686e1a",//注册OAuth Application时生产的ClinetID
+    client_secret:"dd88ba379ec052cdb4e37ae1eac66bfa0b6027b5",//注册OAuth Application时生成的Client Secret
+  },
+})
+gitment.render('git')
+</script>
+<!-- Gitment代码结束 -->
+  
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 12.5px;">Chrome</a> <a href="/tags/Flask/" style="font-size: 12.5px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 15px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 17.5px;">UMLet</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.5px;">gitment</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/iNode/" style="font-size: 12.5px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 12.5px;">建模</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 15px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/10/HTML与CSS学习记录/">HTML与CSS学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/JavaScript原型链-prototype与-proto/">JavaScript原型链:prototype与__proto__</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/02/ubuntu下Chrome谷歌浏览器部分网站图片显示不正常的解决方法/">ubuntu下Chrome谷歌浏览器部分网站图片显示不正常的解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/02/ubuntu-18-04下安装稳定版Chrome谷歌浏览器/">ubuntu 18.04下安装稳定版Chrome谷歌浏览器</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/01/ubuntu18-04中安装iNode/">ubuntu18.04中安装iNode</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

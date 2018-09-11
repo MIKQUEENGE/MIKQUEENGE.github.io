@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>智能指针 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="为什么使用动态指针？在C++中，动态内存的管理是通过一对运算符来完成的：  new: 在动态内存中为对象分配空间并返回一个指向该对象的指针，同时可以对这个对象初始化。 delete: 接受一个动态对象的指针，销毁该对象并释放与之关联的内存。  这样动态内存的使用就很容易出现问题：  忘记释放内存（delete）就会产生内存泄漏的问题。 过早释放内存（在还有指针引用该内存的时候就释放了它）就会产生引">
+<meta name="keywords" content="指针">
+<meta property="og:type" content="article">
+<meta property="og:title" content="智能指针">
+<meta property="og:url" content="http://blog.zmj97.top/2018/04/02/智能指针/index.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="为什么使用动态指针？在C++中，动态内存的管理是通过一对运算符来完成的：  new: 在动态内存中为对象分配空间并返回一个指向该对象的指针，同时可以对这个对象初始化。 delete: 接受一个动态对象的指针，销毁该对象并释放与之关联的内存。  这样动态内存的使用就很容易出现问题：  忘记释放内存（delete）就会产生内存泄漏的问题。 过早释放内存（在还有指针引用该内存的时候就释放了它）就会产生引">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-06T16:40:46.653Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="智能指针">
+<meta name="twitter:description" content="为什么使用动态指针？在C++中，动态内存的管理是通过一对运算符来完成的：  new: 在动态内存中为对象分配空间并返回一个指向该对象的指针，同时可以对这个对象初始化。 delete: 接受一个动态对象的指针，销毁该对象并释放与之关联的内存。  这样动态内存的使用就很容易出现问题：  忘记释放内存（delete）就会产生内存泄漏的问题。 过早释放内存（在还有指针引用该内存的时候就释放了它）就会产生引">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/tags">Tags</a>
+        
+          <a class="main-nav-link" href="/categories">Categories</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.zmj97.top"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-智能指针" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/04/02/智能指针/" class="article-date">
+  <time datetime="2018-04-02T07:21:32.000Z" itemprop="datePublished">2018-04-02</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C-C/">C/C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      智能指针
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+        
+        <h2 id="为什么使用动态指针？"><a href="#为什么使用动态指针？" class="headerlink" title="为什么使用动态指针？"></a>为什么使用动态指针？</h2><p>在C++中，动态内存的管理是通过一对运算符来完成的：</p>
+<ul>
+<li>new: 在动态内存中为对象分配空间并返回一个指向该对象的指针，同时可以对这个对象初始化。</li>
+<li>delete: 接受一个动态对象的指针，销毁该对象并释放与之关联的内存。</li>
+</ul>
+<p>这样动态内存的使用就很容易出现问题：</p>
+<ul>
+<li>忘记释放内存（delete）就会产生内存泄漏的问题。</li>
+<li>过早释放内存（在还有指针引用该内存的时候就释放了它）就会产生引用非法内存的指针。</li>
+</ul>
+<p>为了防止出现这种情况，更容易更安全地使用动态内存， 自C++11开始提供了两种智能指针类型来管理动态对象。</p>
+<h2 id="什么是智能指针？"><a href="#什么是智能指针？" class="headerlink" title="什么是智能指针？"></a>什么是智能指针？</h2><p>智能指针是存储指向动态分配（堆）对象指针的类。智能指针的行为类似常规指针，重要的区别是它负责自动释放所指向的对象。</p>
+<h2 id="智能指针的原理是什么？"><a href="#智能指针的原理是什么？" class="headerlink" title="智能指针的原理是什么？"></a>智能指针的原理是什么？</h2><p>资源分配即初始化RAII（Resource Acquisition Is Initialization）：RAII 的做法是使用一个对象，在其构造时获取资源，在对象生命期控制对资源的访问使之始终保持有效，最后在对象析构的时候释放资源。</p>
+<p>定义一个类来封装资源的分配和释放，在构造函数完成资源的分配<br>和初始化，在析构函数完成资源的清理，可以保证资源的正确初始化和释放。</p>
+<p>在类中采用引用计数的方法。在智能指针的内部有一个计数器，记录了当前内存资源到底有多少指针在引用，当新增加一个这个资源的引用时，计数器就会+1，否则-1，当计数器的值变为0时，这个智能指针就会自动释放它管理的 这个资源。</p>
+<h2 id="常见的智能指针？"><a href="#常见的智能指针？" class="headerlink" title="常见的智能指针？"></a>常见的智能指针？</h2><p>C++11提供的两个智能指针为<strong>shared_ptr</strong>和<strong>unique_ptr</strong>，还定义了一个伴随类<strong>weak_ptr</strong>，这三个类都定义在<strong>memory</strong>头文件中。以及C++98引入的使用起来到处是坑的<strong>auto_ptr</strong>。</p>
+<h3 id="shared-ptr（官方文档）"><a href="#shared-ptr（官方文档）" class="headerlink" title="shared_ptr（官方文档）"></a>shared_ptr（<a href="http://en.cppreference.com/w/cpp/memory/shared_ptr" target="_blank" rel="noopener">官方文档</a>）</h3><blockquote>
+<p> shared_ptr允许多个指针指向相同的对象。shared_ptr使用引用计数，每一个shared_ptr的拷贝都指向相同的内存。</p>
+<p>每多一个指针指向它，内部的引用计数加1，每析构一次，内部的引用计数减1，减为0时，自动删除所指向的堆内存。</p>
+<p>shared_ptr内部的引用计数是线程安全的，但是对象的读取需要加锁。</p>
+<p>不要用一个原始指针初始化多个shared_ptr，否则会造成二次释放同一内存。</p>
+</blockquote>
+<h3 id="unique-ptr"><a href="#unique-ptr" class="headerlink" title="unique_ptr"></a>unique_ptr</h3><blockquote>
+<p>unique_ptr“唯一”拥有其所指对象，同一时刻只能有一个unique_ptr指向给定对象（通过禁止拷贝语义、只有移动语义来实现）。</p>
+<p>相比于原始指针，unique_ptr用其RAII的特性，使得在出现异常的情况下，动态资源能得到释放。</p>
+<p>unique_ptr指针本身的生命周期：</p>
+<ul>
+<li>从unique_ptr指针创建时开始，直到离开作用域。</li>
+<li>离开作用域时，若其指向对象，则将其所指对象销毁(默认使用delete操作符，用户可指定其他操作)。</li>
+</ul>
+<p>unique_ptr指针与其所指对象的关系：</p>
+<p>在智能指针生命周期内，可以改变智能指针所指对象，如创建智能指针时通过构造函数指定、通过reset方法重新指定、通过release方法释放所有权、通过移动语义转移所有权。</p>
+</blockquote>
+<h3 id="weak-ptr"><a href="#weak-ptr" class="headerlink" title="weak_ptr"></a>weak_ptr</h3><blockquote>
+<p>weak_ptr是为了配合shared_ptr而引入的一种智能指针，因为它<strong>不具有普通指针的行为，没有重载operator*和-&gt;</strong>,它的最大作用在于协助shared_ptr工作，<strong>像旁观者那样观测资源的使用情况</strong>。</p>
+<p>weak_ptr可以从一个shared_ptr或者另一个weak_ptr对象构造，获得资源的观测权。但weak_ptr没有共享资源，它的构造不会引起指针引用计数的增加。</p>
+<p>使用weak_ptr的成员函数use_count()可以观测资源的引用计数，另一个成员函数expired()的功能等价于use_count()==0,但更快，表示被观测的资源(也就是shared_ptr的管理的资源)已经不复存在。</p>
+<p>weak_ptr可以使用一个非常重要的成员函数lock()从被观测的shared_ptr获得一个可用的shared_ptr对象，从而操作资源。但当expired()==true的时候，lock()函数将返回一个存储空指针的shared_ptr。</p>
+</blockquote>
+<h2 id="循环引用问题"><a href="#循环引用问题" class="headerlink" title="循环引用问题"></a>循环引用问题</h2><p>首先看下面的代码理解什么是循环引用：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">　　<span class="built_in">shared_ptr</span>&lt;B&gt; m_b;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">　　<span class="built_in">shared_ptr</span>&lt;A&gt; m_a;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">　　<span class="built_in">shared_ptr</span>&lt;A&gt; a(<span class="keyword">new</span> A); <span class="comment">//new出来的A的引用计数此时为1</span></span><br><span class="line">　　<span class="built_in">shared_ptr</span>&lt;B&gt; b(<span class="keyword">new</span> B); <span class="comment">//new出来的B的引用计数此时为1</span></span><br><span class="line">　　a-&gt;m_b = b; <span class="comment">//B的引用计数增加为2</span></span><br><span class="line">　　b-&gt;m_a = a; <span class="comment">//A的引用计数增加为2</span></span><br><span class="line"> </span><br><span class="line">　　<span class="comment">//b先出作用域，B的引用计数减少为1，不为0，所以堆上的B空间没有被释放</span></span><br><span class="line">　　<span class="comment">//a后出作用域，同理A的引用计数减少为1，不为0，所以堆上A的空间也没有被释放</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>因为weak_ptr的构造和析构不会引起引用计数的增加或减少，所以可以用weak_ptr解决这个问题（weak_ptr必须与shared_ptr配合使用,不能单独使用）：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span>;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">　　weak_ptr&lt;B&gt; m_b;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">　　weak_ptr&lt;A&gt; m_a;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">test</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">　　<span class="built_in">shared_ptr</span>&lt;A&gt; a(<span class="keyword">new</span> A);</span><br><span class="line">　　<span class="built_in">shared_ptr</span>&lt;B&gt; b(<span class="keyword">new</span> B);</span><br><span class="line">　　a-&gt;m_b = b;</span><br><span class="line">　　b-&gt;m_a = a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a>auto_ptr</h3><p>缺陷：（<a href="https://www.zhihu.com/question/37351146/answer/83379043" target="_blank" rel="noopener">参考链接</a>，来源：知乎，作者：Sen Zhang）</p>
+<blockquote>
+<p>auto_ptr采用可以采用copy语义来转移指针资源的所有权的同时将原指针置为NULL，这跟通常理解的copy行为是不一致的，而这样的行为要有些场合下不是我们希望看到的。</p>
+<p>例如参考《Effective STL》第8条，sort的快排实现中有将元素复制到某个局部临时对象中，但对于auto_ptr，却将原元素置为null，这就导致最后的排序结果中可能有大量的null。</p>
+<p>而现在C++11的对move语义的支持，使得这样的资源转移<strong>通常</strong>只会在<strong>必要的场合</strong>发生，例如转移一个临时变量（右值）给某个named variable（左值）</p>
+<p>这也就是用unique_ptr代替auto_ptr的原因，</p>
+<p>本质上来说，就是unique_ptr禁用了copy，而用move替代。</p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;bar&gt; b0(<span class="keyword">new</span> bar());</span><br><span class="line"><span class="built_in">std</span>::<span class="built_in">unique_ptr</span>&lt;bar&gt; b1(<span class="built_in">std</span>::move(b0));</span><br></pre></td></tr></table></figure>
+<h2 id="智能指针的实现"><a href="#智能指针的实现" class="headerlink" title="智能指针的实现"></a>智能指针的实现</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SmartPointer</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="comment">//构造函数</span></span><br><span class="line">    SmartPointer(T* p=<span class="number">0</span>): _ptr(p), _reference_count(<span class="keyword">new</span> <span class="keyword">size_t</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p)</span><br><span class="line">            *_reference_count = <span class="number">1</span>; </span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            *_reference_count = <span class="number">0</span>; </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//拷贝构造函数</span></span><br><span class="line">    SmartPointer(<span class="keyword">const</span> SmartPointer&amp; src) &#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>!=&amp;src) &#123;</span><br><span class="line">            _ptr = src._ptr;</span><br><span class="line">            _reference_count = src._reference_count;</span><br><span class="line">            (*_reference_count)++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//重载赋值操作符</span></span><br><span class="line">    SmartPointer&amp; <span class="keyword">operator</span>=(<span class="keyword">const</span> SmartPointer&amp; src) &#123;</span><br><span class="line">        <span class="keyword">if</span>(_ptr==src._ptr) &#123;</span><br><span class="line">            <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        releaseCount();</span><br><span class="line">        _ptr = src._ptr;</span><br><span class="line">        _reference_count = src._reference_count;</span><br><span class="line">        (*_reference_count)++;</span><br><span class="line">        <span class="keyword">return</span> *<span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//重载操作符</span></span><br><span class="line">    T&amp; <span class="keyword">operator</span>*() &#123;</span><br><span class="line">        <span class="keyword">if</span>(ptr) &#123;</span><br><span class="line">            <span class="keyword">return</span> *_ptr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//throw exception</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//重载操作符</span></span><br><span class="line">    T* <span class="keyword">operator</span>-&gt;() &#123;</span><br><span class="line">        <span class="keyword">if</span>(_ptr) &#123;</span><br><span class="line">            <span class="keyword">return</span> _ptr;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//throw exception</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//析构函数</span></span><br><span class="line">    ~SmartPointer() &#123;</span><br><span class="line">        <span class="keyword">if</span> (--(*_reference_count) == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">delete</span> _ptr;</span><br><span class="line">            <span class="keyword">delete</span> _reference_count;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    T *_ptr;</span><br><span class="line">    <span class="keyword">size_t</span> *_reference_count;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">releaseCount</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(_ptr) &#123;</span><br><span class="line">            (*_reference_count)--;</span><br><span class="line">            <span class="keyword">if</span>((*_reference_count)==<span class="number">0</span>) &#123;</span><br><span class="line">                <span class="keyword">delete</span> _ptr;</span><br><span class="line">                <span class="keyword">delete</span> _reference_count;</span><br><span class="line">            &#125;    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    SmartPointer&lt;<span class="keyword">char</span>&gt; cp1(<span class="keyword">new</span> <span class="keyword">char</span>(<span class="string">'a'</span>));</span><br><span class="line">    SmartPointer&lt;<span class="keyword">char</span>&gt; cp2(cp1);</span><br><span class="line">    SmartPointer&lt;<span class="keyword">char</span>&gt; cp3;</span><br><span class="line">    cp3 = cp2;</span><br><span class="line">    cp3 = cp1;</span><br><span class="line">    cp3 = cp3;</span><br><span class="line">    SmartPointer&lt;<span class="keyword">char</span>&gt; cp4(<span class="keyword">new</span> <span class="keyword">char</span>(<span class="string">'b'</span>));</span><br><span class="line">    cp3 = cp4;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.zmj97.top/2018/04/02/智能指针/" data-id="cjlx9ru00001j7baghgq4tziv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/04/15/系统分析与设计作业五/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          系统分析与设计作业五
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/04/01/numpy常用函数和数据类型/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">numpy常用函数和数据类型</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+  
+  <!-- Gitment评论插件通用代码 -->
+<div id="git"></div>
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<script src="https://billts.site/js/gitment.js"></script>
+<script>
+var gitment = new Gitment({
+  id: '{{ page.date }}',
+  owner: "MIKQUEENGE",//github用户名
+  repo: "MIKQUEENGE.github.io",//用户存储评论的github项目名称
+  oauth: {
+    client_id: "228c27f8095999686e1a",//注册OAuth Application时生产的ClinetID
+    client_secret:"dd88ba379ec052cdb4e37ae1eac66bfa0b6027b5",//注册OAuth Application时生成的Client Secret
+  },
+})
+gitment.render('git')
+</script>
+<!-- Gitment代码结束 -->
+  
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 10px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 12.5px;">Chrome</a> <a href="/tags/Flask/" style="font-size: 12.5px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 10px;">HTML</a> <a href="/tags/JavaScript/" style="font-size: 10px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 15px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 17.5px;">UMLet</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.5px;">gitment</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/iNode/" style="font-size: 12.5px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 20px;">ubuntu</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 12.5px;">建模</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 15px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">July 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">June 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">May 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">April 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">March 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/10/HTML与CSS学习记录/">HTML与CSS学习记录</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/04/JavaScript原型链-prototype与-proto/">JavaScript原型链:prototype与__proto__</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/02/ubuntu下Chrome谷歌浏览器部分网站图片显示不正常的解决方法/">ubuntu下Chrome谷歌浏览器部分网站图片显示不正常的解决方法</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/02/ubuntu-18-04下安装稳定版Chrome谷歌浏览器/">ubuntu 18.04下安装稳定版Chrome谷歌浏览器</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/01/ubuntu18-04中安装iNode/">ubuntu18.04中安装iNode</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/tags" class="mobile-nav-link">Tags</a>
+  
+    <a href="/categories" class="mobile-nav-link">Categories</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
