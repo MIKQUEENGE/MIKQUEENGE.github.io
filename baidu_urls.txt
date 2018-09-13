@@ -1,5 +1,5 @@
+http://blog.zmj97.top/2018/09/13/将hexo的评论系统由gitment改为Valine/
 http://blog.zmj97.top/2018/09/13/JavaScript学习记录二/
 http://blog.zmj97.top/2018/09/11/JavaScript学习记录一/
 http://blog.zmj97.top/2018/09/11/HTML5与CSS3权威指南之HTML5学习记录/
 http://blog.zmj97.top/2018/09/10/HTML与CSS学习记录/
-http://blog.zmj97.top/2018/09/04/JavaScript原型链-prototype与-proto/

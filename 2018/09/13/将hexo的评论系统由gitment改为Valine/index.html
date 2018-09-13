@@ -5,22 +5,20 @@
   
 
   
-  <title>深度学习周报week07-week08 | zmj&#39;s blog</title>
+  <title>将hexo的评论系统由gitment改为Valine | zmj&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="音频分类将1000个音频分别放入对应文件夹中：  filename.txt 存储文件对应位置。 以上所有存储在classification文件夹中。 建立filename.py来生成filename.txt： 1234567891011import ostextname = &apos;filename.txt&apos;with open(textname, &apos;w&apos;) as f:    for root, dirs">
+  <meta name="description" content="首先注册LeanCloud，注册后添加应用，然后选择应用&amp;gt;设置&amp;gt;应用key就可以看到自己的AppID和AppKey了。 然后进入自己的主题目录（比如我的主题是默认的landscape）： 删除配置gitment时/themes/landscape/layout/_partial/post目录下添加的git.ejs文件， 然后编辑/themes/landscape/layout/_par">
+<meta name="keywords" content="hexo,gitment,Valine">
 <meta property="og:type" content="article">
-<meta property="og:title" content="深度学习周报week07-week08">
-<meta property="og:url" content="http://blog.zmj97.top/2018/05/19/深度学习周报week07-week08/index.html">
+<meta property="og:title" content="将hexo的评论系统由gitment改为Valine">
+<meta property="og:url" content="http://blog.zmj97.top/2018/09/13/将hexo的评论系统由gitment改为Valine/index.html">
 <meta property="og:site_name" content="zmj&#39;s blog">
-<meta property="og:description" content="音频分类将1000个音频分别放入对应文件夹中：  filename.txt 存储文件对应位置。 以上所有存储在classification文件夹中。 建立filename.py来生成filename.txt： 1234567891011import ostextname = &apos;filename.txt&apos;with open(textname, &apos;w&apos;) as f:    for root, dirs">
+<meta property="og:description" content="首先注册LeanCloud，注册后添加应用，然后选择应用&amp;gt;设置&amp;gt;应用key就可以看到自己的AppID和AppKey了。 然后进入自己的主题目录（比如我的主题是默认的landscape）： 删除配置gitment时/themes/landscape/layout/_partial/post目录下添加的git.ejs文件， 然后编辑/themes/landscape/layout/_par">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://blog.zmj97.top/images/classification.PNG">
-<meta property="og:image" content="http://blog.zmj97.top/images/filename_txt.PNG">
-<meta property="og:updated_time" content="2018-09-11T05:46:12.973Z">
+<meta property="og:updated_time" content="2018-09-13T07:19:26.365Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="深度学习周报week07-week08">
-<meta name="twitter:description" content="音频分类将1000个音频分别放入对应文件夹中：  filename.txt 存储文件对应位置。 以上所有存储在classification文件夹中。 建立filename.py来生成filename.txt： 1234567891011import ostextname = &apos;filename.txt&apos;with open(textname, &apos;w&apos;) as f:    for root, dirs">
-<meta name="twitter:image" content="http://blog.zmj97.top/images/classification.PNG">
+<meta name="twitter:title" content="将hexo的评论系统由gitment改为Valine">
+<meta name="twitter:description" content="首先注册LeanCloud，注册后添加应用，然后选择应用&amp;gt;设置&amp;gt;应用key就可以看到自己的AppID和AppKey了。 然后进入自己的主题目录（比如我的主题是默认的landscape）： 删除配置gitment时/themes/landscape/layout/_partial/post目录下添加的git.ejs文件， 然后编辑/themes/landscape/layout/_par">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -67,14 +65,14 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-深度学习周报week07-week08" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-将hexo的评论系统由gitment改为Valine" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2018/05/19/深度学习周报week07-week08/" class="article-date">
-  <time datetime="2018-05-19T01:49:31.000Z" itemprop="datePublished">2018-05-19</time>
+    <a href="/2018/09/13/将hexo的评论系统由gitment改为Valine/" class="article-date">
+  <time datetime="2018-09-13T07:10:56.000Z" itemprop="datePublished">2018-09-13</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/deep-learning/">deep learning</a>
+    <a class="article-category-link" href="/categories/methods/">methods</a>
   </div>
 
   </div>
@@ -85,7 +83,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      深度学习周报week07-week08
+      将hexo的评论系统由gitment改为Valine
     </h1>
   
 
@@ -94,72 +92,35 @@
     <div class="article-entry" itemprop="articleBody">
       
         <!-- Table of Contents --> 
-         
-          <div id="toc" class="toc-article"> 
-          	<strong class="toc-title">文章目录</strong> 
-          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#音频分类"><span class="toc-number">1.</span> <span class="toc-text">音频分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MFCC"><span class="toc-number">2.</span> <span class="toc-text">MFCC</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#了解相关库和函数"><span class="toc-number">3.</span> <span class="toc-text">了解相关库和函数</span></a></li></ol> 
-          </div> 
         
-        <h2 id="音频分类"><a href="#音频分类" class="headerlink" title="音频分类"></a>音频分类</h2><p>将1000个音频分别放入对应文件夹中：</p>
-<p><img src="/images/classification.PNG" alt=""></p>
-<p><code>filename.txt</code> 存储文件对应位置。</p>
-<p>以上所有存储在<code>classification</code>文件夹中。</p>
-<p>建立<code>filename.py</code>来生成<code>filename.txt</code>：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line">textname = <span class="string">'filename.txt'</span></span><br><span class="line"><span class="keyword">with</span> open(textname, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> root, dirs, afiles <span class="keyword">in</span> os.walk(<span class="string">'./classification'</span>):</span><br><span class="line">        <span class="keyword">for</span> subdir <span class="keyword">in</span> dirs:</span><br><span class="line">            <span class="keyword">for</span> subroot, subdirs, subfiles <span class="keyword">in</span> os.walk(<span class="string">'./classification/'</span>+subdir):</span><br><span class="line">                <span class="keyword">for</span> filename <span class="keyword">in</span> subfiles:</span><br><span class="line">                    apath = os.path.join(subdir, filename)</span><br><span class="line">                    f.write(apath)</span><br><span class="line">                    f.write(<span class="string">'\n'</span>)</span><br></pre></td></tr></table></figure>
-<p>生成的<code>filename.txt</code>为：</p>
-<p><img src="/images/filename_txt.PNG" alt=""></p>
-<h2 id="MFCC"><a href="#MFCC" class="headerlink" title="MFCC"></a>MFCC</h2><p><a href="https://blog.csdn.net/fengzhonghen/article/details/51722555" target="_blank" rel="noopener">学习链接</a></p>
-<p><strong>MFCC</strong>(Mel-frequency cepstral coefficients)：梅尔频率倒谱系数。</p>
-<p>梅尔频率是基于人耳听觉特性提出的概念， 它与Hz频率成非线性对应关系。</p>
-<p>MFCC则是利用它们之间的这种关系，计算得到的Hz频谱特征，<u>主要用于语音数据特征提取和降低运算维度</u>。</p>
-<p><u>主要用于语音数据特征提取和降低运算维度。</u></p>
-<p>例如：对于一帧有512维(采样点)数据，经过MFCC后可以提取出最重要的40维(一般而言)数据同时也达到了将维的目的。</p>
-<p>MFCC的步骤为：</p>
-<ul>
-<li>预加重</li>
-<li>分帧</li>
-<li>加窗</li>
-<li><strong>快速傅里叶变换(FFT)</strong></li>
-<li><strong>梅尔滤波器组</strong></li>
-<li>离散余弦变换(DCT)</li>
-</ul>
-<p>其中最重要的就是FFT和梅尔滤波器组，这两个进行了主要的降维操作。</p>
-<h2 id="了解相关库和函数"><a href="#了解相关库和函数" class="headerlink" title="了解相关库和函数"></a>了解相关库和函数</h2><ul>
-<li>scipy.io.wavfile</li>
-<li>python_speech_features</li>
-<li>librosa</li>
-<li>pydub</li>
-<li>tf.sparse_tensor_to_dense</li>
-<li>tf.edit_distance</li>
-<li>tf.nn.ctc_loss</li>
-</ul>
+        <p>首先注册<a href="https://leancloud.cn/" target="_blank" rel="noopener">LeanCloud</a>，注册后添加应用，然后选择<code>应用&gt;设置&gt;应用key</code>就可以看到自己的AppID和AppKey了。</p>
+<p>然后进入自己的主题目录（比如我的主题是默认的<code>landscape</code>）：</p>
+<p>删除配置gitment时<code>/themes/landscape/layout/_partial/post</code>目录下添加的<code>git.ejs</code>文件，</p>
+<p>然后编辑<code>/themes/landscape/layout/_partial/</code>目录下的<code>article.ejs</code>，将原本配置gitment时添加在最后的那段代码删掉，添加：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;% if (!index)&#123; %&gt;</span><br><span class="line">  &lt;% if (post.comments)&#123; %&gt;</span><br><span class="line">    &lt;div id=&quot;vcomments&quot;&gt;&lt;/div&gt;</span><br><span class="line">    &lt;script src=&quot;//cdn1.lncld.net/static/js/3.0.4/av-min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src=&apos;//unpkg.com/valine/dist/Valine.min.js&apos;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        new Valine(&#123;</span><br><span class="line">            el: &apos;#vcomments&apos;,</span><br><span class="line">            appId: &apos;你的appid&apos;,</span><br><span class="line">            appKey: &apos;你的appkey&apos;,</span><br><span class="line">            notify:true, </span><br><span class="line">            verify:true, </span><br><span class="line">            avatar:&apos;mm&apos;, </span><br><span class="line">            placeholder: &apos;嘻嘻嘻&apos; </span><br><span class="line">        &#125;)</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">  &lt;% &#125; else &#123; %&gt;</span><br><span class="line">    &lt;div class=&quot;vcomments&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;% &#125; %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure>
+<p>其中notify为邮件提醒功能是否开启，verify为验证码功能。</p>
+<p>然后即OK啦！！</p>
+<p>有其他问题可以访问<a href="https://valine.js.org/quickstart.html" target="_blank" rel="noopener">Valine官方文档</a>查看。</p>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://blog.zmj97.top/2018/05/19/深度学习周报week07-week08/" data-id="cjm08v4u9002dolag1mbwyzav" class="article-share-link">Share</a>
+      <a data-url="http://blog.zmj97.top/2018/09/13/将hexo的评论系统由gitment改为Valine/" data-id="cjm08v4ts001tolag97yky0nj" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Valine/">Valine</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gitment/">gitment</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li></ul>
+
     </footer>
   </div>
   
     
 <nav id="article-nav">
   
-    <a href="/2018/06/06/系统分析与设计作业十三/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          系统分析与设计作业十三
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/13/系统分析与设计作业九/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2018/09/13/JavaScript学习记录二/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">系统分析与设计作业九</div>
+      <div class="article-nav-title">JavaScript学习记录二</div>
     </a>
   
 </nav>
