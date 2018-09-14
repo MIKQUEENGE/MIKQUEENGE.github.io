@@ -11,8 +11,6 @@ menu:
 excerpt_link: Read More
 fancybox: true
 
-gitment: true
-
 # Sidebar
 sidebar: bottom
 widgets:

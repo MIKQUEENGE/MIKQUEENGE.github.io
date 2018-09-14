@@ -17,9 +17,12 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <% if (theme.fancybox){ %>
-  <%- css('http://apps.bdimg.com/libs/fancybox/2.1.5/jquery.fancybox') %>
+  <%- css('fancybox/jquery.fancybox.css') %>
   <%- js('fancybox/jquery.fancybox.pack') %>
 <% } %>
 
 <%- js('js/script') %>
 <%- partial('gauges-analytics') %>
+
+<%- partial('totop') %>
+<script src="<%- config.root %>js/totop.js"></script>

@@ -86,10 +86,26 @@
 </section>
 <% } %>
 
+
 <% if (!index){ %>
   <% if (post.comments){ %>
-  <%- partial('post/git') %>
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src='//unpkg.com/valine/dist/Valine.min.js'></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '嘻嘻嘻' 
+        })
+    </script>
   <% } else { %>
-    <div class="git"></div>
+    <div class="vcomments"></div>
   <% } %>
 <% } %>
+

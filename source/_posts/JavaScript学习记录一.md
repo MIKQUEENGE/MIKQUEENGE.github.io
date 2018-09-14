@@ -11,6 +11,8 @@ tags:
 
 ——《JavaScript高级程序设计（第2版）》学习笔记
 
+要多查阅[MDN Web 文档](https://developer.mozilla.org/zh-CN/docs/Web)
+
 ------
 
 # 简介
