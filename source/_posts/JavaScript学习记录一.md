@@ -374,7 +374,7 @@ var num = (1, 2, 6, 5, 3, 0); // num的值为0
 
 ```javascript
 for (var propName in window) {
-    console.log(propName);
+  console.log(propName);
 }
 ```
 
@@ -402,9 +402,9 @@ var url = location.href;
 
 ```javascript
 with (location) {
-    var qs = search.substring(1);
-    var hostName = hostname;
-    var url = href;
+  var qs = search.substring(1);
+  var hostName = hostname;
+  var url = href;
 }
 ```
 
@@ -416,13 +416,11 @@ with (location) {
 
 ## 函数
 
+```js
 function functionName(arg0, arg1, ..., argN) {
-
-```
-statements
-```
-
+	statements
 }
+```
 
 返回值不是必需的。
 

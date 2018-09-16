@@ -53,9 +53,9 @@ ECMAScript中所有的函数的参数都是**按值传递**的。
 
 ```javascript
 function setName(obj) {
-    obj.name = "Nicholas";
-    obj = new Object();
-    obj.name = "Greg";
+  obj.name = "Nicholas";
+  obj = new Object();
+  obj.name = "Greg";
 }
 
 var person = new Obejct();
@@ -209,13 +209,13 @@ a.sort();
 alert(a); // 0,1,2,3,5,6
 
 function compare(v1, v2) {
-    if (v1 < v2) {
-        return 1;
-    } else if (v1 > v2) {
-        return -1;
-    } else {
-        return 0;
-    }
+  if (v1 < v2) {
+    return 1;
+  } else if (v1 > v2) {
+    return -1;
+  } else {
+    return 0;
+  }
 }
 a.sort(compare);
 alert(a); // 6,5,3,2,1,0
@@ -226,12 +226,12 @@ alert(a); // 6,5,3,2,1,0
 ```javascript
 // 升序排序
 function compare1(v1, v2) {
-    return v1 - v2;
+  return v1 - v2;
 }
 
 // 降序排序
 function compare1(v1, v2) {
-    return v2 - v1;
+  return v2 - v1;
 }
 ```
 
@@ -391,11 +391,11 @@ RegExp['$&'];     // "hi"
 
 ```javascript
 function sum1(num1, num2) {
-    return num1 + num2;
+  return num1 + num2;
 }
 
 var sum2 = function(num1, num2) {
-    return num1 + num2;
+  return num1 + num2;
 };
 
 var sum3 = new Function('num1', 'num2', 'return num1 + num2'); // 不推荐
@@ -412,11 +412,11 @@ var sum3 = new Function('num1', 'num2', 'return num1 + num2'); // 不推荐
 ```javascript
 // 函数声明
 function sum1(num1, num2) {
-    return num1 + num2;
+  return num1 + num2;
 }
 // 函数表达式
 var sum2 = function(num1, num2) {
-    return num1 + num2;
+  return num1 + num2;
 };
 ```
 
@@ -438,11 +438,11 @@ var sum2 = function(num1, num2) {
 
 ```javascript
 function factorial(num) {
-    if (num <= 1) {
-        return 1;
-    } else {
-        return num * factorial(num-1);
-    }
+  if (num <= 1) {
+    return 1;
+  } else {
+    return num * factorial(num-1);
+  }
 }
 ```
 
@@ -450,19 +450,19 @@ function factorial(num) {
 
 ```javascript
 function factorial(num) {
-    if (num <= 1) {
-        return 1;
-    } else {
-        return num * arguments.callee(num-1);	// 使用callee属性
-    }
+  if (num <= 1) {
+    return 1;
+  } else {
+    return num * arguments.callee(num-1); // 使用callee属性
+  }
 }
 
-var trueFactorial = factorial;	// 拷贝函数
-factorial = function() {		// 修改原函数定义
-    return 0;
+var trueFactorial = factorial;  // 拷贝函数
+factorial = function() {  // 修改原函数定义
+  return 0;
 };
 
-alert(factorial(5));	// 0
+alert(factorial(5));  // 0
 alert(trueFactorial(5));// 120
 ```
 
@@ -703,20 +703,20 @@ decodeURIComponent("JavaScript_%D1%88%D0%B5%D0%BB%D0%BB%D1%8B");
 
 var fileName = 'my file(2).txt';
 var header = "Content-Disposition: attachment; filename*=UTF-8''" 
-             + encodeRFC5987ValueChars(fileName);
+       + encodeRFC5987ValueChars(fileName);
 
 console.log(header); 
 // 输出 "Content-Disposition: attachment; filename*=UTF-8''my%20file%282%29.txt"
 
 function encodeRFC5987ValueChars (str) {
-    return encodeURIComponent(str).
-        // 注意，仅管 RFC3986 保留 "!"，但 RFC5987 并没有
-        // 所以我们并不需要过滤它
-        replace(/['()]/g, escape). // i.e., %27 %28 %29
-        replace(/\*/g, '%2A').
-            // 下面的并不是 RFC5987 中 URI 编码必须的
-            // 所以对于 |`^ 这3个字符我们可以稍稍提高一点可读性
-            replace(/%(?:7C|60|5E)/g, unescape);
+  return encodeURIComponent(str).
+    // 注意，仅管 RFC3986 保留 "!"，但 RFC5987 并没有
+    // 所以我们并不需要过滤它
+    replace(/['()]/g, escape). // i.e., %27 %28 %29
+    replace(/\*/g, '%2A').
+      // 下面的并不是 RFC5987 中 URI 编码必须的
+      // 所以对于 |`^ 这3个字符我们可以稍稍提高一点可读性
+      replace(/%(?:7C|60|5E)/g, unescape);
 }
 ```
 
