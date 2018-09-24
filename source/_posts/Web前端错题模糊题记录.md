@@ -47,6 +47,10 @@ alt和title同时设置的时候，alt作为图片的替代文字出现，title�
 > - DOCTYPE 不存在或形式不正确会导致 HTML 和 XHTML 文档以混杂模式呈现。
 > 
 
+**<u>NOSCRIPT标签是做什么用的？</u>**
+
+noscript 元素用来定义在脚本未被执行时的替代内容（文本）。
+
 ## CSS
 
 **<u>关于CSS的position属性？</u>**
@@ -288,6 +292,18 @@ DOM事件的方法（IE的事件模型不支持）：
 - preventDefault() 通知浏览器不要执行与事件关联的默认动作
 - stopPropagation() 不再派发事件
 
+<u>**JavaScript的函数调用有哪几种方式？请举例说明，并分析其不同之处。**</u>
+
+![img](https://uploadfiles.nowcoder.com/images/20180906/5405985_1536239169184_7CB0EB2AC29A9E988352087AAD2B0C2F)
+
+**<u>以下 javascript 代码，在浏览器中运行的结果是</u>**
+
+![img](https://uploadfiles.nowcoder.net/images/20161128/5918115_1480305918764_CF08B543645A55F242CA55EB20727AE6)
+
+先全部输出first，然后全部输出second。
+
+js 是运行于单线程环境中，定时器作用是在规定时间内将事件加入执行队列，而加入的前提是当前事件队列没有任何东西。
+
 ## 其他
 
 **<u>和后端 API 服务通信的方式有哪些</u>**
@@ -319,3 +335,10 @@ webpack是一个前端模块化方案，更侧重模块打包，我们可以把�
 **<u>Node.js 的核心模块</u>**
 
 HTTP模块、URL模块、Query Strings模块、File System模块、Path模块、Global模块。
+
+**<u>ajax事件有哪些</u>**
+
+![img](https://uploadfiles.nowcoder.net/images/20170311/6901516_1489199810009_E2168FD8E97D4BF6646E2043D52753FD)
+
+
+

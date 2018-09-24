@@ -138,6 +138,24 @@ LF，Line Feed，换行符，16进制0x0a
 
 ![图片来源于网络](http://ocs628urt.bkt.clouddn.com/http%E6%8A%A5%E6%96%87.png)
 
+## 常用请求首部信息
+
+（参考自红宝书）
+
+虽然不同浏览器实际发送的头部信息会有所不同，但下边这些基本上是所有浏览器都会发送的：
+
+- Accept：浏览器能够处理的内容类型
+- Accept-Charset：浏览器能够显示的字符集
+- Accept-Encoding：浏览器能够处理的压缩编码
+- Accept-Language：浏览器当前设置的语言
+- Connection：浏览器与服务器之间连接的类型
+- Cookie：当前页面设置的任何Cookie
+- Host：发出请求的页面所在的域
+- Referer：发出请求的页面的URI。注意HTTP规范将这个字段拼写错了（正确拼法为Referrer），但为了保证与规范一致，也只能将错就错了。
+- User-Agent：浏览器的代理用户字段。
+
+注意，这些字段名是一个字母都不应有区别的，一旦有区别，那它就不是首部字段。
+
 ## 请求方法
 
 根据HTTP标准，HTTP请求可以使用多种请求方法。

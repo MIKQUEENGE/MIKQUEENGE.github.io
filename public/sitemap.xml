@@ -2,16 +2,44 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://zmj97.coding.me/2018/09/21/HTTP%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://zmj97.coding.me/2018/09/24/git%E7%9B%B8%E5%85%B3%E6%95%B4%E7%90%86/</loc>
     
-    <lastmod>2018-09-21T14:22:09.936Z</lastmod>
+    <lastmod>2018-09-24T14:59:27.003Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zmj97.coding.me/2018/09/24/ubuntu18-04%E5%BC%80%E6%9C%BA%E6%85%A2%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
+    
+    <lastmod>2018-09-24T05:19:39.580Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zmj97.coding.me/2018/09/23/Vuex%E5%85%A5%E9%97%A8/</loc>
+    
+    <lastmod>2018-09-24T03:31:51.004Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://zmj97.coding.me/2018/09/20/Web%E5%89%8D%E7%AB%AF%E9%94%99%E9%A2%98%E6%A8%A1%E7%B3%8A%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2018-09-21T02:42:33.375Z</lastmod>
+    <lastmod>2018-09-23T02:32:10.160Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zmj97.coding.me/2018/09/22/%E6%B1%82%E5%8C%85%E5%90%AB%E6%AF%8F%E4%B8%AA%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84-%E5%85%B1k%E4%B8%AA-%E8%87%B3%E5%B0%91%E4%B8%80%E4%B8%AA%E5%85%83%E7%B4%A0%E7%9A%84%E6%9C%80%E5%B0%8F%E5%8C%BA%E9%97%B4/</loc>
+    
+    <lastmod>2018-09-22T15:12:14.243Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zmj97.coding.me/2018/09/21/HTTP%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2018-09-22T01:57:55.889Z</lastmod>
     
   </url>
   
@@ -86,13 +114,6 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/04/16/hexo%E5%88%9B%E5%BB%BA%E7%9A%84tags%E5%92%8Ccategories%E9%A1%B5%E9%9D%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
-    
-    <lastmod>2018-09-11T05:46:12.973Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://zmj97.coding.me/2018/04/01/numpy%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E5%92%8C%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
@@ -107,21 +128,21 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/09/04/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto/</loc>
+    <loc>https://zmj97.coding.me/2018/03/31/TensorFlow%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/09/01/ubuntu18-04%E4%B8%AD%E5%AE%89%E8%A3%85iNode/</loc>
+    <loc>https://zmj97.coding.me/2018/04/01/TensorFlow%E8%AE%AD%E7%BB%83MNIST%E6%8A%A5%E9%94%99ResourceExhaustedError/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/09/02/ubuntu%E4%B8%8BChrome%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E9%83%A8%E5%88%86%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E5%B8%B8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
+    <loc>https://zmj97.coding.me/2018/07/19/PAT%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
@@ -142,14 +163,14 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/04/01/%E4%BD%BF%E7%94%A8TensorBoard%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://zmj97.coding.me/2018/03/31/%E5%85%B3%E4%BA%8Ehexo-markdown%E6%B7%BB%E5%8A%A0%E7%9A%84%E5%9B%BE%E7%89%87%E5%9C%A8github-page%E4%B8%AD%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/03/31/%E5%85%B3%E4%BA%8Ehexo-markdown%E6%B7%BB%E5%8A%A0%E7%9A%84%E5%9B%BE%E7%89%87%E5%9C%A8github-page%E4%B8%AD%E6%97%A0%E6%B3%95%E6%98%BE%E7%A4%BA%E7%9A%84%E9%97%AE%E9%A2%98/</loc>
+    <loc>https://zmj97.coding.me/2018/04/01/%E4%BD%BF%E7%94%A8TensorBoard%E5%8F%AF%E8%A7%86%E5%8C%96%E5%B7%A5%E5%85%B7/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
@@ -170,7 +191,14 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/03/30/%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
+    <loc>https://zmj97.coding.me/2018/06/21/Flask%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2018-09-11T05:46:12.973Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://zmj97.coding.me/2018/04/16/%E6%8E%A5%E5%85%A5gitment%E4%B8%BAhexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
@@ -184,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/06/21/Flask%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://zmj97.coding.me/2018/04/02/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
@@ -198,14 +226,14 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/04/02/%E6%99%BA%E8%83%BD%E6%8C%87%E9%92%88/</loc>
+    <loc>https://zmj97.coding.me/2018/05/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5week03-week04/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/05/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5week05-week06/</loc>
+    <loc>https://zmj97.coding.me/2018/09/04/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
@@ -226,14 +254,14 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/06/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5week11-week12/</loc>
+    <loc>https://zmj97.coding.me/2018/05/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5week05-week06/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/04/01/TensorFlow%E8%AE%AD%E7%BB%83MNIST%E6%8A%A5%E9%94%99ResourceExhaustedError/</loc>
+    <loc>https://zmj97.coding.me/2018/06/27/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5week11-week12/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
@@ -317,21 +345,21 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/05/12/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E5%91%A8%E6%8A%A5week03-week04/</loc>
+    <loc>https://zmj97.coding.me/2018/04/16/hexo%E5%88%9B%E5%BB%BA%E7%9A%84tags%E5%92%8Ccategories%E9%A1%B5%E9%9D%A2%E4%B8%BA%E7%A9%BA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/03/31/TensorFlow%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/</loc>
+    <loc>https://zmj97.coding.me/2018/09/01/ubuntu18-04%E4%B8%AD%E5%AE%89%E8%A3%85iNode/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/07/19/PAT%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</loc>
+    <loc>https://zmj97.coding.me/2018/09/02/ubuntu%E4%B8%8BChrome%E8%B0%B7%E6%AD%8C%E6%B5%8F%E8%A7%88%E5%99%A8%E9%83%A8%E5%88%86%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E6%98%BE%E7%A4%BA%E4%B8%8D%E6%AD%A3%E5%B8%B8%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
@@ -345,7 +373,7 @@
   </url>
   
   <url>
-    <loc>https://zmj97.coding.me/2018/04/16/%E6%8E%A5%E5%85%A5gitment%E4%B8%BAhexo%E6%B7%BB%E5%8A%A0%E8%AF%84%E8%AE%BA%E5%8A%9F%E8%83%BD/</loc>
+    <loc>https://zmj97.coding.me/2018/03/30/%E5%A0%86%E5%92%8C%E6%A0%88%E7%9A%84%E5%8C%BA%E5%88%AB/</loc>
     
     <lastmod>2018-09-11T05:46:12.973Z</lastmod>
     
