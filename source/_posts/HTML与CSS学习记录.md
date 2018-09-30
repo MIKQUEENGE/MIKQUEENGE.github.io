@@ -195,18 +195,18 @@ W3C对这两个标签赋予了“强调”的语义。
 
 下边这些已经被舍弃的标签(仅为了定义样式的标签和很少使用或已经被新标签代替的标签)应停止使用：
 
-- \<acronym>  定义首字母缩写，应用abbr代替。
-- \<applet> 定义嵌入的applet，应用object代替。
-- \<basefont>
-- \<big>
-- \<center>
-- \<dir> 定义目录列表，应用ul代替。
-- \<font>
-- \<frame>
-- \<frameset>
-- \<noframes>
-- \<strike>
-- \<tt>
+- `<acronym>`  定义首字母缩写，应用abbr代替。
+- `<applet>` 定义嵌入的applet，应用object代替。
+- `<basefont>`
+- `<big>`
+- `<center>`
+- `<dir>` 定义目录列表，应用ul代替。
+- `<font>`
+- `<frame>`
+- `<frameset>`
+- `<noframes>`
+- `<strike>`
+- `<tt>`
 
 # CSS基础知识
 
@@ -216,7 +216,7 @@ W3C对这两个标签赋予了“强调”的语义。
 
 pixel，像素，一个图片或计算机屏幕中最小的点。
 
-### %
+### 百分比%
 
 CSS中支持百分比的属性：
 
@@ -618,17 +618,21 @@ vertical-align对inline、inline-block、table-cell元素有效，对块元素�
 
 3. [关键字](http://www.runoob.com/cssref/pr-pos-vertical-align.html) （前四个比较常用）：
 
-   | 值           | 描述                                           |
-   | ------------ | ---------------------------------------------- |
-   | **top**      | 把元素的顶端与行中最高元素的顶端对齐           |
-   | **middle**   | 把此元素放置在父元素的中部。                   |
-   | **baseline** | 默认。元素放置在父元素的基线上。               |
-   | **bottom**   | 把元素的底端与行中最低的元素的顶端对齐。       |
-   | text-top     | 把元素的顶端与父元素字体的顶端对齐             |
-   | text-bottom  | 把元素的底端与父元素字体的底端对齐。           |
-   | sub          | 垂直对齐文本的下标。                           |
-   | super        | 垂直对齐文本的上标                             |
-   | inherit      | 规定应该从父元素继承 vertical-align 属性的值。 |
+
+
+| 值           | 描述                                           |
+| ------------ | ---------------------------------------------- |
+| **top**      | 把元素的顶端与行中最高元素的顶端对齐           |
+| **middle**   | 把此元素放置在父元素的中部。                   |
+| **baseline** | 默认。元素放置在父元素的基线上。               |
+| **bottom**   | 把元素的底端与行中最低的元素的顶端对齐。       |
+| text-top     | 把元素的顶端与父元素字体的顶端对齐             |
+| text-bottom  | 把元素的底端与父元素字体的底端对齐。           |
+| sub          | 垂直对齐文本的下标。                           |
+| super        | 垂直对齐文本的上标                             |
+| inherit      | 规定应该从父元素继承 vertical-align 属性的值。 |
+
+
 
 ### 应用
 
@@ -681,7 +685,9 @@ vertical-align对inline、inline-block、table-cell元素有效，对块元素�
 - icon使用`position: absolute`脱离文档流并盖在input上
 - input将padding-left调到合适大小使得输入框不被icon盖住
 
-#　浮动布局
+
+
+# 浮动布局
 
 ## 文档流
 
@@ -773,7 +779,7 @@ float的取值表如下，默认为**none**：
 
 - color： 十六进制的颜色值若每两位值相同，可以缩写一半，比如`color: #112233`可以缩写为`color: #123`
 
-##　语法压缩
+## 语法压缩
 
 - 当一个CSS规则只有一两个属性的时候，使用横向书写
 - 可以省略最后一个属性的分号

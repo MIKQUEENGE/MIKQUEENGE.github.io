@@ -12,7 +12,7 @@ tags:
 
 `git merge`命令用于合并指定分支到当前分支。默认情况下，执行`快进式合并`（fast-farward merge），直接通过把master指向feature来将两个分支并为一个分支，只保存master的分支信息。
 
-`git merge --no--ff`执行正常合并，在master分支上生成新的节点，可以就可以保存之前的feature分支历史。能够更好的查看merge历史和branch状态。
+`git merge --no--ff`执行正常合并，在master分支上生成新的节点，就可以保存之前的feature分支历史。能够更好的查看merge历史和branch状态。
 
 因此为了保证版本演进的清晰，推荐使用`--no--ff`的方法。
 
@@ -115,7 +115,7 @@ git pull origin master // 以上两句命令相当于这一句命令
 
 编辑冲突的文件：
 
-```js
+```
 // ……
 
 <<<<<<< HEAD // 合并当前分支的内容
