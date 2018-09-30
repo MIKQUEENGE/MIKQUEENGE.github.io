@@ -1,5 +1,5 @@
-https://zmj97.coding.me/2018/09/25/cookie、sessionStorage和localStorage/
-https://zmj97.coding.me/2018/09/25/前端向后台发送请求有哪些方式/
-https://zmj97.coding.me/2018/09/24/git相关整理/
-https://zmj97.coding.me/2018/09/24/ubuntu18-04开机慢的解决办法/
-https://zmj97.coding.me/2018/09/23/Vuex入门/
+https://zmj97.coding.me/2018/09/29/ubuntu修改顶栏颜色/
+https://zmj97.coding.me/2018/09/29/常用SQL语句/
+https://zmj97.coding.me/2018/09/29/数据库基础知识/
+https://zmj97.coding.me/2018/09/28/操作系统面试相关总结/
+https://zmj97.coding.me/2018/09/26/继续磕面经/
