@@ -1,6 +1,6 @@
 ---
 title: 常用SQL语句
-toc: false
+toc: true
 date: 2018-09-29 11:55:20
 categories:
 - Web
