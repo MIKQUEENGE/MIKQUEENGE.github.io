@@ -9,8 +9,6 @@ tags:
 - 双向链表
 ---
 
-![clipboard.png](https://segmentfault.com/img/bVXd6N?w=662&h=91)
-
 - append(element): 添加元素到链表尾部
 - insert(position,element): 向双向链表中某个位置插入元素
 - removeAt(position): 移除双向链表中某个位置的元素

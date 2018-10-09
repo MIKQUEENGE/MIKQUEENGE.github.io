@@ -15,7 +15,7 @@ timezone:
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
 url: https://zmj97.coding.me/
 root: /
-permalink: :year/:month/:day/:title/
+permalink: :title.html
 permalink_defaults:
 
 # Directory
@@ -85,6 +85,14 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: landscape
+
+nofollow:
+  enable: true
+  exclude:
+  - blog.zmj97.top
+  - zmj97.coding.me
+
+all_minifier: true
 
 baidu_url_submit:
   count: 5 ## 提交最新的五个链接
