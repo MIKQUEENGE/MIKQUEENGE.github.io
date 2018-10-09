@@ -1,3 +1,3 @@
-# mikqueenge.github.io
+# zmj's blog
 
-[A Personal Blog](https://mikqueenge.github.io/) 
+[A Personal Blog](https://zmj97.github.io/) 

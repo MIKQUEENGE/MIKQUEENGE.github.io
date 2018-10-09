@@ -1,5 +1,5 @@
+https://zmj97.coding.me/2018/10/07/JavaScript实现双向链表/
+https://zmj97.coding.me/2018/10/04/同步与异步/
+https://zmj97.coding.me/2018/10/04/Promise与async-await/
 https://zmj97.coding.me/2018/09/29/ubuntu修改顶栏颜色/
 https://zmj97.coding.me/2018/09/29/常用SQL语句/
-https://zmj97.coding.me/2018/09/29/数据库基础知识/
-https://zmj97.coding.me/2018/09/28/操作系统面试相关总结/
-https://zmj97.coding.me/2018/09/26/继续磕面经/
