@@ -17,6 +17,8 @@ tags:
 >
 > 新域名：`http://blog.zmj97.top`(这里一定要注意！从阿里云买的域名使用的协议是http！)
 
+<!-- more -->
+
 今天下午兴致勃勃地买了个域名绑定到这个博客上后，发现昨天好不容易跳了各种坑才实现的**评论功能无法登陆**了！
 
 每一次点击评论里的登陆都会回到index页面，地址栏显示地地址为`https://blog.zmj97.top/?error=redirect_uri_mismatch&error_description=The+redirect_uri+MUST+match+the+registered+callback+URL+for+this+application.&error_uri=https%3A%2F%2Fdeveloper.github.com%2Fv3%2Foauth%2F%23redirect-uri-mismatch`

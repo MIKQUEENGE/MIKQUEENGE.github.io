@@ -18,6 +18,8 @@ ResourceExhaustedError (see above for traceback): OOM when allocating tensor
 
 搜索了一下才知道是GPU显存不足（emmmm....）造成的，可以把最后测试的那行代码改为将测试集分成几个小部分分别测试最后再求精度的平均值：
 
+<!-- more -->
+
 ```python
 accuracy_sum = tf.reduce_sum(tf.cast(correct_prediction, tf.float32))
 good = 0

@@ -12,6 +12,8 @@ tags:
 
 首先注册[LeanCloud](https://leancloud.cn/)，注册后添加应用，然后选择`应用>设置>应用key`就可以看到自己的AppID和AppKey了。
 
+<!-- more -->
+
 然后进入自己的主题目录（比如我的主题是默认的`landscape`）：
 
 删除配置gitment时`/themes/landscape/layout/_partial/post`目录下添加的`git.ejs`文件，
@@ -44,7 +46,9 @@ tags:
 
 其中notify为邮件提醒功能是否开启，verify为验证码功能，visitor为文章访问量统计功能，[avatar](https://valine.js.org/avatar.html)为`Gravatar` 头像展示方式。
 
-然后即OK啦！！
+在leancloud的`应用>设置>安全中心>Web安全域名`中添加你的域名。
+
+然后就OK啦！！
 
 有其他问题可以访问[Valine官方文档](https://valine.js.org/quickstart.html)查看。
 

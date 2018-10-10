@@ -12,6 +12,8 @@ tags:
 
 要多查阅[MDN Web 文档](https://developer.mozilla.org/zh-CN/docs/Web)
 
+<!-- more -->
+
 ---
 
 # BOM

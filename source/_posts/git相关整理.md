@@ -16,6 +16,8 @@ tags:
 
 因此为了保证版本演进的清晰，推荐使用`--no--ff`的方法。
 
+<!-- more -->
+
 ![img](http://www.ruanyifeng.com/blogimg/asset/201207/bg2012070505.png)
 
 ![Image result for git merge -- no ff](https://i.stack.imgur.com/FMD5h.png)

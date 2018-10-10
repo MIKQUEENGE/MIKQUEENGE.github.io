@@ -18,6 +18,8 @@ tags:
 
 链接：http://pan.baidu.com/s/1c0oGMn2 密码：f7zt
 
+<!-- more -->
+
 [HTML5优缺点](https://blog.csdn.net/qq_34309704/article/details/80163001)
 
 ---

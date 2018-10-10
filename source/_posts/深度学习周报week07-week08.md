@@ -15,6 +15,8 @@ tags:
 
 `filename.txt` 存储文件对应位置。
 
+<!-- more -->
+
 以上所有存储在`classification`文件夹中。
 
 建立`filename.py`来生成`filename.txt`：

@@ -16,6 +16,8 @@ tags:
 
 在终端内运行`./install.sh`
 
+<!-- more -->
+
 这样就安装完成啦，现在就可以安装qq微信之类的软件啦：
 
 [所有deepin-wine内支持的windows软件下载地址](http://mirrors.aliyun.com/deepin/pool/non-free/d/)

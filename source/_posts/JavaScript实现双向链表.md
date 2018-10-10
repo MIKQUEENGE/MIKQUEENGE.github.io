@@ -9,9 +9,18 @@ tags:
 - 双向链表
 ---
 
+
+
+![img](https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3254661749,1008892734&fm=26&gp=0.jpg)
+
+
+
 - append(element): 添加元素到链表尾部
 - insert(position,element): 向双向链表中某个位置插入元素
 - removeAt(position): 移除双向链表中某个位置的元素
+
+<!-- more -->
+
 - getHead(): 获取双向链表的头部
 - getTail(): 获取双向链表的尾部
 - isEmpty(): 检查双向链表是否为空，为空则返回true

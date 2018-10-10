@@ -12,6 +12,8 @@ tags:
 
 要多查阅[MDN Web 文档](https://developer.mozilla.org/zh-CN/docs/Web)
 
+<!-- more -->
+
 ---
 
 # 面向对象的程序设计
@@ -133,7 +135,7 @@ function sayName() {
 
 ### 原型模式
 
-关于prototype可以先看[这一篇](https://blog.zmj97.top/2018/09/04/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto/)。
+关于prototype可以先看[这一篇](https://blog.zmj97.top/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto.html)。
 
 然后看下边这个例子：
 

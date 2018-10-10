@@ -10,6 +10,8 @@ tags:
 
 HTTP协议，HyperText Transfer Protocol，超文本传输协议，是因特网上应用最为 广泛的一种网络传输协议。
 
+<!-- more -->
+
 ## 版本
 
 ### HTTP/0.9

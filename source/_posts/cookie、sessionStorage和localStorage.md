@@ -19,6 +19,8 @@ Cookie技术通过在请求和响应报文中写入Cookie信息来控制客户�
 
 因为Cookie被携带在http报文中，所以Cookie只适合存储比较小的数据，不能超过4KB。
 
+<!-- more -->
+
 ## webstorage
 
 HTML5提供的在客户端存储数据的方式。

@@ -12,6 +12,8 @@ tags:
 
 OJ：[牛客网](https://www.nowcoder.com/pat)
 
+<!-- more -->
+
 ---
 
 

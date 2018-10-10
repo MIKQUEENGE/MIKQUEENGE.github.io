@@ -5,10 +5,10 @@
 # Site
 title: zmj's blog
 subtitle:
-description:
+description: 代码升级之路
 keywords:
 author: Mengjie Zhang
-language: 
+language: zh-CN
 timezone:
 
 # URL
@@ -39,7 +39,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
+  enable: false
   line_number: true
   auto_detect: false
   tab_replace:
@@ -86,13 +86,28 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'default'
+  line_number: false    # default false
+
 nofollow:
   enable: true
   exclude:
   - blog.zmj97.top
   - zmj97.coding.me
 
+auto_excerpt:
+  enable: true
+  length: 100
+
 all_minifier: true
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
 
 baidu_url_submit:
   count: 5 ## 提交最新的五个链接

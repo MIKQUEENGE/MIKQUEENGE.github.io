@@ -16,7 +16,9 @@ tags:
 
 打开landscape/_partial/article.ejs，
 
-在`<div class="article-entry" itemprop="articleBody">`的div内添加：
+在`<div class="article-entry" itemprop="articleBody">`的div内添加代码：
+
+<!-- more -->
 
 ```ejs
 <% if (page.type === "tags") { %>

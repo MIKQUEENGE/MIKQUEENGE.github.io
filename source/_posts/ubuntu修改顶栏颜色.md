@@ -14,6 +14,8 @@ tags:
 sudo gedit /usr/share/themes/Vimix-Beryl/gnome-shell/gnome-shell.css
 ```
 
+<!-- more -->
+
 打开之后搜索`top bar`，会看到这样一段：
 
 ```css

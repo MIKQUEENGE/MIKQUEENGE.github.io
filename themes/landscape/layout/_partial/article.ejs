@@ -11,17 +11,12 @@
       </header>
     <% } %>
     <div class="article-entry" itemprop="articleBody">
-      <% if (index){ %>
-        <% var br = post.content.indexOf('\n', 153) %>
-        <% if (br < 0) { %>
-          <%- post.content %>
-        <% } else { %>
-          <%- post.content.substring(0, br) %>
-          <% if (theme.excerpt_link){ %>
-            <p class="article-more-link">
-              <a href="<%- url_for(post.path) %>#more"><%= theme.excerpt_link %></a>
-            </p>
-          <% } %>
+      <% if (post.excerpt && index) { %>
+        <%- post.excerpt %>
+        <% if (theme.excerpt_link) { %>
+          <p class="article-more-link">
+            <a href="<%- config.root %><%- post.path %>#more"><%= theme.excerpt_link %></a>
+          </p>
         <% } %>
       <% } else { %>
         <!-- Table of Contents --> 

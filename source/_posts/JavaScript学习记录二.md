@@ -12,6 +12,8 @@ tags:
 
 要多查阅[MDN Web 文档](https://developer.mozilla.org/zh-CN/docs/Web)
 
+<!-- more -->
+
 ---
 
 # 变量、作用域和内存问题
@@ -486,7 +488,7 @@ b.sayColor(); //'blue'
 每个函数都包含两个属性：length和prototype。
 
 - length：函数希望接收的命名参数的个数
-- prototype：可以看我[这篇文章](https://blog.zmj97.top/2018/09/04/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto/)。
+- prototype：可以看我[这篇文章](https://blog.zmj97.top/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto.html)。
 
 每个函数都包含两个非继承而来的方法：apply()和call()。
 

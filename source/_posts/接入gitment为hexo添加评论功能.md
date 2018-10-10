@@ -13,6 +13,8 @@ tags:
 
 [注册链接](https://github.com/settings/applications/new)
 
+<!-- more -->
+
 ![](/images/Capture3.PNG)
 
 其中：

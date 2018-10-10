@@ -13,6 +13,8 @@ tags:
 
 利用tornado框架搭建本地服务器。
 
+<!-- more -->
+
 主要学习以下内容：
 
 - define

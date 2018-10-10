@@ -16,6 +16,8 @@ toc: true
 
 要注意**版本对应**
 
+<!-- more -->
+
 ## 学习基础知识
 
 ### [神经网络基本原理](http://www.ruanyifeng.com/blog/2017/07/neural-network.html)

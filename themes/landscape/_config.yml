@@ -1,9 +1,9 @@
 # Header
 menu:
-  Home: /
-  Archives: /archives
-  Tags: /tags
-  Categories: /categories
+  主页: /
+  归档: /archives
+  标签: /tags
+  分类: /categories
 #  Rss: /atom.xml
 #  Sitemap: /sitemap.xml
 
@@ -19,6 +19,11 @@ widgets:
 - tagcloud
 - archive
 - recent_posts
+
+local_search:
+  enable: true
+  trigger: auto
+  top_n_per_article: 1
 
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:

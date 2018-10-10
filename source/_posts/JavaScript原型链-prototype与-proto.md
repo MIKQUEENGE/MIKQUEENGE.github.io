@@ -28,6 +28,8 @@ var p = new Person();
 p.__proto__ = Person.prototype;
 ```
 
+<!-- more -->
+
 当调用`p.xxx()`时，首先在`p`中找`xxx`这个属性，没有的话从`p`的`__proto__`(即`Person`的`prototype`)中寻找，如果没有，则继续向上寻找（`p.__proto__.__proto__`即`Person.prototype.__proto__`, ...）。
 
 
