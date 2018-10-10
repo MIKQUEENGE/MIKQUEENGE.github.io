@@ -1,4 +1,106 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>继续磕面经 | zmj&#39;s blog</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型"><meta name="keywords" content="HTML,CSS,HTTP,JavaScript,ES6,Vue,设计模式"><meta property="og:type" content="article"><meta property="og:title" content="继续磕面经"><meta property="og:url" content="https://zmj97.coding.me/继续磕面经.html"><meta property="og:site_name" content="zmj&#39;s blog"><meta property="og:description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2018-10-10T08:44:39.235Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="继续磕面经"><meta name="twitter:description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head></html><body><div id="container"><div id="wrap"><header id="header"><div id="banner"></div><div id="header-outer" class="outer"><div id="header-title" class="inner"><h1 id="logo-wrap"><a href="/" id="logo">zmj&#39;s blog</a></h1></div><div id="header-inner" class="inner"><nav id="main-nav"><a id="main-nav-toggle" class="nav-icon"></a> <a class="main-nav-link" href="/">主页</a> <a class="main-nav-link" href="/archives">归档</a> <a class="main-nav-link" href="/tags">标签</a> <a class="main-nav-link" href="/categories">分类</a></nav><nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="搜索"></a></nav><div id="search-form-wrap"><form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form></div></div></div></header><div class="outer"><section id="main"><article id="post-继续磕面经" class="article article-type-post" itemscope="" itemprop="blogPost"><div class="article-meta"><a href="/继续磕面经.html" class="article-date"><time datetime="2018-09-26T09:31:07.000Z" itemprop="datePublished">2018-09-26</time></a><div class="article-category"><a class="article-category-link" href="/categories/Web/">Web</a></div></div><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">继续磕面经</h1></header><div class="article-entry" itemprop="articleBody"><div id="toc" class="toc-article"><strong class="toc-title">文章目录</strong><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#js的基本数据类型"><span class="toc-number">1.</span> <span class="toc-text">js的基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取变量的数据类型有哪些方法"><span class="toc-number">2.</span> <span class="toc-text">获取变量的数据类型有哪些方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS的拷贝？"><span class="toc-number">3.</span> <span class="toc-text">JS的拷贝？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深拷贝的方法"><span class="toc-number">4.</span> <span class="toc-text">深拷贝的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS单位有哪些"><span class="toc-number">5.</span> <span class="toc-text">CSS单位有哪些</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#相对长度"><span class="toc-number">5.1.</span> <span class="toc-text">相对长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绝对长度"><span class="toc-number">5.2.</span> <span class="toc-text">绝对长度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网页渲染的流程"><span class="toc-number">6.</span> <span class="toc-text">网页渲染的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS继承"><span class="toc-number">7.</span> <span class="toc-text">JS继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue：v-model"><span class="toc-number">8.</span> <span class="toc-text">vue：v-model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式"><span class="toc-number">9.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单例模式"><span class="toc-number">10.</span> <span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预解析"><span class="toc-number">11.</span> <span class="toc-text">预解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM"><span class="toc-number">12.</span> <span class="toc-text">DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的存储方式"><span class="toc-number">13.</span> <span class="toc-text">对象的存储方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存回收方式"><span class="toc-number">14.</span> <span class="toc-text">内存回收方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String为什么有length属性"><span class="toc-number">15.</span> <span class="toc-text">String为什么有length属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知一个function-ClassA-，如何使得new-ClassA-和ClassA-返回的值都是新的实例"><span class="toc-number">16.</span> <span class="toc-text">已知一个function ClassA() {}，如何使得new ClassA()和ClassA()返回的值都是新的实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用数据结构表示项目之间的依赖"><span class="toc-number">17.</span> <span class="toc-text">用数据结构表示项目之间的依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个图有没有环"><span class="toc-number">18.</span> <span class="toc-text">判断一个图有没有环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从输入url到显示完成了什么"><span class="toc-number">19.</span> <span class="toc-text">从输入url到显示完成了什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现parse函数解析-b-1-amp-c-2这样的字段"><span class="toc-number">20.</span> <span class="toc-text">实现parse函数解析?b=1&amp;c=2这样的字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#箭头函数的区别，能当做构造函数么"><span class="toc-number">21.</span> <span class="toc-text">箭头函数的区别，能当做构造函数么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6如何获取函数参数"><span class="toc-number">22.</span> <span class="toc-text">ES6如何获取函数参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeout准时么"><span class="toc-number">23.</span> <span class="toc-text">setTimeout准时么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6手写观察者模式"><span class="toc-number">24.</span> <span class="toc-text">ES6手写观察者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#产生0-100的随机数"><span class="toc-number">25.</span> <span class="toc-text">产生0-100的随机数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http报文结构，header有哪些字段"><span class="toc-number">26.</span> <span class="toc-text">http报文结构，header有哪些字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域"><span class="toc-number">27.</span> <span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写所有排序算法和DFS、BFS"><span class="toc-number">28.</span> <span class="toc-text">手写所有排序算法和DFS、BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒模型"><span class="toc-number">29.</span> <span class="toc-text">盒模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session和cookie区别"><span class="toc-number">30.</span> <span class="toc-text">session和cookie区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换元素"><span class="toc-number">31.</span> <span class="toc-text">替换元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象的特性"><span class="toc-number">32.</span> <span class="toc-text">面向对象的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-怎么实现多态的"><span class="toc-number">33.</span> <span class="toc-text">C++怎么实现多态的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步异步区别"><span class="toc-number">34.</span> <span class="toc-text">同步异步区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js异步加载方法"><span class="toc-number">35.</span> <span class="toc-text">js异步加载方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串行和并行"><span class="toc-number">36.</span> <span class="toc-text">串行和并行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库index及实现"><span class="toc-number">37.</span> <span class="toc-text">数据库index及实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和线程"><span class="toc-number">38.</span> <span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程间通信方法"><span class="toc-number">39.</span> <span class="toc-text">进程间通信方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程或线程的同步方法"><span class="toc-number">40.</span> <span class="toc-text">进程或线程的同步方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟DOM的作用"><span class="toc-number">41.</span> <span class="toc-text">虚拟DOM的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尾递归"><span class="toc-number">42.</span> <span class="toc-text">尾递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#position"><span class="toc-number">43.</span> <span class="toc-text">position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动"><span class="toc-number">44.</span> <span class="toc-text">浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#圣杯布局、双飞翼布局"><span class="toc-number">45.</span> <span class="toc-text">圣杯布局、双飞翼布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动画实现div无限旋转"><span class="toc-number">46.</span> <span class="toc-text">动画实现div无限旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端性能优化"><span class="toc-number">47.</span> <span class="toc-text">前端性能优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#304实现原理"><span class="toc-number">48.</span> <span class="toc-text">304实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webSocket是哪一层的"><span class="toc-number">49.</span> <span class="toc-text">webSocket是哪一层的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现add-1-2-3-6"><span class="toc-number">50.</span> <span class="toc-text">实现add(1)(2)(3) == 6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js是单线程的，如何实现定时"><span class="toc-number">51.</span> <span class="toc-text">js是单线程的，如何实现定时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6代理"><span class="toc-number">52.</span> <span class="toc-text">ES6代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算一个数转换成二进制后1的个数"><span class="toc-number">53.</span> <span class="toc-text">计算一个数转换成二进制后1的个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP长连接"><span class="toc-number">54.</span> <span class="toc-text">HTTP长连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态码5xx"><span class="toc-number">55.</span> <span class="toc-text">状态码5xx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https默认端口"><span class="toc-number">56.</span> <span class="toc-text">https默认端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp连接过程中的状态考察"><span class="toc-number">57.</span> <span class="toc-text">tcp连接过程中的状态考察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三次握手四次挥手详细"><span class="toc-number">58.</span> <span class="toc-text">三次握手四次挥手详细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http2-0"><span class="toc-number">59.</span> <span class="toc-text">http2.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多路复用和1-x请求的区别"><span class="toc-number">60.</span> <span class="toc-text">多路复用和1.x请求的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unsigned-int类型扩展长度"><span class="toc-number">61.</span> <span class="toc-text">unsigned int类型扩展长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个长度为一百万的数组中，超过一半都是某一个值，求这个值"><span class="toc-number">62.</span> <span class="toc-text">一个长度为一百万的数组中，超过一半都是某一个值，求这个值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐进增强和优雅降级"><span class="toc-number">63.</span> <span class="toc-text">渐进增强和优雅降级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端缓存机制"><span class="toc-number">64.</span> <span class="toc-text">前端缓存机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#没有辅助空间的情况下交换两个数的值"><span class="toc-number">65.</span> <span class="toc-text">没有辅助空间的情况下交换两个数的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端安全"><span class="toc-number">66.</span> <span class="toc-text">前端安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let暂时性死区和块级作用域"><span class="toc-number">67.</span> <span class="toc-text">let暂时性死区和块级作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类数组"><span class="toc-number">68.</span> <span class="toc-text">类数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-in-缺点"><span class="toc-number">69.</span> <span class="toc-text">for in 缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach"><span class="toc-number">70.</span> <span class="toc-text">forEach()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6中map遍历实现原理"><span class="toc-number">71.</span> <span class="toc-text">ES6中map遍历实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组去重"><span class="toc-number">72.</span> <span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁"><span class="toc-number">73.</span> <span class="toc-text">死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https详细过程"><span class="toc-number">74.</span> <span class="toc-text">https详细过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化"><span class="toc-number">75.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的各种方法"><span class="toc-number">76.</span> <span class="toc-text">数组的各种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存换页算法"><span class="toc-number">77.</span> <span class="toc-text">内存换页算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件循环"><span class="toc-number">78.</span> <span class="toc-text">事件循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理"><span class="toc-number">79.</span> <span class="toc-text">ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写封装jsonp"><span class="toc-number">80.</span> <span class="toc-text">手写封装jsonp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托"><span class="toc-number">81.</span> <span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP和UDP"><span class="toc-number">82.</span> <span class="toc-text">TCP和UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#soket阻塞模式"><span class="toc-number">83.</span> <span class="toc-text">soket阻塞模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#doctype"><span class="toc-number">84.</span> <span class="toc-text">doctype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AJAX实现原理，手写实现"><span class="toc-number">85.</span> <span class="toc-text">AJAX实现原理，手写实现</span></a></li></ol></div><h3 id="js的基本数据类型"><a href="#js的基本数据类型" class="headerlink" title="js的基本数据类型"></a>js的基本数据类型</h3><p>Undefined、Null、Boolean、Number、String五种基本数据类型</p><a id="more"></a><h3 id="获取变量的数据类型有哪些方法"><a href="#获取变量的数据类型有哪些方法" class="headerlink" title="获取变量的数据类型有哪些方法"></a>获取变量的数据类型有哪些方法</h3><ol><li><p><code>typeof</code>，返回六种结果：undefined、boolean、number、string、object、function</p><pre class="language-js"><code class="language-js"><span class="token keyword">typeof</span> <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>继续磕面经 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型">
+<meta name="keywords" content="HTML,HTTP,CSS,JavaScript,ES6,Vue,设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="继续磕面经">
+<meta property="og:url" content="https://zmj97.coding.me/继续磕面经.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-10T08:44:39.235Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="继续磕面经">
+<meta name="twitter:description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-继续磕面经" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/继续磕面经.html" class="article-date">
+  <time datetime="2018-09-26T09:31:07.000Z" itemprop="datePublished">2018-09-26</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      继续磕面经
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#js的基本数据类型"><span class="toc-number">1.</span> <span class="toc-text">js的基本数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#获取变量的数据类型有哪些方法"><span class="toc-number">2.</span> <span class="toc-text">获取变量的数据类型有哪些方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS的拷贝？"><span class="toc-number">3.</span> <span class="toc-text">JS的拷贝？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#深拷贝的方法"><span class="toc-number">4.</span> <span class="toc-text">深拷贝的方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CSS单位有哪些"><span class="toc-number">5.</span> <span class="toc-text">CSS单位有哪些</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#相对长度"><span class="toc-number">5.1.</span> <span class="toc-text">相对长度</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#绝对长度"><span class="toc-number">5.2.</span> <span class="toc-text">绝对长度</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#网页渲染的流程"><span class="toc-number">6.</span> <span class="toc-text">网页渲染的流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#JS继承"><span class="toc-number">7.</span> <span class="toc-text">JS继承</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue：v-model"><span class="toc-number">8.</span> <span class="toc-text">vue：v-model</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式"><span class="toc-number">9.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#单例模式"><span class="toc-number">10.</span> <span class="toc-text">单例模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#预解析"><span class="toc-number">11.</span> <span class="toc-text">预解析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM"><span class="toc-number">12.</span> <span class="toc-text">DOM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#对象的存储方式"><span class="toc-number">13.</span> <span class="toc-text">对象的存储方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存回收方式"><span class="toc-number">14.</span> <span class="toc-text">内存回收方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#String为什么有length属性"><span class="toc-number">15.</span> <span class="toc-text">String为什么有length属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#已知一个function-ClassA-，如何使得new-ClassA-和ClassA-返回的值都是新的实例"><span class="toc-number">16.</span> <span class="toc-text">已知一个function ClassA() {}，如何使得new ClassA()和ClassA()返回的值都是新的实例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#用数据结构表示项目之间的依赖"><span class="toc-number">17.</span> <span class="toc-text">用数据结构表示项目之间的依赖</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#判断一个图有没有环"><span class="toc-number">18.</span> <span class="toc-text">判断一个图有没有环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#从输入url到显示完成了什么"><span class="toc-number">19.</span> <span class="toc-text">从输入url到显示完成了什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现parse函数解析-b-1-amp-c-2这样的字段"><span class="toc-number">20.</span> <span class="toc-text">实现parse函数解析?b=1&amp;c=2这样的字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#箭头函数的区别，能当做构造函数么"><span class="toc-number">21.</span> <span class="toc-text">箭头函数的区别，能当做构造函数么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6如何获取函数参数"><span class="toc-number">22.</span> <span class="toc-text">ES6如何获取函数参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#setTimeout准时么"><span class="toc-number">23.</span> <span class="toc-text">setTimeout准时么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6手写观察者模式"><span class="toc-number">24.</span> <span class="toc-text">ES6手写观察者模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#产生0-100的随机数"><span class="toc-number">25.</span> <span class="toc-text">产生0-100的随机数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http报文结构，header有哪些字段"><span class="toc-number">26.</span> <span class="toc-text">http报文结构，header有哪些字段</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域"><span class="toc-number">27.</span> <span class="toc-text">跨域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写所有排序算法和DFS、BFS"><span class="toc-number">28.</span> <span class="toc-text">手写所有排序算法和DFS、BFS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#盒模型"><span class="toc-number">29.</span> <span class="toc-text">盒模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#session和cookie区别"><span class="toc-number">30.</span> <span class="toc-text">session和cookie区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#替换元素"><span class="toc-number">31.</span> <span class="toc-text">替换元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象的特性"><span class="toc-number">32.</span> <span class="toc-text">面向对象的特性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#C-怎么实现多态的"><span class="toc-number">33.</span> <span class="toc-text">C++怎么实现多态的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同步异步区别"><span class="toc-number">34.</span> <span class="toc-text">同步异步区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js异步加载方法"><span class="toc-number">35.</span> <span class="toc-text">js异步加载方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#串行和并行"><span class="toc-number">36.</span> <span class="toc-text">串行和并行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据库index及实现"><span class="toc-number">37.</span> <span class="toc-text">数据库index及实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程和线程"><span class="toc-number">38.</span> <span class="toc-text">进程和线程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程间通信方法"><span class="toc-number">39.</span> <span class="toc-text">进程间通信方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#进程或线程的同步方法"><span class="toc-number">40.</span> <span class="toc-text">进程或线程的同步方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#虚拟DOM的作用"><span class="toc-number">41.</span> <span class="toc-text">虚拟DOM的作用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#尾递归"><span class="toc-number">42.</span> <span class="toc-text">尾递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#position"><span class="toc-number">43.</span> <span class="toc-text">position</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#浮动"><span class="toc-number">44.</span> <span class="toc-text">浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#圣杯布局、双飞翼布局"><span class="toc-number">45.</span> <span class="toc-text">圣杯布局、双飞翼布局</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#动画实现div无限旋转"><span class="toc-number">46.</span> <span class="toc-text">动画实现div无限旋转</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端性能优化"><span class="toc-number">47.</span> <span class="toc-text">前端性能优化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#304实现原理"><span class="toc-number">48.</span> <span class="toc-text">304实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#webSocket是哪一层的"><span class="toc-number">49.</span> <span class="toc-text">webSocket是哪一层的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现add-1-2-3-6"><span class="toc-number">50.</span> <span class="toc-text">实现add(1)(2)(3) == 6</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js是单线程的，如何实现定时"><span class="toc-number">51.</span> <span class="toc-text">js是单线程的，如何实现定时</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6代理"><span class="toc-number">52.</span> <span class="toc-text">ES6代理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#计算一个数转换成二进制后1的个数"><span class="toc-number">53.</span> <span class="toc-text">计算一个数转换成二进制后1的个数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP长连接"><span class="toc-number">54.</span> <span class="toc-text">HTTP长连接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#状态码5xx"><span class="toc-number">55.</span> <span class="toc-text">状态码5xx</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https默认端口"><span class="toc-number">56.</span> <span class="toc-text">https默认端口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tcp连接过程中的状态考察"><span class="toc-number">57.</span> <span class="toc-text">tcp连接过程中的状态考察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三次握手四次挥手详细"><span class="toc-number">58.</span> <span class="toc-text">三次握手四次挥手详细</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#http2-0"><span class="toc-number">59.</span> <span class="toc-text">http2.0</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#多路复用和1-x请求的区别"><span class="toc-number">60.</span> <span class="toc-text">多路复用和1.x请求的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#unsigned-int类型扩展长度"><span class="toc-number">61.</span> <span class="toc-text">unsigned int类型扩展长度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个长度为一百万的数组中，超过一半都是某一个值，求这个值"><span class="toc-number">62.</span> <span class="toc-text">一个长度为一百万的数组中，超过一半都是某一个值，求这个值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐进增强和优雅降级"><span class="toc-number">63.</span> <span class="toc-text">渐进增强和优雅降级</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端缓存机制"><span class="toc-number">64.</span> <span class="toc-text">前端缓存机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#没有辅助空间的情况下交换两个数的值"><span class="toc-number">65.</span> <span class="toc-text">没有辅助空间的情况下交换两个数的值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前端安全"><span class="toc-number">66.</span> <span class="toc-text">前端安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#let暂时性死区和块级作用域"><span class="toc-number">67.</span> <span class="toc-text">let暂时性死区和块级作用域</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类数组"><span class="toc-number">68.</span> <span class="toc-text">类数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#for-in-缺点"><span class="toc-number">69.</span> <span class="toc-text">for in 缺点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#forEach"><span class="toc-number">70.</span> <span class="toc-text">forEach()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ES6中map遍历实现原理"><span class="toc-number">71.</span> <span class="toc-text">ES6中map遍历实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组去重"><span class="toc-number">72.</span> <span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁"><span class="toc-number">73.</span> <span class="toc-text">死锁</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#https详细过程"><span class="toc-number">74.</span> <span class="toc-text">https详细过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块化"><span class="toc-number">75.</span> <span class="toc-text">模块化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组的各种方法"><span class="toc-number">76.</span> <span class="toc-text">数组的各种方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内存换页算法"><span class="toc-number">77.</span> <span class="toc-text">内存换页算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件循环"><span class="toc-number">78.</span> <span class="toc-text">事件循环</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理"><span class="toc-number">79.</span> <span class="toc-text">ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写封装jsonp"><span class="toc-number">80.</span> <span class="toc-text">手写封装jsonp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件委托"><span class="toc-number">81.</span> <span class="toc-text">事件委托</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP和UDP"><span class="toc-number">82.</span> <span class="toc-text">TCP和UDP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#soket阻塞模式"><span class="toc-number">83.</span> <span class="toc-text">soket阻塞模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#doctype"><span class="toc-number">84.</span> <span class="toc-text">doctype</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AJAX实现原理，手写实现"><span class="toc-number">85.</span> <span class="toc-text">AJAX实现原理，手写实现</span></a></li></ol> 
+          </div> 
+        
+        <h3 id="js的基本数据类型"><a href="#js的基本数据类型" class="headerlink" title="js的基本数据类型"></a>js的基本数据类型</h3><p>Undefined、Null、Boolean、Number、String五种基本数据类型</p>
+<a id="more"></a>
+<h3 id="获取变量的数据类型有哪些方法"><a href="#获取变量的数据类型有哪些方法" class="headerlink" title="获取变量的数据类型有哪些方法"></a>获取变量的数据类型有哪些方法</h3><ol>
+<li><p><code>typeof</code>，返回六种结果：undefined、boolean、number、string、object、function</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">typeof</span> <span class="token string">''</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// string</span>
 <span class="token keyword">typeof</span> <span class="token number">1</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// number</span>
 <span class="token keyword">typeof</span> <span class="token boolean">true</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// boolean</span>
 <span class="token keyword">typeof</span> undefined<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// undefined</span>
@@ -7,19 +109,33 @@
 <span class="token keyword">typeof</span> <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//function</span>
 <span class="token keyword">typeof</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//object</span>
 <span class="token keyword">typeof</span> <span class="token keyword">new</span> <span class="token class-name">RegExp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//object</span>
-</code></pre></li><li><p><code>instanceof</code>，判断是否是一个类的实例</p><pre class="language-js"><code class="language-js"><span class="token boolean">true</span> <span class="token keyword">instanceof</span> <span class="token class-name">Boolean</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
+</code></pre>
+</li>
+<li><p><code>instanceof</code>，判断是否是一个类的实例</p>
+<pre class=" language-js"><code class="language-js"><span class="token boolean">true</span> <span class="token keyword">instanceof</span> <span class="token class-name">Boolean</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
 <span class="token number">1</span> <span class="token keyword">instanceof</span> <span class="token class-name">Number</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
 <span class="token string">''</span> <span class="token keyword">instanceof</span> <span class="token class-name">String</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// false</span>
 <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 <span class="token punctuation">(</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 <span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token keyword">instanceof</span> <span class="token class-name">Function</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 <span class="token keyword">new</span> <span class="token class-name">Boolean</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token keyword">instanceof</span> <span class="token class-name">Boolean</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
-</code></pre></li><li><p><code>constructor</code>，一个类的prototype会指向自己的引用。</p><p>需要注意的是：</p><ul><li><code>null</code>和<code>undefined</code>是无效的对象，因此没有constructor，需要通过typeof来判断。</li><li>JS对象的constructor是不稳定的。当开发者重写prototype后，原有的constructor会丢失，constructor会默认为Object。</li></ul><pre class="language-js"><code class="language-js"><span class="token string">''</span><span class="token punctuation">.</span>constructor <span class="token operator">==</span> String<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
+</code></pre>
+</li>
+<li><p><code>constructor</code>，一个类的prototype会指向自己的引用。</p>
+<p>需要注意的是：</p>
+<ul>
+<li><code>null</code>和<code>undefined</code>是无效的对象，因此没有constructor，需要通过typeof来判断。</li>
+<li>JS对象的constructor是不稳定的。当开发者重写prototype后，原有的constructor会丢失，constructor会默认为Object。</li>
+</ul>
+<pre class=" language-js"><code class="language-js"><span class="token string">''</span><span class="token punctuation">.</span>constructor <span class="token operator">==</span> String<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">.</span>constructor Number<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 <span class="token boolean">true</span><span class="token punctuation">.</span>constructor <span class="token operator">==</span> Boolean<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 <span class="token keyword">new</span> <span class="token class-name">Function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>constructor <span class="token operator">==</span> Function<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// true</span>
 <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>constructor <span class="token operator">==</span> Date<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//true</span>
-</code></pre></li><li><p><code>Object.prototype.toString</code></p><pre class="language-js"><code class="language-js">Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//[object String]</span>
+</code></pre>
+</li>
+<li><p><code>Object.prototype.toString</code></p>
+<pre class=" language-js"><code class="language-js">Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   <span class="token comment" spellcheck="true">//[object String]</span>
 Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment" spellcheck="true">//[object Number]</span>
 Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[object Boolean]</span>
 Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>undefined<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[object Undefined]</span>
@@ -32,7 +148,15 @@ Object<span class="token punctuation">.</span>prototype<span class="token punctu
 Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>document<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[object HTMLDocument]</span>
 Object<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>toString<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>window<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//[object global] window是全局对象global的引用</span>
 <span class="token comment" spellcheck="true">// 代码来自 红尘客栈-古月 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/mozuncangtianbaxue/article/details/77151598?utm_source=copy </span>
-</code></pre></li></ol><h3 id="JS的拷贝？"><a href="#JS的拷贝？" class="headerlink" title="JS的拷贝？"></a>JS的拷贝？</h3><p>基本数据类型会新开辟一个数据段来保存值，</p><p>但是对象的拷贝实际上是拷贝了对实际对象的引用，我们可以把对象名看做指针。</p><h3 id="深拷贝的方法"><a href="#深拷贝的方法" class="headerlink" title="深拷贝的方法"></a>深拷贝的方法</h3><p>需要注意的是：slice()和concat()只深拷贝了一级属性。</p><ol><li><p>递归复制所有属性</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="JS的拷贝？"><a href="#JS的拷贝？" class="headerlink" title="JS的拷贝？"></a>JS的拷贝？</h3><p>基本数据类型会新开辟一个数据段来保存值，</p>
+<p>但是对象的拷贝实际上是拷贝了对实际对象的引用，我们可以把对象名看做指针。</p>
+<h3 id="深拷贝的方法"><a href="#深拷贝的方法" class="headerlink" title="深拷贝的方法"></a>深拷贝的方法</h3><p>需要注意的是：slice()和concat()只深拷贝了一级属性。</p>
+<ol>
+<li><p>递归复制所有属性</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>arg <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> arg <span class="token operator">!=</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
   <span class="token keyword">let</span> newObj <span class="token operator">=</span> Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">:</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> key <span class="token keyword">in</span> arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -44,20 +168,214 @@ Object<span class="token punctuation">.</span>prototype<span class="token punctu
   <span class="token punctuation">}</span>
   <span class="token keyword">return</span> newObj<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></li><li><p>使用JSON的parse和stringify</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+</li>
+<li><p>使用JSON的parse和stringify</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token keyword">typeof</span> arg <span class="token operator">==</span> <span class="token string">'object'</span> <span class="token operator">?</span> argJSON<span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>JSON<span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> arg<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></li><li><p>使用JQuery的extend方法</p><p><code>$.extend([deep], target, object1[, objectN ])</code></p><ul><li>用于将一个或多个对象的内容合并到目标对象</li><li>如果多个对象具有相同的属性，则后者会覆盖前者的属性值</li></ul><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+</li>
+<li><p>使用JQuery的extend方法</p>
+<p><code>$.extend([deep], target, object1[, objectN ])</code></p>
+<ul>
+<li>用于将一个或多个对象的内容合并到目标对象</li>
+<li>如果多个对象具有相同的属性，则后者会覆盖前者的属性值</li>
+</ul>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">deepClone</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>arg <span class="token operator">==</span> <span class="token keyword">null</span> <span class="token operator">||</span> <span class="token keyword">typeof</span> arg <span class="token operator">!=</span> <span class="token string">'object'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> arg<span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>arg <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token keyword">return</span> $<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">else</span> <span class="token keyword">return</span> $<span class="token punctuation">.</span><span class="token function">extend</span><span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">,</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">,</span>arg<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre></li></ol><h3 id="CSS单位有哪些"><a href="#CSS单位有哪些" class="headerlink" title="CSS单位有哪些"></a>CSS单位有哪些</h3><h4 id="相对长度"><a href="#相对长度" class="headerlink" title="相对长度"></a>相对长度</h4><table><thead><tr><th>单位</th><th>描述</th></tr></thead><tbody><tr><td>em</td><td>它是描述相对于应用在当前元素的字体尺寸，所以它也是相对长度单位。一般浏览器字体大小默认为16px，则2em == 32px；</td></tr><tr><td>ex</td><td>依赖于英文子母小 x 的高度</td></tr><tr><td>ch</td><td>数字 0 的宽度</td></tr><tr><td>rem</td><td>根元素（html）的 font-size</td></tr><tr><td>vw</td><td>viewpoint width，视窗宽度，1vw=视窗宽度的1%</td></tr><tr><td>vh</td><td>viewpoint height，视窗高度，1vh=视窗高度的1%</td></tr><tr><td>vmin</td><td>vw和vh中较小的那个。</td></tr><tr><td>vmax</td><td>vw和vh中较大的那个。</td></tr><tr><td>%</td><td><a href="https://blog.zmj97.top/2018/09/10/HTML%E4%B8%8ECSS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#%E7%99%BE%E5%88%86%E6%AF%94" target="_blank" rel="noopener">介绍链接</a></td></tr></tbody></table><h4 id="绝对长度"><a href="#绝对长度" class="headerlink" title="绝对长度"></a>绝对长度</h4><table><thead><tr><th>单位</th><th>描述</th></tr></thead><tbody><tr><td>cm</td><td>厘米</td></tr><tr><td>mm</td><td>毫米</td></tr><tr><td>in</td><td>英寸 (1in = 96px = 2.54cm)</td></tr><tr><td>px</td><td>像素 (1px = 1/96 of 1in)</td></tr><tr><td>pt</td><td>point，大约1/72英寸； (1pt = 1/72in)</td></tr><tr><td>pc</td><td>pica，大约6pt，1/6英寸； (1pc = 12 pt)</td></tr></tbody></table><h3 id="网页渲染的流程"><a href="#网页渲染的流程" class="headerlink" title="网页渲染的流程"></a>网页渲染的流程</h3><p>参考：<a href="https://www.cnblogs.com/dojo-lzz/p/3983335.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/dojo-lzz/p/3983335.html</a></p><p>页面解析渲染该过程主要分为以下步骤：</p><ol><li>解析HTML</li><li>构建DOM树</li><li>DOM树与CSS样式进行附着构造呈现树</li><li>布局</li><li>绘制</li></ol><ul><li>浏览器怎么知道收到的包是html文件（content-type）</li><li>CSS会阻塞DOM解析么（不会阻塞DOM解析，会阻塞DOM渲染，阻塞后面的JS执行）</li><li>知道哪些content-type（<a href="https://blog.csdn.net/luyu13141314/article/details/81129069?utm_source=copy" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a>）<ul><li><strong>text/html</strong> ：HTML格式</li><li><strong>text/plain</strong> ：纯文本格式</li><li><strong>text/xml</strong> ：XML格式</li><li><strong>image/gif</strong> ：gif图片格式</li><li><strong>image/jpeg</strong> ：jpg图片格式</li><li><strong>image/png</strong> ：png图片格式</li><li><strong>application/xml</strong> ： XML数据格式</li><li><strong>application/json</strong> ： JSON数据格式</li><li><strong>application/pdf</strong> ： pdf格式</li><li><strong>application/msword</strong> ： Word文档格式</li><li><strong>application/octet-stream</strong> ： 二进制流数据（如文件下载）</li><li><strong>application/x-www-form-urlencoded</strong> ： POST 提交数据</li><li><strong>multipart/form-data</strong> ： 表单上传文件</li></ul></li><li>bfc（<a href="https://www.cnblogs.com/dojo-lzz/p/3999013.html" rel="external nofollow noopener noreferrer" target="_blank">看这里</a>）</li><li>清浮动的方法（父元素:after，结尾空div clear，父元素定义height，overflow，父元素table，结尾br clear）</li><li>水平方向有margin叠加么（没有）</li></ul><h3 id="JS继承"><a href="#JS继承" class="headerlink" title="JS继承"></a>JS继承</h3><ol><li>工厂模式</li><li>构造函数模式</li><li>原型链模式</li><li>组合使用构造器和原型链模式</li><li>原型式继承（浅拷贝）</li><li>寄生式继承（5的增强版）</li><li>寄生组合式继承</li></ol><ul><li>原型继承可以继承非原型属性么</li><li>修正constructor</li><li>apply/call方法和原型方法的区别</li></ul><h3 id="vue：v-model"><a href="#vue：v-model" class="headerlink" title="vue：v-model"></a>vue：v-model</h3><p>双向绑定</p><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>searchText<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-</code></pre><p>等价于：</p><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
+</code></pre>
+</li>
+</ol>
+<h3 id="CSS单位有哪些"><a href="#CSS单位有哪些" class="headerlink" title="CSS单位有哪些"></a>CSS单位有哪些</h3><h4 id="相对长度"><a href="#相对长度" class="headerlink" title="相对长度"></a>相对长度</h4><table>
+<thead>
+<tr>
+<th>单位</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>em</td>
+<td>它是描述相对于应用在当前元素的字体尺寸，所以它也是相对长度单位。一般浏览器字体大小默认为16px，则2em == 32px；</td>
+</tr>
+<tr>
+<td>ex</td>
+<td>依赖于英文子母小 x 的高度</td>
+</tr>
+<tr>
+<td>ch</td>
+<td>数字 0 的宽度</td>
+</tr>
+<tr>
+<td>rem</td>
+<td>根元素（html）的 font-size</td>
+</tr>
+<tr>
+<td>vw</td>
+<td>viewpoint width，视窗宽度，1vw=视窗宽度的1%</td>
+</tr>
+<tr>
+<td>vh</td>
+<td>viewpoint height，视窗高度，1vh=视窗高度的1%</td>
+</tr>
+<tr>
+<td>vmin</td>
+<td>vw和vh中较小的那个。</td>
+</tr>
+<tr>
+<td>vmax</td>
+<td>vw和vh中较大的那个。</td>
+</tr>
+<tr>
+<td>%</td>
+<td><a href="https://blog.zmj97.top/2018/09/10/HTML%E4%B8%8ECSS%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#%E7%99%BE%E5%88%86%E6%AF%94" target="_blank" rel="noopener">介绍链接</a></td>
+</tr>
+</tbody>
+</table>
+<h4 id="绝对长度"><a href="#绝对长度" class="headerlink" title="绝对长度"></a>绝对长度</h4><table>
+<thead>
+<tr>
+<th>单位</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cm</td>
+<td>厘米</td>
+</tr>
+<tr>
+<td>mm</td>
+<td>毫米</td>
+</tr>
+<tr>
+<td>in</td>
+<td>英寸 (1in = 96px = 2.54cm)</td>
+</tr>
+<tr>
+<td>px</td>
+<td>像素 (1px = 1/96 of 1in)</td>
+</tr>
+<tr>
+<td>pt</td>
+<td>point，大约1/72英寸； (1pt = 1/72in)</td>
+</tr>
+<tr>
+<td>pc</td>
+<td>pica，大约6pt，1/6英寸； (1pc = 12 pt)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="网页渲染的流程"><a href="#网页渲染的流程" class="headerlink" title="网页渲染的流程"></a>网页渲染的流程</h3><p>参考：<a href="https://www.cnblogs.com/dojo-lzz/p/3983335.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/dojo-lzz/p/3983335.html</a></p>
+<p>页面解析渲染该过程主要分为以下步骤：</p>
+<ol>
+<li>解析HTML</li>
+<li>构建DOM树</li>
+<li>DOM树与CSS样式进行附着构造呈现树</li>
+<li>布局</li>
+<li>绘制</li>
+</ol>
+<ul>
+<li>浏览器怎么知道收到的包是html文件（content-type）</li>
+<li>CSS会阻塞DOM解析么（不会阻塞DOM解析，会阻塞DOM渲染，阻塞后面的JS执行）</li>
+<li>知道哪些content-type（<a href="https://blog.csdn.net/luyu13141314/article/details/81129069?utm_source=copy" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a>）<ul>
+<li><strong>text/html</strong>  ：HTML格式</li>
+<li><strong>text/plain</strong> ：纯文本格式      </li>
+<li><strong>text/xml</strong>   ：XML格式</li>
+<li><strong>image/gif</strong>  ：gif图片格式    </li>
+<li><strong>image/jpeg</strong> ：jpg图片格式 </li>
+<li><strong>image/png</strong>  ：png图片格式</li>
+<li><strong>application/xml</strong>     ： XML数据格式</li>
+<li><strong>application/json</strong>    ： JSON数据格式</li>
+<li><strong>application/pdf</strong>     ： pdf格式  </li>
+<li><strong>application/msword</strong>  ： Word文档格式</li>
+<li><strong>application/octet-stream</strong> ： 二进制流数据（如文件下载）</li>
+<li><strong>application/x-www-form-urlencoded</strong> ： POST 提交数据</li>
+<li><strong>multipart/form-data</strong> ： 表单上传文件</li>
+</ul>
+</li>
+<li>bfc（<a href="https://www.cnblogs.com/dojo-lzz/p/3999013.html" rel="external nofollow noopener noreferrer" target="_blank">看这里</a>）</li>
+<li>清浮动的方法（父元素:after，结尾空div clear，父元素定义height，overflow，父元素table，结尾br clear）</li>
+<li>水平方向有margin叠加么（没有）</li>
+</ul>
+<h3 id="JS继承"><a href="#JS继承" class="headerlink" title="JS继承"></a>JS继承</h3><ol>
+<li>工厂模式</li>
+<li>构造函数模式</li>
+<li>原型链模式</li>
+<li>组合使用构造器和原型链模式</li>
+<li>原型式继承（浅拷贝）</li>
+<li>寄生式继承（5的增强版）</li>
+<li>寄生组合式继承</li>
+</ol>
+<ul>
+<li>原型继承可以继承非原型属性么</li>
+<li>修正constructor</li>
+<li>apply/call方法和原型方法的区别</li>
+</ul>
+<h3 id="vue：v-model"><a href="#vue：v-model" class="headerlink" title="vue：v-model"></a>vue：v-model</h3><p>双向绑定</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">v-model</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>searchText<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</code></pre>
+<p>等价于：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span>
   <span class="token attr-name"><span class="token namespace">v-bind:</span>value</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>searchText<span class="token punctuation">"</span></span>
   <span class="token attr-name"><span class="token namespace">v-on:</span>input</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>searchText <span class="token punctuation">=</span> $event.target.value<span class="token punctuation">"</span></span>
 <span class="token punctuation">></span></span>
-</code></pre><h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><p><a href="https://www.cnblogs.com/tongkey/p/7170826.html" rel="external nofollow noopener noreferrer" target="_blank">23种设计模式</a></p><h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><ul><li>用来解决哪些问题</li><li>只能用闭包实现么</li><li>写个单例模式</li></ul><h3 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h3><p>在当前作用域下，js运行之前，会把带有var和function关键字的事先<strong>声明</strong>，并在内存中安排好。然后再从上到下执行js语句。函数声明会最先得到提升，然后是变量声明。</p><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><ul><li>已知父节点获取第一个子节点（parentObj.firstChild）</li><li>查兄弟节点（previousSibing前一个，nextSibing后一个）</li><li>在某个子节点后面插入节点（insertBefore()）</li></ul><h3 id="对象的存储方式"><a href="#对象的存储方式" class="headerlink" title="对象的存储方式"></a>对象的存储方式</h3><p>实际存储在堆中，在栈中存储的是堆内存储地址。</p><p>所以可以把变量名看做指针。</p><h3 id="内存回收方式"><a href="#内存回收方式" class="headerlink" title="内存回收方式"></a>内存回收方式</h3><p>标记清除、引用计数（问题：循环引用，IE9之前BOM和DOM是COM实现的，垃圾收集采用的是引用计数，因此也会出现问题）</p><h3 id="String为什么有length属性"><a href="#String为什么有length属性" class="headerlink" title="String为什么有length属性"></a>String为什么有length属性</h3><p>基本包装类型</p><h3 id="已知一个function-ClassA-，如何使得new-ClassA-和ClassA-返回的值都是新的实例"><a href="#已知一个function-ClassA-，如何使得new-ClassA-和ClassA-返回的值都是新的实例" class="headerlink" title="已知一个function ClassA() {}，如何使得new ClassA()和ClassA()返回的值都是新的实例"></a>已知一个function ClassA() {}，如何使得new ClassA()和ClassA()返回的值都是新的实例</h3><p>函数内部判断this是否为window</p><h3 id="用数据结构表示项目之间的依赖"><a href="#用数据结构表示项目之间的依赖" class="headerlink" title="用数据结构表示项目之间的依赖"></a>用数据结构表示项目之间的依赖</h3><p>双向链表？map？不知道。。。</p><h3 id="判断一个图有没有环"><a href="#判断一个图有没有环" class="headerlink" title="判断一个图有没有环"></a>判断一个图有没有环</h3><p>无向图：不断去掉度为1的点</p><p>有向图：拓扑排序</p><h3 id="从输入url到显示完成了什么"><a href="#从输入url到显示完成了什么" class="headerlink" title="从输入url到显示完成了什么"></a>从输入url到显示完成了什么</h3><ol><li>用户输入URL地址</li><li>浏览器解析URL解析出主机名</li><li>浏览器将主机名转换成服务器ip地址（浏览器先查找本地DNS缓存列表 没有的话 再向浏览器默认的DNS服务器发送查询请求 同时缓存）</li><li>浏览器将端口号从URL中解析出来</li><li>浏览器建立一条与目标Web服务器的TCP连接（三次握手）</li><li>浏览器向服务器发送一条HTTP请求报文</li><li>服务器向浏览器返回一条HTTP响应报文</li><li>浏览器解析文档</li><li>如果文档中有资源 重复6 7 8 动作 直至资源全部加载完毕</li><li>关闭连接</li><li>渲染页面</li></ol><ul><li>浏览器会不会缓存dns<ul><li>会，不同浏览器缓存时间不一样</li></ul></li><li>https多了什么步骤<ul><li><strong>https</strong>: http + 通信加密 + 证书 + 完整性保护，http secure　</li><li><strong>证书</strong>可以证明服务器或客户端的身份</li><li><strong>ssl</strong>: secure socket layer，安全套接层</li><li>多了<strong>SSL安全套接层</strong>。HTTP直接和TCP通信。当使用SSL时，则变为先和SSL通信，再由SSL和TCP通信。所以HTTPS可以看做身披SSL协议外壳的HTTP。</li></ul></li><li>假如客户端最大下行10m，服务端最大上行100m，服务端会直接以10m的速率发包么（加增乘减，AIMD）</li><li>浏览器解析数据是全部收到才解析还是边收边解析</li><li>如果加载<code>&lt;link&gt;</code>需要十秒，分别在head和body那么加载时用户会看到什么</li><li>script，同上，还有外联/内联</li></ul><h3 id="实现parse函数解析-b-1-amp-c-2这样的字段"><a href="#实现parse函数解析-b-1-amp-c-2这样的字段" class="headerlink" title="实现parse函数解析?b=1&amp;c=2这样的字段"></a>实现parse函数解析?b=1&amp;c=2这样的字段</h3><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">myParse</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<h3 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h3><p><a href="https://www.cnblogs.com/tongkey/p/7170826.html" rel="external nofollow noopener noreferrer" target="_blank">23种设计模式</a></p>
+<h3 id="单例模式"><a href="#单例模式" class="headerlink" title="单例模式"></a>单例模式</h3><ul>
+<li>用来解决哪些问题</li>
+<li>只能用闭包实现么</li>
+<li>写个单例模式</li>
+</ul>
+<h3 id="预解析"><a href="#预解析" class="headerlink" title="预解析"></a>预解析</h3><p>在当前作用域下，js运行之前，会把带有var和function关键字的事先<strong>声明</strong>，并在内存中安排好。然后再从上到下执行js语句。函数声明会最先得到提升，然后是变量声明。</p>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><ul>
+<li>已知父节点获取第一个子节点（parentObj.firstChild）</li>
+<li>查兄弟节点（previousSibing前一个，nextSibing后一个）</li>
+<li>在某个子节点后面插入节点（insertBefore()）</li>
+</ul>
+<h3 id="对象的存储方式"><a href="#对象的存储方式" class="headerlink" title="对象的存储方式"></a>对象的存储方式</h3><p>实际存储在堆中，在栈中存储的是堆内存储地址。</p>
+<p>所以可以把变量名看做指针。</p>
+<h3 id="内存回收方式"><a href="#内存回收方式" class="headerlink" title="内存回收方式"></a>内存回收方式</h3><p>标记清除、引用计数（问题：循环引用，IE9之前BOM和DOM是COM实现的，垃圾收集采用的是引用计数，因此也会出现问题）</p>
+<h3 id="String为什么有length属性"><a href="#String为什么有length属性" class="headerlink" title="String为什么有length属性"></a>String为什么有length属性</h3><p>基本包装类型</p>
+<h3 id="已知一个function-ClassA-，如何使得new-ClassA-和ClassA-返回的值都是新的实例"><a href="#已知一个function-ClassA-，如何使得new-ClassA-和ClassA-返回的值都是新的实例" class="headerlink" title="已知一个function ClassA() {}，如何使得new ClassA()和ClassA()返回的值都是新的实例"></a>已知一个function ClassA() {}，如何使得new ClassA()和ClassA()返回的值都是新的实例</h3><p>函数内部判断this是否为window</p>
+<h3 id="用数据结构表示项目之间的依赖"><a href="#用数据结构表示项目之间的依赖" class="headerlink" title="用数据结构表示项目之间的依赖"></a>用数据结构表示项目之间的依赖</h3><p>双向链表？map？不知道。。。</p>
+<h3 id="判断一个图有没有环"><a href="#判断一个图有没有环" class="headerlink" title="判断一个图有没有环"></a>判断一个图有没有环</h3><p>无向图：不断去掉度为1的点</p>
+<p>有向图：拓扑排序</p>
+<h3 id="从输入url到显示完成了什么"><a href="#从输入url到显示完成了什么" class="headerlink" title="从输入url到显示完成了什么"></a>从输入url到显示完成了什么</h3><ol>
+<li>用户输入URL地址</li>
+<li>浏览器解析URL解析出主机名</li>
+<li>浏览器将主机名转换成服务器ip地址（浏览器先查找本地DNS缓存列表 没有的话 再向浏览器默认的DNS服务器发送查询请求 同时缓存）</li>
+<li>浏览器将端口号从URL中解析出来</li>
+<li>浏览器建立一条与目标Web服务器的TCP连接（三次握手）</li>
+<li>浏览器向服务器发送一条HTTP请求报文</li>
+<li>服务器向浏览器返回一条HTTP响应报文</li>
+<li>浏览器解析文档</li>
+<li>如果文档中有资源 重复6 7 8 动作 直至资源全部加载完毕</li>
+<li>关闭连接</li>
+<li>渲染页面</li>
+</ol>
+<ul>
+<li>浏览器会不会缓存dns<ul>
+<li>会，不同浏览器缓存时间不一样</li>
+</ul>
+</li>
+<li>https多了什么步骤<ul>
+<li><strong>https</strong>: http + 通信加密 + 证书 + 完整性保护，http secure　</li>
+<li><strong>证书</strong>可以证明服务器或客户端的身份</li>
+<li><strong>ssl</strong>: secure socket layer，安全套接层</li>
+<li>多了<strong>SSL安全套接层</strong>。HTTP直接和TCP通信。当使用SSL时，则变为先和SSL通信，再由SSL和TCP通信。所以HTTPS可以看做身披SSL协议外壳的HTTP。</li>
+</ul>
+</li>
+<li>假如客户端最大下行10m，服务端最大上行100m，服务端会直接以10m的速率发包么（加增乘减，AIMD）</li>
+<li>浏览器解析数据是全部收到才解析还是边收边解析</li>
+<li>如果加载<code>&lt;link&gt;</code>需要十秒，分别在head和body那么加载时用户会看到什么</li>
+<li>script，同上，还有外联/内联</li>
+</ul>
+<h3 id="实现parse函数解析-b-1-amp-c-2这样的字段"><a href="#实现parse函数解析-b-1-amp-c-2这样的字段" class="headerlink" title="实现parse函数解析?b=1&amp;c=2这样的字段"></a>实现parse函数解析?b=1&amp;c=2这样的字段</h3><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">myParse</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   arg <span class="token operator">=</span> arg<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'&amp;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> arg<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -65,4 +383,190 @@ Object<span class="token punctuation">.</span>prototype<span class="token punctu
   <span class="token punctuation">}</span>
   <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><h3 id="箭头函数的区别，能当做构造函数么"><a href="#箭头函数的区别，能当做构造函数么" class="headerlink" title="箭头函数的区别，能当做构造函数么"></a>箭头函数的区别，能当做构造函数么</h3><h3 id="ES6如何获取函数参数"><a href="#ES6如何获取函数参数" class="headerlink" title="ES6如何获取函数参数"></a>ES6如何获取函数参数</h3><h3 id="setTimeout准时么"><a href="#setTimeout准时么" class="headerlink" title="setTimeout准时么"></a>setTimeout准时么</h3><h3 id="ES6手写观察者模式"><a href="#ES6手写观察者模式" class="headerlink" title="ES6手写观察者模式"></a>ES6手写观察者模式</h3><h3 id="产生0-100的随机数"><a href="#产生0-100的随机数" class="headerlink" title="产生0-100的随机数"></a>产生0-100的随机数</h3><h3 id="http报文结构，header有哪些字段"><a href="#http报文结构，header有哪些字段" class="headerlink" title="http报文结构，header有哪些字段"></a>http报文结构，header有哪些字段</h3><h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><h3 id="手写所有排序算法和DFS、BFS"><a href="#手写所有排序算法和DFS、BFS" class="headerlink" title="手写所有排序算法和DFS、BFS"></a>手写所有排序算法和DFS、BFS</h3><p>快排、堆排、基数排序</p><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>标准盒模型和IE盒模型</p><h3 id="session和cookie区别"><a href="#session和cookie区别" class="headerlink" title="session和cookie区别"></a>session和cookie区别</h3><h3 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h3><p>浏览器根据元素的标签和属性，来决定元素的具体显示内容</p><p>img、input、textarea、select、obejct、button、label都是替换元素（置换元素）</p><h3 id="面向对象的特性"><a href="#面向对象的特性" class="headerlink" title="面向对象的特性"></a>面向对象的特性</h3><h3 id="C-怎么实现多态的"><a href="#C-怎么实现多态的" class="headerlink" title="C++怎么实现多态的"></a>C++怎么实现多态的</h3><h3 id="同步异步区别"><a href="#同步异步区别" class="headerlink" title="同步异步区别"></a>同步异步区别</h3><h3 id="js异步加载方法"><a href="#js异步加载方法" class="headerlink" title="js异步加载方法"></a>js异步加载方法</h3><h3 id="串行和并行"><a href="#串行和并行" class="headerlink" title="串行和并行"></a>串行和并行</h3><h3 id="数据库index及实现"><a href="#数据库index及实现" class="headerlink" title="数据库index及实现"></a>数据库index及实现</h3><h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><h3 id="进程间通信方法"><a href="#进程间通信方法" class="headerlink" title="进程间通信方法"></a>进程间通信方法</h3><h3 id="进程或线程的同步方法"><a href="#进程或线程的同步方法" class="headerlink" title="进程或线程的同步方法"></a>进程或线程的同步方法</h3><h3 id="虚拟DOM的作用"><a href="#虚拟DOM的作用" class="headerlink" title="虚拟DOM的作用"></a>虚拟DOM的作用</h3><h3 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h3><h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="圣杯布局、双飞翼布局"><a href="#圣杯布局、双飞翼布局" class="headerlink" title="圣杯布局、双飞翼布局"></a>圣杯布局、双飞翼布局</h3><h3 id="动画实现div无限旋转"><a href="#动画实现div无限旋转" class="headerlink" title="动画实现div无限旋转"></a>动画实现div无限旋转</h3><h3 id="前端性能优化"><a href="#前端性能优化" class="headerlink" title="前端性能优化"></a>前端性能优化</h3><h3 id="304实现原理"><a href="#304实现原理" class="headerlink" title="304实现原理"></a>304实现原理</h3><h3 id="webSocket是哪一层的"><a href="#webSocket是哪一层的" class="headerlink" title="webSocket是哪一层的"></a>webSocket是哪一层的</h3><p>应用层</p><h3 id="实现add-1-2-3-6"><a href="#实现add-1-2-3-6" class="headerlink" title="实现add(1)(2)(3) == 6"></a>实现add(1)(2)(3) == 6</h3><h3 id="js是单线程的，如何实现定时"><a href="#js是单线程的，如何实现定时" class="headerlink" title="js是单线程的，如何实现定时"></a>js是单线程的，如何实现定时</h3><h3 id="ES6代理"><a href="#ES6代理" class="headerlink" title="ES6代理"></a>ES6代理</h3><h3 id="计算一个数转换成二进制后1的个数"><a href="#计算一个数转换成二进制后1的个数" class="headerlink" title="计算一个数转换成二进制后1的个数"></a>计算一个数转换成二进制后1的个数</h3><h3 id="HTTP长连接"><a href="#HTTP长连接" class="headerlink" title="HTTP长连接"></a>HTTP长连接</h3><h3 id="状态码5xx"><a href="#状态码5xx" class="headerlink" title="状态码5xx"></a>状态码5xx</h3><h3 id="https默认端口"><a href="#https默认端口" class="headerlink" title="https默认端口"></a>https默认端口</h3><h3 id="tcp连接过程中的状态考察"><a href="#tcp连接过程中的状态考察" class="headerlink" title="tcp连接过程中的状态考察"></a>tcp连接过程中的状态考察</h3><h3 id="三次握手四次挥手详细"><a href="#三次握手四次挥手详细" class="headerlink" title="三次握手四次挥手详细"></a>三次握手四次挥手详细</h3><h3 id="http2-0"><a href="#http2-0" class="headerlink" title="http2.0"></a>http2.0</h3><h3 id="多路复用和1-x请求的区别"><a href="#多路复用和1-x请求的区别" class="headerlink" title="多路复用和1.x请求的区别"></a>多路复用和1.x请求的区别</h3><h3 id="unsigned-int类型扩展长度"><a href="#unsigned-int类型扩展长度" class="headerlink" title="unsigned int类型扩展长度"></a>unsigned int类型扩展长度</h3><h3 id="一个长度为一百万的数组中，超过一半都是某一个值，求这个值"><a href="#一个长度为一百万的数组中，超过一半都是某一个值，求这个值" class="headerlink" title="一个长度为一百万的数组中，超过一半都是某一个值，求这个值"></a>一个长度为一百万的数组中，超过一半都是某一个值，求这个值</h3><p><a href="https://www.cnblogs.com/yanliang12138/p/4763743.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/yanliang12138/p/4763743.html</a></p><h3 id="渐进增强和优雅降级"><a href="#渐进增强和优雅降级" class="headerlink" title="渐进增强和优雅降级"></a>渐进增强和优雅降级</h3><h3 id="前端缓存机制"><a href="#前端缓存机制" class="headerlink" title="前端缓存机制"></a>前端缓存机制</h3><h3 id="没有辅助空间的情况下交换两个数的值"><a href="#没有辅助空间的情况下交换两个数的值" class="headerlink" title="没有辅助空间的情况下交换两个数的值"></a>没有辅助空间的情况下交换两个数的值</h3><h3 id="前端安全"><a href="#前端安全" class="headerlink" title="前端安全"></a>前端安全</h3><h3 id="let暂时性死区和块级作用域"><a href="#let暂时性死区和块级作用域" class="headerlink" title="let暂时性死区和块级作用域"></a>let暂时性死区和块级作用域</h3><h3 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h3><h3 id="for-in-缺点"><a href="#for-in-缺点" class="headerlink" title="for in 缺点"></a>for in 缺点</h3><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><h3 id="ES6中map遍历实现原理"><a href="#ES6中map遍历实现原理" class="headerlink" title="ES6中map遍历实现原理"></a>ES6中map遍历实现原理</h3><h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><h3 id="https详细过程"><a href="#https详细过程" class="headerlink" title="https详细过程"></a>https详细过程</h3><p>加密算法，对称还是非对称。md5,SHA,AES</p><h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>webpack、AMD、CMD</p><h3 id="数组的各种方法"><a href="#数组的各种方法" class="headerlink" title="数组的各种方法"></a>数组的各种方法</h3><h3 id="内存换页算法"><a href="#内存换页算法" class="headerlink" title="内存换页算法"></a>内存换页算法</h3><h3 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h3><h3 id="ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理"><a href="#ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理" class="headerlink" title="ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理"></a>ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理</h3><h3 id="手写封装jsonp"><a href="#手写封装jsonp" class="headerlink" title="手写封装jsonp"></a>手写封装jsonp</h3><h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><h3 id="TCP和UDP"><a href="#TCP和UDP" class="headerlink" title="TCP和UDP"></a>TCP和UDP</h3><h3 id="soket阻塞模式"><a href="#soket阻塞模式" class="headerlink" title="soket阻塞模式"></a>soket阻塞模式</h3><h3 id="doctype"><a href="#doctype" class="headerlink" title="doctype"></a>doctype</h3><h3 id="AJAX实现原理，手写实现"><a href="#AJAX实现原理，手写实现" class="headerlink" title="AJAX实现原理，手写实现"></a>AJAX实现原理，手写实现</h3></div><footer class="article-footer"><a data-url="https://zmj97.coding.me/继续磕面经.html" data-id="cjn30m1y30053fmagv1eafa7v" class="article-share-link">Share</a><ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul></footer></div><nav id="article-nav"><a href="/操作系统面试相关总结.html" id="article-nav-newer" class="article-nav-link-wrap"><strong class="article-nav-caption">Newer</strong><div class="article-nav-title">操作系统面试相关总结</div></a><a href="/cookie、sessionStorage和localStorage.html" id="article-nav-older" class="article-nav-link-wrap"><strong class="article-nav-caption">Older</strong><div class="article-nav-title">cookie、sessionStorage和localStorage</div></a></nav></article><div id="vcomments"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz",appKey:"tIDpxK3F6tVo5V3nAOr3AJ3r",notify:!0,verify:!0,visitor:!0,avatar:"monsterid",placeholder:"快来评论鸭～"})</script></section></div><footer id="footer"><aside id="sidebar" class="outer"><div class="widget-wrap"><h3 class="widget-title">分类</h3><div class="widget"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签</h3><div class="widget"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a href="/tags/BN/" style="font-size:10px">BN</a> <a href="/tags/CSS/" style="font-size:12.86px">CSS</a> <a href="/tags/Chrome/" style="font-size:11.43px">Chrome</a> <a href="/tags/ES6/" style="font-size:11.43px">ES6</a> <a href="/tags/Flask/" style="font-size:10px">Flask</a> <a href="/tags/Flux/" style="font-size:10px">Flux</a> <a href="/tags/HTML/" style="font-size:15.71px">HTML</a> <a href="/tags/HTTP/" style="font-size:11.43px">HTTP</a> <a href="/tags/JavaScript/" style="font-size:20px">JavaScript</a> <a href="/tags/MNIST/" style="font-size:10px">MNIST</a> <a href="/tags/Markdown/" style="font-size:10px">Markdown</a> <a href="/tags/OAuth/" style="font-size:10px">OAuth</a> <a href="/tags/PAT/" style="font-size:10px">PAT</a> <a href="/tags/Python/" style="font-size:10px">Python</a> <a href="/tags/SCRUM/" style="font-size:10px">SCRUM</a> <a href="/tags/SQL/" style="font-size:10px">SQL</a> <a href="/tags/TensorBoard/" style="font-size:10px">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size:14.29px">TensorFlow</a> <a href="/tags/Tmux/" style="font-size:10px">Tmux</a> <a href="/tags/Typora/" style="font-size:10px">Typora</a> <a href="/tags/UMLet/" style="font-size:15.71px">UMLet</a> <a href="/tags/Ubuntu/" style="font-size:10px">Ubuntu</a> <a href="/tags/VUE/" style="font-size:10px">VUE</a> <a href="/tags/Valine/" style="font-size:10px">Valine</a> <a href="/tags/Vue/" style="font-size:11.43px">Vue</a> <a href="/tags/Vuex/" style="font-size:10px">Vuex</a> <a href="/tags/ajax/" style="font-size:10px">ajax</a> <a href="/tags/cookie/" style="font-size:10px">cookie</a> <a href="/tags/form/" style="font-size:10px">form</a> <a href="/tags/git/" style="font-size:10px">git</a> <a href="/tags/github-pages/" style="font-size:10px">github pages</a> <a href="/tags/gitment/" style="font-size:12.86px">gitment</a> <a href="/tags/hexo/" style="font-size:17.14px">hexo</a> <a href="/tags/iNode/" style="font-size:11.43px">iNode</a> <a href="/tags/markdown/" style="font-size:10px">markdown</a> <a href="/tags/mongoDB/" style="font-size:10px">mongoDB</a> <a href="/tags/numpy/" style="font-size:10px">numpy</a> <a href="/tags/prototype/" style="font-size:10px">prototype</a> <a href="/tags/ubuntu/" style="font-size:18.57px">ubuntu</a> <a href="/tags/webstorage/" style="font-size:10px">webstorage</a> <a href="/tags/youtube/" style="font-size:10px">youtube</a> <a href="/tags/三层架构/" style="font-size:10px">三层架构</a> <a href="/tags/内存/" style="font-size:10px">内存</a> <a href="/tags/刷题/" style="font-size:10px">刷题</a> <a href="/tags/双向链表/" style="font-size:10px">双向链表</a> <a href="/tags/同步/" style="font-size:10px">同步</a> <a href="/tags/图片显示/" style="font-size:10px">图片显示</a> <a href="/tags/建模/" style="font-size:11.43px">建模</a> <a href="/tags/异步/" style="font-size:10px">异步</a> <a href="/tags/归并/" style="font-size:10px">归并</a> <a href="/tags/快捷方式/" style="font-size:10px">快捷方式</a> <a href="/tags/指针/" style="font-size:10px">指针</a> <a href="/tags/操作系统/" style="font-size:10px">操作系统</a> <a href="/tags/数据库/" style="font-size:11.43px">数据库</a> <a href="/tags/数据库建模/" style="font-size:10px">数据库建模</a> <a href="/tags/爬虫/" style="font-size:10px">爬虫</a> <a href="/tags/用例图/" style="font-size:14.29px">用例图</a> <a href="/tags/网站收录/" style="font-size:10px">网站收录</a> <a href="/tags/设计模式/" style="font-size:10px">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size:10px">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size:10px">阿里云</a></div></div><div class="widget-wrap"><h3 class="widget-title">归档</h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">最新文章</h3><div class="widget"><ul><li><a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a></li><li><a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a></li><li><a href="/同步与异步.html">同步与异步</a></li><li><a href="/Promise与async-await.html">Promise与async/await</a></li><li><a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a></li></ul></div></div></aside><div class="outer"><div id="footer-info" class="inner">&copy; 2018 Mengjie Zhang<br>Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a></div></div></footer></div><nav id="mobile-nav"><a href="/" class="mobile-nav-link">主页</a> <a href="/archives" class="mobile-nav-link">归档</a> <a href="/tags" class="mobile-nav-link">标签</a> <a href="/categories" class="mobile-nav-link">分类</a></nav><script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script src="/js/script.js"></script><div id="totop" style="position:fixed;bottom:100px;right:50px;cursor:pointer;z-index:99999"><a title="返回顶部"><img src="/img/scrollup.png"></a></div><script src="/js/totop.js"></script></div></body>
+</code></pre>
+<h3 id="箭头函数的区别，能当做构造函数么"><a href="#箭头函数的区别，能当做构造函数么" class="headerlink" title="箭头函数的区别，能当做构造函数么"></a>箭头函数的区别，能当做构造函数么</h3><h3 id="ES6如何获取函数参数"><a href="#ES6如何获取函数参数" class="headerlink" title="ES6如何获取函数参数"></a>ES6如何获取函数参数</h3><h3 id="setTimeout准时么"><a href="#setTimeout准时么" class="headerlink" title="setTimeout准时么"></a>setTimeout准时么</h3><h3 id="ES6手写观察者模式"><a href="#ES6手写观察者模式" class="headerlink" title="ES6手写观察者模式"></a>ES6手写观察者模式</h3><h3 id="产生0-100的随机数"><a href="#产生0-100的随机数" class="headerlink" title="产生0-100的随机数"></a>产生0-100的随机数</h3><h3 id="http报文结构，header有哪些字段"><a href="#http报文结构，header有哪些字段" class="headerlink" title="http报文结构，header有哪些字段"></a>http报文结构，header有哪些字段</h3><h3 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h3><h3 id="手写所有排序算法和DFS、BFS"><a href="#手写所有排序算法和DFS、BFS" class="headerlink" title="手写所有排序算法和DFS、BFS"></a>手写所有排序算法和DFS、BFS</h3><p>快排、堆排、基数排序</p>
+<h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>标准盒模型和IE盒模型</p>
+<h3 id="session和cookie区别"><a href="#session和cookie区别" class="headerlink" title="session和cookie区别"></a>session和cookie区别</h3><h3 id="替换元素"><a href="#替换元素" class="headerlink" title="替换元素"></a>替换元素</h3><p>浏览器根据元素的标签和属性，来决定元素的具体显示内容</p>
+<p>img、input、textarea、select、obejct、button、label都是替换元素（置换元素）</p>
+<h3 id="面向对象的特性"><a href="#面向对象的特性" class="headerlink" title="面向对象的特性"></a>面向对象的特性</h3><h3 id="C-怎么实现多态的"><a href="#C-怎么实现多态的" class="headerlink" title="C++怎么实现多态的"></a>C++怎么实现多态的</h3><h3 id="同步异步区别"><a href="#同步异步区别" class="headerlink" title="同步异步区别"></a>同步异步区别</h3><h3 id="js异步加载方法"><a href="#js异步加载方法" class="headerlink" title="js异步加载方法"></a>js异步加载方法</h3><h3 id="串行和并行"><a href="#串行和并行" class="headerlink" title="串行和并行"></a>串行和并行</h3><h3 id="数据库index及实现"><a href="#数据库index及实现" class="headerlink" title="数据库index及实现"></a>数据库index及实现</h3><h3 id="进程和线程"><a href="#进程和线程" class="headerlink" title="进程和线程"></a>进程和线程</h3><h3 id="进程间通信方法"><a href="#进程间通信方法" class="headerlink" title="进程间通信方法"></a>进程间通信方法</h3><h3 id="进程或线程的同步方法"><a href="#进程或线程的同步方法" class="headerlink" title="进程或线程的同步方法"></a>进程或线程的同步方法</h3><h3 id="虚拟DOM的作用"><a href="#虚拟DOM的作用" class="headerlink" title="虚拟DOM的作用"></a>虚拟DOM的作用</h3><h3 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h3><h3 id="position"><a href="#position" class="headerlink" title="position"></a>position</h3><h3 id="浮动"><a href="#浮动" class="headerlink" title="浮动"></a>浮动</h3><h3 id="圣杯布局、双飞翼布局"><a href="#圣杯布局、双飞翼布局" class="headerlink" title="圣杯布局、双飞翼布局"></a>圣杯布局、双飞翼布局</h3><h3 id="动画实现div无限旋转"><a href="#动画实现div无限旋转" class="headerlink" title="动画实现div无限旋转"></a>动画实现div无限旋转</h3><h3 id="前端性能优化"><a href="#前端性能优化" class="headerlink" title="前端性能优化"></a>前端性能优化</h3><h3 id="304实现原理"><a href="#304实现原理" class="headerlink" title="304实现原理"></a>304实现原理</h3><h3 id="webSocket是哪一层的"><a href="#webSocket是哪一层的" class="headerlink" title="webSocket是哪一层的"></a>webSocket是哪一层的</h3><p>应用层</p>
+<h3 id="实现add-1-2-3-6"><a href="#实现add-1-2-3-6" class="headerlink" title="实现add(1)(2)(3) == 6"></a>实现add(1)(2)(3) == 6</h3><h3 id="js是单线程的，如何实现定时"><a href="#js是单线程的，如何实现定时" class="headerlink" title="js是单线程的，如何实现定时"></a>js是单线程的，如何实现定时</h3><h3 id="ES6代理"><a href="#ES6代理" class="headerlink" title="ES6代理"></a>ES6代理</h3><h3 id="计算一个数转换成二进制后1的个数"><a href="#计算一个数转换成二进制后1的个数" class="headerlink" title="计算一个数转换成二进制后1的个数"></a>计算一个数转换成二进制后1的个数</h3><h3 id="HTTP长连接"><a href="#HTTP长连接" class="headerlink" title="HTTP长连接"></a>HTTP长连接</h3><h3 id="状态码5xx"><a href="#状态码5xx" class="headerlink" title="状态码5xx"></a>状态码5xx</h3><h3 id="https默认端口"><a href="#https默认端口" class="headerlink" title="https默认端口"></a>https默认端口</h3><h3 id="tcp连接过程中的状态考察"><a href="#tcp连接过程中的状态考察" class="headerlink" title="tcp连接过程中的状态考察"></a>tcp连接过程中的状态考察</h3><h3 id="三次握手四次挥手详细"><a href="#三次握手四次挥手详细" class="headerlink" title="三次握手四次挥手详细"></a>三次握手四次挥手详细</h3><h3 id="http2-0"><a href="#http2-0" class="headerlink" title="http2.0"></a>http2.0</h3><h3 id="多路复用和1-x请求的区别"><a href="#多路复用和1-x请求的区别" class="headerlink" title="多路复用和1.x请求的区别"></a>多路复用和1.x请求的区别</h3><h3 id="unsigned-int类型扩展长度"><a href="#unsigned-int类型扩展长度" class="headerlink" title="unsigned int类型扩展长度"></a>unsigned int类型扩展长度</h3><h3 id="一个长度为一百万的数组中，超过一半都是某一个值，求这个值"><a href="#一个长度为一百万的数组中，超过一半都是某一个值，求这个值" class="headerlink" title="一个长度为一百万的数组中，超过一半都是某一个值，求这个值"></a>一个长度为一百万的数组中，超过一半都是某一个值，求这个值</h3><p><a href="https://www.cnblogs.com/yanliang12138/p/4763743.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/yanliang12138/p/4763743.html</a></p>
+<h3 id="渐进增强和优雅降级"><a href="#渐进增强和优雅降级" class="headerlink" title="渐进增强和优雅降级"></a>渐进增强和优雅降级</h3><h3 id="前端缓存机制"><a href="#前端缓存机制" class="headerlink" title="前端缓存机制"></a>前端缓存机制</h3><h3 id="没有辅助空间的情况下交换两个数的值"><a href="#没有辅助空间的情况下交换两个数的值" class="headerlink" title="没有辅助空间的情况下交换两个数的值"></a>没有辅助空间的情况下交换两个数的值</h3><h3 id="前端安全"><a href="#前端安全" class="headerlink" title="前端安全"></a>前端安全</h3><h3 id="let暂时性死区和块级作用域"><a href="#let暂时性死区和块级作用域" class="headerlink" title="let暂时性死区和块级作用域"></a>let暂时性死区和块级作用域</h3><h3 id="类数组"><a href="#类数组" class="headerlink" title="类数组"></a>类数组</h3><h3 id="for-in-缺点"><a href="#for-in-缺点" class="headerlink" title="for in 缺点"></a>for in 缺点</h3><h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><h3 id="ES6中map遍历实现原理"><a href="#ES6中map遍历实现原理" class="headerlink" title="ES6中map遍历实现原理"></a>ES6中map遍历实现原理</h3><h3 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h3><h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><h3 id="https详细过程"><a href="#https详细过程" class="headerlink" title="https详细过程"></a>https详细过程</h3><p>加密算法，对称还是非对称。md5,SHA,AES</p>
+<h3 id="模块化"><a href="#模块化" class="headerlink" title="模块化"></a>模块化</h3><p>webpack、AMD、CMD</p>
+<h3 id="数组的各种方法"><a href="#数组的各种方法" class="headerlink" title="数组的各种方法"></a>数组的各种方法</h3><h3 id="内存换页算法"><a href="#内存换页算法" class="headerlink" title="内存换页算法"></a>内存换页算法</h3><h3 id="事件循环"><a href="#事件循环" class="headerlink" title="事件循环"></a>事件循环</h3><h3 id="ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理"><a href="#ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理" class="headerlink" title="ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理"></a>ajax调用中，后台数据返回线程和前端UI线程是怎样通信和交互的，说一下实现原理</h3><h3 id="手写封装jsonp"><a href="#手写封装jsonp" class="headerlink" title="手写封装jsonp"></a>手写封装jsonp</h3><h3 id="事件委托"><a href="#事件委托" class="headerlink" title="事件委托"></a>事件委托</h3><h3 id="TCP和UDP"><a href="#TCP和UDP" class="headerlink" title="TCP和UDP"></a>TCP和UDP</h3><h3 id="soket阻塞模式"><a href="#soket阻塞模式" class="headerlink" title="soket阻塞模式"></a>soket阻塞模式</h3><h3 id="doctype"><a href="#doctype" class="headerlink" title="doctype"></a>doctype</h3><h3 id="AJAX实现原理，手写实现"><a href="#AJAX实现原理，手写实现" class="headerlink" title="AJAX实现原理，手写实现"></a>AJAX实现原理，手写实现</h3>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/继续磕面经.html" data-id="cjn31e95u0053gsag8v201ayb" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ES6/">ES6</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/操作系统面试相关总结.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          操作系统面试相关总结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/cookie、sessionStorage和localStorage.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">cookie、sessionStorage和localStorage</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 12.86px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a>
+          </li>
+        
+          <li>
+            <a href="/同步与异步.html">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/Promise与async-await.html">Promise与async/await</a>
+          </li>
+        
+          <li>
+            <a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>

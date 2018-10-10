@@ -1,4 +1,109 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>猫眼电影加密数字破解（爬取评分票房票价） | zmj&#39;s blog</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="背景在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于\uf5fb的码，需要解密。而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。"><meta name="keywords" content="爬虫,Python"><meta property="og:type" content="article"><meta property="og:title" content="猫眼电影加密数字破解（爬取评分票房票价）"><meta property="og:url" content="https://zmj97.coding.me/猫眼电影加密数字破解（爬取评分票房票价）.html"><meta property="og:site_name" content="zmj&#39;s blog"><meta property="og:description" content="背景在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于\uf5fb的码，需要解密。而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://zmj97.coding.me/images/woff_decode.PNG"><meta property="og:updated_time" content="2018-10-10T08:45:54.557Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="猫眼电影加密数字破解（爬取评分票房票价）"><meta name="twitter:description" content="背景在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于\uf5fb的码，需要解密。而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。"><meta name="twitter:image" content="https://zmj97.coding.me/images/woff_decode.PNG"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head></html><body><div id="container"><div id="wrap"><header id="header"><div id="banner"></div><div id="header-outer" class="outer"><div id="header-title" class="inner"><h1 id="logo-wrap"><a href="/" id="logo">zmj&#39;s blog</a></h1></div><div id="header-inner" class="inner"><nav id="main-nav"><a id="main-nav-toggle" class="nav-icon"></a> <a class="main-nav-link" href="/">主页</a> <a class="main-nav-link" href="/archives">归档</a> <a class="main-nav-link" href="/tags">标签</a> <a class="main-nav-link" href="/categories">分类</a></nav><nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="搜索"></a></nav><div id="search-form-wrap"><form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form></div></div></div></header><div class="outer"><section id="main"><article id="post-猫眼电影加密数字破解（爬取评分票房票价）" class="article article-type-post" itemscope="" itemprop="blogPost"><div class="article-meta"><a href="/猫眼电影加密数字破解（爬取评分票房票价）.html" class="article-date"><time datetime="2018-07-01T14:05:27.000Z" itemprop="datePublished">2018-07-01</time></a><div class="article-category"><a class="article-category-link" href="/categories/methods/">methods</a></div></div><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">猫眼电影加密数字破解（爬取评分票房票价）</h1></header><div class="article-entry" itemprop="articleBody"><div id="toc" class="toc-article"><strong class="toc-title">文章目录</strong><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解密办法"><span class="toc-number">2.</span> <span class="toc-text">解密办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解密思路"><span class="toc-number">3.</span> <span class="toc-text">解密思路</span></a></li></ol></div><h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于<code>\uf5fb</code>的码，需要解密。</p><p>而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。</p><a id="more"></a><h2 id="解密办法"><a href="#解密办法" class="headerlink" title="解密办法"></a>解密办法</h2><p>下载动态字体文件，解析映射关系。</p><h2 id="解密思路"><a href="#解密思路" class="headerlink" title="解密思路"></a>解密思路</h2><p>首先找到动态字体文件的地址（head标签内的style标签内）：</p><pre class="language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>猫眼电影加密数字破解（爬取评分票房票价） | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="背景在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于\uf5fb的码，需要解密。 而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。">
+<meta name="keywords" content="爬虫,Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="猫眼电影加密数字破解（爬取评分票房票价）">
+<meta property="og:url" content="https://zmj97.coding.me/猫眼电影加密数字破解（爬取评分票房票价）.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="背景在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于\uf5fb的码，需要解密。 而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zmj97.coding.me/images/woff_decode.PNG">
+<meta property="og:updated_time" content="2018-10-10T08:45:54.557Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="猫眼电影加密数字破解（爬取评分票房票价）">
+<meta name="twitter:description" content="背景在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于\uf5fb的码，需要解密。 而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。">
+<meta name="twitter:image" content="https://zmj97.coding.me/images/woff_decode.PNG">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-猫眼电影加密数字破解（爬取评分票房票价）" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/猫眼电影加密数字破解（爬取评分票房票价）.html" class="article-date">
+  <time datetime="2018-07-01T14:05:27.000Z" itemprop="datePublished">2018-07-01</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/methods/">methods</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      猫眼电影加密数字破解（爬取评分票房票价）
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#背景"><span class="toc-number">1.</span> <span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解密办法"><span class="toc-number">2.</span> <span class="toc-text">解密办法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#解密思路"><span class="toc-number">3.</span> <span class="toc-text">解密思路</span></a></li></ol> 
+          </div> 
+        
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在爬取猫眼电影相关数据时发现爬取下来的评分、票房、票价不是具体的数字而是一串类似于<code>\uf5fb</code>的码，需要解密。</p>
+<p>而这些密码是每次访问时随机生成的，和0-9的映射关系也是随机的。</p>
+<a id="more"></a>
+<h2 id="解密办法"><a href="#解密办法" class="headerlink" title="解密办法"></a>解密办法</h2><p>下载动态字体文件，解析映射关系。</p>
+<h2 id="解密思路"><a href="#解密思路" class="headerlink" title="解密思路"></a>解密思路</h2><p>首先找到动态字体文件的地址（head标签内的style标签内）：</p>
+<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>style</span><span class="token punctuation">></span></span><span class="token style language-css">
     <span class="token atrule"><span class="token rule">@font-face</span></span> <span class="token punctuation">{</span>
       <span class="token property">font-family</span><span class="token punctuation">:</span> stonefont<span class="token punctuation">;</span>
       <span class="token property">src</span><span class="token punctuation">:</span> <span class="token url">url('//vfile.meituan.net/colorstone/e954129d5204b4e8c783c95f7da4c2733168.eot')</span><span class="token punctuation">;</span>
@@ -10,7 +115,10 @@
       <span class="token property">font-family</span><span class="token punctuation">:</span> stonefont<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
   </span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>style</span><span class="token punctuation">></span></span>
-</code></pre><p>其中的.woff文件是我们需要的。</p><p>爬取代码如下（利用<strong>scrapy</strong>）：</p><pre class="language-python"><code class="language-python"><span class="token comment" spellcheck="true">#下载字体文件</span>
+</code></pre>
+<p>其中的.woff文件是我们需要的。</p>
+<p>爬取代码如下（利用<strong>scrapy</strong>）：</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#下载字体文件</span>
 font_url <span class="token operator">=</span> sel<span class="token punctuation">.</span>xpath<span class="token punctuation">(</span><span class="token string">'/html/head/style/text()'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>extract<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 font_url <span class="token operator">=</span> <span class="token string">'http:'</span><span class="token operator">+</span>font_url<span class="token punctuation">[</span>font_url<span class="token punctuation">.</span>rfind<span class="token punctuation">(</span><span class="token string">'url'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">5</span><span class="token punctuation">:</span>font_url<span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">'woff'</span><span class="token punctuation">)</span><span class="token operator">+</span><span class="token number">4</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>font_url<span class="token punctuation">)</span>
@@ -19,9 +127,13 @@ f <span class="token operator">=</span> urllib<span class="token punctuation">.<
 data <span class="token operator">=</span> f<span class="token punctuation">.</span>read<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token keyword">with</span> open<span class="token punctuation">(</span>woff_path<span class="token punctuation">,</span> <span class="token string">"wb"</span><span class="token punctuation">)</span> <span class="token keyword">as</span> code<span class="token punctuation">:</span>
     code<span class="token punctuation">.</span>write<span class="token punctuation">(</span>data<span class="token punctuation">)</span>
-</code></pre><p>利用<code>TTFont</code>将<code>woff</code>文件转换为<code>xml</code>文件：</p><pre class="language-python"><code class="language-python">font1 <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'tmp.woff'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>利用<code>TTFont</code>将<code>woff</code>文件转换为<code>xml</code>文件：</p>
+<pre class=" language-python"><code class="language-python">font1 <span class="token operator">=</span> TTFont<span class="token punctuation">(</span><span class="token string">'tmp.woff'</span><span class="token punctuation">)</span>
 font1<span class="token punctuation">.</span>saveXML<span class="token punctuation">(</span><span class="token string">'tmp.xml'</span><span class="token punctuation">)</span>
-</code></pre><p>查看xml文件会发现一个映射关系：</p><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>GlyphOrder</span><span class="token punctuation">></span></span>
+</code></pre>
+<p>查看xml文件会发现一个映射关系：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>GlyphOrder</span><span class="token punctuation">></span></span>
     <span class="token comment" spellcheck="true">&lt;!-- The 'id' attribute is only for humans; it is ignored when parsed. --></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>GlyphID</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>glyph00000<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>GlyphID</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>x<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
@@ -36,7 +148,10 @@ font1<span class="token punctuation">.</span>saveXML<span class="token punctuati
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>GlyphID</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>10<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uniE488<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>GlyphID</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>11<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uniE6DA<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>GlyphOrder</span><span class="token punctuation">></span></span>
-</code></pre><p>但是使用这个映射关系解码发现解密出来的数字不对，因此GlyphOrder并不是我们需要的映射关系。</p><p>xml文件往下翻，发现了字体数据：</p><pre class="language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TTGlyph</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uniF245<span class="token punctuation">"</span></span> <span class="token attr-name">xMin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">yMin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">xMax</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>508<span class="token punctuation">"</span></span> <span class="token attr-name">yMax</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>716<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+</code></pre>
+<p>但是使用这个映射关系解码发现解密出来的数字不对，因此GlyphOrder并不是我们需要的映射关系。</p>
+<p>xml文件往下翻，发现了字体数据：</p>
+<pre class=" language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>TTGlyph</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>uniF245<span class="token punctuation">"</span></span> <span class="token attr-name">xMin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">yMin</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">xMax</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>508<span class="token punctuation">"</span></span> <span class="token attr-name">yMax</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>716<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>contour</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pt</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>323<span class="token punctuation">"</span></span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>0<span class="token punctuation">"</span></span> <span class="token attr-name">on</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>pt</span> <span class="token attr-name">x</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>323<span class="token punctuation">"</span></span> <span class="token attr-name">y</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>171<span class="token punctuation">"</span></span> <span class="token attr-name">on</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>1<span class="token punctuation">"</span></span><span class="token punctuation">/></span></span>
@@ -57,17 +172,30 @@ font1<span class="token punctuation">.</span>saveXML<span class="token punctuati
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>contour</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>instructions</span><span class="token punctuation">/></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>TTGlyph</span><span class="token punctuation">></span></span>
-</code></pre><p>看到这里突然想到，无论unicode码怎么变，数字渲染出来的样子是不会变的，因此可以从字体数据入手：</p><p><strong>0-9每一个数字都有对应的一个<code>TTGlyph</code>数据，首先对一个已知映射关系的字体文件进行分析，获取0-9的字体数据，然后对于每次下载的动态字体文件，将其字体信息与0-9的字体数据进行对比就可以知道其映射关系了。</strong></p><p>首先需要一份已知映射关系的xml文件作为映射关系对比文件，将其命名为<code>data.xml</code>，然后使用<a href="http://fontstore.baidu.com/static/editor/index.html" rel="external nofollow noopener noreferrer" target="_blank">百度字体编辑器</a>分析其对应的<code>woff</code>获取其映射关系(由于我的<code>data.xml</code>对应的<code>woff</code>文件删掉了，因此这里截图的是一个随机的<code>woff</code>文件对应的映射关系，可能与后边的代码内的映射关系不同，特此说明)：</p><p><img src="/images/woff_decode.PNG" alt=""></p><p>创建<code>data.xml</code>对应的映射关系的字典：</p><pre class="language-python"><code class="language-python">data_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"uniE184"</span><span class="token punctuation">:</span><span class="token string">"4"</span><span class="token punctuation">,</span><span class="token string">"uniE80B"</span><span class="token punctuation">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"uniF22E"</span><span class="token punctuation">:</span><span class="token string">"8"</span><span class="token punctuation">,</span><span class="token string">"uniE14C"</span><span class="token punctuation">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
+</code></pre>
+<p>看到这里突然想到，无论unicode码怎么变，数字渲染出来的样子是不会变的，因此可以从字体数据入手：</p>
+<p><strong>0-9每一个数字都有对应的一个<code>TTGlyph</code>数据，首先对一个已知映射关系的字体文件进行分析，获取0-9的字体数据，然后对于每次下载的动态字体文件，将其字体信息与0-9的字体数据进行对比就可以知道其映射关系了。</strong></p>
+<p>首先需要一份已知映射关系的xml文件作为映射关系对比文件，将其命名为<code>data.xml</code>，然后使用<a href="http://fontstore.baidu.com/static/editor/index.html" rel="external nofollow noopener noreferrer" target="_blank">百度字体编辑器</a>分析其对应的<code>woff</code>获取其映射关系(由于我的<code>data.xml</code>对应的<code>woff</code>文件删掉了，因此这里截图的是一个随机的<code>woff</code>文件对应的映射关系，可能与后边的代码内的映射关系不同，特此说明)：</p>
+<p><img src="/images/woff_decode.PNG" alt=""></p>
+<p>创建<code>data.xml</code>对应的映射关系的字典：</p>
+<pre class=" language-python"><code class="language-python">data_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"uniE184"</span><span class="token punctuation">:</span><span class="token string">"4"</span><span class="token punctuation">,</span><span class="token string">"uniE80B"</span><span class="token punctuation">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"uniF22E"</span><span class="token punctuation">:</span><span class="token string">"8"</span><span class="token punctuation">,</span><span class="token string">"uniE14C"</span><span class="token punctuation">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
         <span class="token string">"uniF5FB"</span><span class="token punctuation">:</span><span class="token string">"6"</span><span class="token punctuation">,</span><span class="token string">"uniEE59"</span><span class="token punctuation">:</span><span class="token string">"5"</span><span class="token punctuation">,</span><span class="token string">"uniEBD3"</span><span class="token punctuation">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"uniED85"</span><span class="token punctuation">:</span><span class="token string">"7"</span><span class="token punctuation">,</span><span class="token string">"uniECB8"</span><span class="token punctuation">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"uniE96A"</span><span class="token punctuation">:</span><span class="token string">"9"</span><span class="token punctuation">}</span>
-</code></pre><p>要对比字体数据就要对xml文件进行分析，因此创建相关xml分析函数：</p><p>获取某节点指定属性的值：</p><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">getValue</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> attribute<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</code></pre>
+<p>要对比字体数据就要对xml文件进行分析，因此创建相关xml分析函数：</p>
+<p>获取某节点指定属性的值：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">getValue</span><span class="token punctuation">(</span>node<span class="token punctuation">,</span> attribute<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> node<span class="token punctuation">.</span>attributes<span class="token punctuation">[</span>attribute<span class="token punctuation">]</span><span class="token punctuation">.</span>value
-</code></pre><p>字体数据的标签为<code>TTGlyph</code>，创建获取一个<code>xml</code>文件中所有的文字信息节点的函数：</p><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">getTTGlyphList</span><span class="token punctuation">(</span>xml_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</code></pre>
+<p>字体数据的标签为<code>TTGlyph</code>，创建获取一个<code>xml</code>文件中所有的文字信息节点的函数：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">getTTGlyphList</span><span class="token punctuation">(</span>xml_path<span class="token punctuation">)</span><span class="token punctuation">:</span>
     dataXmlfilepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>abspath<span class="token punctuation">(</span>xml_path<span class="token punctuation">)</span>
     dataDomObj <span class="token operator">=</span> xmldom<span class="token punctuation">.</span>parse<span class="token punctuation">(</span>dataXmlfilepath<span class="token punctuation">)</span>
     dataElementObj <span class="token operator">=</span> dataDomObj<span class="token punctuation">.</span>documentElement
     dataTTGlyphList <span class="token operator">=</span> dataElementObj<span class="token punctuation">.</span>getElementsByTagName<span class="token punctuation">(</span><span class="token string">'TTGlyph'</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> dataTTGlyphList
-</code></pre><p>判断两个<code>TTGlyph</code>节点数据是否相同的函数：</p><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">isEqual</span><span class="token punctuation">(</span>ttglyph_a<span class="token punctuation">,</span> ttglyph_b<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</code></pre>
+<p>判断两个<code>TTGlyph</code>节点数据是否相同的函数：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">isEqual</span><span class="token punctuation">(</span>ttglyph_a<span class="token punctuation">,</span> ttglyph_b<span class="token punctuation">)</span><span class="token punctuation">:</span>
     a_pt_list <span class="token operator">=</span> ttglyph_a<span class="token punctuation">.</span>getElementsByTagName<span class="token punctuation">(</span><span class="token string">'pt'</span><span class="token punctuation">)</span>
     b_pt_list <span class="token operator">=</span> ttglyph_b<span class="token punctuation">.</span>getElementsByTagName<span class="token punctuation">(</span><span class="token string">'pt'</span><span class="token punctuation">)</span>
     a_len <span class="token operator">=</span> len<span class="token punctuation">(</span>a_pt_list<span class="token punctuation">)</span>
@@ -78,12 +206,22 @@ font1<span class="token punctuation">.</span>saveXML<span class="token punctuati
         <span class="token keyword">if</span> getValue<span class="token punctuation">(</span>a_pt_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'x'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> getValue<span class="token punctuation">(</span>b_pt_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'x'</span><span class="token punctuation">)</span>  <span class="token operator">or</span> getValue<span class="token punctuation">(</span>a_pt_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> getValue<span class="token punctuation">(</span>b_pt_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'y'</span><span class="token punctuation">)</span> <span class="token operator">or</span> getValue<span class="token punctuation">(</span>a_pt_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'on'</span><span class="token punctuation">)</span> <span class="token operator">!=</span> getValue<span class="token punctuation">(</span>b_pt_list<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token string">'on'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> <span class="token boolean">False</span>
     <span class="token keyword">return</span> <span class="token boolean">True</span>
-</code></pre><p>===============================================</p><p>相关函数建好后可以继续分析：</p><p>由于每次的unicode码是随机生成的，因此还需要知道新的0-9对应的unicode码是多少，为了方便直接使用函数获取了上边提到过的映射关系不对的<code>GlyphOrder</code>，是一个<code>key</code>为unicode，<code>value</code>为数字的字典：</p><pre class="language-python"><code class="language-python">decode_dict <span class="token operator">=</span> dict<span class="token punctuation">(</span>enumerate<span class="token punctuation">(</span>font1<span class="token punctuation">.</span>getGlyphOrder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+</code></pre>
+<p>===============================================</p>
+<p>相关函数建好后可以继续分析：</p>
+<p>由于每次的unicode码是随机生成的，因此还需要知道新的0-9对应的unicode码是多少，为了方便直接使用函数获取了上边提到过的映射关系不对的<code>GlyphOrder</code>，是一个<code>key</code>为unicode，<code>value</code>为数字的字典：</p>
+<pre class=" language-python"><code class="language-python">decode_dict <span class="token operator">=</span> dict<span class="token punctuation">(</span>enumerate<span class="token punctuation">(</span>font1<span class="token punctuation">.</span>getGlyphOrder<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">:</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 decode_dict <span class="token operator">=</span> dict<span class="token punctuation">(</span>zip<span class="token punctuation">(</span>decode_dict<span class="token punctuation">.</span>values<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>decode_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    
-</code></pre><p>获取已知映射关系的<code>data.xml</code>的字体数据节点和新的动态字体文件的数据节点：</p><pre class="language-python"><code class="language-python">dataTTGlyphList <span class="token operator">=</span> getTTGlyphList<span class="token punctuation">(</span><span class="token string">"data.xml"</span><span class="token punctuation">)</span>
+</code></pre>
+<p>获取已知映射关系的<code>data.xml</code>的字体数据节点和新的动态字体文件的数据节点：</p>
+<pre class=" language-python"><code class="language-python">dataTTGlyphList <span class="token operator">=</span> getTTGlyphList<span class="token punctuation">(</span><span class="token string">"data.xml"</span><span class="token punctuation">)</span>
 tmpTTGlyphList <span class="token operator">=</span> getTTGlyphList<span class="token punctuation">(</span><span class="token string">"tmp.xml"</span><span class="token punctuation">)</span>
-</code></pre><p>利用字体数据更新映射字典：</p><pre class="language-python"><code class="language-python">decode_dict <span class="token operator">=</span> refresh<span class="token punctuation">(</span>decode_dict<span class="token punctuation">,</span>tmpTTGlyphList<span class="token punctuation">,</span>dataTTGlyphList<span class="token punctuation">)</span>
-</code></pre><p>更新函数的具体实现如下：</p><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">refresh</span><span class="token punctuation">(</span>dict<span class="token punctuation">,</span> ttGlyphList_a<span class="token punctuation">,</span> ttGlyphList_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</code></pre>
+<p>利用字体数据更新映射字典：</p>
+<pre class=" language-python"><code class="language-python">decode_dict <span class="token operator">=</span> refresh<span class="token punctuation">(</span>decode_dict<span class="token punctuation">,</span>tmpTTGlyphList<span class="token punctuation">,</span>dataTTGlyphList<span class="token punctuation">)</span>
+</code></pre>
+<p>更新函数的具体实现如下：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">refresh</span><span class="token punctuation">(</span>dict<span class="token punctuation">,</span> ttGlyphList_a<span class="token punctuation">,</span> ttGlyphList_data<span class="token punctuation">)</span><span class="token punctuation">:</span>
     data_dict <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"uniE184"</span><span class="token punctuation">:</span><span class="token string">"4"</span><span class="token punctuation">,</span><span class="token string">"uniE80B"</span><span class="token punctuation">:</span><span class="token string">"3"</span><span class="token punctuation">,</span><span class="token string">"uniF22E"</span><span class="token punctuation">:</span><span class="token string">"8"</span><span class="token punctuation">,</span><span class="token string">"uniE14C"</span><span class="token punctuation">:</span><span class="token string">"0"</span><span class="token punctuation">,</span>
         <span class="token string">"uniF5FB"</span><span class="token punctuation">:</span><span class="token string">"6"</span><span class="token punctuation">,</span><span class="token string">"uniEE59"</span><span class="token punctuation">:</span><span class="token string">"5"</span><span class="token punctuation">,</span><span class="token string">"uniEBD3"</span><span class="token punctuation">:</span><span class="token string">"1"</span><span class="token punctuation">,</span><span class="token string">"uniED85"</span><span class="token punctuation">:</span><span class="token string">"7"</span><span class="token punctuation">,</span><span class="token string">"uniECB8"</span><span class="token punctuation">:</span><span class="token string">"2"</span><span class="token punctuation">,</span><span class="token string">"uniE96A"</span><span class="token punctuation">:</span><span class="token string">"9"</span><span class="token punctuation">}</span>
     data_keys <span class="token operator">=</span> data_dict<span class="token punctuation">.</span>keys<span class="token punctuation">(</span><span class="token punctuation">)</span>
@@ -94,8 +232,12 @@ tmpTTGlyphList <span class="token operator">=</span> getTTGlyphList<span class="
                     dict<span class="token punctuation">[</span>getValue<span class="token punctuation">(</span>ttglyph_a<span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">]</span> <span class="token operator">=</span> data_dict<span class="token punctuation">[</span>getValue<span class="token punctuation">(</span>ttglyph_data<span class="token punctuation">,</span><span class="token string">'name'</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
                     <span class="token keyword">break</span>
     <span class="token keyword">return</span> dict
-</code></pre><p>考虑到小数的情况，加入小数点映射：</p><pre class="language-python"><code class="language-python">decode_dict<span class="token punctuation">[</span><span class="token string">'.'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'.'</span>
-</code></pre><p>实现解码函数（输入映射字典和一个需要解密的数值，输出解密后的结果如15.6）：</p><pre class="language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">decode</span><span class="token punctuation">(</span>decode_dict<span class="token punctuation">,</span> code<span class="token punctuation">)</span><span class="token punctuation">:</span>
+</code></pre>
+<p>考虑到小数的情况，加入小数点映射：</p>
+<pre class=" language-python"><code class="language-python">decode_dict<span class="token punctuation">[</span><span class="token string">'.'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'.'</span>
+</code></pre>
+<p>实现解码函数（输入映射字典和一个需要解密的数值，输出解密后的结果如15.6）：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">def</span> <span class="token function">decode</span><span class="token punctuation">(</span>decode_dict<span class="token punctuation">,</span> code<span class="token punctuation">)</span><span class="token punctuation">:</span>
     _lst_uincode <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
     <span class="token keyword">for</span> item <span class="token keyword">in</span> code<span class="token punctuation">.</span>__repr__<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\\u"</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
         _lst_uincode<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token string">"uni"</span> <span class="token operator">+</span> item<span class="token punctuation">[</span><span class="token punctuation">:</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">.</span>upper<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -104,4 +246,184 @@ tmpTTGlyphList <span class="token operator">=</span> getTTGlyphList<span class="
     _lst_uincode <span class="token operator">=</span> _lst_uincode<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">:</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span>
     result <span class="token operator">=</span> <span class="token string">""</span><span class="token punctuation">.</span>join<span class="token punctuation">(</span><span class="token punctuation">[</span>str<span class="token punctuation">(</span>decode_dict<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">for</span> i <span class="token keyword">in</span> _lst_uincode<span class="token punctuation">]</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> result
-</code></pre><p>==================================================</p><p><a href="https://github.com/SoftwareSAD/Spider/blob/master/rowpiece/rowpiece/spiders/RowpieceSpider.py" rel="external nofollow noopener noreferrer" target="_blank">具体代码链接</a></p></div><footer class="article-footer"><a data-url="https://zmj97.coding.me/猫眼电影加密数字破解（爬取评分票房票价）.html" data-id="cjn30m1xo0049fmagvapgznp6" class="article-share-link">Share</a><ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul></footer></div><nav id="article-nav"><a href="/PAT刷题记录.html" id="article-nav-newer" class="article-nav-link-wrap"><strong class="article-nav-caption">Newer</strong><div class="article-nav-title">PAT刷题记录</div></a><a href="/系统分析与设计作业FinalReport.html" id="article-nav-older" class="article-nav-link-wrap"><strong class="article-nav-caption">Older</strong><div class="article-nav-title">系统分析与设计作业FinalReport</div></a></nav></article><div id="vcomments"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz",appKey:"tIDpxK3F6tVo5V3nAOr3AJ3r",notify:!0,verify:!0,visitor:!0,avatar:"monsterid",placeholder:"快来评论鸭～"})</script></section></div><footer id="footer"><aside id="sidebar" class="outer"><div class="widget-wrap"><h3 class="widget-title">分类</h3><div class="widget"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签</h3><div class="widget"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a href="/tags/BN/" style="font-size:10px">BN</a> <a href="/tags/CSS/" style="font-size:12.86px">CSS</a> <a href="/tags/Chrome/" style="font-size:11.43px">Chrome</a> <a href="/tags/ES6/" style="font-size:11.43px">ES6</a> <a href="/tags/Flask/" style="font-size:10px">Flask</a> <a href="/tags/Flux/" style="font-size:10px">Flux</a> <a href="/tags/HTML/" style="font-size:15.71px">HTML</a> <a href="/tags/HTTP/" style="font-size:11.43px">HTTP</a> <a href="/tags/JavaScript/" style="font-size:20px">JavaScript</a> <a href="/tags/MNIST/" style="font-size:10px">MNIST</a> <a href="/tags/Markdown/" style="font-size:10px">Markdown</a> <a href="/tags/OAuth/" style="font-size:10px">OAuth</a> <a href="/tags/PAT/" style="font-size:10px">PAT</a> <a href="/tags/Python/" style="font-size:10px">Python</a> <a href="/tags/SCRUM/" style="font-size:10px">SCRUM</a> <a href="/tags/SQL/" style="font-size:10px">SQL</a> <a href="/tags/TensorBoard/" style="font-size:10px">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size:14.29px">TensorFlow</a> <a href="/tags/Tmux/" style="font-size:10px">Tmux</a> <a href="/tags/Typora/" style="font-size:10px">Typora</a> <a href="/tags/UMLet/" style="font-size:15.71px">UMLet</a> <a href="/tags/Ubuntu/" style="font-size:10px">Ubuntu</a> <a href="/tags/VUE/" style="font-size:10px">VUE</a> <a href="/tags/Valine/" style="font-size:10px">Valine</a> <a href="/tags/Vue/" style="font-size:11.43px">Vue</a> <a href="/tags/Vuex/" style="font-size:10px">Vuex</a> <a href="/tags/ajax/" style="font-size:10px">ajax</a> <a href="/tags/cookie/" style="font-size:10px">cookie</a> <a href="/tags/form/" style="font-size:10px">form</a> <a href="/tags/git/" style="font-size:10px">git</a> <a href="/tags/github-pages/" style="font-size:10px">github pages</a> <a href="/tags/gitment/" style="font-size:12.86px">gitment</a> <a href="/tags/hexo/" style="font-size:17.14px">hexo</a> <a href="/tags/iNode/" style="font-size:11.43px">iNode</a> <a href="/tags/markdown/" style="font-size:10px">markdown</a> <a href="/tags/mongoDB/" style="font-size:10px">mongoDB</a> <a href="/tags/numpy/" style="font-size:10px">numpy</a> <a href="/tags/prototype/" style="font-size:10px">prototype</a> <a href="/tags/ubuntu/" style="font-size:18.57px">ubuntu</a> <a href="/tags/webstorage/" style="font-size:10px">webstorage</a> <a href="/tags/youtube/" style="font-size:10px">youtube</a> <a href="/tags/三层架构/" style="font-size:10px">三层架构</a> <a href="/tags/内存/" style="font-size:10px">内存</a> <a href="/tags/刷题/" style="font-size:10px">刷题</a> <a href="/tags/双向链表/" style="font-size:10px">双向链表</a> <a href="/tags/同步/" style="font-size:10px">同步</a> <a href="/tags/图片显示/" style="font-size:10px">图片显示</a> <a href="/tags/建模/" style="font-size:11.43px">建模</a> <a href="/tags/异步/" style="font-size:10px">异步</a> <a href="/tags/归并/" style="font-size:10px">归并</a> <a href="/tags/快捷方式/" style="font-size:10px">快捷方式</a> <a href="/tags/指针/" style="font-size:10px">指针</a> <a href="/tags/操作系统/" style="font-size:10px">操作系统</a> <a href="/tags/数据库/" style="font-size:11.43px">数据库</a> <a href="/tags/数据库建模/" style="font-size:10px">数据库建模</a> <a href="/tags/爬虫/" style="font-size:10px">爬虫</a> <a href="/tags/用例图/" style="font-size:14.29px">用例图</a> <a href="/tags/网站收录/" style="font-size:10px">网站收录</a> <a href="/tags/设计模式/" style="font-size:10px">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size:10px">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size:10px">阿里云</a></div></div><div class="widget-wrap"><h3 class="widget-title">归档</h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">最新文章</h3><div class="widget"><ul><li><a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a></li><li><a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a></li><li><a href="/同步与异步.html">同步与异步</a></li><li><a href="/Promise与async-await.html">Promise与async/await</a></li><li><a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a></li></ul></div></div></aside><div class="outer"><div id="footer-info" class="inner">&copy; 2018 Mengjie Zhang<br>Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a></div></div></footer></div><nav id="mobile-nav"><a href="/" class="mobile-nav-link">主页</a> <a href="/archives" class="mobile-nav-link">归档</a> <a href="/tags" class="mobile-nav-link">标签</a> <a href="/categories" class="mobile-nav-link">分类</a></nav><script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script src="/js/script.js"></script><div id="totop" style="position:fixed;bottom:100px;right:50px;cursor:pointer;z-index:99999"><a title="返回顶部"><img src="/img/scrollup.png"></a></div><script src="/js/totop.js"></script></div></body>
+</code></pre>
+<p>==================================================</p>
+<p><a href="https://github.com/SoftwareSAD/Spider/blob/master/rowpiece/rowpiece/spiders/RowpieceSpider.py" rel="external nofollow noopener noreferrer" target="_blank">具体代码链接</a></p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/猫眼电影加密数字破解（爬取评分票房票价）.html" data-id="cjn31e95h0049gsagu9heflzw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/爬虫/">爬虫</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/PAT刷题记录.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          PAT刷题记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/系统分析与设计作业FinalReport.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">系统分析与设计作业FinalReport</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 12.86px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a>
+          </li>
+        
+          <li>
+            <a href="/同步与异步.html">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/Promise与async-await.html">Promise与async/await</a>
+          </li>
+        
+          <li>
+            <a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>

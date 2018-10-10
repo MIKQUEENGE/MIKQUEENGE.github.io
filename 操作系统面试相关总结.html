@@ -1,1 +1,535 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>操作系统面试相关总结 | zmj&#39;s blog</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="参考课程：操作系统参考资料：计算机操作系统教程"><meta name="keywords" content="操作系统"><meta property="og:type" content="article"><meta property="og:title" content="操作系统面试相关总结"><meta property="og:url" content="https://zmj97.coding.me/操作系统面试相关总结.html"><meta property="og:site_name" content="zmj&#39;s blog"><meta property="og:description" content="参考课程：操作系统参考资料：计算机操作系统教程"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://zmj97.coding.me/images/进程状态转换图.jpg"><meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/5/22/08d8fe2bdd546e97085f4f1d69281c9f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1"><meta property="og:updated_time" content="2018-10-10T08:48:13.408Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="操作系统面试相关总结"><meta name="twitter:description" content="参考课程：操作系统参考资料：计算机操作系统教程"><meta name="twitter:image" content="https://zmj97.coding.me/images/进程状态转换图.jpg"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head></html><body><div id="container"><div id="wrap"><header id="header"><div id="banner"></div><div id="header-outer" class="outer"><div id="header-title" class="inner"><h1 id="logo-wrap"><a href="/" id="logo">zmj&#39;s blog</a></h1></div><div id="header-inner" class="inner"><nav id="main-nav"><a id="main-nav-toggle" class="nav-icon"></a> <a class="main-nav-link" href="/">主页</a> <a class="main-nav-link" href="/archives">归档</a> <a class="main-nav-link" href="/tags">标签</a> <a class="main-nav-link" href="/categories">分类</a></nav><nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="搜索"></a></nav><div id="search-form-wrap"><form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form></div></div></div></header><div class="outer"><section id="main"><article id="post-操作系统面试相关总结" class="article article-type-post" itemscope="" itemprop="blogPost"><div class="article-meta"><a href="/操作系统面试相关总结.html" class="article-date"><time datetime="2018-09-28T09:08:01.000Z" itemprop="datePublished">2018-09-28</time></a><div class="article-category"><a class="article-category-link" href="/categories/Web/">Web</a></div></div><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">操作系统面试相关总结</h1></header><div class="article-entry" itemprop="articleBody"><div id="toc" class="toc-article"><strong class="toc-title">文章目录</strong><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统的四个特性"><span class="toc-number">1.</span> <span class="toc-text">操作系统的四个特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统的主要功能"><span class="toc-number">2.</span> <span class="toc-text">操作系统的主要功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的状态与转换"><span class="toc-number">3.</span> <span class="toc-text">进程的状态与转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程与线程"><span class="toc-number">4.</span> <span class="toc-text">进程与线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程通信"><span class="toc-number">5.</span> <span class="toc-text">进程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程同步"><span class="toc-number">6.</span> <span class="toc-text">进程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户态和内核态"><span class="toc-number">7.</span> <span class="toc-text">用户态和内核态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁"><span class="toc-number">8.</span> <span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁原因"><span class="toc-number">8.1.</span> <span class="toc-text">死锁原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的四个必要条件"><span class="toc-number">8.2.</span> <span class="toc-text">死锁的四个必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁处理"><span class="toc-number">8.3.</span> <span class="toc-text">死锁处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程调度算法"><span class="toc-number">9.</span> <span class="toc-text">进程调度算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存连续分配"><span class="toc-number">10.</span> <span class="toc-text">内存连续分配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本分页储存管理方式"><span class="toc-number">11.</span> <span class="toc-text">基本分页储存管理方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本分段储存管理方式"><span class="toc-number">12.</span> <span class="toc-text">基本分段储存管理方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分段分页方式的比较"><span class="toc-number">13.</span> <span class="toc-text">分段分页方式的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#段页式存储"><span class="toc-number">14.</span> <span class="toc-text">段页式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本思想"><span class="toc-number">14.1.</span> <span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地址变换的过程"><span class="toc-number">14.2.</span> <span class="toc-text">地址变换的过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟内存"><span class="toc-number">15.</span> <span class="toc-text">虚拟内存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面置换算法"><span class="toc-number">16.</span> <span class="toc-text">页面置换算法</span></a></li></ol></div><p>参考课程：<a href="https://www.bilibili.com/video/av6538245?from=search&amp;seid=2726829833194936883" rel="external nofollow noopener noreferrer" target="_blank">操作系统</a></p><p>参考资料：<a href="https://link.juejin.im/?target=http%3A%2F%2Fc.biancheng.net%2Fcpp%2Fu%2Fxitong%2F" rel="external nofollow noopener noreferrer" target="_blank">计算机操作系统教程</a></p><a id="more"></a><hr><h2 id="操作系统的四个特性"><a href="#操作系统的四个特性" class="headerlink" title="操作系统的四个特性"></a>操作系统的四个特性</h2><ul><li><strong>并发</strong>：同一<u>时间段</u>内多个程序执行<ul><li>需要区别并行和并发</li><li>并行为同一<u>时刻</u>多个程序执行</li></ul></li><li><strong>共享</strong>：系统中的资源可以被内存中的多个并发执行的进线程共同使用</li><li><p><strong>虚拟</strong>：通过时分复用和空分复用技术实现把一个物理实体虚拟为多个</p><ul><li>时分复用：如分时系统，就是将提供给整个信道传输信息的事件划分成若干时间片（简称时隙），并将这些时隙分配给每一个信号源使用</li><li>空分复用：如虚拟内存，指让同一个频段在不同的空间内得到重复利用</li></ul></li><li><p><strong>异步</strong>：操作系统允许多个程序并发执行，<u>但由于资源有限，进程的执行不是一步到底的，而是走走停停，以不可知的速度向前推进</u></p><ul><li>这导致当操作系统运行在一种随机的环境下时，可能导致进程产生与时间有关的错误</li><li>但只要运行环境相同，操作系统必须保证多次运行进程都获得相同的结果</li></ul></li></ul><h2 id="操作系统的主要功能"><a href="#操作系统的主要功能" class="headerlink" title="操作系统的主要功能"></a>操作系统的主要功能</h2><ul><li><strong>进程管理</strong>：包括进程控制、进程同步、进程通信和进程调度</li><li><strong>内存管理</strong>：包括内存分配、内存保护、地址映射和内存扩充</li><li><p><strong>设备管理</strong>：负责管理各类外围设备（简称：外设），包括分配、启动和故障处理等</p><ul><li>完成用户的IO请求</li><li>为用户进程分配IO设备</li><li>提高IO设备利用率</li><li>提高IO速度</li><li>方便IO的使用</li></ul></li><li><p><strong>文件管理</strong>：管理系统文件和用户文件，方便使用同时保证安全性</p><ul><li>磁盘存储空间管理</li><li>目录管理</li><li>文件读写管理</li><li>文件共享和保护</li></ul></li><li><strong>作业管理</strong>：每个用户请求计算机系统完成的一个独立的操作称为作业。作业管理包括作业的输入和输出，作业的调度与控制（根据用户的需要控制作业运行的步骤）</li></ul><h2 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h2><p><img src="/images/进程状态转换图.jpg" alt="进程状态转换图"></p><ul><li><strong>新建</strong>： 对应于进程刚刚被创建时没有被提交的状态，并等待系统完成创建进程的所有必要信息</li><li><strong>运行</strong>：当一个进程在处理机上运行时，则称该进程处于运行状态<ul><li>处于此状态的进程的数目小于等于处理器的数目</li><li>对于单处理机系统，处于运行状态的进程只有一个</li><li>在没有其他进程可以执行时（如所有进程都在阻塞状态），通常会自动执行系统的空闲进程。</li></ul></li><li><strong>就绪</strong>：当一个进程获得了除处理机以外的一切所需资源，一旦得到处理机即可运行，则称此进程处于就绪状态。就绪进程可以按多个<u>优先级</u>来划分队列:<ul><li>当一个进程由于时间片用完而进入就绪状态时，排入低优先级队列</li><li>当进程由I/O操作完成而进入就绪状态时，排入高优先级队列。</li></ul></li><li><p><strong>阻塞</strong>：也称为等待或睡眠状态，一个进程正在等待某一事件发生（例如请求I/O而等待I/O完成等）而暂时停止运行，这时即使把处理机分配给进程也无法运行，故称该进程处于阻塞状态</p></li><li><p><strong>终止</strong>：进程已结束运行，回收除进程控制块之外的其他资源，并让其他进程从进程控制块中收集有关信息（如记帐和将退出代码传递给父进程）</p></li></ul><h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><table><thead><tr><th>方面</th><th>进程</th><th>线程</th></tr></thead><tbody><tr><td>根本区别</td><td>操作系统资源分配的基本单位</td><td>任务调度和执行的基本单位</td></tr><tr><td>开销方面</td><td>每个进程都有独立的代码和数据空间（程序上下文），程序之间的切换会有较大的开销</td><td>线程可以看做是轻量级的进程。同一类线程共享代码和数据空间，每个线程都有自己独立的运行栈和程序计数器，线程之间切换的开销很小</td></tr><tr><td>所处环境</td><td>操作系统中多个进程可以并发运行</td><td>同一个进程中可以有多个线程同时执行（通过CPU调度，在每个时间片中只有一个线程执行）</td></tr><tr><td>内存分配</td><td>系统在运行时会为每个进程分配不同的内存空间</td><td>除了CPU外，系统不会为线程分配内存（线程使用的资源来自其所属进程的资源），线程组之间只能共享资源</td></tr><tr><td>包含关系</td><td>进程可以包含多个线程，且这些线程可以并发运行</td><td>线程是进程的一部分，所以线程也被称为轻权进程或者轻量级进程</td></tr></tbody></table><h2 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h2><p>进程之间的信息交换。</p><ul><li>共享内存</li><li>信息传递</li><li>管道通信<ul><li>管道，是指用于连接一个读进程和一个写进程以实现它们之间通信的一个共享文件，又名pipe文件</li><li>向管道（共享文件）提供输入的发送进程（即写进程），以字符流形式将大量的数据送入（写）管道</li><li>而接收管道输出的接收进程（即读进程），则从管道中接收（读）数据</li><li>为了协调双方的通信，管道机制必须提供以下三方面的协调能力：互斥、同步和确定对方的存在</li></ul></li></ul><h2 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h2><p>多进程虽然提高了系统资源利用率和吞吐量，但是由于进程的异步性可能造成系统的混乱。</p><p><strong>进程同步</strong>的任务就是对多个相关进程在<u>执行顺序上进行协调</u>，使并发执行的多个进程之间可以有效的共享资源和相互合作，保证程序执行的可再现性。</p><p>同步机制需要遵循的原则：</p><ol><li>空闲让进：当没有进程处于临界区的时候，应该许可其他进程进入临界区的申请</li><li>忙则等待：当前如果有进程处于临界区，如果有其他进程申请进入，则必须等待，保证对临界区的互斥访问</li><li>有限等待：对要求访问临界资源的进程，需要在有限时间内进入临界区，防止出现死等</li><li>让权等待：当进程无法进入临界区的时候，需要释放处理机，以免陷入忙等</li></ol><p>经典的进程同步问题：</p><ul><li>生产者-消费者问题</li><li>哲学家进餐问题</li><li>读者-写者问题</li></ul><p>同步的解决方案：</p><ul><li>管程</li><li>信号量</li></ul><h2 id="用户态和内核态"><a href="#用户态和内核态" class="headerlink" title="用户态和内核态"></a>用户态和内核态</h2><p><img src="https://user-gold-cdn.xitu.io/2017/5/22/08d8fe2bdd546e97085f4f1d69281c9f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p><p>运行在<strong>用户态</strong>下的程序<strong>不能</strong>直接访问操作系统内核数据结构和程序。</p><p><strong>用户态切换到内核态的3种方式</strong></p><ol><li><strong>系统调用</strong>：用户态进程主动要求切换到内核态的一种方式，用户态进程通过系统调用申请使用操作系统提供的服务程序完成工作。</li><li><strong>异常</strong>：当CPU在执行运行在用户态下的程序时，发生了某些事先不可知的异常，这时会触发由当前运行进程切换到处理此异常的内核相关程序中，也就转到了内核态，比如缺页异常。</li><li><strong>外围设备的中断</strong>：当外围设备完成用户请求的操作后，会向CPU发出相应的中断信号，这时CPU会暂停执行下一条即将要执行的指令转而去执行与中断信号对应的处理程序，如果先前执行的指令是用户态下的程序，那么这个转换的过程自然也就发生了由用户态到内核态的切换。比如硬盘读写操作完成，系统会切换到硬盘读写的中断处理程序中执行后续操作等。</li></ol><h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>多个进程在运行过程中，因为争夺资源而造成的一种僵局。</p><h3 id="死锁原因"><a href="#死锁原因" class="headerlink" title="死锁原因"></a>死锁原因</h3><ol><li><strong>竞争资源</strong>：请求同一有限资源的进程数多于可用资源数</li><li><strong>进程推进顺序不当</strong>：进程执行中，请求和释放资源顺序不合理，如资源等待链</li></ol><h3 id="死锁的四个必要条件"><a href="#死锁的四个必要条件" class="headerlink" title="死锁的四个必要条件"></a>死锁的四个必要条件</h3><ol><li><strong>互斥</strong>:在一个时间只能有一个进程使用资源</li><li><strong>持有并等待</strong>：进程持有至少一个资源时，等待获取其他进程持有的额外资源</li><li><strong>无抢占</strong>：进程对于已经申请到的资源在使用完成之前不可以被剥夺</li><li><strong>循环等待</strong>：存在进程集合{P0,P1,…,PN}，P0正在等待P1占用的资源，P1正在等待P2占用的资源，……，PN-1正在等待PN占用的资源，PN正在等待P0占用的资源</li></ol><h3 id="死锁处理"><a href="#死锁处理" class="headerlink" title="死锁处理"></a>死锁处理</h3><ul><li>确保系统永远不会进入死锁状态</li><li>系统可能进入死锁状态，若进入死锁状态则进行恢复</li><li>忽略这个问题，假装系统中从来没有发生死锁；用于大多数操作系统，包括UNIX。</li></ul><ol><li><strong>死锁预防</strong>：破坏产生死锁的4个必要条件中的一个或者多个<ol><li><strong>互斥</strong>：不互斥可能带来不确定性问题</li><li><strong>持有并等待</strong>：让一个资源在请求资源时，不持有任何其他资源。为请求资源的进程分配所有资源；仅当进程不占有资源时才可以请求资源。但是这会导致<u>资源利用率低，还可能发生饥饿</u>。</li><li><strong>无抢占</strong>：抢占资源只能kill掉正在占有资源的进程，不合理</li><li><strong>循环等待</strong>：对所有资源类型进行排序，并要求每个进程按照资源的顺序进行申请。在<u>嵌入式系统</u>中经常这种方法，因为嵌入式系统资源比较有限</li></ol></li><li><strong>死锁避免</strong>：额外的先行验证<ol><li>最简单最有效的模式是要求每个进程声明它可能需要的每个类型资源的<strong>最大数目</strong></li><li>限定<strong>提供与分配</strong>的资源数量和进程的<strong>最大需求</strong></li><li>在进程申请资源时检查资源分配状态来进行资源分配，以确保永远不会有一个环形等待状态</li><li><strong>银行家算法</strong>：死锁避免的著名算法。以银行借贷系统的分配策略为基础，判断并保证系统的安全运行</li></ol></li><li><strong>死锁检测</strong>：允许系统运行过程中产生死锁，在死锁发生之后，采用一定的算法进行检测，并确定与死锁相关的资源和进程，采取相关方法清除检测到的死锁。实现难度大</li><li><strong>死锁恢复</strong>：与死锁检测配合，将系统从死锁中解脱出来（撤销进程或者剥夺资源）。对检测到的和死锁相关的进程以及资源，通过撤销或者挂起的方式，释放一些资源并将其分配给处于阻塞状态的进程，使其转变为就绪态。实现难度大。</li></ol><h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><ul><li><p><strong>先来先服务调度算法FCFS：</strong>既可以作为作业调度算法也可以作为进程调度算法；按作业或者进程到达的先后顺序依次调度；因此对于长作业比较有利；</p></li><li><p><strong>短作业优先调度算法SJF：</strong>作业调度算法，算法从就绪队列中选择估计时间最短的作业进行处理，直到得出结果或者无法继续执行；缺点：不利于长作业；未考虑作业的重要性；运行时间是预估的，并不靠谱 ；</p></li><li><p><strong>高相应比算法HRN：</strong>响应比=(等待时间+要求服务时间)/要求服务时间；</p></li><li><p><strong>时间片轮转调度RR：</strong>按到达的先后对进程放入队列中，然后给队首进程分配CPU时间片，时间片用完之后计时器发出中断，暂停当前进程并将其放到队列尾部，循环 ;</p></li><li><p><strong>多级反馈队列调度算法：</strong>目前公认较好的调度算法；设置多个就绪队列并为每个队列设置不同的优先级，第一个队列优先级最高，其余依次递减。优先级越高的队列分配的时间片越短，进程到达之后按FCFS放入第一个队列，如果调度执行后没有完成，那么放到第二个队列尾部等待调度，如果第二次调度仍然没有完成，放入第三队列尾部…。只有当前一个队列为空的时候才会去调度下一个队列的进程。</p></li></ul><h2 id="内存连续分配"><a href="#内存连续分配" class="headerlink" title="内存连续分配"></a>内存连续分配</h2><p>动态分区分配时所采用的几种算法。</p><p>动态分区分配又称为可变分区分配，是一种动态划分内存的分区方法。</p><p>这种分区方法不预先将内存划分，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。</p><p>因此系统中分区的大小和数目是可变的。</p><ul><li><p><strong>首次适应(First Fit)算法：</strong>空闲分区以地址递增的次序链接。分配内存时顺序查找，找到大小能满足要求的第一个空闲分区。</p></li><li><p><strong>最佳适应(Best Fit)算法：</strong>空闲分区按容量递增形成分区链，找到第一个能满足要求的空闲分区。</p></li><li><p><strong>最坏适应(Worst Fit)算法：</strong>又称最大适应(Largest Fit)算法，空闲分区以容量递减的次序链接。找到第一个能满足要求的空闲分区，也就是挑选出最大的分区。</p></li></ul><h2 id="基本分页储存管理方式"><a href="#基本分页储存管理方式" class="headerlink" title="基本分页储存管理方式"></a>基本分页储存管理方式</h2><p>把主存空间划分为大小相等且固定的块，块相对较小，作为主存的基本单位。</p><p>每个进程也以块为单位进行划分，进程在执行时，以块为单位逐个申请主存中的块空间。</p><p>因为程序数据存储在不同的页面中，而页面又离散的分布在内存中，<strong>因此需要一个页表来记录逻辑地址和实际存储地址之间的映射关系，以实现从页号到物理块号的映射。</strong></p><p>由于页表也是存储在内存中的，因此和不适用分页管理的存储方式相比，访问分页系统中内存数据需要<strong>两次的内存访问</strong>(一次是从内存中访问页表，从中找到指定的物理块号，加上页内偏移得到实际物理地址；第二次就是根据第一次得到的物理地址访问内存取出数据)。</p><p>为了减少两次访问内存导致的效率影响，分页管理中引入了<strong>快表机制</strong>，包含快表机制的内存管理中，当要访问内存数据的时候，首先将页号在快表中查询，如果查找到说明要访问的页表项在快表中，那么直接从快表中读取相应的物理块号；如果没有找到，那么访问内存中的页表，从页表中得到物理地址，同时将页表中的该映射表项添加到快表中(可能存在快表换出算法)。</p><p>在某些计算机中如果内存的逻辑地址很大，将会导致程序的页表项会很多，而页表在内存中是连续存放的，所以相应的就需要较大的连续内存空间。为了解决这个问题，可以采用<strong>两级页表或者多级页表的方法</strong>，其中外层页表一次性调入内存且连续存放，内层页表离散存放。相应的访问内存页表的时候需要一次地址变换，访问逻辑地址对应的物理地址的时候也需要一次地址变换，而且一共需要访问内存3次才可以读取一次数据。</p><h2 id="基本分段储存管理方式"><a href="#基本分段储存管理方式" class="headerlink" title="基本分段储存管理方式"></a>基本分段储存管理方式</h2><p>分页是为了提高内存利用率，而分段是为了满足程序员在编写代码的时候的一些逻辑需求(比如数据共享，数据保护，动态链接等)。</p><p>分段内存管理当中，<strong>地址是二维的，一维是段号，一维是段内地址；其中每个段的长度是不一样的，而且每个段内部都是从0开始编址的</strong>。由于分段管理中，每个段内部是连续内存分配，但是段和段之间是离散分配的，因此也存在一个逻辑地址到物理地址的映射关系，相应的就是段表机制。段表中的每一个表项记录了该段在内存中的起始地址和该段的长度。段表可以放在内存中也可以放在寄存器中。</p><p>访问内存的时候根据段号和段表项的长度计算当前访问段在段表中的位置，然后访问段表，得到该段的物理地址，根据该物理地址以及段内偏移量就可以得到需要访问的内存。由于也是两次内存访问，所以分段管理中同样引入了联想寄存器。</p><h2 id="分段分页方式的比较"><a href="#分段分页方式的比较" class="headerlink" title="分段分页方式的比较"></a>分段分页方式的比较</h2><p>页是信息的物理单位，是出于系统内存利用率的角度提出的离散分配机制；</p><p>段是信息的逻辑单位，每个段含有一组意义完整的信息，是出于用户角度提出的内存管理机制。</p><p>页的大小是固定的，由系统决定；</p><p>段的大小是不确定的，由用户决定。</p><h2 id="段页式存储"><a href="#段页式存储" class="headerlink" title="段页式存储"></a>段页式存储</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>分页系统能有效地提高内存的利用率，而分段系统能反映程序的逻辑结构，便于段的共享与保护，将分页与分段两种存储方式结合起来，就形成了段页式存储管理方式。</p><p>在段页式存储管理系统中，作业的地址空间首先被分成若干个逻辑分段，每段都有自己的段号，然后再将每段分成若干个大小相等的页。对于主存空间也分成大小相等的页，主存的分配以页为单位。</p><p>段页式系统中，作业的地址结构包含三部分的内容：段号，页号，页内位移量</p><p>程序员按照分段系统的地址结构将地址分为段号与段内位移量，地址变换机构将段内位移量分解为页号和页内位移量。</p><p>为实现段页式存储管理，系统应为每个进程设置一个段表，包括每段的段号，该段的页表始址和页表长度。每个段有自己的页表，记录段中的每一页的页号和存放在主存中的物理块号。</p><h3 id="地址变换的过程"><a href="#地址变换的过程" class="headerlink" title="地址变换的过程"></a>地址变换的过程</h3><ol><li>程序执行时，从PCB（进程控制块）中取出段表始址和段表长度，装入段表寄存器。</li><li>由地址变换机构将逻辑地址自动分成段号、页号和页内地址。</li><li>将段号与段表长度进行比较，若段号大于或等于段表长度，则表示本次访问的地址已超越进程的地址空间，产生越界中断。</li><li>将段表始址与段号和段表项长度的乘积相加，便得到该段表项在段表中的位置。</li><li>取出段描述子得到该段的页表始址和页表长度。</li><li>将页号与页表长度进行比较，若页号大于或等于页表长度，则表示本次访问的地址已超越进程的地址空间，产生越界中断。</li><li>将页表始址与页号和页表项长度的乘积相加，便得到该页表项在页表中的位置。</li><li>取出页描述子得到该页的物理块号。</li><li>对该页的存取控制进行检查。</li><li>将物理块号送入物理地址寄存器中，再将有效地址寄存器中的页内地址直接送入物理地址寄存器的块内地址字段中，拼接得到实际的物理地址。</li></ol><h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><p>如果存在一个程序，所需内存空间超过了计算机可以提供的实际内存，那么由于该程序无法装入内存所以也就无法运行。</p><p>单纯的增加物理内存只能解决一部分问题，但是仍然会出现无法装入单个或者无法同时装入多个程序的问题。</p><p>因此可以从逻辑的角度扩充内存容量，即可解决上述两种问题。</p><p>基于局部性原理，<u>在程序装入时，可以将程序的一部分装入内存，而将其余部分留在外存</u>，就可以启动程序执行。</p><p>在程序执行过程中，<u>当所访问的信息不在内存时，由操作系统将所需要的部分调入内存,然后继续执行程序</u>。</p><p>另一方面，操作系统将内存中<u>暂时不使用的内容换出到外存上，从而腾出空间存放将要调入内存的信息</u>。</p><p>这样，系统好像为用户提供了一个比实际内存大得多的存储器，称为<strong>虚拟存储器</strong>。</p><p><strong>虚拟存储器</strong>的特征：</p><ol><li><strong>多次性</strong>：一个作业可以分多次被调入内存。多次性是虚拟存储特有的属性</li><li><strong>对换性</strong>：作业运行过程中存在换进换出的过程(换出暂时不用的数据换入需要的数据)</li><li><strong>虚拟性</strong>：虚拟性体现在其从逻辑上扩充了内存的容量(可以运行实际内存需求比物理内存大的应用程序)。虚拟性是虚拟存储器的最重要特征也是其最终目标。虚拟性建立在多次性和对换性的基础上行，多次性和对换性又建立在离散分配的基础上</li></ol><h2 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h2><ul><li><p><strong>最佳置换算法：</strong>只具有理论意义的算法，用来评价其他页面置换算法。置换策略是将当前页面中在未来最长时间内不会被访问的页置换出去。</p></li><li><p><strong>先进先出置换算法：</strong>简单粗暴的一种置换算法，没有考虑页面访问频率信息。每次淘汰最早调入的页面。</p></li><li><p><strong>最近最久未使用算法LRU：</strong>算法赋予每个页面一个访问字段，用来记录上次页面被访问到现在所经历的时间t，每次置换的时候把t值最大的页面置换出去(实现方面可以采用寄存器或者栈的方式实现)。</p></li><li><p><strong>时钟算法clock(也被称为是最近未使用算法NRU)：</strong>页面设置一个访问位，并将页面链接为一个环形队列，页面被访问的时候访问位设置为1。页面置换的时候，如果当前指针所指页面访问为为0，那么置换，否则将其置为0，循环直到遇到一个访问为位0的页面。</p></li><li><p><strong>改进型Clock算法：</strong>在Clock算法的基础上添加一个修改位，替换时根究访问位和修改位综合判断。优先替换访问位和修改位都是0的页面，其次是访问位为0修改位为1的页面。</p></li><li><p><strong>最少使用算法LFU：</strong>设置寄存器记录页面被访问次数，每次置换的时候置换当前访问次数最少的。</p></li></ul></div><footer class="article-footer"><a data-url="https://zmj97.coding.me/操作系统面试相关总结.html" data-id="cjn30m1x1003cfmagd9ijdkgc" class="article-share-link">Share</a><ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul></footer></div><nav id="article-nav"><a href="/数据库基础知识.html" id="article-nav-newer" class="article-nav-link-wrap"><strong class="article-nav-caption">Newer</strong><div class="article-nav-title">数据库基础知识</div></a><a href="/继续磕面经.html" id="article-nav-older" class="article-nav-link-wrap"><strong class="article-nav-caption">Older</strong><div class="article-nav-title">继续磕面经</div></a></nav></article><div id="vcomments"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz",appKey:"tIDpxK3F6tVo5V3nAOr3AJ3r",notify:!0,verify:!0,visitor:!0,avatar:"monsterid",placeholder:"快来评论鸭～"})</script></section></div><footer id="footer"><aside id="sidebar" class="outer"><div class="widget-wrap"><h3 class="widget-title">分类</h3><div class="widget"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签</h3><div class="widget"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a href="/tags/BN/" style="font-size:10px">BN</a> <a href="/tags/CSS/" style="font-size:12.86px">CSS</a> <a href="/tags/Chrome/" style="font-size:11.43px">Chrome</a> <a href="/tags/ES6/" style="font-size:11.43px">ES6</a> <a href="/tags/Flask/" style="font-size:10px">Flask</a> <a href="/tags/Flux/" style="font-size:10px">Flux</a> <a href="/tags/HTML/" style="font-size:15.71px">HTML</a> <a href="/tags/HTTP/" style="font-size:11.43px">HTTP</a> <a href="/tags/JavaScript/" style="font-size:20px">JavaScript</a> <a href="/tags/MNIST/" style="font-size:10px">MNIST</a> <a href="/tags/Markdown/" style="font-size:10px">Markdown</a> <a href="/tags/OAuth/" style="font-size:10px">OAuth</a> <a href="/tags/PAT/" style="font-size:10px">PAT</a> <a href="/tags/Python/" style="font-size:10px">Python</a> <a href="/tags/SCRUM/" style="font-size:10px">SCRUM</a> <a href="/tags/SQL/" style="font-size:10px">SQL</a> <a href="/tags/TensorBoard/" style="font-size:10px">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size:14.29px">TensorFlow</a> <a href="/tags/Tmux/" style="font-size:10px">Tmux</a> <a href="/tags/Typora/" style="font-size:10px">Typora</a> <a href="/tags/UMLet/" style="font-size:15.71px">UMLet</a> <a href="/tags/Ubuntu/" style="font-size:10px">Ubuntu</a> <a href="/tags/VUE/" style="font-size:10px">VUE</a> <a href="/tags/Valine/" style="font-size:10px">Valine</a> <a href="/tags/Vue/" style="font-size:11.43px">Vue</a> <a href="/tags/Vuex/" style="font-size:10px">Vuex</a> <a href="/tags/ajax/" style="font-size:10px">ajax</a> <a href="/tags/cookie/" style="font-size:10px">cookie</a> <a href="/tags/form/" style="font-size:10px">form</a> <a href="/tags/git/" style="font-size:10px">git</a> <a href="/tags/github-pages/" style="font-size:10px">github pages</a> <a href="/tags/gitment/" style="font-size:12.86px">gitment</a> <a href="/tags/hexo/" style="font-size:17.14px">hexo</a> <a href="/tags/iNode/" style="font-size:11.43px">iNode</a> <a href="/tags/markdown/" style="font-size:10px">markdown</a> <a href="/tags/mongoDB/" style="font-size:10px">mongoDB</a> <a href="/tags/numpy/" style="font-size:10px">numpy</a> <a href="/tags/prototype/" style="font-size:10px">prototype</a> <a href="/tags/ubuntu/" style="font-size:18.57px">ubuntu</a> <a href="/tags/webstorage/" style="font-size:10px">webstorage</a> <a href="/tags/youtube/" style="font-size:10px">youtube</a> <a href="/tags/三层架构/" style="font-size:10px">三层架构</a> <a href="/tags/内存/" style="font-size:10px">内存</a> <a href="/tags/刷题/" style="font-size:10px">刷题</a> <a href="/tags/双向链表/" style="font-size:10px">双向链表</a> <a href="/tags/同步/" style="font-size:10px">同步</a> <a href="/tags/图片显示/" style="font-size:10px">图片显示</a> <a href="/tags/建模/" style="font-size:11.43px">建模</a> <a href="/tags/异步/" style="font-size:10px">异步</a> <a href="/tags/归并/" style="font-size:10px">归并</a> <a href="/tags/快捷方式/" style="font-size:10px">快捷方式</a> <a href="/tags/指针/" style="font-size:10px">指针</a> <a href="/tags/操作系统/" style="font-size:10px">操作系统</a> <a href="/tags/数据库/" style="font-size:11.43px">数据库</a> <a href="/tags/数据库建模/" style="font-size:10px">数据库建模</a> <a href="/tags/爬虫/" style="font-size:10px">爬虫</a> <a href="/tags/用例图/" style="font-size:14.29px">用例图</a> <a href="/tags/网站收录/" style="font-size:10px">网站收录</a> <a href="/tags/设计模式/" style="font-size:10px">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size:10px">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size:10px">阿里云</a></div></div><div class="widget-wrap"><h3 class="widget-title">归档</h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">最新文章</h3><div class="widget"><ul><li><a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a></li><li><a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a></li><li><a href="/同步与异步.html">同步与异步</a></li><li><a href="/Promise与async-await.html">Promise与async/await</a></li><li><a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a></li></ul></div></div></aside><div class="outer"><div id="footer-info" class="inner">&copy; 2018 Mengjie Zhang<br>Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a></div></div></footer></div><nav id="mobile-nav"><a href="/" class="mobile-nav-link">主页</a> <a href="/archives" class="mobile-nav-link">归档</a> <a href="/tags" class="mobile-nav-link">标签</a> <a href="/categories" class="mobile-nav-link">分类</a></nav><script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script src="/js/script.js"></script><div id="totop" style="position:fixed;bottom:100px;right:50px;cursor:pointer;z-index:99999"><a title="返回顶部"><img src="/img/scrollup.png"></a></div><script src="/js/totop.js"></script></div></body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>操作系统面试相关总结 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考课程：操作系统 参考资料：计算机操作系统教程">
+<meta name="keywords" content="操作系统">
+<meta property="og:type" content="article">
+<meta property="og:title" content="操作系统面试相关总结">
+<meta property="og:url" content="https://zmj97.coding.me/操作系统面试相关总结.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="参考课程：操作系统 参考资料：计算机操作系统教程">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zmj97.coding.me/images/进程状态转换图.jpg">
+<meta property="og:image" content="https://user-gold-cdn.xitu.io/2017/5/22/08d8fe2bdd546e97085f4f1d69281c9f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1">
+<meta property="og:updated_time" content="2018-10-10T08:48:13.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="操作系统面试相关总结">
+<meta name="twitter:description" content="参考课程：操作系统 参考资料：计算机操作系统教程">
+<meta name="twitter:image" content="https://zmj97.coding.me/images/进程状态转换图.jpg">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-操作系统面试相关总结" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/操作系统面试相关总结.html" class="article-date">
+  <time datetime="2018-09-28T09:08:01.000Z" itemprop="datePublished">2018-09-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      操作系统面试相关总结
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统的四个特性"><span class="toc-number">1.</span> <span class="toc-text">操作系统的四个特性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#操作系统的主要功能"><span class="toc-number">2.</span> <span class="toc-text">操作系统的主要功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程的状态与转换"><span class="toc-number">3.</span> <span class="toc-text">进程的状态与转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程与线程"><span class="toc-number">4.</span> <span class="toc-text">进程与线程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程通信"><span class="toc-number">5.</span> <span class="toc-text">进程通信</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程同步"><span class="toc-number">6.</span> <span class="toc-text">进程同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#用户态和内核态"><span class="toc-number">7.</span> <span class="toc-text">用户态和内核态</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#死锁"><span class="toc-number">8.</span> <span class="toc-text">死锁</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁原因"><span class="toc-number">8.1.</span> <span class="toc-text">死锁原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁的四个必要条件"><span class="toc-number">8.2.</span> <span class="toc-text">死锁的四个必要条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#死锁处理"><span class="toc-number">8.3.</span> <span class="toc-text">死锁处理</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#进程调度算法"><span class="toc-number">9.</span> <span class="toc-text">进程调度算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#内存连续分配"><span class="toc-number">10.</span> <span class="toc-text">内存连续分配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本分页储存管理方式"><span class="toc-number">11.</span> <span class="toc-text">基本分页储存管理方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本分段储存管理方式"><span class="toc-number">12.</span> <span class="toc-text">基本分段储存管理方式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分段分页方式的比较"><span class="toc-number">13.</span> <span class="toc-text">分段分页方式的比较</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#段页式存储"><span class="toc-number">14.</span> <span class="toc-text">段页式存储</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#基本思想"><span class="toc-number">14.1.</span> <span class="toc-text">基本思想</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#地址变换的过程"><span class="toc-number">14.2.</span> <span class="toc-text">地址变换的过程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#虚拟内存"><span class="toc-number">15.</span> <span class="toc-text">虚拟内存</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#页面置换算法"><span class="toc-number">16.</span> <span class="toc-text">页面置换算法</span></a></li></ol> 
+          </div> 
+        
+        <p>参考课程：<a href="https://www.bilibili.com/video/av6538245?from=search&amp;seid=2726829833194936883" rel="external nofollow noopener noreferrer" target="_blank">操作系统</a></p>
+<p>参考资料：<a href="https://link.juejin.im/?target=http%3A%2F%2Fc.biancheng.net%2Fcpp%2Fu%2Fxitong%2F" rel="external nofollow noopener noreferrer" target="_blank">计算机操作系统教程</a></p>
+<a id="more"></a>
+<hr>
+<h2 id="操作系统的四个特性"><a href="#操作系统的四个特性" class="headerlink" title="操作系统的四个特性"></a>操作系统的四个特性</h2><ul>
+<li><strong>并发</strong>：同一<u>时间段</u>内多个程序执行<ul>
+<li>需要区别并行和并发</li>
+<li>并行为同一<u>时刻</u>多个程序执行</li>
+</ul>
+</li>
+<li><strong>共享</strong>：系统中的资源可以被内存中的多个并发执行的进线程共同使用</li>
+<li><p><strong>虚拟</strong>：通过时分复用和空分复用技术实现把一个物理实体虚拟为多个</p>
+<ul>
+<li>时分复用：如分时系统，就是将提供给整个信道传输信息的事件划分成若干时间片（简称时隙），并将这些时隙分配给每一个信号源使用</li>
+<li>空分复用：如虚拟内存，指让同一个频段在不同的空间内得到重复利用</li>
+</ul>
+</li>
+<li><p><strong>异步</strong>：操作系统允许多个程序并发执行，<u>但由于资源有限，进程的执行不是一步到底的，而是走走停停，以不可知的速度向前推进</u></p>
+<ul>
+<li>这导致当操作系统运行在一种随机的环境下时，可能导致进程产生与时间有关的错误</li>
+<li>但只要运行环境相同，操作系统必须保证多次运行进程都获得相同的结果</li>
+</ul>
+</li>
+</ul>
+<h2 id="操作系统的主要功能"><a href="#操作系统的主要功能" class="headerlink" title="操作系统的主要功能"></a>操作系统的主要功能</h2><ul>
+<li><strong>进程管理</strong>：包括进程控制、进程同步、进程通信和进程调度</li>
+<li><strong>内存管理</strong>：包括内存分配、内存保护、地址映射和内存扩充</li>
+<li><p><strong>设备管理</strong>：负责管理各类外围设备（简称：外设），包括分配、启动和故障处理等</p>
+<ul>
+<li>完成用户的IO请求</li>
+<li>为用户进程分配IO设备</li>
+<li>提高IO设备利用率</li>
+<li>提高IO速度</li>
+<li>方便IO的使用</li>
+</ul>
+</li>
+<li><p><strong>文件管理</strong>：管理系统文件和用户文件，方便使用同时保证安全性</p>
+<ul>
+<li>磁盘存储空间管理</li>
+<li>目录管理</li>
+<li>文件读写管理</li>
+<li>文件共享和保护</li>
+</ul>
+</li>
+<li><strong>作业管理</strong>：每个用户请求计算机系统完成的一个独立的操作称为作业。作业管理包括作业的输入和输出，作业的调度与控制（根据用户的需要控制作业运行的步骤）</li>
+</ul>
+<h2 id="进程的状态与转换"><a href="#进程的状态与转换" class="headerlink" title="进程的状态与转换"></a>进程的状态与转换</h2><p><img src="/images/进程状态转换图.jpg" alt="进程状态转换图"></p>
+<ul>
+<li><strong>新建</strong>： 对应于进程刚刚被创建时没有被提交的状态，并等待系统完成创建进程的所有必要信息</li>
+<li><strong>运行</strong>：当一个进程在处理机上运行时，则称该进程处于运行状态<ul>
+<li>处于此状态的进程的数目小于等于处理器的数目</li>
+<li>对于单处理机系统，处于运行状态的进程只有一个</li>
+<li>在没有其他进程可以执行时（如所有进程都在阻塞状态），通常会自动执行系统的空闲进程。</li>
+</ul>
+</li>
+<li><strong>就绪</strong>：当一个进程获得了除处理机以外的一切所需资源，一旦得到处理机即可运行，则称此进程处于就绪状态。就绪进程可以按多个<u>优先级</u>来划分队列:<ul>
+<li>当一个进程由于时间片用完而进入就绪状态时，排入低优先级队列</li>
+<li>当进程由I/O操作完成而进入就绪状态时，排入高优先级队列。</li>
+</ul>
+</li>
+<li><p><strong>阻塞</strong>：也称为等待或睡眠状态，一个进程正在等待某一事件发生（例如请求I/O而等待I/O完成等）而暂时停止运行，这时即使把处理机分配给进程也无法运行，故称该进程处于阻塞状态</p>
+</li>
+<li><p><strong>终止</strong>：进程已结束运行，回收除进程控制块之外的其他资源，并让其他进程从进程控制块中收集有关信息（如记帐和将退出代码传递给父进程）</p>
+</li>
+</ul>
+<h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><table>
+<thead>
+<tr>
+<th>方面</th>
+<th>进程</th>
+<th>线程</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>根本区别</td>
+<td>操作系统资源分配的基本单位</td>
+<td>任务调度和执行的基本单位</td>
+</tr>
+<tr>
+<td>开销方面</td>
+<td>每个进程都有独立的代码和数据空间（程序上下文），程序之间的切换会有较大的开销</td>
+<td>线程可以看做是轻量级的进程。同一类线程共享代码和数据空间，每个线程都有自己独立的运行栈和程序计数器，线程之间切换的开销很小</td>
+</tr>
+<tr>
+<td>所处环境</td>
+<td>操作系统中多个进程可以并发运行</td>
+<td>同一个进程中可以有多个线程同时执行（通过CPU调度，在每个时间片中只有一个线程执行）</td>
+</tr>
+<tr>
+<td>内存分配</td>
+<td>系统在运行时会为每个进程分配不同的内存空间</td>
+<td>除了CPU外，系统不会为线程分配内存（线程使用的资源来自其所属进程的资源），线程组之间只能共享资源</td>
+</tr>
+<tr>
+<td>包含关系</td>
+<td>进程可以包含多个线程，且这些线程可以并发运行</td>
+<td>线程是进程的一部分，所以线程也被称为轻权进程或者轻量级进程</td>
+</tr>
+</tbody>
+</table>
+<h2 id="进程通信"><a href="#进程通信" class="headerlink" title="进程通信"></a>进程通信</h2><p>进程之间的信息交换。</p>
+<ul>
+<li>共享内存</li>
+<li>信息传递</li>
+<li>管道通信<ul>
+<li>管道，是指用于连接一个读进程和一个写进程以实现它们之间通信的一个共享文件，又名pipe文件</li>
+<li>向管道（共享文件）提供输入的发送进程（即写进程），以字符流形式将大量的数据送入（写）管道</li>
+<li>而接收管道输出的接收进程（即读进程），则从管道中接收（读）数据</li>
+<li>为了协调双方的通信，管道机制必须提供以下三方面的协调能力：互斥、同步和确定对方的存在</li>
+</ul>
+</li>
+</ul>
+<h2 id="进程同步"><a href="#进程同步" class="headerlink" title="进程同步"></a>进程同步</h2><p>多进程虽然提高了系统资源利用率和吞吐量，但是由于进程的异步性可能造成系统的混乱。</p>
+<p><strong>进程同步</strong>的任务就是对多个相关进程在<u>执行顺序上进行协调</u>，使并发执行的多个进程之间可以有效的共享资源和相互合作，保证程序执行的可再现性。</p>
+<p>同步机制需要遵循的原则：</p>
+<ol>
+<li>空闲让进：当没有进程处于临界区的时候，应该许可其他进程进入临界区的申请</li>
+<li>忙则等待：当前如果有进程处于临界区，如果有其他进程申请进入，则必须等待，保证对临界区的互斥访问</li>
+<li>有限等待：对要求访问临界资源的进程，需要在有限时间内进入临界区，防止出现死等</li>
+<li>让权等待：当进程无法进入临界区的时候，需要释放处理机，以免陷入忙等</li>
+</ol>
+<p>经典的进程同步问题：</p>
+<ul>
+<li>生产者-消费者问题</li>
+<li>哲学家进餐问题</li>
+<li>读者-写者问题</li>
+</ul>
+<p>同步的解决方案：</p>
+<ul>
+<li>管程</li>
+<li>信号量</li>
+</ul>
+<h2 id="用户态和内核态"><a href="#用户态和内核态" class="headerlink" title="用户态和内核态"></a>用户态和内核态</h2><p><img src="https://user-gold-cdn.xitu.io/2017/5/22/08d8fe2bdd546e97085f4f1d69281c9f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p>
+<p>运行在<strong>用户态</strong>下的程序<strong>不能</strong>直接访问操作系统内核数据结构和程序。</p>
+<p><strong>用户态切换到内核态的3种方式</strong></p>
+<ol>
+<li><strong>系统调用</strong>：用户态进程主动要求切换到内核态的一种方式，用户态进程通过系统调用申请使用操作系统提供的服务程序完成工作。</li>
+<li><strong>异常</strong>：当CPU在执行运行在用户态下的程序时，发生了某些事先不可知的异常，这时会触发由当前运行进程切换到处理此异常的内核相关程序中，也就转到了内核态，比如缺页异常。</li>
+<li><strong>外围设备的中断</strong>：当外围设备完成用户请求的操作后，会向CPU发出相应的中断信号，这时CPU会暂停执行下一条即将要执行的指令转而去执行与中断信号对应的处理程序，如果先前执行的指令是用户态下的程序，那么这个转换的过程自然也就发生了由用户态到内核态的切换。比如硬盘读写操作完成，系统会切换到硬盘读写的中断处理程序中执行后续操作等。</li>
+</ol>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>多个进程在运行过程中，因为争夺资源而造成的一种僵局。</p>
+<h3 id="死锁原因"><a href="#死锁原因" class="headerlink" title="死锁原因"></a>死锁原因</h3><ol>
+<li><strong>竞争资源</strong>：请求同一有限资源的进程数多于可用资源数</li>
+<li><strong>进程推进顺序不当</strong>：进程执行中，请求和释放资源顺序不合理，如资源等待链</li>
+</ol>
+<h3 id="死锁的四个必要条件"><a href="#死锁的四个必要条件" class="headerlink" title="死锁的四个必要条件"></a>死锁的四个必要条件</h3><ol>
+<li><strong>互斥</strong>:在一个时间只能有一个进程使用资源</li>
+<li><strong>持有并等待</strong>：进程持有至少一个资源时，等待获取其他进程持有的额外资源</li>
+<li><strong>无抢占</strong>：进程对于已经申请到的资源在使用完成之前不可以被剥夺</li>
+<li><strong>循环等待</strong>：存在进程集合{P0,P1,…,PN}，P0正在等待P1占用的资源，P1正在等待P2占用的资源，……，PN-1正在等待PN占用的资源，PN正在等待P0占用的资源</li>
+</ol>
+<h3 id="死锁处理"><a href="#死锁处理" class="headerlink" title="死锁处理"></a>死锁处理</h3><ul>
+<li>确保系统永远不会进入死锁状态</li>
+<li>系统可能进入死锁状态，若进入死锁状态则进行恢复</li>
+<li>忽略这个问题，假装系统中从来没有发生死锁；用于大多数操作系统，包括UNIX。</li>
+</ul>
+<ol>
+<li><strong>死锁预防</strong>：破坏产生死锁的4个必要条件中的一个或者多个<ol>
+<li><strong>互斥</strong>：不互斥可能带来不确定性问题</li>
+<li><strong>持有并等待</strong>：让一个资源在请求资源时，不持有任何其他资源。为请求资源的进程分配所有资源；仅当进程不占有资源时才可以请求资源。但是这会导致<u>资源利用率低，还可能发生饥饿</u>。</li>
+<li><strong>无抢占</strong>：抢占资源只能kill掉正在占有资源的进程，不合理</li>
+<li><strong>循环等待</strong>：对所有资源类型进行排序，并要求每个进程按照资源的顺序进行申请。在<u>嵌入式系统</u>中经常这种方法，因为嵌入式系统资源比较有限</li>
+</ol>
+</li>
+<li><strong>死锁避免</strong>：额外的先行验证<ol>
+<li>最简单最有效的模式是要求每个进程声明它可能需要的每个类型资源的<strong>最大数目</strong></li>
+<li>限定<strong>提供与分配</strong>的资源数量和进程的<strong>最大需求</strong></li>
+<li>在进程申请资源时检查资源分配状态来进行资源分配，以确保永远不会有一个环形等待状态</li>
+<li><strong>银行家算法</strong>：死锁避免的著名算法。以银行借贷系统的分配策略为基础，判断并保证系统的安全运行</li>
+</ol>
+</li>
+<li><strong>死锁检测</strong>：允许系统运行过程中产生死锁，在死锁发生之后，采用一定的算法进行检测，并确定与死锁相关的资源和进程，采取相关方法清除检测到的死锁。实现难度大</li>
+<li><strong>死锁恢复</strong>：与死锁检测配合，将系统从死锁中解脱出来（撤销进程或者剥夺资源）。对检测到的和死锁相关的进程以及资源，通过撤销或者挂起的方式，释放一些资源并将其分配给处于阻塞状态的进程，使其转变为就绪态。实现难度大。</li>
+</ol>
+<h2 id="进程调度算法"><a href="#进程调度算法" class="headerlink" title="进程调度算法"></a>进程调度算法</h2><ul>
+<li><p><strong>先来先服务调度算法FCFS：</strong>既可以作为作业调度算法也可以作为进程调度算法；按作业或者进程到达的先后顺序依次调度；因此对于长作业比较有利；</p>
+</li>
+<li><p><strong>短作业优先调度算法SJF：</strong>作业调度算法，算法从就绪队列中选择估计时间最短的作业进行处理，直到得出结果或者无法继续执行；缺点：不利于长作业；未考虑作业的重要性；运行时间是预估的，并不靠谱 ；</p>
+</li>
+<li><p><strong>高相应比算法HRN：</strong>响应比=(等待时间+要求服务时间)/要求服务时间；</p>
+</li>
+<li><p><strong>时间片轮转调度RR：</strong>按到达的先后对进程放入队列中，然后给队首进程分配CPU时间片，时间片用完之后计时器发出中断，暂停当前进程并将其放到队列尾部，循环 ;</p>
+</li>
+<li><p><strong>多级反馈队列调度算法：</strong>目前公认较好的调度算法；设置多个就绪队列并为每个队列设置不同的优先级，第一个队列优先级最高，其余依次递减。优先级越高的队列分配的时间片越短，进程到达之后按FCFS放入第一个队列，如果调度执行后没有完成，那么放到第二个队列尾部等待调度，如果第二次调度仍然没有完成，放入第三队列尾部…。只有当前一个队列为空的时候才会去调度下一个队列的进程。</p>
+</li>
+</ul>
+<h2 id="内存连续分配"><a href="#内存连续分配" class="headerlink" title="内存连续分配"></a>内存连续分配</h2><p>动态分区分配时所采用的几种算法。</p>
+<p>动态分区分配又称为可变分区分配，是一种动态划分内存的分区方法。</p>
+<p>这种分区方法不预先将内存划分，而是在进程装入内存时，根据进程的大小动态地建立分区，并使分区的大小正好适合进程的需要。</p>
+<p>因此系统中分区的大小和数目是可变的。</p>
+<ul>
+<li><p><strong>首次适应(First Fit)算法：</strong>空闲分区以地址递增的次序链接。分配内存时顺序查找，找到大小能满足要求的第一个空闲分区。</p>
+</li>
+<li><p><strong>最佳适应(Best Fit)算法：</strong>空闲分区按容量递增形成分区链，找到第一个能满足要求的空闲分区。</p>
+</li>
+<li><p><strong>最坏适应(Worst Fit)算法：</strong>又称最大适应(Largest Fit)算法，空闲分区以容量递减的次序链接。找到第一个能满足要求的空闲分区，也就是挑选出最大的分区。</p>
+</li>
+</ul>
+<h2 id="基本分页储存管理方式"><a href="#基本分页储存管理方式" class="headerlink" title="基本分页储存管理方式"></a>基本分页储存管理方式</h2><p>把主存空间划分为大小相等且固定的块，块相对较小，作为主存的基本单位。</p>
+<p>每个进程也以块为单位进行划分，进程在执行时，以块为单位逐个申请主存中的块空间。</p>
+<p>因为程序数据存储在不同的页面中，而页面又离散的分布在内存中，<strong>因此需要一个页表来记录逻辑地址和实际存储地址之间的映射关系，以实现从页号到物理块号的映射。</strong></p>
+<p>由于页表也是存储在内存中的，因此和不适用分页管理的存储方式相比，访问分页系统中内存数据需要<strong>两次的内存访问</strong>(一次是从内存中访问页表，从中找到指定的物理块号，加上页内偏移得到实际物理地址；第二次就是根据第一次得到的物理地址访问内存取出数据)。</p>
+<p>为了减少两次访问内存导致的效率影响，分页管理中引入了<strong>快表机制</strong>，包含快表机制的内存管理中，当要访问内存数据的时候，首先将页号在快表中查询，如果查找到说明要访问的页表项在快表中，那么直接从快表中读取相应的物理块号；如果没有找到，那么访问内存中的页表，从页表中得到物理地址，同时将页表中的该映射表项添加到快表中(可能存在快表换出算法)。</p>
+<p>在某些计算机中如果内存的逻辑地址很大，将会导致程序的页表项会很多，而页表在内存中是连续存放的，所以相应的就需要较大的连续内存空间。为了解决这个问题，可以采用<strong>两级页表或者多级页表的方法</strong>，其中外层页表一次性调入内存且连续存放，内层页表离散存放。相应的访问内存页表的时候需要一次地址变换，访问逻辑地址对应的物理地址的时候也需要一次地址变换，而且一共需要访问内存3次才可以读取一次数据。</p>
+<h2 id="基本分段储存管理方式"><a href="#基本分段储存管理方式" class="headerlink" title="基本分段储存管理方式"></a>基本分段储存管理方式</h2><p>分页是为了提高内存利用率，而分段是为了满足程序员在编写代码的时候的一些逻辑需求(比如数据共享，数据保护，动态链接等)。</p>
+<p>分段内存管理当中，<strong>地址是二维的，一维是段号，一维是段内地址；其中每个段的长度是不一样的，而且每个段内部都是从0开始编址的</strong>。由于分段管理中，每个段内部是连续内存分配，但是段和段之间是离散分配的，因此也存在一个逻辑地址到物理地址的映射关系，相应的就是段表机制。段表中的每一个表项记录了该段在内存中的起始地址和该段的长度。段表可以放在内存中也可以放在寄存器中。</p>
+<p>访问内存的时候根据段号和段表项的长度计算当前访问段在段表中的位置，然后访问段表，得到该段的物理地址，根据该物理地址以及段内偏移量就可以得到需要访问的内存。由于也是两次内存访问，所以分段管理中同样引入了联想寄存器。</p>
+<h2 id="分段分页方式的比较"><a href="#分段分页方式的比较" class="headerlink" title="分段分页方式的比较"></a>分段分页方式的比较</h2><p>页是信息的物理单位，是出于系统内存利用率的角度提出的离散分配机制；</p>
+<p>段是信息的逻辑单位，每个段含有一组意义完整的信息，是出于用户角度提出的内存管理机制。</p>
+<p>页的大小是固定的，由系统决定；</p>
+<p>段的大小是不确定的，由用户决定。</p>
+<h2 id="段页式存储"><a href="#段页式存储" class="headerlink" title="段页式存储"></a>段页式存储</h2><h3 id="基本思想"><a href="#基本思想" class="headerlink" title="基本思想"></a>基本思想</h3><p>分页系统能有效地提高内存的利用率，而分段系统能反映程序的逻辑结构，便于段的共享与保护，将分页与分段两种存储方式结合起来，就形成了段页式存储管理方式。</p>
+<p>在段页式存储管理系统中，作业的地址空间首先被分成若干个逻辑分段，每段都有自己的段号，然后再将每段分成若干个大小相等的页。对于主存空间也分成大小相等的页，主存的分配以页为单位。</p>
+<p>段页式系统中，作业的地址结构包含三部分的内容：段号，页号，页内位移量</p>
+<p>程序员按照分段系统的地址结构将地址分为段号与段内位移量，地址变换机构将段内位移量分解为页号和页内位移量。</p>
+<p>为实现段页式存储管理，系统应为每个进程设置一个段表，包括每段的段号，该段的页表始址和页表长度。每个段有自己的页表，记录段中的每一页的页号和存放在主存中的物理块号。</p>
+<h3 id="地址变换的过程"><a href="#地址变换的过程" class="headerlink" title="地址变换的过程"></a>地址变换的过程</h3><ol>
+<li>程序执行时，从PCB（进程控制块）中取出段表始址和段表长度，装入段表寄存器。</li>
+<li>由地址变换机构将逻辑地址自动分成段号、页号和页内地址。</li>
+<li>将段号与段表长度进行比较，若段号大于或等于段表长度，则表示本次访问的地址已超越进程的地址空间，产生越界中断。</li>
+<li>将段表始址与段号和段表项长度的乘积相加，便得到该段表项在段表中的位置。</li>
+<li>取出段描述子得到该段的页表始址和页表长度。</li>
+<li>将页号与页表长度进行比较，若页号大于或等于页表长度，则表示本次访问的地址已超越进程的地址空间，产生越界中断。</li>
+<li>将页表始址与页号和页表项长度的乘积相加，便得到该页表项在页表中的位置。</li>
+<li>取出页描述子得到该页的物理块号。</li>
+<li>对该页的存取控制进行检查。</li>
+<li>将物理块号送入物理地址寄存器中，再将有效地址寄存器中的页内地址直接送入物理地址寄存器的块内地址字段中，拼接得到实际的物理地址。</li>
+</ol>
+<h2 id="虚拟内存"><a href="#虚拟内存" class="headerlink" title="虚拟内存"></a>虚拟内存</h2><p>如果存在一个程序，所需内存空间超过了计算机可以提供的实际内存，那么由于该程序无法装入内存所以也就无法运行。</p>
+<p>单纯的增加物理内存只能解决一部分问题，但是仍然会出现无法装入单个或者无法同时装入多个程序的问题。</p>
+<p>因此可以从逻辑的角度扩充内存容量，即可解决上述两种问题。</p>
+<p>基于局部性原理，<u>在程序装入时，可以将程序的一部分装入内存，而将其余部分留在外存</u>，就可以启动程序执行。</p>
+<p>在程序执行过程中，<u>当所访问的信息不在内存时，由操作系统将所需要的部分调入内存,然后继续执行程序</u>。</p>
+<p>另一方面，操作系统将内存中<u>暂时不使用的内容换出到外存上，从而腾出空间存放将要调入内存的信息</u>。</p>
+<p>这样，系统好像为用户提供了一个比实际内存大得多的存储器，称为<strong>虚拟存储器</strong>。</p>
+<p><strong>虚拟存储器</strong>的特征：</p>
+<ol>
+<li><strong>多次性</strong>：一个作业可以分多次被调入内存。多次性是虚拟存储特有的属性</li>
+<li><strong>对换性</strong>：作业运行过程中存在换进换出的过程(换出暂时不用的数据换入需要的数据)</li>
+<li><strong>虚拟性</strong>：虚拟性体现在其从逻辑上扩充了内存的容量(可以运行实际内存需求比物理内存大的应用程序)。虚拟性是虚拟存储器的最重要特征也是其最终目标。虚拟性建立在多次性和对换性的基础上行，多次性和对换性又建立在离散分配的基础上</li>
+</ol>
+<h2 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h2><ul>
+<li><p><strong>最佳置换算法：</strong>只具有理论意义的算法，用来评价其他页面置换算法。置换策略是将当前页面中在未来最长时间内不会被访问的页置换出去。</p>
+</li>
+<li><p><strong>先进先出置换算法：</strong>简单粗暴的一种置换算法，没有考虑页面访问频率信息。每次淘汰最早调入的页面。</p>
+</li>
+<li><p><strong>最近最久未使用算法LRU：</strong>算法赋予每个页面一个访问字段，用来记录上次页面被访问到现在所经历的时间t，每次置换的时候把t值最大的页面置换出去(实现方面可以采用寄存器或者栈的方式实现)。</p>
+</li>
+<li><p><strong>时钟算法clock(也被称为是最近未使用算法NRU)：</strong>页面设置一个访问位，并将页面链接为一个环形队列，页面被访问的时候访问位设置为1。页面置换的时候，如果当前指针所指页面访问为为0，那么置换，否则将其置为0，循环直到遇到一个访问为位0的页面。</p>
+</li>
+<li><p><strong>改进型Clock算法：</strong>在Clock算法的基础上添加一个修改位，替换时根究访问位和修改位综合判断。优先替换访问位和修改位都是0的页面，其次是访问位为0修改位为1的页面。</p>
+</li>
+<li><p><strong>最少使用算法LFU：</strong>设置寄存器记录页面被访问次数，每次置换的时候置换当前访问次数最少的。</p>
+</li>
+</ul>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/操作系统面试相关总结.html" data-id="cjn31e94s003bgsagovq7gv2r" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/操作系统/">操作系统</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/数据库基础知识.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          数据库基础知识
+        
+      </div>
+    </a>
+  
+  
+    <a href="/继续磕面经.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">继续磕面经</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 12.86px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a>
+          </li>
+        
+          <li>
+            <a href="/同步与异步.html">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/Promise与async-await.html">Promise与async/await</a>
+          </li>
+        
+          <li>
+            <a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>

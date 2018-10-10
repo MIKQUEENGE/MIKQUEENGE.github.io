@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>求包含每个有序数组(共k个)至少一个元素的最小区间 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="给定k个有序数组, 每个数组有个N个元素，找出一个最小的闭区间，使其包含每个数组中的至少一个元素。  关于最小区间—— 给定两个区间[a,b], [c,d]：  如果 b-a &amp;lt; d-c，则认为[a, b]是更小的区间； 如果 b-a == d-c，且a &amp;lt; c，则认为[a, b]是更小的区间。  不妨设k为3，分别为a,b,c数组且a1&amp;lt;=b1&amp;lt;=c1，当前最小区间长度">
+<meta name="keywords" content="归并">
+<meta property="og:type" content="article">
+<meta property="og:title" content="求包含每个有序数组(共k个)至少一个元素的最小区间">
+<meta property="og:url" content="https://zmj97.coding.me/求包含每个有序数组-共k个-至少一个元素的最小区间.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="给定k个有序数组, 每个数组有个N个元素，找出一个最小的闭区间，使其包含每个数组中的至少一个元素。  关于最小区间—— 给定两个区间[a,b], [c,d]：  如果 b-a &amp;lt; d-c，则认为[a, b]是更小的区间； 如果 b-a == d-c，且a &amp;lt; c，则认为[a, b]是更小的区间。  不妨设k为3，分别为a,b,c数组且a1&amp;lt;=b1&amp;lt;=c1，当前最小区间长度">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-10T08:47:40.503Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="求包含每个有序数组(共k个)至少一个元素的最小区间">
+<meta name="twitter:description" content="给定k个有序数组, 每个数组有个N个元素，找出一个最小的闭区间，使其包含每个数组中的至少一个元素。  关于最小区间—— 给定两个区间[a,b], [c,d]：  如果 b-a &amp;lt; d-c，则认为[a, b]是更小的区间； 如果 b-a == d-c，且a &amp;lt; c，则认为[a, b]是更小的区间。  不妨设k为3，分别为a,b,c数组且a1&amp;lt;=b1&amp;lt;=c1，当前最小区间长度">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-求包含每个有序数组-共k个-至少一个元素的最小区间" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/求包含每个有序数组-共k个-至少一个元素的最小区间.html" class="article-date">
+  <time datetime="2018-09-22T13:03:22.000Z" itemprop="datePublished">2018-09-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OJ/">OJ</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      求包含每个有序数组(共k个)至少一个元素的最小区间
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+        
+        <blockquote>
+<p>给定k个<strong>有序</strong>数组, 每个数组有个N个元素，找出一个最小的闭区间，使其包含每个数组中的至少一个元素。 </p>
+<p>关于最小区间——</p>
+<p>给定两个区间[a,b], [c,d]： </p>
+<p>如果 b-a &lt; d-c，则认为[a, b]是更小的区间；</p>
+<p>如果 b-a == d-c，且a &lt; c，则认为[a, b]是更小的区间。</p>
+</blockquote>
+<p>不妨设k为3，分别为a,b,c数组且a1&lt;=b1&lt;=c1，当前最小区间长度为INT_MAX</p>
+<p>假设三个数组所有元素排序后为：</p>
+<p>a1,…,b1,…,c1,…..</p>
+<p>我们考虑最小的a1，若最小区间包含的a数组的元素为a1，则若[a1,c1]的长度小于当前最小区间长度，更新最小区间长度为c1-a1，</p>
+<p>然后我们丢弃a1，因为若最小区间包含的a数组元素为a1，则最小区间一定为[a1,c1]，而我们已经更新了这个长度；若不是a1,则丢弃a1也无关紧要，不影响最后结果。</p>
+<p>那么现在我们一直的最小区间长度为c1-a1，三个数组剩下所有元素排序后可能为</p>
+<p>a2,..,b1,..,c1,…或</p>
+<p>b1,..,a2,..c1,…或</p>
+<p>b1,..,c1,..a2…</p>
+<p>第一种情况就类似于上边讨论的情况，更新最小区间长度为c1-a2，然后丢弃a2。</p>
+<p>对于后两种情况，我们考虑最小的b1：</p>
+<p>若最小区间包含的b数组的元素为b1，则最小区间包含的一定为b1,c1,a2，我们更新最小区间长度，然后丢弃b1，</p>
+<p>若不是b1，则丢弃b1;</p>
+<p>这样不断循环地考虑最小值，直到丢弃完了某一个数组的所有值，这样我们的当前最小区间长度就是所求结果。</p>
+<p>下边是代码：</p>
+<pre class=" language-c++"><code class="language-c++">#include <iostream>
+#include <limits.h>
+#include <vector>
+using namespace std;
+
+int main() {
+    int k, n;
+    cin>>k>>n;
+    if (k <= 0="" ||="" n="" <="0)" return="" 0;="" vector<vector<int=""> > nums;
+    vector<int> pos;
+    for (int i = 0; i < k; i++) {
+        vector<int> arrayI;
+        int tmp;
+        for (int j = 0; j < n; j++) {
+            cin>>tmp;
+            arrayI.push_back(tmp);
+        }
+        nums.push_back(arrayI);
+        pos.push_back(0);
+    }
+    int minLength = INT_MAX;
+    int realMin, realMax;
+    while (true) {
+        int arrayOfLeastNum = -1;
+        int tmpMin = INT_MAX;
+        int tmpMax = INT_MIN;
+        for (int i = 0; i < k; i++) {
+            if (nums[i][pos[i]] < tmpMin) {
+                tmpMin = nums[i][pos[i]];
+                arrayOfLeastNum = i;
+            }
+            if (nums[i][pos[i]] > tmpMax) {
+                tmpMax = nums[i][pos[i]];
+            }
+        }
+        if (tmpMax - tmpMin < minLength) {
+            minLength = tmpMax - tmpMin;
+            realMin = tmpMin, realMax = tmpMax;
+        }
+        if (++pos[arrayOfLeastNum] >= n) break;
+    }
+    cout<<realmin<<' '<<realmax;="" return="" 0;="" }="" <="" code=""></realmin<<'></int></int></=></vector></limits.h></iostream></code></pre>
+<p>但是，这个只能过90%:</p>
+<blockquote>
+<p>运行超时:您的程序未能在规定时间内运行结束，请检查是否循环有错或算法复杂度过大。<br>case通过率为90.00%</p>
+</blockquote>
+<p>看了一下题下的讨论，可以用一个优先队列（priority_queue，一个STL）或自己实现一个最小堆来维护“当前最小区间队列”，这样查找当前的最大值和最小值就是O(logn)而不是O(n)</p>
+<p>下边帖一下别人的代码：</p>
+<pre class=" language-c++"><code class="language-c++">链接：https://www.nowcoder.com/questionTerminal/0399d363fb594970bae7ad8a3978f86a
+来源：牛客网
+
+//思路2，用优先队列去实现多路归并
+
+#include<bits stdc++.h="">
+using namespace std;
+struct pt{
+    int x;
+    int pos;
+    pt(int a,int b):x(a),pos(b){}
+};
+struct cmp{        //重写比较函数
+    bool operator()(const pt a,const pt b){
+        return a.x>b.x;
+    }
+};
+int main(){
+    int k,n;
+    while(cin>>k>>n){
+        vector<vector<pt>>all;
+        vector<int> vec;
+        for(int i = 0;i<k;i++){ vector<pt="">temp;
+            for(int j = 0;j<n;j++){ int="" x;="" cin="">>x;
+                pt p(x,i);
+                temp.push_back(p);
+            }
+            all.push_back(temp);
+            vec.push_back(0);
+        }
+        vector<pt> sort;
+        priority_queue<pt,vector<pt>,cmp> qu; //优先队列
+        for(int i = 0;i<k;i++) qu.push(all[i][0]);="" while(!qu.empty()){="" pt="" temp="qu.top();" qu.pop();="" sort.push_back(temp);="" vec[temp.pos]++;="" if(vec[temp.pos]<="n-1){" qu.push(all[temp.pos][vec[temp.pos]]);="" }="" for(int="" i="0;i<vec.size();i++)" vec[i]="0;" int="" begin="0;" end="0;" start="0;" final="0;" length="INT_MAX;" bool="" flg="false;" vec[sort[0].pos]++;="" while(begin<sort.size()-1||end<sort.size()-1){="" flgg="true;">=1);
+            if(!flgg&&end<sort.size()){ if(end<sort.size()-1)="" end++;="" vec[sort[end].pos]++;="" }="" if(!flgg&&end="=sort.size()-1)" break;="" if(flgg&&begin<sort.size()){="" int="" x="sort[end].x-sort[begin].x;" if(x<length){="" start="sort[begin].x;" final="sort[end].x;" length="x;" vec[sort[begin].pos]--;="" if(begin<sort.size()-1)="" begin++;="" a="1;" cout<<start<<"="" "<<final<<endl;="" system("pause");="" return="" 0;="" <="" code=""></sort.size()){></k;i++)></pt,vector<pt></pt></n;j++){></k;i++){></int></vector<pt></bits></code></pre>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/求包含每个有序数组-共k个-至少一个元素的最小区间.html" data-id="cjn31e94x003lgsagl6n9pz81" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/归并/">归并</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Vuex入门.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vuex入门
+        
+      </div>
+    </a>
+  
+  
+    <a href="/HTTP学习记录.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">HTTP学习记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 12.86px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a>
+          </li>
+        
+          <li>
+            <a href="/同步与异步.html">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/Promise与async-await.html">Promise与async/await</a>
+          </li>
+        
+          <li>
+            <a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>
