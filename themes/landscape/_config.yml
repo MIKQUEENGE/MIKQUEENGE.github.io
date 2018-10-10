@@ -20,11 +20,6 @@ widgets:
 - archive
 - recent_posts
 
-local_search:
-  enable: true
-  trigger: auto
-  top_n_per_article: 1
-
 # display widgets at the bottom of index pages (pagination == 2)
 index_widgets:
 # - category

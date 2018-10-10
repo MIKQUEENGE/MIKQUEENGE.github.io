@@ -8,8 +8,6 @@ tags:
 - hexo
 ---
 
-
-
 主题：landscape
 
 添加type以及menu后仍然显示空白的解决办法：

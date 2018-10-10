@@ -1,4 +1,109 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>牛客网前端挑战编程题解 | zmj&#39;s blog</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="OJ链接：https://www.nowcoder.com/ta/front-end注意：在牛客不能用ES6的东西！"><meta name="keywords" content="JavaScript"><meta property="og:type" content="article"><meta property="og:title" content="牛客网前端挑战编程题解"><meta property="og:url" content="https://zmj97.coding.me/牛客网前端挑战编程题解.html"><meta property="og:site_name" content="zmj&#39;s blog"><meta property="og:description" content="OJ链接：https://www.nowcoder.com/ta/front-end注意：在牛客不能用ES6的东西！"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2018-10-10T08:46:00.513Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="牛客网前端挑战编程题解"><meta name="twitter:description" content="OJ链接：https://www.nowcoder.com/ta/front-end注意：在牛客不能用ES6的东西！"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head></html><body><div id="container"><div id="wrap"><header id="header"><div id="banner"></div><div id="header-outer" class="outer"><div id="header-title" class="inner"><h1 id="logo-wrap"><a href="/" id="logo">zmj&#39;s blog</a></h1></div><div id="header-inner" class="inner"><nav id="main-nav"><a id="main-nav-toggle" class="nav-icon"></a> <a class="main-nav-link" href="/">主页</a> <a class="main-nav-link" href="/archives">归档</a> <a class="main-nav-link" href="/tags">标签</a> <a class="main-nav-link" href="/categories">分类</a></nav><nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="搜索"></a></nav><div id="search-form-wrap"><form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form></div></div></div></header><div class="outer"><section id="main"><article id="post-牛客网前端挑战编程题解" class="article article-type-post" itemscope="" itemprop="blogPost"><div class="article-meta"><a href="/牛客网前端挑战编程题解.html" class="article-date"><time datetime="2018-09-20T06:33:15.000Z" itemprop="datePublished">2018-09-20</time></a><div class="article-category"><a class="article-category-link" href="/categories/Web/">Web</a></div></div><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">牛客网前端挑战编程题解</h1></header><div class="article-entry" itemprop="articleBody"><div id="toc" class="toc-article"><strong class="toc-title">文章目录</strong><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改this指向"><span class="toc-number">1.</span> <span class="toc-text">修改this指向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取url参数"><span class="toc-number">2.</span> <span class="toc-text">获取url参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dom节点查找"><span class="toc-number">3.</span> <span class="toc-text">dom节点查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#根据包名，在指定空间中创建对象"><span class="toc-number">4.</span> <span class="toc-text">根据包名，在指定空间中创建对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组去重"><span class="toc-number">5.</span> <span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#斐波那契数列"><span class="toc-number">6.</span> <span class="toc-text">斐波那契数列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间格式化输出"><span class="toc-number">7.</span> <span class="toc-text">时间格式化输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取字符串长度"><span class="toc-number">8.</span> <span class="toc-text">获取字符串长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邮箱字符串判断"><span class="toc-number">9.</span> <span class="toc-text">邮箱字符串判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色字符串转换"><span class="toc-number">10.</span> <span class="toc-text">颜色字符串转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将字符串转换为驼峰模式"><span class="toc-number">11.</span> <span class="toc-text">将字符串转换为驼峰模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串字符统计"><span class="toc-number">12.</span> <span class="toc-text">字符串字符统计</span></a></li></ol></div><p>OJ链接：<a href="https://www.nowcoder.com/ta/front-end" rel="external nofollow noopener noreferrer" target="_blank">https://www.nowcoder.com/ta/front-end</a></p><p>注意：在牛客不能用ES6的东西！</p><a id="more"></a><h2 id="修改this指向"><a href="#修改this指向" class="headerlink" title="修改this指向"></a>修改this指向</h2><blockquote><p>封装函数 f，使 f 的 this 指向指定的对象</p></blockquote><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">bindThis</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> oTarget<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>牛客网前端挑战编程题解 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="OJ链接：https://www.nowcoder.com/ta/front-end 注意：在牛客不能用ES6的东西！">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="牛客网前端挑战编程题解">
+<meta property="og:url" content="https://zmj97.coding.me/牛客网前端挑战编程题解.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="OJ链接：https://www.nowcoder.com/ta/front-end 注意：在牛客不能用ES6的东西！">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-10T08:46:00.513Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="牛客网前端挑战编程题解">
+<meta name="twitter:description" content="OJ链接：https://www.nowcoder.com/ta/front-end 注意：在牛客不能用ES6的东西！">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-牛客网前端挑战编程题解" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/牛客网前端挑战编程题解.html" class="article-date">
+  <time datetime="2018-09-20T06:33:15.000Z" itemprop="datePublished">2018-09-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      牛客网前端挑战编程题解
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#修改this指向"><span class="toc-number">1.</span> <span class="toc-text">修改this指向</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取url参数"><span class="toc-number">2.</span> <span class="toc-text">获取url参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#dom节点查找"><span class="toc-number">3.</span> <span class="toc-text">dom节点查找</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#根据包名，在指定空间中创建对象"><span class="toc-number">4.</span> <span class="toc-text">根据包名，在指定空间中创建对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数组去重"><span class="toc-number">5.</span> <span class="toc-text">数组去重</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#斐波那契数列"><span class="toc-number">6.</span> <span class="toc-text">斐波那契数列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间格式化输出"><span class="toc-number">7.</span> <span class="toc-text">时间格式化输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取字符串长度"><span class="toc-number">8.</span> <span class="toc-text">获取字符串长度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#邮箱字符串判断"><span class="toc-number">9.</span> <span class="toc-text">邮箱字符串判断</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#颜色字符串转换"><span class="toc-number">10.</span> <span class="toc-text">颜色字符串转换</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将字符串转换为驼峰模式"><span class="toc-number">11.</span> <span class="toc-text">将字符串转换为驼峰模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#字符串字符统计"><span class="toc-number">12.</span> <span class="toc-text">字符串字符统计</span></a></li></ol> 
+          </div> 
+        
+        <p>OJ链接：<a href="https://www.nowcoder.com/ta/front-end" rel="external nofollow noopener noreferrer" target="_blank">https://www.nowcoder.com/ta/front-end</a></p>
+<p>注意：在牛客不能用ES6的东西！</p>
+<a id="more"></a>
+<h2 id="修改this指向"><a href="#修改this指向" class="headerlink" title="修改this指向"></a>修改this指向</h2><blockquote>
+<p> 封装函数 f，使 f 的 this 指向指定的对象</p>
+</blockquote>
+<p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">bindThis</span><span class="token punctuation">(</span>f<span class="token punctuation">,</span> oTarget<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">// 考虑浏览器兼容</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>f<span class="token punctuation">.</span>bind<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">return</span> f<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>oTarget<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -10,9 +115,21 @@
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><h2 id="获取url参数"><a href="#获取url参数" class="headerlink" title="获取url参数"></a>获取url参数</h2><blockquote><p>获取 url 中的参数</p><ol><li>指定参数名称，返回该参数的值 或者 空字符串</li><li>不指定参数名称，返回全部的参数对象 或者 {}</li><li>如果存在多个同名参数，则返回数组</li></ol></blockquote><p>输入</p><pre><code>http://www.nowcoder.com?key=1&amp;key=2&amp;key=3&amp;test=4#hehe
-</code></pre><p>输出</p><pre><code>[1, 2, 3]
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getUrlParam</span><span class="token punctuation">(</span>sUrl<span class="token punctuation">,</span> sKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<h2 id="获取url参数"><a href="#获取url参数" class="headerlink" title="获取url参数"></a>获取url参数</h2><blockquote>
+<p>获取 url 中的参数</p>
+<ol>
+<li>指定参数名称，返回该参数的值 或者 空字符串</li>
+<li>不指定参数名称，返回全部的参数对象 或者 {}</li>
+<li>如果存在多个同名参数，则返回数组</li>
+</ol>
+</blockquote>
+<p>输入</p>
+<pre><code>http://www.nowcoder.com?key=1&amp;key=2&amp;key=3&amp;test=4#hehe
+</code></pre><p>输出</p>
+<pre><code>[1, 2, 3]
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">getUrlParam</span><span class="token punctuation">(</span>sUrl<span class="token punctuation">,</span> sKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> result <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">// 先取?和#之间的字符串，然后按照&amp;分割</span>
   <span class="token keyword">var</span> querys <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>sUrl<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'#'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'&amp;'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -29,7 +146,9 @@
   <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>result<span class="token punctuation">[</span>sKey<span class="token punctuation">]</span><span class="token punctuation">.</span>length <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> result<span class="token punctuation">[</span>sKey<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">else</span> <span class="token keyword">return</span> result<span class="token punctuation">[</span>sKey<span class="token punctuation">]</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>还有大神的正则的方法…直接贴出来吧：</p><pre class="language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 链接：https://www.nowcoder.com/questionTerminal/a3ded747e3884a3c86d09d88d1652e10</span>
+</code></pre>
+<p>还有大神的正则的方法…直接贴出来吧：</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 链接：https://www.nowcoder.com/questionTerminal/a3ded747e3884a3c86d09d88d1652e10</span>
 <span class="token comment" spellcheck="true">// 来源：牛客网</span>
 
 <span class="token keyword">function</span> <span class="token function">getUrlParam</span><span class="token punctuation">(</span>sUrl<span class="token punctuation">,</span> sKey<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -39,17 +158,28 @@
         obj<span class="token punctuation">[</span>RegExp<span class="token punctuation">.</span>$<span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">?</span> obj<span class="token punctuation">[</span>RegExp<span class="token punctuation">.</span>$<span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">concat</span><span class="token punctuation">(</span>obj<span class="token punctuation">[</span>RegExp<span class="token punctuation">.</span>$<span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>RegExp<span class="token punctuation">.</span>$<span class="token number">2</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> obj<span class="token punctuation">[</span>RegExp<span class="token punctuation">.</span>$<span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span>RegExp<span class="token punctuation">.</span>$<span class="token number">2</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> sKey <span class="token operator">?</span> obj<span class="token punctuation">[</span>sKey<span class="token punctuation">]</span><span class="token operator">||</span><span class="token string">""</span> <span class="token punctuation">:</span> obj<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><h2 id="dom节点查找"><a href="#dom节点查找" class="headerlink" title="dom节点查找"></a>dom节点查找</h2><blockquote><p>查找两个节点的最近的一个共同父节点，可以包括节点自身</p></blockquote><p>输入描述</p><pre><code>oNode1 和 oNode2 在同一文档中，且不会为相同的节点
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">commonParentNode</span><span class="token punctuation">(</span>oNode1<span class="token punctuation">,</span> oNode2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<h2 id="dom节点查找"><a href="#dom节点查找" class="headerlink" title="dom节点查找"></a>dom节点查找</h2><blockquote>
+<p>查找两个节点的最近的一个共同父节点，可以包括节点自身</p>
+</blockquote>
+<p>输入描述</p>
+<pre><code>oNode1 和 oNode2 在同一文档中，且不会为相同的节点
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">commonParentNode</span><span class="token punctuation">(</span>oNode1<span class="token punctuation">,</span> oNode2<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token punctuation">;</span>oNode1<span class="token punctuation">;</span>oNode1 <span class="token operator">=</span> oNode1<span class="token punctuation">.</span>parentNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span>oNode1<span class="token punctuation">.</span><span class="token function">contains</span><span class="token punctuation">(</span>oNode2<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
             <span class="token keyword">return</span> oNode1<span class="token punctuation">;</span>
         <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><p>还是对DOM的相关属性啊什么的不了解。。红宝书刚看到DOM。。。要加油鸭</p><h2 id="根据包名，在指定空间中创建对象"><a href="#根据包名，在指定空间中创建对象" class="headerlink" title="根据包名，在指定空间中创建对象"></a>根据包名，在指定空间中创建对象</h2><p>输入描述</p><pre><code>namespace({a: {test: 1, b: 2}}, &#39;a.b.c.d&#39;)
-</code></pre><p>输出描述</p><pre><code>{a: {test: 1, b: {c: {d: {}}}}}
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">namespace</span><span class="token punctuation">(</span>oNamespace<span class="token punctuation">,</span> sPackage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>还是对DOM的相关属性啊什么的不了解。。红宝书刚看到DOM。。。要加油鸭</p>
+<h2 id="根据包名，在指定空间中创建对象"><a href="#根据包名，在指定空间中创建对象" class="headerlink" title="根据包名，在指定空间中创建对象"></a>根据包名，在指定空间中创建对象</h2><p>输入描述</p>
+<pre><code>namespace({a: {test: 1, b: 2}}, &#39;a.b.c.d&#39;)
+</code></pre><p>输出描述</p>
+<pre><code>{a: {test: 1, b: {c: {d: {}}}}}
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">namespace</span><span class="token punctuation">(</span>oNamespace<span class="token punctuation">,</span> sPackage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> tmpPoint <span class="token operator">=</span> oNamespace<span class="token punctuation">;</span>
     <span class="token keyword">var</span> keys <span class="token operator">=</span> sPackage<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'.'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> keys<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -58,9 +188,17 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> oNamespace<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>记住，对象名就像是指针一样。</p><h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><blockquote><p>为 Array 对象添加一个去除重复项的方法</p></blockquote><p>输入</p><pre><code>[false, true, undefined, null, NaN, 0, 1, {}, {}, &#39;a&#39;, &#39;a&#39;, NaN]
-</code></pre><p>输出</p><pre><code>[false, true, undefined, null, NaN, 0, 1, {}, {}, &#39;a&#39;]
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js">Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>uniq <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>记住，对象名就像是指针一样。</p>
+<h2 id="数组去重"><a href="#数组去重" class="headerlink" title="数组去重"></a>数组去重</h2><blockquote>
+<p>为 Array 对象添加一个去除重复项的方法</p>
+</blockquote>
+<p>输入</p>
+<pre><code>[false, true, undefined, null, NaN, 0, 1, {}, {}, &#39;a&#39;, &#39;a&#39;, NaN]
+</code></pre><p>输出</p>
+<pre><code>[false, true, undefined, null, NaN, 0, 1, {}, {}, &#39;a&#39;]
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js">Array<span class="token punctuation">.</span>prototype<span class="token punctuation">.</span>uniq <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> hasNaN <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
     <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token punctuation">(</span>hasNaN <span class="token operator">===</span> <span class="token boolean">false</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">!=</span> <span class="token keyword">this</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -71,14 +209,24 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> <span class="token keyword">this</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>关于NaN的问题调试了好几次。。</p><p>使用<code>this.indexOf(this[i]) &lt; i</code>判断的时候，</p><p>因为NaN和任何值都不相等，因此index是-1，因此在这里一定会被删掉，</p><p>因此需要先判断是不是已经遇到过NaN了，遇到过的话再次遇到就直接删掉，没有遇到的话遇到时就把hasNaN设为true，然后continue来跳过splice。</p><h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><blockquote><p>用 JavaScript 实现斐波那契数列函数,返回第n个斐波那契数。 f(1) = 1, f(2) = 1 等</p></blockquote><p>emmmmm，不知道为什么会有斐波那契这种题。。。。</p><pre class="language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 暴力递归</span>
+</code></pre>
+<p>关于NaN的问题调试了好几次。。</p>
+<p>使用<code>this.indexOf(this[i]) &lt; i</code>判断的时候，</p>
+<p>因为NaN和任何值都不相等，因此index是-1，因此在这里一定会被删掉，</p>
+<p>因此需要先判断是不是已经遇到过NaN了，遇到过的话再次遇到就直接删掉，没有遇到的话遇到时就把hasNaN设为true，然后continue来跳过splice。</p>
+<h2 id="斐波那契数列"><a href="#斐波那契数列" class="headerlink" title="斐波那契数列"></a>斐波那契数列</h2><blockquote>
+<p>用 JavaScript 实现斐波那契数列函数,返回第n个斐波那契数。 f(1) = 1, f(2) = 1 等</p>
+</blockquote>
+<p>emmmmm，不知道为什么会有斐波那契这种题。。。。</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 暴力递归</span>
 <span class="token keyword">function</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token number">-1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token number">-2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment" spellcheck="true">// 本来想用callee，结果严格模式不让用。。。红宝书一直说callee多么多么好。。。搞得我不用好难受</span>
-</code></pre><pre class="language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 循环</span>
+</code></pre>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 循环</span>
 <span class="token keyword">function</span> <span class="token function">fibonacci</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;=</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span><span class="token punctuation">;</span>
@@ -90,9 +238,16 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> c<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><h2 id="时间格式化输出"><a href="#时间格式化输出" class="headerlink" title="时间格式化输出"></a>时间格式化输出</h2><blockquote><p>按所给的时间格式输出指定的时间<br>格式说明<br>对于 2014.09.05 13:14:20<br>yyyy: 年份，2014<br>yy: 年份，14<br>MM: 月份，补满两位，09<br>M: 月份, 9<br>dd: 日期，补满两位，05<br>d: 日期, 5<br>HH: 24制小时，补满两位，13<br>H: 24制小时，13<br>hh: 12制小时，补满两位，01<br>h: 12制小时，1<br>mm: 分钟，补满两位，14<br>m: 分钟，14<br>ss: 秒，补满两位，20<br>s: 秒，20<br>w: 星期，为 [‘日’, ‘一’, ‘二’, ‘三’, ‘四’, ‘五’, ‘六’] 中的某一个，本 demo 结果为 五</p></blockquote><p>输入</p><pre><code>formatDate(new Date(1409894060000), &#39;yyyy-MM-dd HH:mm:ss 星期w&#39;)
-</code></pre><p>输出</p><pre><code>2014-09-05 13:14:20 星期五
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">formatDate</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> format<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<h2 id="时间格式化输出"><a href="#时间格式化输出" class="headerlink" title="时间格式化输出"></a>时间格式化输出</h2><blockquote>
+<p>按所给的时间格式输出指定的时间<br>格式说明<br>对于 2014.09.05 13:14:20<br>yyyy: 年份，2014<br>yy: 年份，14<br>MM: 月份，补满两位，09<br>M: 月份, 9<br>dd: 日期，补满两位，05<br>d: 日期, 5<br>HH: 24制小时，补满两位，13<br>H: 24制小时，13<br>hh: 12制小时，补满两位，01<br>h: 12制小时，1<br>mm: 分钟，补满两位，14<br>m: 分钟，14<br>ss: 秒，补满两位，20<br>s: 秒，20<br>w: 星期，为 [‘日’, ‘一’, ‘二’, ‘三’, ‘四’, ‘五’, ‘六’] 中的某一个，本 demo 结果为 五</p>
+</blockquote>
+<p>输入</p>
+<pre><code>formatDate(new Date(1409894060000), &#39;yyyy-MM-dd HH:mm:ss 星期w&#39;)
+</code></pre><p>输出</p>
+<pre><code>2014-09-05 13:14:20 星期五
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">formatDate</span><span class="token punctuation">(</span>date<span class="token punctuation">,</span> format<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> myDate <span class="token operator">=</span> <span class="token punctuation">{</span>
         yyyy<span class="token punctuation">:</span> date<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
         yy<span class="token punctuation">:</span> date<span class="token punctuation">.</span><span class="token function">getFullYear</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">%</span><span class="token number">100</span><span class="token punctuation">,</span>
@@ -112,16 +267,34 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> format<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/([a-z]+)/ig</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>$<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token keyword">return</span> myDate<span class="token punctuation">[</span>$<span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>参考了大神的代码。。。自己差点就十几个if了。。。</p><p>关于代码说明几点：</p><p><code>getFullYear()</code>为年份四位表示</p><p><code>getMonth()</code>为月份0-11</p><p><code>getDate()</code>为日期1-31</p><p><code>getHours()</code>为小时0-23</p><p><code>getMinutes()</code>为分钟0-59</p><p><code>getSeconds()</code>为秒数0-59</p><p><code>getDay()</code>为0-6表示[‘日’, ‘一’, ‘二’, ‘三’, ‘四’, ‘五’, ‘六’]</p><p><code>RegExp.$1...RegExp.$9</code>表示用于存储第一、……第九个匹配的捕获组，至于什么是捕获组可以看下边这个例子：</p><pre class="language-js"><code class="language-js"><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">"this has been a short summer"</span><span class="token punctuation">;</span>
+</code></pre>
+<p>参考了大神的代码。。。自己差点就十几个if了。。。</p>
+<p>关于代码说明几点：</p>
+<p><code>getFullYear()</code>为年份四位表示</p>
+<p><code>getMonth()</code>为月份0-11</p>
+<p><code>getDate()</code>为日期1-31</p>
+<p><code>getHours()</code>为小时0-23</p>
+<p><code>getMinutes()</code>为分钟0-59</p>
+<p><code>getSeconds()</code>为秒数0-59</p>
+<p><code>getDay()</code>为0-6表示[‘日’, ‘一’, ‘二’, ‘三’, ‘四’, ‘五’, ‘六’]</p>
+<p><code>RegExp.$1...RegExp.$9</code>表示用于存储第一、……第九个匹配的捕获组，至于什么是捕获组可以看下边这个例子：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> text <span class="token operator">=</span> <span class="token string">"this has been a short summer"</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> pattern <span class="token operator">=</span> <span class="token regex">/(..)or(.)/g</span><span class="token punctuation">;</span>
 
 <span class="token keyword">if</span> <span class="token punctuation">(</span>pattern<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span>text<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token function">alert</span><span class="token punctuation">(</span>RegExp<span class="token punctuation">.</span>$<span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "sh"</span>
   <span class="token function">alert</span><span class="token punctuation">(</span>RegExp<span class="token punctuation">.</span>$<span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "t"</span>
 <span class="token punctuation">}</span>
-</code></pre><h2 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h2><blockquote><p>如果第二个参数 bUnicode255For1 === true，则所有字符长度为 1<br>否则如果字符 Unicode 编码 &gt; 255 则长度为 2</p></blockquote><p>输入</p><pre><code>&#39;hello world, 牛客&#39;, false
-</code></pre><p>输出</p><pre><code>17
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">strLength</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> bUnicode255For1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<h2 id="获取字符串长度"><a href="#获取字符串长度" class="headerlink" title="获取字符串长度"></a>获取字符串长度</h2><blockquote>
+<p>如果第二个参数 bUnicode255For1 === true，则所有字符长度为 1<br>否则如果字符 Unicode 编码 &gt; 255 则长度为 2</p>
+</blockquote>
+<p>输入</p>
+<pre><code>&#39;hello world, 牛客&#39;, false
+</code></pre><p>输出</p>
+<pre><code>17
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">strLength</span><span class="token punctuation">(</span>s<span class="token punctuation">,</span> bUnicode255For1<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>bUnicode255For1 <span class="token operator">===</span> <span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
         <span class="token keyword">return</span> s<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
     <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
@@ -133,15 +306,50 @@
         <span class="token keyword">return</span> result<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><p>刚开始一直没看懂题。。。这道题应该有点问题，js默认utf-16编码，所以不是所有字符都长度为1，有的字符是长度为2的。。。忽略这个写这个题吧。。。</p><h2 id="邮箱字符串判断"><a href="#邮箱字符串判断" class="headerlink" title="邮箱字符串判断"></a>邮箱字符串判断</h2><p>输入描述</p><pre><code>邮箱字符串
-</code></pre><p>输出描述</p><pre><code>true表示格式正确
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">isAvailableEmail</span><span class="token punctuation">(</span>sEmail<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>刚开始一直没看懂题。。。这道题应该有点问题，js默认utf-16编码，所以不是所有字符都长度为1，有的字符是长度为2的。。。忽略这个写这个题吧。。。</p>
+<h2 id="邮箱字符串判断"><a href="#邮箱字符串判断" class="headerlink" title="邮箱字符串判断"></a>邮箱字符串判断</h2><p>输入描述</p>
+<pre><code>邮箱字符串
+</code></pre><p>输出描述</p>
+<pre><code>true表示格式正确
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">isAvailableEmail</span><span class="token punctuation">(</span>sEmail<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> reg <span class="token operator">=</span> <span class="token regex">/^[\w\.]+@[\w\.]+\.[\w\.]+$/i</span><span class="token punctuation">;</span>
     <span class="token keyword">return</span> reg<span class="token punctuation">.</span><span class="token function">test</span><span class="token punctuation">(</span>sEmail<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><blockquote><ul><li><p>\w 匹配字母或数字或下划线或汉字 等价于 ‘[^A-Za-z0-9_]’。</p></li><li><p>\s 匹配任意的空白符</p></li><li><p>\d 匹配数字</p></li><li><p>\b 匹配单词的开始或结束</p></li><li><p>^ 匹配字符串的开始</p></li><li><p>$ 匹配字符串的结束</p></li><li><p>\w能不能匹配汉字要视你的操作系统和你的应用环境而定</p></li></ul></blockquote><h2 id="颜色字符串转换"><a href="#颜色字符串转换" class="headerlink" title="颜色字符串转换"></a>颜色字符串转换</h2><blockquote><p>将 rgb 颜色字符串转换为十六进制的形式，如 rgb(255, 255, 255) 转为 #ffffff</p><ol><li>rgb 中每个 , 后面的空格数量不固定</li><li>十六进制表达式使用六位小写字母</li><li>如果输入不符合 rgb 格式，返回原始输入</li></ol></blockquote><p>输入</p><pre><code>&#39;rgb(255, 255, 255)&#39;
-</code></pre><p>输出</p><pre><code>#ffffff
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">rgb2hex</span><span class="token punctuation">(</span>sRGB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<blockquote>
+<ul>
+<li><p>\w 匹配字母或数字或下划线或汉字 等价于 ‘[^A-Za-z0-9_]’。</p>
+</li>
+<li><p>\s 匹配任意的空白符</p>
+</li>
+<li><p>\d 匹配数字</p>
+</li>
+<li><p>\b 匹配单词的开始或结束</p>
+</li>
+<li><p>^ 匹配字符串的开始</p>
+</li>
+<li><p>$ 匹配字符串的结束</p>
+</li>
+<li><p>\w能不能匹配汉字要视你的操作系统和你的应用环境而定</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="颜色字符串转换"><a href="#颜色字符串转换" class="headerlink" title="颜色字符串转换"></a>颜色字符串转换</h2><blockquote>
+<p>将 rgb 颜色字符串转换为十六进制的形式，如 rgb(255, 255, 255) 转为 #ffffff</p>
+<ol>
+<li>rgb 中每个 , 后面的空格数量不固定</li>
+<li>十六进制表达式使用六位小写字母</li>
+<li>如果输入不符合 rgb 格式，返回原始输入</li>
+</ol>
+</blockquote>
+<p>输入</p>
+<pre><code>&#39;rgb(255, 255, 255)&#39;
+</code></pre><p>输出</p>
+<pre><code>#ffffff
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">rgb2hex</span><span class="token punctuation">(</span>sRGB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>sRGB<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token operator">!==</span><span class="token string">'rgb('</span> <span class="token operator">||</span> sRGB<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">!==</span><span class="token string">')'</span><span class="token punctuation">)</span> <span class="token keyword">return</span> sRGB<span class="token punctuation">;</span>
     <span class="token keyword">var</span> tmp <span class="token operator">=</span> <span class="token punctuation">(</span>sRGB<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'('</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">')'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> colors <span class="token operator">=</span> tmp<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -154,7 +362,10 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> re<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>又使用了最水的办法。。。</p><p>看一下大佬的正则的方法：</p><pre class="language-js"><code class="language-js"><span class="token comment" spellcheck="true">//链接：https://www.nowcoder.com/questionTerminal/80b08802a833419f9c4ccc6e042c1cca</span>
+</code></pre>
+<p>又使用了最水的办法。。。</p>
+<p>看一下大佬的正则的方法：</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">//链接：https://www.nowcoder.com/questionTerminal/80b08802a833419f9c4ccc6e042c1cca</span>
 <span class="token comment" spellcheck="true">//来源：牛客网</span>
 
 <span class="token keyword">function</span> <span class="token function">rgb2hex</span><span class="token punctuation">(</span>sRGB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -166,7 +377,11 @@
     <span class="token keyword">return</span> n <span class="token operator">&lt;</span> <span class="token number">16</span> <span class="token operator">?</span> <span class="token string">'0'</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">+</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token operator">+</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-</code></pre><p>a代表正则匹配的整个字符串, r ,g, b代表红绿蓝三个通道, 分别是正则中的三个括号匹配的字符串. 通常用的$0, $1, $2, $3。</p><p>但是吧，可能是用例不全，这个方法并没有判断是不是超出0-255也能AC。。</p><p>可以在hex函数里加个判断，如果规范才返回字符串，然后在replace里的那个函数里加个判断hex(r)、hex(g)、hex(b)是否为undefined，像这样：</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">rgb2hex</span><span class="token punctuation">(</span>sRGB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>a代表正则匹配的整个字符串,  r ,g, b代表红绿蓝三个通道, 分别是正则中的三个括号匹配的字符串.  通常用的$0, $1, $2, $3。</p>
+<p>但是吧，可能是用例不全，这个方法并没有判断是不是超出0-255也能AC。。</p>
+<p>可以在hex函数里加个判断，如果规范才返回字符串，然后在replace里的那个函数里加个判断hex(r)、hex(g)、hex(b)是否为undefined，像这样：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">rgb2hex</span><span class="token punctuation">(</span>sRGB<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">return</span> sRGB<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/^rgb\((\d+)\s*\,\s*(\d+)\s*\,\s*(\d+)\)$/g</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> r<span class="token punctuation">,</span> g<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token function">hex</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">==</span> undefined <span class="token operator">||</span> <span class="token function">hex</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span> <span class="token operator">==</span> undefined <span class="token operator">||</span> <span class="token function">hex</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span> <span class="token operator">==</span> undefined<span class="token punctuation">)</span> <span class="token keyword">return</span> sRGB<span class="token punctuation">;</span>
     <span class="token keyword">return</span> <span class="token string">'#'</span> <span class="token operator">+</span> <span class="token function">hex</span><span class="token punctuation">(</span>r<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">hex</span><span class="token punctuation">(</span>g<span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">hex</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -177,9 +392,21 @@
     <span class="token keyword">return</span> n <span class="token operator">&lt;</span> <span class="token number">16</span> <span class="token operator">?</span> <span class="token string">'0'</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token operator">+</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token operator">+</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><p>这样就可以啦！</p><h2 id="将字符串转换为驼峰模式"><a href="#将字符串转换为驼峰模式" class="headerlink" title="将字符串转换为驼峰模式"></a>将字符串转换为驼峰模式</h2><blockquote><p>css 中经常有类似 background-image 这种通过 - 连接的字符，通过 javascript 设置样式的时候需要将这种样式转换成 backgroundImage 驼峰格式，请完成此转换功能</p><ol><li>以 - 为分隔符，将第二个起的非空单词首字母转为大写</li><li>-webkit-border-image 转换后的结果为 webkitBorderImage</li></ol></blockquote><p>输入</p><pre><code>&#39;font-size&#39;
-</code></pre><p>输出</p><pre><code>fontSize
-</code></pre><p>代码</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">cssStyle2DomStyle</span><span class="token punctuation">(</span>sName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>这样就可以啦！</p>
+<h2 id="将字符串转换为驼峰模式"><a href="#将字符串转换为驼峰模式" class="headerlink" title="将字符串转换为驼峰模式"></a>将字符串转换为驼峰模式</h2><blockquote>
+<p>css 中经常有类似 background-image 这种通过 - 连接的字符，通过 javascript 设置样式的时候需要将这种样式转换成 backgroundImage 驼峰格式，请完成此转换功能</p>
+<ol>
+<li>以 - 为分隔符，将第二个起的非空单词首字母转为大写</li>
+<li>-webkit-border-image 转换后的结果为 webkitBorderImage</li>
+</ol>
+</blockquote>
+<p>输入</p>
+<pre><code>&#39;font-size&#39;
+</code></pre><p>输出</p>
+<pre><code>fontSize
+</code></pre><p>代码</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">cssStyle2DomStyle</span><span class="token punctuation">(</span>sName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span> <span class="token punctuation">(</span>sName<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">"-"</span><span class="token punctuation">)</span> sName <span class="token operator">=</span> sName<span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> words <span class="token operator">=</span> sName<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> re <span class="token operator">=</span> words<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
@@ -188,7 +415,9 @@
     <span class="token punctuation">}</span>
     <span class="token keyword">return</span> re<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>大神的代码：</p><pre class="language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 链接：https://www.nowcoder.com/questionTerminal/2ded24e34ec34325a62d42d0c8479bae</span>
+</code></pre>
+<p>大神的代码：</p>
+<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 链接：https://www.nowcoder.com/questionTerminal/2ded24e34ec34325a62d42d0c8479bae</span>
 <span class="token comment" spellcheck="true">// 来源：牛客网</span>
 
 <span class="token keyword">return</span> sName<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\-[a-z]/g</span> <span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span> b<span class="token punctuation">)</span><span class="token punctuation">{</span>
@@ -196,13 +425,234 @@
     <span class="token keyword">return</span> b <span class="token operator">==</span> <span class="token number">0</span> <span class="token operator">?</span> a<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span> <span class="token punctuation">:</span> a<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token string">'-'</span><span class="token punctuation">,</span><span class="token string">''</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toUpperCase</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-</code></pre><p>其中b是offset。</p><p>replace第二个参数函数的参数表：</p><table><thead><tr><th>变量名</th><th>代表的值</th></tr></thead><tbody><tr><td>match</td><td>匹配的子串。（对应于上述的$&amp;。）</td></tr><tr><td><code>p1,p2, ...</code></td><td>假如replace()方法的第一个参数是一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/RegExp" rel="external nofollow noopener noreferrer" target="_blank"><code>RegExp</code></a> 对象，则代表第n个括号匹配的字符串。（对应于上述的$1，$2等。）</td></tr><tr><td><code>offset</code></td><td>匹配到的子字符串在原字符串中的偏移量。（比如，如果原字符串是“abcd”，匹配到的子字符串是“bc”，那么这个参数将是1）</td></tr><tr><td>string</td><td>被匹配的原字符串。</td></tr></tbody></table><h2 id="字符串字符统计"><a href="#字符串字符统计" class="headerlink" title="字符串字符统计"></a>字符串字符统计</h2><blockquote><p>统计字符串中每个字符的出现频率，返回一个 Object，key 为统计字符，value 为出现频率</p><ol><li>不限制 key 的顺序</li><li>输入的字符串参数不会为空</li><li>忽略空白字符</li></ol></blockquote><p>输入</p><pre><code>&#39;hello world&#39;
-</code></pre><p>输出</p><pre><code>{h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1}
-</code></pre><p>大神的代码：</p><pre class="language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">count</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+</code></pre>
+<p>其中b是offset。</p>
+<p>replace第二个参数函数的参数表：</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>代表的值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>match</td>
+<td>匹配的子串。（对应于上述的$&amp;。）</td>
+</tr>
+<tr>
+<td><code>p1,p2, ...</code></td>
+<td>假如replace()方法的第一个参数是一个<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/RegExp" rel="external nofollow noopener noreferrer" target="_blank"><code>RegExp</code></a> 对象，则代表第n个括号匹配的字符串。（对应于上述的$1，$2等。）</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td>匹配到的子字符串在原字符串中的偏移量。（比如，如果原字符串是“abcd”，匹配到的子字符串是“bc”，那么这个参数将是1）</td>
+</tr>
+<tr>
+<td>string</td>
+<td>被匹配的原字符串。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="字符串字符统计"><a href="#字符串字符统计" class="headerlink" title="字符串字符统计"></a>字符串字符统计</h2><blockquote>
+<p>统计字符串中每个字符的出现频率，返回一个 Object，key 为统计字符，value 为出现频率</p>
+<ol>
+<li>不限制 key 的顺序</li>
+<li>输入的字符串参数不会为空</li>
+<li>忽略空白字符</li>
+</ol>
+</blockquote>
+<p>输入</p>
+<pre><code>&#39;hello world&#39;
+</code></pre><p>输出</p>
+<pre><code>{h: 1, e: 1, l: 3, o: 2, w: 1, r: 1, d: 1}
+</code></pre><p>大神的代码：</p>
+<pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">count</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> obj <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
     str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex">/\S/g</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token operator">!</span>obj<span class="token punctuation">[</span>s<span class="token punctuation">]</span><span class="token operator">?</span>obj<span class="token punctuation">[</span>s<span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">:</span>obj<span class="token punctuation">[</span>s<span class="token punctuation">]</span><span class="token operator">++</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span><span class="token punctuation">)</span>
     <span class="token keyword">return</span> obj<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre><p>\S匹配非空字符串，function(s)里的s代表匹配到的每一项。</p><hr><p>哎总结一句就是我好菜。。对JS了解还是太少。。。</p></div><footer class="article-footer"><a data-url="https://zmj97.coding.me/牛客网前端挑战编程题解.html" data-id="cjn30m1xm0046fmagqx3k985v" class="article-share-link">Share</a><ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul></footer></div><nav id="article-nav"><a href="/HTTP学习记录.html" id="article-nav-newer" class="article-nav-link-wrap"><strong class="article-nav-caption">Newer</strong><div class="article-nav-title">HTTP学习记录</div></a><a href="/Web前端错题模糊题记录.html" id="article-nav-older" class="article-nav-link-wrap"><strong class="article-nav-caption">Older</strong><div class="article-nav-title">Web前端错题模糊题记录</div></a></nav></article><div id="vcomments"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz",appKey:"tIDpxK3F6tVo5V3nAOr3AJ3r",notify:!0,verify:!0,visitor:!0,avatar:"monsterid",placeholder:"快来评论鸭～"})</script></section></div><footer id="footer"><aside id="sidebar" class="outer"><div class="widget-wrap"><h3 class="widget-title">分类</h3><div class="widget"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签</h3><div class="widget"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a href="/tags/BN/" style="font-size:10px">BN</a> <a href="/tags/CSS/" style="font-size:12.86px">CSS</a> <a href="/tags/Chrome/" style="font-size:11.43px">Chrome</a> <a href="/tags/ES6/" style="font-size:11.43px">ES6</a> <a href="/tags/Flask/" style="font-size:10px">Flask</a> <a href="/tags/Flux/" style="font-size:10px">Flux</a> <a href="/tags/HTML/" style="font-size:15.71px">HTML</a> <a href="/tags/HTTP/" style="font-size:11.43px">HTTP</a> <a href="/tags/JavaScript/" style="font-size:20px">JavaScript</a> <a href="/tags/MNIST/" style="font-size:10px">MNIST</a> <a href="/tags/Markdown/" style="font-size:10px">Markdown</a> <a href="/tags/OAuth/" style="font-size:10px">OAuth</a> <a href="/tags/PAT/" style="font-size:10px">PAT</a> <a href="/tags/Python/" style="font-size:10px">Python</a> <a href="/tags/SCRUM/" style="font-size:10px">SCRUM</a> <a href="/tags/SQL/" style="font-size:10px">SQL</a> <a href="/tags/TensorBoard/" style="font-size:10px">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size:14.29px">TensorFlow</a> <a href="/tags/Tmux/" style="font-size:10px">Tmux</a> <a href="/tags/Typora/" style="font-size:10px">Typora</a> <a href="/tags/UMLet/" style="font-size:15.71px">UMLet</a> <a href="/tags/Ubuntu/" style="font-size:10px">Ubuntu</a> <a href="/tags/VUE/" style="font-size:10px">VUE</a> <a href="/tags/Valine/" style="font-size:10px">Valine</a> <a href="/tags/Vue/" style="font-size:11.43px">Vue</a> <a href="/tags/Vuex/" style="font-size:10px">Vuex</a> <a href="/tags/ajax/" style="font-size:10px">ajax</a> <a href="/tags/cookie/" style="font-size:10px">cookie</a> <a href="/tags/form/" style="font-size:10px">form</a> <a href="/tags/git/" style="font-size:10px">git</a> <a href="/tags/github-pages/" style="font-size:10px">github pages</a> <a href="/tags/gitment/" style="font-size:12.86px">gitment</a> <a href="/tags/hexo/" style="font-size:17.14px">hexo</a> <a href="/tags/iNode/" style="font-size:11.43px">iNode</a> <a href="/tags/markdown/" style="font-size:10px">markdown</a> <a href="/tags/mongoDB/" style="font-size:10px">mongoDB</a> <a href="/tags/numpy/" style="font-size:10px">numpy</a> <a href="/tags/prototype/" style="font-size:10px">prototype</a> <a href="/tags/ubuntu/" style="font-size:18.57px">ubuntu</a> <a href="/tags/webstorage/" style="font-size:10px">webstorage</a> <a href="/tags/youtube/" style="font-size:10px">youtube</a> <a href="/tags/三层架构/" style="font-size:10px">三层架构</a> <a href="/tags/内存/" style="font-size:10px">内存</a> <a href="/tags/刷题/" style="font-size:10px">刷题</a> <a href="/tags/双向链表/" style="font-size:10px">双向链表</a> <a href="/tags/同步/" style="font-size:10px">同步</a> <a href="/tags/图片显示/" style="font-size:10px">图片显示</a> <a href="/tags/建模/" style="font-size:11.43px">建模</a> <a href="/tags/异步/" style="font-size:10px">异步</a> <a href="/tags/归并/" style="font-size:10px">归并</a> <a href="/tags/快捷方式/" style="font-size:10px">快捷方式</a> <a href="/tags/指针/" style="font-size:10px">指针</a> <a href="/tags/操作系统/" style="font-size:10px">操作系统</a> <a href="/tags/数据库/" style="font-size:11.43px">数据库</a> <a href="/tags/数据库建模/" style="font-size:10px">数据库建模</a> <a href="/tags/爬虫/" style="font-size:10px">爬虫</a> <a href="/tags/用例图/" style="font-size:14.29px">用例图</a> <a href="/tags/网站收录/" style="font-size:10px">网站收录</a> <a href="/tags/设计模式/" style="font-size:10px">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size:10px">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size:10px">阿里云</a></div></div><div class="widget-wrap"><h3 class="widget-title">归档</h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">最新文章</h3><div class="widget"><ul><li><a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a></li><li><a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a></li><li><a href="/同步与异步.html">同步与异步</a></li><li><a href="/Promise与async-await.html">Promise与async/await</a></li><li><a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a></li></ul></div></div></aside><div class="outer"><div id="footer-info" class="inner">&copy; 2018 Mengjie Zhang<br>Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a></div></div></footer></div><nav id="mobile-nav"><a href="/" class="mobile-nav-link">主页</a> <a href="/archives" class="mobile-nav-link">归档</a> <a href="/tags" class="mobile-nav-link">标签</a> <a href="/categories" class="mobile-nav-link">分类</a></nav><script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script src="/js/script.js"></script><div id="totop" style="position:fixed;bottom:100px;right:50px;cursor:pointer;z-index:99999"><a title="返回顶部"><img src="/img/scrollup.png"></a></div><script src="/js/totop.js"></script></div></body>
+</code></pre>
+<p>\S匹配非空字符串，function(s)里的s代表匹配到的每一项。</p>
+<hr>
+<p>哎总结一句就是我好菜。。对JS了解还是太少。。。</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/牛客网前端挑战编程题解.html" data-id="cjn31e95e0046gsagxxh5tv2n" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/HTTP学习记录.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          HTTP学习记录
+        
+      </div>
+    </a>
+  
+  
+    <a href="/Web前端错题模糊题记录.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Web前端错题模糊题记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 12.86px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a>
+          </li>
+        
+          <li>
+            <a href="/同步与异步.html">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/Promise与async-await.html">Promise与async/await</a>
+          </li>
+        
+          <li>
+            <a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>

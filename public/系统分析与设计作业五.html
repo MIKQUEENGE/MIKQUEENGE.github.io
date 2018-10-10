@@ -1,14 +1,152 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>系统分析与设计作业五 | zmj&#39;s blog</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="配置mongoDB参考教程：https://www.yiibai.com/mongodb/mongodb_environment.html下载需要科学上网。"><meta name="keywords" content="mongoDB,Flask"><meta property="og:type" content="article"><meta property="og:title" content="系统分析与设计作业五"><meta property="og:url" content="https://zmj97.coding.me/系统分析与设计作业五.html"><meta property="og:site_name" content="zmj&#39;s blog"><meta property="og:description" content="配置mongoDB参考教程：https://www.yiibai.com/mongodb/mongodb_environment.html下载需要科学上网。"><meta property="og:locale" content="zh-CN"><meta property="og:image" content="https://zmj97.coding.me/images/Untitled.png"><meta property="og:image" content="https://zmj97.coding.me/images/Capture.PNG"><meta property="og:image" content="https://zmj97.coding.me/images/Capture1.PNG"><meta property="og:image" content="https://zmj97.coding.me/images/Capture2.PNG"><meta property="og:updated_time" content="2018-10-10T08:45:25.676Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="系统分析与设计作业五"><meta name="twitter:description" content="配置mongoDB参考教程：https://www.yiibai.com/mongodb/mongodb_environment.html下载需要科学上网。"><meta name="twitter:image" content="https://zmj97.coding.me/images/Untitled.png"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head></html><body><div id="container"><div id="wrap"><header id="header"><div id="banner"></div><div id="header-outer" class="outer"><div id="header-title" class="inner"><h1 id="logo-wrap"><a href="/" id="logo">zmj&#39;s blog</a></h1></div><div id="header-inner" class="inner"><nav id="main-nav"><a id="main-nav-toggle" class="nav-icon"></a> <a class="main-nav-link" href="/">主页</a> <a class="main-nav-link" href="/archives">归档</a> <a class="main-nav-link" href="/tags">标签</a> <a class="main-nav-link" href="/categories">分类</a></nav><nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="搜索"></a></nav><div id="search-form-wrap"><form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form></div></div></div></header><div class="outer"><section id="main"><article id="post-系统分析与设计作业五" class="article article-type-post" itemscope="" itemprop="blogPost"><div class="article-meta"><a href="/系统分析与设计作业五.html" class="article-date"><time datetime="2018-04-15T14:52:13.000Z" itemprop="datePublished">2018-04-15</time></a><div class="article-category"><a class="article-category-link" href="/categories/系统分析与设计/">系统分析与设计</a></div></div><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">系统分析与设计作业五</h1></header><div class="article-entry" itemprop="articleBody"><div id="toc" class="toc-article"><strong class="toc-title">文章目录</strong><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置mongoDB"><span class="toc-number">1.</span> <span class="toc-text">配置mongoDB</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#了解Python-Flask后端服务实现（win10）"><span class="toc-number">2.</span> <span class="toc-text">了解Python+Flask后端服务实现（win10）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境配置"><span class="toc-number">2.1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-number">2.2.</span> <span class="toc-text">IDE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask-快速入门"><span class="toc-number">2.3.</span> <span class="toc-text">Flask 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#调试模式"><span class="toc-number">2.3.1.</span> <span class="toc-text">调试模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由"><span class="toc-number">2.3.2.</span> <span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#静态绑定"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">静态绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态绑定"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">动态绑定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP方法"><span class="toc-number">2.3.3.</span> <span class="toc-text">HTTP方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见HTTP方法"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">常见HTTP方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建url"><span class="toc-number">2.3.4.</span> <span class="toc-text">构建url</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染静态文件"><span class="toc-number">2.3.5.</span> <span class="toc-text">渲染静态文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染模板"><span class="toc-number">2.3.6.</span> <span class="toc-text">渲染模板</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后续链接"><span class="toc-number">3.</span> <span class="toc-text">后续链接</span></a></li></ol></div><h1 id="配置mongoDB"><a href="#配置mongoDB" class="headerlink" title="配置mongoDB"></a>配置mongoDB</h1><p>参考教程：<a href="https://www.yiibai.com/mongodb/mongodb_environment.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.yiibai.com/mongodb/mongodb_environment.html</a></p><p>下载需要科学上网。</p><a id="more"></a><p>另外：</p><p>将F:\mongodb\bin\添加到环境变量中。</p><p>每次开启前用这个命令修改db缓存路径：</p><blockquote><p>mongod -dbpath f:\mongodb\data</p></blockquote><p>然后再打开另一个cmd窗口输入mongod即可。</p><h1 id="了解Python-Flask后端服务实现（win10）"><a href="#了解Python-Flask后端服务实现（win10）" class="headerlink" title="了解Python+Flask后端服务实现（win10）"></a>了解Python+Flask后端服务实现（win10）</h1><p>参考资料：<a href="http://www.jb51.net/article/60738.htm" rel="external nofollow noopener noreferrer" target="_blank">http://www.jb51.net/article/60738.htm</a></p><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>安装pymongo、flask、Pillow：</p><blockquote><p>easy_install pymongo</p><p>easy_install flask</p><p>easy_install Pillow</p></blockquote><h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p>使用<a href="https://www.jetbrains.com/pycharm/" rel="external nofollow noopener noreferrer" target="_blank">PyCharm</a></p><p>打开PyCharm-&gt;新建项目-&gt;选择Flask框架-&gt;修改路径-&gt;创建</p><p>得到了一个最简单的hello world的项目：</p><p><img src="/images/Untitled.png" alt="first pro"></p><h2 id="Flask-快速入门"><a href="#Flask-快速入门" class="headerlink" title="Flask 快速入门"></a>Flask 快速入门</h2><p><a href="http://www.pythondoc.com/flask/quickstart.html#debug-mode" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a></p><p>运行刚刚创建的hello world程序：</p><p><img src="/images/Capture.PNG" alt="run"></p><p>在浏览器输入网址<a href="http://127.0.0.1:5000/：" rel="external nofollow noopener noreferrer" target="_blank">http://127.0.0.1:5000/：</a></p><p><img src="/images/Capture1.PNG" alt="web"></p><h3 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h3><p>在代码修改的时候服务器能够自动加载，<br>并且如果发生错误，它会提供一个有用的调试器。</p><p>使用</p><pre class="language-python"><code class="language-python">app<span class="token punctuation">.</span>debug <span class="token operator">=</span> <span class="token boolean">True</span>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>系统分析与设计作业五 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="配置mongoDB参考教程：https://www.yiibai.com/mongodb/mongodb_environment.html 下载需要科学上网。">
+<meta name="keywords" content="mongoDB,Flask">
+<meta property="og:type" content="article">
+<meta property="og:title" content="系统分析与设计作业五">
+<meta property="og:url" content="https://zmj97.coding.me/系统分析与设计作业五.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="配置mongoDB参考教程：https://www.yiibai.com/mongodb/mongodb_environment.html 下载需要科学上网。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://zmj97.coding.me/images/Untitled.png">
+<meta property="og:image" content="https://zmj97.coding.me/images/Capture.PNG">
+<meta property="og:image" content="https://zmj97.coding.me/images/Capture1.PNG">
+<meta property="og:image" content="https://zmj97.coding.me/images/Capture2.PNG">
+<meta property="og:updated_time" content="2018-10-10T08:45:25.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="系统分析与设计作业五">
+<meta name="twitter:description" content="配置mongoDB参考教程：https://www.yiibai.com/mongodb/mongodb_environment.html 下载需要科学上网。">
+<meta name="twitter:image" content="https://zmj97.coding.me/images/Untitled.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-系统分析与设计作业五" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/系统分析与设计作业五.html" class="article-date">
+  <time datetime="2018-04-15T14:52:13.000Z" itemprop="datePublished">2018-04-15</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/系统分析与设计/">系统分析与设计</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      系统分析与设计作业五
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#配置mongoDB"><span class="toc-number">1.</span> <span class="toc-text">配置mongoDB</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#了解Python-Flask后端服务实现（win10）"><span class="toc-number">2.</span> <span class="toc-text">了解Python+Flask后端服务实现（win10）</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#环境配置"><span class="toc-number">2.1.</span> <span class="toc-text">环境配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#IDE"><span class="toc-number">2.2.</span> <span class="toc-text">IDE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Flask-快速入门"><span class="toc-number">2.3.</span> <span class="toc-text">Flask 快速入门</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#调试模式"><span class="toc-number">2.3.1.</span> <span class="toc-text">调试模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#路由"><span class="toc-number">2.3.2.</span> <span class="toc-text">路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#静态绑定"><span class="toc-number">2.3.2.1.</span> <span class="toc-text">静态绑定</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#动态绑定"><span class="toc-number">2.3.2.2.</span> <span class="toc-text">动态绑定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP方法"><span class="toc-number">2.3.3.</span> <span class="toc-text">HTTP方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常见HTTP方法"><span class="toc-number">2.3.3.1.</span> <span class="toc-text">常见HTTP方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#构建url"><span class="toc-number">2.3.4.</span> <span class="toc-text">构建url</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染静态文件"><span class="toc-number">2.3.5.</span> <span class="toc-text">渲染静态文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渲染模板"><span class="toc-number">2.3.6.</span> <span class="toc-text">渲染模板</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#后续链接"><span class="toc-number">3.</span> <span class="toc-text">后续链接</span></a></li></ol> 
+          </div> 
+        
+        <h1 id="配置mongoDB"><a href="#配置mongoDB" class="headerlink" title="配置mongoDB"></a>配置mongoDB</h1><p>参考教程：<a href="https://www.yiibai.com/mongodb/mongodb_environment.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.yiibai.com/mongodb/mongodb_environment.html</a></p>
+<p>下载需要科学上网。</p>
+<a id="more"></a>
+<p>另外：</p>
+<p>将F:\mongodb\bin\添加到环境变量中。</p>
+<p>每次开启前用这个命令修改db缓存路径：</p>
+<blockquote>
+<p>mongod -dbpath f:\mongodb\data</p>
+</blockquote>
+<p>然后再打开另一个cmd窗口输入mongod即可。</p>
+<h1 id="了解Python-Flask后端服务实现（win10）"><a href="#了解Python-Flask后端服务实现（win10）" class="headerlink" title="了解Python+Flask后端服务实现（win10）"></a>了解Python+Flask后端服务实现（win10）</h1><p>参考资料：<a href="http://www.jb51.net/article/60738.htm" rel="external nofollow noopener noreferrer" target="_blank">http://www.jb51.net/article/60738.htm</a></p>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>安装pymongo、flask、Pillow：</p>
+<blockquote>
+<p>easy_install pymongo</p>
+<p>easy_install flask</p>
+<p>easy_install Pillow</p>
+</blockquote>
+<h2 id="IDE"><a href="#IDE" class="headerlink" title="IDE"></a>IDE</h2><p>使用<a href="https://www.jetbrains.com/pycharm/" rel="external nofollow noopener noreferrer" target="_blank">PyCharm</a></p>
+<p>打开PyCharm-&gt;新建项目-&gt;选择Flask框架-&gt;修改路径-&gt;创建</p>
+<p>得到了一个最简单的hello world的项目：</p>
+<p><img src="/images/Untitled.png" alt="first pro"></p>
+<h2 id="Flask-快速入门"><a href="#Flask-快速入门" class="headerlink" title="Flask 快速入门"></a>Flask 快速入门</h2><p><a href="http://www.pythondoc.com/flask/quickstart.html#debug-mode" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a></p>
+<p>运行刚刚创建的hello world程序：</p>
+<p><img src="/images/Capture.PNG" alt="run"></p>
+<p>在浏览器输入网址<a href="http://127.0.0.1:5000/：" rel="external nofollow noopener noreferrer" target="_blank">http://127.0.0.1:5000/：</a></p>
+<p><img src="/images/Capture1.PNG" alt="web"></p>
+<h3 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h3><p>在代码修改的时候服务器能够自动加载，<br>并且如果发生错误，它会提供一个有用的调试器。</p>
+<p>使用</p>
+<pre class=" language-python"><code class="language-python">app<span class="token punctuation">.</span>debug <span class="token operator">=</span> <span class="token boolean">True</span>
 app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre><p>或者</p><pre class="language-python"><code class="language-python">app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-</code></pre><p>开启调试模式。</p><h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p><a href="http://www.pythondoc.com/flask/api.html#flask.Flask.route" rel="external nofollow noopener noreferrer" target="_blank"><code>route()</code></a> 装饰器用于把一个函数绑定到一个 URL 上。</p><h4 id="静态绑定"><a href="#静态绑定" class="headerlink" title="静态绑定"></a>静态绑定</h4><pre class="language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>或者</p>
+<pre class=" language-python"><code class="language-python">app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</code></pre>
+<p>开启调试模式。</p>
+<h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p><a href="http://www.pythondoc.com/flask/api.html#flask.Flask.route" rel="external nofollow noopener noreferrer" target="_blank"><code>route()</code></a> 装饰器用于把一个函数绑定到一个 URL 上。</p>
+<h4 id="静态绑定"><a href="#静态绑定" class="headerlink" title="静态绑定"></a>静态绑定</h4><pre class=" language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token string">'Index Page'</span>
 
 @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/hello'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token string">'Hello World'</span>
-</code></pre><h4 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h4><p>把一些特定的字段标记成 <code>&lt;variable_name&gt;</code>来进行动态绑定，还可以用 <code>&lt;converter:variable_name&gt;</code>限制格式：</p><pre class="language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/user/&lt;username>'</span><span class="token punctuation">)</span>
+</code></pre>
+<h4 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h4><p>把一些特定的字段标记成 <code>&lt;variable_name&gt;</code>来进行动态绑定，还可以用 <code>&lt;converter:variable_name&gt;</code>限制格式：</p>
+<pre class=" language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/user/&lt;username>'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">show_user_profile</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># show the user profile for that user</span>
     <span class="token keyword">return</span> <span class="token string">'User %s'</span> <span class="token operator">%</span> username
@@ -17,13 +155,57 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
 <span class="token keyword">def</span> <span class="token function">show_post</span><span class="token punctuation">(</span>post_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># show the post with the given id, the id is an integer</span>
     <span class="token keyword">return</span> <span class="token string">'Post %d'</span> <span class="token operator">%</span> post_id
-</code></pre><p>有如下三种转换器：</p><table><thead><tr><th>int</th><th>接受整数</th></tr></thead><tbody><tr><td><strong>float</strong></td><td><strong>同 int 一样，但是接受浮点数</strong></td></tr><tr><td><strong>path</strong></td><td><strong>和默认的相似，但也接受斜线</strong></td></tr></tbody></table><h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><p>默认情况下，路由只会响应 GET 请求，但是能够通过给 <a href="http://www.pythondoc.com/flask/api.html#flask.Flask.route" rel="external nofollow noopener noreferrer" target="_blank"><code>route()</code></a> 装饰器提供 methods 参数来改变：</p><pre class="language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+</code></pre>
+<p>有如下三种转换器：</p>
+<table>
+<thead>
+<tr>
+<th>int</th>
+<th>接受整数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>float</strong></td>
+<td><strong>同 int 一样，但是接受浮点数</strong></td>
+</tr>
+<tr>
+<td><strong>path</strong></td>
+<td><strong>和默认的相似，但也接受斜线</strong></td>
+</tr>
+</tbody>
+</table>
+<h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><p>默认情况下，路由只会响应 GET 请求，但是能够通过给 <a href="http://www.pythondoc.com/flask/api.html#flask.Flask.route" rel="external nofollow noopener noreferrer" target="_blank"><code>route()</code></a> 装饰器提供 methods 参数来改变：</p>
+<pre class=" language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'POST'</span><span class="token punctuation">:</span>
         do_the_login<span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         show_the_login_form<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre><h4 id="常见HTTP方法"><a href="#常见HTTP方法" class="headerlink" title="常见HTTP方法"></a>常见HTTP方法</h4><ul><li><p>GET</p><p>浏览器通知服务器只 <em>获取</em> 页面上的信息并且发送回来。这可能是最常用的方法。</p></li><li><p>HEAD</p><p>浏览器告诉服务器获取信息，但是只对 <em>头信息</em> 感兴趣，不需要整个页面的内容。应用应该处理起来像接收到一个 GET 请求但是不传递实际内容。在 Flask 中你完全不需要处理它，底层的 Werkzeug 库会为你处理的。</p></li><li><p>POST</p><p>浏览器通知服务器它要在 URL 上 <em>提交</em> 一些信息，服务器必须保证数据被存储且只存储一次。这是 HTML 表单通常发送数据到服务器的方法。</p></li><li><p>PUT</p><p>同 POST 类似，但是服务器可能触发了多次存储过程，多次覆盖掉旧值。现在你就会问这有什么用，有许多理由需要如此去做。考虑下在传输过程中连接丢失：在这种情况下浏览器 和服务器之间的系统可能安全地第二次接收请求，而不破坏其它东西。对于 POST 是不可能实现的，因为它只会被触发一次。</p></li><li><p>DELETE</p><p>移除给定位置的信息。</p></li><li><p>OPTIONS</p><p>给客户端提供一个快速的途径来指出这个 URL 支持哪些 HTTP 方法。从 Flask 0.6 开始，自动实现了它。</p></li></ul><h3 id="构建url"><a href="#构建url" class="headerlink" title="构建url"></a>构建url</h3><p>可以使用函数<a href="http://www.pythondoc.com/flask/api.html#flask.url_for" rel="external nofollow noopener noreferrer" target="_blank"><code>url_for()</code></a> 来针对一个特定的函数构建一个 URL。</p><p>它能够接受函数名作为第一参数，以及一些关键字参数，<br>每一个关键字参数对应于 URL 规则的变量部分。未知变量部分被插入到 URL 中作为查询参数：</p><pre class="language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> url_for
+</code></pre>
+<h4 id="常见HTTP方法"><a href="#常见HTTP方法" class="headerlink" title="常见HTTP方法"></a>常见HTTP方法</h4><ul>
+<li><p>GET</p>
+<p>浏览器通知服务器只 <em>获取</em> 页面上的信息并且发送回来。这可能是最常用的方法。</p>
+</li>
+<li><p>HEAD</p>
+<p>浏览器告诉服务器获取信息，但是只对 <em>头信息</em> 感兴趣，不需要整个页面的内容。应用应该处理起来像接收到一个 GET 请求但是不传递实际内容。在 Flask 中你完全不需要处理它，底层的 Werkzeug 库会为你处理的。</p>
+</li>
+<li><p>POST</p>
+<p>浏览器通知服务器它要在 URL 上 <em>提交</em> 一些信息，服务器必须保证数据被存储且只存储一次。这是 HTML 表单通常发送数据到服务器的方法。</p>
+</li>
+<li><p>PUT</p>
+<p>同 POST 类似，但是服务器可能触发了多次存储过程，多次覆盖掉旧值。现在你就会问这有什么用，有许多理由需要如此去做。考虑下在传输过程中连接丢失：在这种情况下浏览器 和服务器之间的系统可能安全地第二次接收请求，而不破坏其它东西。对于 POST 是不可能实现的，因为它只会被触发一次。</p>
+</li>
+<li><p>DELETE</p>
+<p>移除给定位置的信息。</p>
+</li>
+<li><p>OPTIONS</p>
+<p>给客户端提供一个快速的途径来指出这个 URL 支持哪些 HTTP 方法。从 Flask 0.6 开始，自动实现了它。</p>
+</li>
+</ul>
+<h3 id="构建url"><a href="#构建url" class="headerlink" title="构建url"></a>构建url</h3><p>可以使用函数<a href="http://www.pythondoc.com/flask/api.html#flask.url_for" rel="external nofollow noopener noreferrer" target="_blank"><code>url_for()</code></a> 来针对一个特定的函数构建一个 URL。</p>
+<p>它能够接受函数名作为第一参数，以及一些关键字参数，<br>每一个关键字参数对应于 URL 规则的变量部分。未知变量部分被插入到 URL 中作为查询参数：</p>
+<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> url_for
 <span class="token operator">>></span><span class="token operator">></span> app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span> @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">pass</span>
@@ -44,11 +226,198 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
 <span class="token operator">/</span>login
 <span class="token operator">/</span>login?next<span class="token operator">=</span><span class="token operator">/</span>
 <span class="token operator">/</span>user<span class="token operator">/</span>John<span class="token operator">%</span>20Doe
-</code></pre><h3 id="渲染静态文件"><a href="#渲染静态文件" class="headerlink" title="渲染静态文件"></a>渲染静态文件</h3><p>只要在你的包中或模块旁边创建一个名为 static 的文件夹，在应用中使用 /static 即可访问。</p><p>给静态文件生成 URL：</p><pre class="language-python"><code class="language-python">url_for<span class="token punctuation">(</span><span class="token string">'static'</span><span class="token punctuation">,</span> filename<span class="token operator">=</span><span class="token string">'style.css'</span><span class="token punctuation">)</span>
-</code></pre><p>这个文件应该存储在 <code>static/style.css</code>，而使用PyCharm创建Flask项目时已经为你创建好了static目录：</p><p><img src="/images/Capture2.PNG" alt="目录"></p><h3 id="渲染模板"><a href="#渲染模板" class="headerlink" title="渲染模板"></a>渲染模板</h3><p>由于必须自行做好 HTML 转义以保持应用程序的安全，Flask 自动配置好了 <a href="http://jinja.pocoo.org/2/" rel="external nofollow noopener noreferrer" target="_blank">Jinja2</a> 模版。</p><p>可以使用方法 <a href="http://www.pythondoc.com/flask/api.html#flask.render_template" rel="external nofollow noopener noreferrer" target="_blank"><code>render_template()</code></a> 来渲染模版：</p><pre class="language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> render_template
+</code></pre>
+<h3 id="渲染静态文件"><a href="#渲染静态文件" class="headerlink" title="渲染静态文件"></a>渲染静态文件</h3><p>只要在你的包中或模块旁边创建一个名为 static 的文件夹，在应用中使用 /static 即可访问。</p>
+<p>给静态文件生成 URL：</p>
+<pre class=" language-python"><code class="language-python">url_for<span class="token punctuation">(</span><span class="token string">'static'</span><span class="token punctuation">,</span> filename<span class="token operator">=</span><span class="token string">'style.css'</span><span class="token punctuation">)</span>
+</code></pre>
+<p>这个文件应该存储在 <code>static/style.css</code>，而使用PyCharm创建Flask项目时已经为你创建好了static目录：</p>
+<p><img src="/images/Capture2.PNG" alt="目录"></p>
+<h3 id="渲染模板"><a href="#渲染模板" class="headerlink" title="渲染模板"></a>渲染模板</h3><p>由于必须自行做好 HTML 转义以保持应用程序的安全，Flask 自动配置好了 <a href="http://jinja.pocoo.org/2/" rel="external nofollow noopener noreferrer" target="_blank">Jinja2</a> 模版。</p>
+<p>可以使用方法 <a href="http://www.pythondoc.com/flask/api.html#flask.render_template" rel="external nofollow noopener noreferrer" target="_blank"><code>render_template()</code></a> 来渲染模版：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> render_template
 
 @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/hello/'</span><span class="token punctuation">)</span>
 @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/hello/&lt;name>'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span>name<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'hello.html'</span><span class="token punctuation">,</span> name<span class="token operator">=</span>name<span class="token punctuation">)</span>
-</code></pre><p>Flask 将会在 templates 文件夹中寻找模版。</p><h1 id="后续链接"><a href="#后续链接" class="headerlink" title="后续链接"></a><a href="">后续链接</a></h1></div><footer class="article-footer"><a data-url="https://zmj97.coding.me/系统分析与设计作业五.html" data-id="cjn30m1xt004nfmag0k4ndflc" class="article-share-link">Share</a><ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/">Flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB/">mongoDB</a></li></ul></footer></div><nav id="article-nav"><a href="/hexo创建的tags和categories页面为空的解决办法.html" id="article-nav-newer" class="article-nav-link-wrap"><strong class="article-nav-caption">Newer</strong><div class="article-nav-title">hexo创建的tags和categories页面为空的解决办法</div></a><a href="/智能指针.html" id="article-nav-older" class="article-nav-link-wrap"><strong class="article-nav-caption">Older</strong><div class="article-nav-title">智能指针</div></a></nav></article><div id="vcomments"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz",appKey:"tIDpxK3F6tVo5V3nAOr3AJ3r",notify:!0,verify:!0,visitor:!0,avatar:"monsterid",placeholder:"快来评论鸭～"})</script></section></div><footer id="footer"><aside id="sidebar" class="outer"><div class="widget-wrap"><h3 class="widget-title">分类</h3><div class="widget"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签</h3><div class="widget"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a href="/tags/BN/" style="font-size:10px">BN</a> <a href="/tags/CSS/" style="font-size:12.86px">CSS</a> <a href="/tags/Chrome/" style="font-size:11.43px">Chrome</a> <a href="/tags/ES6/" style="font-size:11.43px">ES6</a> <a href="/tags/Flask/" style="font-size:10px">Flask</a> <a href="/tags/Flux/" style="font-size:10px">Flux</a> <a href="/tags/HTML/" style="font-size:15.71px">HTML</a> <a href="/tags/HTTP/" style="font-size:11.43px">HTTP</a> <a href="/tags/JavaScript/" style="font-size:20px">JavaScript</a> <a href="/tags/MNIST/" style="font-size:10px">MNIST</a> <a href="/tags/Markdown/" style="font-size:10px">Markdown</a> <a href="/tags/OAuth/" style="font-size:10px">OAuth</a> <a href="/tags/PAT/" style="font-size:10px">PAT</a> <a href="/tags/Python/" style="font-size:10px">Python</a> <a href="/tags/SCRUM/" style="font-size:10px">SCRUM</a> <a href="/tags/SQL/" style="font-size:10px">SQL</a> <a href="/tags/TensorBoard/" style="font-size:10px">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size:14.29px">TensorFlow</a> <a href="/tags/Tmux/" style="font-size:10px">Tmux</a> <a href="/tags/Typora/" style="font-size:10px">Typora</a> <a href="/tags/UMLet/" style="font-size:15.71px">UMLet</a> <a href="/tags/Ubuntu/" style="font-size:10px">Ubuntu</a> <a href="/tags/VUE/" style="font-size:10px">VUE</a> <a href="/tags/Valine/" style="font-size:10px">Valine</a> <a href="/tags/Vue/" style="font-size:11.43px">Vue</a> <a href="/tags/Vuex/" style="font-size:10px">Vuex</a> <a href="/tags/ajax/" style="font-size:10px">ajax</a> <a href="/tags/cookie/" style="font-size:10px">cookie</a> <a href="/tags/form/" style="font-size:10px">form</a> <a href="/tags/git/" style="font-size:10px">git</a> <a href="/tags/github-pages/" style="font-size:10px">github pages</a> <a href="/tags/gitment/" style="font-size:12.86px">gitment</a> <a href="/tags/hexo/" style="font-size:17.14px">hexo</a> <a href="/tags/iNode/" style="font-size:11.43px">iNode</a> <a href="/tags/markdown/" style="font-size:10px">markdown</a> <a href="/tags/mongoDB/" style="font-size:10px">mongoDB</a> <a href="/tags/numpy/" style="font-size:10px">numpy</a> <a href="/tags/prototype/" style="font-size:10px">prototype</a> <a href="/tags/ubuntu/" style="font-size:18.57px">ubuntu</a> <a href="/tags/webstorage/" style="font-size:10px">webstorage</a> <a href="/tags/youtube/" style="font-size:10px">youtube</a> <a href="/tags/三层架构/" style="font-size:10px">三层架构</a> <a href="/tags/内存/" style="font-size:10px">内存</a> <a href="/tags/刷题/" style="font-size:10px">刷题</a> <a href="/tags/双向链表/" style="font-size:10px">双向链表</a> <a href="/tags/同步/" style="font-size:10px">同步</a> <a href="/tags/图片显示/" style="font-size:10px">图片显示</a> <a href="/tags/建模/" style="font-size:11.43px">建模</a> <a href="/tags/异步/" style="font-size:10px">异步</a> <a href="/tags/归并/" style="font-size:10px">归并</a> <a href="/tags/快捷方式/" style="font-size:10px">快捷方式</a> <a href="/tags/指针/" style="font-size:10px">指针</a> <a href="/tags/操作系统/" style="font-size:10px">操作系统</a> <a href="/tags/数据库/" style="font-size:11.43px">数据库</a> <a href="/tags/数据库建模/" style="font-size:10px">数据库建模</a> <a href="/tags/爬虫/" style="font-size:10px">爬虫</a> <a href="/tags/用例图/" style="font-size:14.29px">用例图</a> <a href="/tags/网站收录/" style="font-size:10px">网站收录</a> <a href="/tags/设计模式/" style="font-size:10px">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size:10px">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size:10px">阿里云</a></div></div><div class="widget-wrap"><h3 class="widget-title">归档</h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">最新文章</h3><div class="widget"><ul><li><a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a></li><li><a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a></li><li><a href="/同步与异步.html">同步与异步</a></li><li><a href="/Promise与async-await.html">Promise与async/await</a></li><li><a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a></li></ul></div></div></aside><div class="outer"><div id="footer-info" class="inner">&copy; 2018 Mengjie Zhang<br>Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a></div></div></footer></div><nav id="mobile-nav"><a href="/" class="mobile-nav-link">主页</a> <a href="/archives" class="mobile-nav-link">归档</a> <a href="/tags" class="mobile-nav-link">标签</a> <a href="/categories" class="mobile-nav-link">分类</a></nav><script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script src="/js/script.js"></script><div id="totop" style="position:fixed;bottom:100px;right:50px;cursor:pointer;z-index:99999"><a title="返回顶部"><img src="/img/scrollup.png"></a></div><script src="/js/totop.js"></script></div></body>
+</code></pre>
+<p>Flask 将会在 templates 文件夹中寻找模版。</p>
+<h1 id="后续链接"><a href="#后续链接" class="headerlink" title="后续链接"></a><a href="">后续链接</a></h1>
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/系统分析与设计作业五.html" data-id="cjn31e95n004ngsagyxsgde4a" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/">Flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB/">mongoDB</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/hexo创建的tags和categories页面为空的解决办法.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          hexo创建的tags和categories页面为空的解决办法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/智能指针.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">智能指针</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 12.86px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a>
+          </li>
+        
+          <li>
+            <a href="/同步与异步.html">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/Promise与async-await.html">Promise与async/await</a>
+          </li>
+        
+          <li>
+            <a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>

@@ -101,14 +101,6 @@ auto_excerpt:
   enable: true
   length: 100
 
-all_minifier: true
-
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
-
 baidu_url_submit:
   count: 5 ## 提交最新的五个链接
   host: https://zmj97.coding.me/ ## 百度站长平台中注册的域名

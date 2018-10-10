@@ -1,1 +1,286 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>堆和栈的区别 | zmj&#39;s blog</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="description" content="参考：链接1 链接2"><meta name="keywords" content="内存"><meta property="og:type" content="article"><meta property="og:title" content="堆和栈的区别"><meta property="og:url" content="https://zmj97.coding.me/堆和栈的区别.html"><meta property="og:site_name" content="zmj&#39;s blog"><meta property="og:description" content="参考：链接1 链接2"><meta property="og:locale" content="zh-CN"><meta property="og:updated_time" content="2018-10-10T08:42:35.911Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="堆和栈的区别"><meta name="twitter:description" content="参考：链接1 链接2"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/style.css"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head></html><body><div id="container"><div id="wrap"><header id="header"><div id="banner"></div><div id="header-outer" class="outer"><div id="header-title" class="inner"><h1 id="logo-wrap"><a href="/" id="logo">zmj&#39;s blog</a></h1></div><div id="header-inner" class="inner"><nav id="main-nav"><a id="main-nav-toggle" class="nav-icon"></a> <a class="main-nav-link" href="/">主页</a> <a class="main-nav-link" href="/archives">归档</a> <a class="main-nav-link" href="/tags">标签</a> <a class="main-nav-link" href="/categories">分类</a></nav><nav id="sub-nav"><a id="nav-search-btn" class="nav-icon" title="搜索"></a></nav><div id="search-form-wrap"><form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form></div></div></div></header><div class="outer"><section id="main"><article id="post-堆和栈的区别" class="article article-type-post" itemscope="" itemprop="blogPost"><div class="article-meta"><a href="/堆和栈的区别.html" class="article-date"><time datetime="2018-03-30T03:48:51.000Z" itemprop="datePublished">2018-03-30</time></a><div class="article-category"><a class="article-category-link" href="/categories/C-C/">C/C++</a></div></div><div class="article-inner"><header class="article-header"><h1 class="article-title" itemprop="name">堆和栈的区别</h1></header><div class="article-entry" itemprop="articleBody"><p>参考：</p><p><a href="https://blog.csdn.net/u013321328/article/details/44172689" rel="external nofollow noopener noreferrer" target="_blank">链接1</a> <a href="https://blog.csdn.net/shanshanhi/article/details/50904706" rel="external nofollow noopener noreferrer" target="_blank">链接2</a></p><a id="more"></a><h1 id="一个由C-C-编译的程序占用的内存分为以下几个部分："><a href="#一个由C-C-编译的程序占用的内存分为以下几个部分：" class="headerlink" title="一个由C/C++编译的程序占用的内存分为以下几个部分："></a>一个由C/C++编译的程序占用的内存分为以下几个部分：</h1><h2 id="1、栈区（stack）"><a href="#1、栈区（stack）" class="headerlink" title="1、栈区（stack）"></a>1、栈区（stack）</h2><p>由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p><h2 id="2、堆区（heap）"><a href="#2、堆区（heap）" class="headerlink" title="2、堆区（heap）"></a>2、堆区（heap）</h2><p>一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。分配方式倒是类似于数据结构中的链表。</p><h2 id="3、全局区-静态区（static）"><a href="#3、全局区-静态区（static）" class="headerlink" title="3、全局区/静态区（static）"></a>3、全局区/静态区（static）</h2><p>全局变量和静态变量的存储是放在一起的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。程序结束后由系统释放。</p><h2 id="4、文字常量区"><a href="#4、文字常量区" class="headerlink" title="4、文字常量区"></a>4、文字常量区</h2><p>存放常量字符串。程序结束后由系统释放。</p><h2 id="5、程序代码区"><a href="#5、程序代码区" class="headerlink" title="5、程序代码区"></a>5、程序代码区</h2><p>存放函数体的二进制代码。</p><h1 id="堆和栈的区别："><a href="#堆和栈的区别：" class="headerlink" title="堆和栈的区别："></a>堆和栈的区别：</h1><h2 id="1、申请方式"><a href="#1、申请方式" class="headerlink" title="1、申请方式"></a>1、申请方式</h2><h3 id="栈区："><a href="#栈区：" class="headerlink" title="栈区："></a>栈区：</h3><p>由编译器自动分配释放，存放函数的参数值，局部变量值等。</p><h3 id="堆区："><a href="#堆区：" class="headerlink" title="堆区："></a>堆区：</h3><p>一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放，程序结束时可能由OS回收。</p><h2 id="2、操作方式"><a href="#2、操作方式" class="headerlink" title="2、操作方式"></a>2、操作方式</h2><h3 id="栈区：-1"><a href="#栈区：-1" class="headerlink" title="栈区："></a>栈区：</h3><p>操作方式类似于数据结构中的栈。</p><h3 id="堆区：-1"><a href="#堆区：-1" class="headerlink" title="堆区："></a>堆区：</h3><p>不同于数据结构中的堆，分配方式类似于链表。</p><h2 id="3、申请后系统的响应"><a href="#3、申请后系统的响应" class="headerlink" title="3、申请后系统的响应"></a>3、申请后系统的响应</h2><h3 id="栈区：-2"><a href="#栈区：-2" class="headerlink" title="栈区："></a>栈区：</h3><p>只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出（overflow）。</p><h3 id="堆区：-2"><a href="#堆区：-2" class="headerlink" title="堆区："></a>堆区：</h3><p>操作系统有一个记录空闲内存地址的链表，<br>当系统收到程序的申请时，会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，<br>对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，从而代码中的delete语句才能正确的释放本内存空间，<br>由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。</p><h2 id="4、申请大小的限制"><a href="#4、申请大小的限制" class="headerlink" title="4、申请大小的限制"></a>4、申请大小的限制</h2><h3 id="栈区：-3"><a href="#栈区：-3" class="headerlink" title="栈区："></a>栈区：</h3><p>在Windows下,栈是是一块确定的连续内存区域。栈顶的地址和栈的最大容量是系统预先规定好的，在WINDOWS下，栈的大小是2M（也有的说是1M），如果申请的空间超过栈的剩余空间时，将提示overflow。因此，能从栈获得的空间较小。</p><h3 id="堆区：-3"><a href="#堆区：-3" class="headerlink" title="堆区："></a>堆区：</h3><p>堆是向高地址扩展的数据结构，由于系统是用链表来存储的空闲内存地址的，它是不连续的，链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。</p><h2 id="5、申请效率的比较"><a href="#5、申请效率的比较" class="headerlink" title="5、申请效率的比较"></a>5、申请效率的比较</h2><h3 id="栈区：-4"><a href="#栈区：-4" class="headerlink" title="栈区："></a>栈区：</h3><p>系统自动分配，速度较快。但程序员是无法控制的。</p><h3 id="堆区：-4"><a href="#堆区：-4" class="headerlink" title="堆区："></a>堆区：</h3><p>由new分配的内存，一般速度比较慢，而且容易产生内存碎片,不过用起来最方便.<br>注意：在WINDOWS下，最好的方式是用VirtualAlloc分配内存，它不在堆也不在栈，而是直接在进程的地址空间中保留一块内存，虽然用起来最不方便。但是速度快，也最灵活。</p><h2 id="6、堆和栈中的存储内容"><a href="#6、堆和栈中的存储内容" class="headerlink" title="6、堆和栈中的存储内容"></a>6、堆和栈中的存储内容</h2><h3 id="栈区：-5"><a href="#栈区：-5" class="headerlink" title="栈区："></a>栈区：</h3><p>在函数调用时，第一个进栈的是函数调用语句的下一条可执行语句的地址，接着是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈的，然后是函数中的局部变量。当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行。</p><h3 id="堆区：-5"><a href="#堆区：-5" class="headerlink" title="堆区："></a>堆区：</h3><p>一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容由程序员安排。</p></div><footer class="article-footer"><a data-url="https://zmj97.coding.me/堆和栈的区别.html" data-id="cjn30m1ww002zfmagxnn0g680" class="article-share-link">Share</a><ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存/">内存</a></li></ul></footer></div><nav id="article-nav"><a href="/部署hexo后github-pages页面未更新或无法打开问题.html" id="article-nav-newer" class="article-nav-link-wrap"><strong class="article-nav-caption">Newer</strong><div class="article-nav-title">部署hexo后github pages页面未更新或无法打开问题</div></a></nav></article><div id="vcomments"></div><script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script><script src="//unpkg.com/valine/dist/Valine.min.js"></script><script>new Valine({el:"#vcomments",appId:"IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz",appKey:"tIDpxK3F6tVo5V3nAOr3AJ3r",notify:!0,verify:!0,visitor:!0,avatar:"monsterid",placeholder:"快来评论鸭～"})</script></section></div><footer id="footer"><aside id="sidebar" class="outer"><div class="widget-wrap"><h3 class="widget-title">分类</h3><div class="widget"><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签</h3><div class="widget"><ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">标签云</h3><div class="widget tagcloud"><a href="/tags/BN/" style="font-size:10px">BN</a> <a href="/tags/CSS/" style="font-size:12.86px">CSS</a> <a href="/tags/Chrome/" style="font-size:11.43px">Chrome</a> <a href="/tags/ES6/" style="font-size:11.43px">ES6</a> <a href="/tags/Flask/" style="font-size:10px">Flask</a> <a href="/tags/Flux/" style="font-size:10px">Flux</a> <a href="/tags/HTML/" style="font-size:15.71px">HTML</a> <a href="/tags/HTTP/" style="font-size:11.43px">HTTP</a> <a href="/tags/JavaScript/" style="font-size:20px">JavaScript</a> <a href="/tags/MNIST/" style="font-size:10px">MNIST</a> <a href="/tags/Markdown/" style="font-size:10px">Markdown</a> <a href="/tags/OAuth/" style="font-size:10px">OAuth</a> <a href="/tags/PAT/" style="font-size:10px">PAT</a> <a href="/tags/Python/" style="font-size:10px">Python</a> <a href="/tags/SCRUM/" style="font-size:10px">SCRUM</a> <a href="/tags/SQL/" style="font-size:10px">SQL</a> <a href="/tags/TensorBoard/" style="font-size:10px">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size:14.29px">TensorFlow</a> <a href="/tags/Tmux/" style="font-size:10px">Tmux</a> <a href="/tags/Typora/" style="font-size:10px">Typora</a> <a href="/tags/UMLet/" style="font-size:15.71px">UMLet</a> <a href="/tags/Ubuntu/" style="font-size:10px">Ubuntu</a> <a href="/tags/VUE/" style="font-size:10px">VUE</a> <a href="/tags/Valine/" style="font-size:10px">Valine</a> <a href="/tags/Vue/" style="font-size:11.43px">Vue</a> <a href="/tags/Vuex/" style="font-size:10px">Vuex</a> <a href="/tags/ajax/" style="font-size:10px">ajax</a> <a href="/tags/cookie/" style="font-size:10px">cookie</a> <a href="/tags/form/" style="font-size:10px">form</a> <a href="/tags/git/" style="font-size:10px">git</a> <a href="/tags/github-pages/" style="font-size:10px">github pages</a> <a href="/tags/gitment/" style="font-size:12.86px">gitment</a> <a href="/tags/hexo/" style="font-size:17.14px">hexo</a> <a href="/tags/iNode/" style="font-size:11.43px">iNode</a> <a href="/tags/markdown/" style="font-size:10px">markdown</a> <a href="/tags/mongoDB/" style="font-size:10px">mongoDB</a> <a href="/tags/numpy/" style="font-size:10px">numpy</a> <a href="/tags/prototype/" style="font-size:10px">prototype</a> <a href="/tags/ubuntu/" style="font-size:18.57px">ubuntu</a> <a href="/tags/webstorage/" style="font-size:10px">webstorage</a> <a href="/tags/youtube/" style="font-size:10px">youtube</a> <a href="/tags/三层架构/" style="font-size:10px">三层架构</a> <a href="/tags/内存/" style="font-size:10px">内存</a> <a href="/tags/刷题/" style="font-size:10px">刷题</a> <a href="/tags/双向链表/" style="font-size:10px">双向链表</a> <a href="/tags/同步/" style="font-size:10px">同步</a> <a href="/tags/图片显示/" style="font-size:10px">图片显示</a> <a href="/tags/建模/" style="font-size:11.43px">建模</a> <a href="/tags/异步/" style="font-size:10px">异步</a> <a href="/tags/归并/" style="font-size:10px">归并</a> <a href="/tags/快捷方式/" style="font-size:10px">快捷方式</a> <a href="/tags/指针/" style="font-size:10px">指针</a> <a href="/tags/操作系统/" style="font-size:10px">操作系统</a> <a href="/tags/数据库/" style="font-size:11.43px">数据库</a> <a href="/tags/数据库建模/" style="font-size:10px">数据库建模</a> <a href="/tags/爬虫/" style="font-size:10px">爬虫</a> <a href="/tags/用例图/" style="font-size:14.29px">用例图</a> <a href="/tags/网站收录/" style="font-size:10px">网站收录</a> <a href="/tags/设计模式/" style="font-size:10px">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size:10px">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size:10px">阿里云</a></div></div><div class="widget-wrap"><h3 class="widget-title">归档</h3><div class="widget"><ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul></div></div><div class="widget-wrap"><h3 class="widget-title">最新文章</h3><div class="widget"><ul><li><a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a></li><li><a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a></li><li><a href="/同步与异步.html">同步与异步</a></li><li><a href="/Promise与async-await.html">Promise与async/await</a></li><li><a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a></li></ul></div></div></aside><div class="outer"><div id="footer-info" class="inner">&copy; 2018 Mengjie Zhang<br>Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a></div></div></footer></div><nav id="mobile-nav"><a href="/" class="mobile-nav-link">主页</a> <a href="/archives" class="mobile-nav-link">归档</a> <a href="/tags" class="mobile-nav-link">标签</a> <a href="/categories" class="mobile-nav-link">分类</a></nav><script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script><link rel="stylesheet" href="/fancybox/jquery.fancybox.css"><script src="/fancybox/jquery.fancybox.pack.js"></script><script src="/js/script.js"></script><div id="totop" style="position:fixed;bottom:100px;right:50px;cursor:pointer;z-index:99999"><a title="返回顶部"><img src="/img/scrollup.png"></a></div><script src="/js/totop.js"></script></div></body>
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>堆和栈的区别 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="参考： 链接1 链接2">
+<meta name="keywords" content="内存">
+<meta property="og:type" content="article">
+<meta property="og:title" content="堆和栈的区别">
+<meta property="og:url" content="https://zmj97.coding.me/堆和栈的区别.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="参考： 链接1 链接2">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-10T08:42:35.911Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="堆和栈的区别">
+<meta name="twitter:description" content="参考： 链接1 链接2">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-堆和栈的区别" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/堆和栈的区别.html" class="article-date">
+  <time datetime="2018-03-30T03:48:51.000Z" itemprop="datePublished">2018-03-30</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C-C/">C/C++</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      堆和栈的区别
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+        
+        <p>参考：</p>
+<p><a href="https://blog.csdn.net/u013321328/article/details/44172689" rel="external nofollow noopener noreferrer" target="_blank">链接1</a> <a href="https://blog.csdn.net/shanshanhi/article/details/50904706" rel="external nofollow noopener noreferrer" target="_blank">链接2</a></p>
+<a id="more"></a>
+<h1 id="一个由C-C-编译的程序占用的内存分为以下几个部分："><a href="#一个由C-C-编译的程序占用的内存分为以下几个部分：" class="headerlink" title="一个由C/C++编译的程序占用的内存分为以下几个部分："></a>一个由C/C++编译的程序占用的内存分为以下几个部分：</h1><h2 id="1、栈区（stack）"><a href="#1、栈区（stack）" class="headerlink" title="1、栈区（stack）"></a>1、栈区（stack）</h2><p>由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
+<h2 id="2、堆区（heap）"><a href="#2、堆区（heap）" class="headerlink" title="2、堆区（heap）"></a>2、堆区（heap）</h2><p>一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。分配方式倒是类似于数据结构中的链表。</p>
+<h2 id="3、全局区-静态区（static）"><a href="#3、全局区-静态区（static）" class="headerlink" title="3、全局区/静态区（static）"></a>3、全局区/静态区（static）</h2><p>全局变量和静态变量的存储是放在一起的，初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域。程序结束后由系统释放。</p>
+<h2 id="4、文字常量区"><a href="#4、文字常量区" class="headerlink" title="4、文字常量区"></a>4、文字常量区</h2><p>存放常量字符串。程序结束后由系统释放。</p>
+<h2 id="5、程序代码区"><a href="#5、程序代码区" class="headerlink" title="5、程序代码区"></a>5、程序代码区</h2><p>存放函数体的二进制代码。</p>
+<h1 id="堆和栈的区别："><a href="#堆和栈的区别：" class="headerlink" title="堆和栈的区别："></a>堆和栈的区别：</h1><h2 id="1、申请方式"><a href="#1、申请方式" class="headerlink" title="1、申请方式"></a>1、申请方式</h2><h3 id="栈区："><a href="#栈区：" class="headerlink" title="栈区："></a>栈区：</h3><p>由编译器自动分配释放，存放函数的参数值，局部变量值等。</p>
+<h3 id="堆区："><a href="#堆区：" class="headerlink" title="堆区："></a>堆区：</h3><p>一般由程序员分配释放（使用new/delete或malloc/free），若程序员不释放，程序结束时可能由OS回收。</p>
+<h2 id="2、操作方式"><a href="#2、操作方式" class="headerlink" title="2、操作方式"></a>2、操作方式</h2><h3 id="栈区：-1"><a href="#栈区：-1" class="headerlink" title="栈区："></a>栈区：</h3><p>操作方式类似于数据结构中的栈。</p>
+<h3 id="堆区：-1"><a href="#堆区：-1" class="headerlink" title="堆区："></a>堆区：</h3><p>不同于数据结构中的堆，分配方式类似于链表。</p>
+<h2 id="3、申请后系统的响应"><a href="#3、申请后系统的响应" class="headerlink" title="3、申请后系统的响应"></a>3、申请后系统的响应</h2><h3 id="栈区：-2"><a href="#栈区：-2" class="headerlink" title="栈区："></a>栈区：</h3><p>只要栈的剩余空间大于所申请空间，系统将为程序提供内存，否则将报异常提示栈溢出（overflow）。</p>
+<h3 id="堆区：-2"><a href="#堆区：-2" class="headerlink" title="堆区："></a>堆区：</h3><p>操作系统有一个记录空闲内存地址的链表，<br>当系统收到程序的申请时，会遍历该链表，寻找第一个空间大于所申请空间的堆结点，然后将该结点从空闲结点链表中删除，并将该结点的空间分配给程序，<br>对于大多数系统，会在这块内存空间中的首地址处记录本次分配的大小，从而代码中的delete语句才能正确的释放本内存空间，<br>由于找到的堆结点的大小不一定正好等于申请的大小，系统会自动的将多余的那部分重新放入空闲链表中。 </p>
+<h2 id="4、申请大小的限制"><a href="#4、申请大小的限制" class="headerlink" title="4、申请大小的限制"></a>4、申请大小的限制</h2><h3 id="栈区：-3"><a href="#栈区：-3" class="headerlink" title="栈区："></a>栈区：</h3><p>在Windows下,栈是是一块确定的连续内存区域。栈顶的地址和栈的最大容量是系统预先规定好的，在WINDOWS下，栈的大小是2M（也有的说是1M），如果申请的空间超过栈的剩余空间时，将提示overflow。因此，能从栈获得的空间较小。</p>
+<h3 id="堆区：-3"><a href="#堆区：-3" class="headerlink" title="堆区："></a>堆区：</h3><p>堆是向高地址扩展的数据结构，由于系统是用链表来存储的空闲内存地址的，它是不连续的，链表的遍历方向是由低地址向高地址。堆的大小受限于计算机系统中有效的虚拟内存。由此可见，堆获得的空间比较灵活，也比较大。</p>
+<h2 id="5、申请效率的比较"><a href="#5、申请效率的比较" class="headerlink" title="5、申请效率的比较"></a>5、申请效率的比较</h2><h3 id="栈区：-4"><a href="#栈区：-4" class="headerlink" title="栈区："></a>栈区：</h3><p>系统自动分配，速度较快。但程序员是无法控制的。</p>
+<h3 id="堆区：-4"><a href="#堆区：-4" class="headerlink" title="堆区："></a>堆区：</h3><p>由new分配的内存，一般速度比较慢，而且容易产生内存碎片,不过用起来最方便.<br>注意：在WINDOWS下，最好的方式是用VirtualAlloc分配内存，它不在堆也不在栈，而是直接在进程的地址空间中保留一块内存，虽然用起来最不方便。但是速度快，也最灵活。</p>
+<h2 id="6、堆和栈中的存储内容"><a href="#6、堆和栈中的存储内容" class="headerlink" title="6、堆和栈中的存储内容"></a>6、堆和栈中的存储内容</h2><h3 id="栈区：-5"><a href="#栈区：-5" class="headerlink" title="栈区："></a>栈区：</h3><p>在函数调用时，第一个进栈的是函数调用语句的下一条可执行语句的地址，接着是函数的各个参数，在大多数的C编译器中，参数是由右往左入栈的，然后是函数中的局部变量。当本次函数调用结束后，局部变量先出栈，然后是参数，最后栈顶指针指向最开始存的地址，也就是主函数中的下一条指令，程序由该点继续运行。</p>
+<h3 id="堆区：-5"><a href="#堆区：-5" class="headerlink" title="堆区："></a>堆区：</h3><p>一般是在堆的头部用一个字节存放堆的大小。堆中的具体内容由程序员安排。</p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/堆和栈的区别.html" data-id="cjn31e94m002zgsagepse42nd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/内存/">内存</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/部署hexo后github-pages页面未更新或无法打开问题.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          部署hexo后github pages页面未更新或无法打开问题
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 12.86px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/7个好用的在线YouTube视频下载工具.html">7个好用的在线YouTube视频下载工具</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript实现双向链表.html">JavaScript实现双向链表</a>
+          </li>
+        
+          <li>
+            <a href="/同步与异步.html">同步与异步</a>
+          </li>
+        
+          <li>
+            <a href="/Promise与async-await.html">Promise与async/await</a>
+          </li>
+        
+          <li>
+            <a href="/ubuntu修改顶栏颜色.html">ubuntu修改顶栏颜色</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>
