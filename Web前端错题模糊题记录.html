@@ -29,7 +29,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -195,13 +196,13 @@
 <p>在客户端和服务器之间发送非常少的数据，减少字节开销。</p>
 </blockquote>
 <p><strong><u>如何获取一个元素节点（id 为 test）的父元素，找到之后如何删除这个元素节点（id 为 test）？</u></strong></p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">var</span> testNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">var</span> testNode <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'test'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> parentNode <span class="token operator">=</span> testNode<span class="token punctuation">.</span>parentNode<span class="token punctuation">;</span>
 parentNode<span class="token punctuation">.</span><span class="token function">removeChild</span><span class="token punctuation">(</span>testNode<span class="token punctuation">)</span><span class="token punctuation">;</span>    
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p><strong><u>!编写一个 js 函数 jsonp 的处理函数:</u></strong></p>
 <p><a href="https://blog.csdn.net/u013830811/article/details/52718664" rel="external nofollow noopener noreferrer" target="_blank">讲解链接</a></p>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 手写jsonp</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 手写jsonp</span>
 <span class="token keyword">function</span> <span class="token function">myCallback</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
@@ -229,9 +230,9 @@ parentNode<span class="token punctuation">.</span><span class="token function">r
 
 <span class="token function">jsonp</span><span class="token punctuation">(</span><span class="token string">'http://baidu.com/index.html'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">34</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'myCallback'</span><span class="token punctuation">)</span>
 <span class="token function">jsonp</span><span class="token punctuation">(</span><span class="token string">'http://baidu.com/index.html?name="zjn"'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> id<span class="token punctuation">:</span> <span class="token number">34</span> <span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token string">'myCallback'</span><span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong><u>编写一个函数判断参数是否是数组类型，如果是返回 true</u></strong></p>
-<pre class=" language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 方法一：</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token comment" spellcheck="true">// 方法一：</span>
 <span class="token keyword">function</span> <span class="token function">isArray</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">return</span> <span class="token punctuation">(</span>arg <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
@@ -243,14 +244,14 @@ parentNode<span class="token punctuation">.</span><span class="token function">r
 <span class="token keyword">function</span> <span class="token function">isArray</span><span class="token punctuation">(</span>arg<span class="token punctuation">)</span><span class="token punctuation">{</span>
   <span class="token keyword">return</span> arg<span class="token punctuation">.</span>__proto__<span class="token punctuation">.</span>constructor<span class="token punctuation">.</span>name <span class="token operator">==</span> <span class="token string">'Array'</span> ？<span class="token boolean">true</span> <span class="token punctuation">:</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong><u>关于对象的length属性：</u></strong></p>
 <p>Window.length //返回在当前窗口中frames的数量（包括IFRAMES）</p>
 <p>String.length //返回字符串中的字符数目</p>
 <p>Function.length //获取一个函数定义的参数数目</p>
 <p>Array.length //返回数组中元素的数目</p>
 <p><strong>如何获取 url 中的 query 字段对应的值，比如：<a href="https://m.mobike.com/?source=part1" rel="external nofollow noopener noreferrer" target="_blank">https://m.mobike.com?source=part1</a>，编写一个函数获取 source 对应的值 part1</strong></p>
-<pre class=" language-js"><code class="language-js"><span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">let</span> query <span class="token operator">=</span> <span class="token punctuation">(</span>url<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
   <span class="token keyword">let</span> p <span class="token operator">=</span> url<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">'?'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
   <span class="token keyword">let</span> sourcePos <span class="token operator">=</span> p<span class="token punctuation">.</span><span class="token function">indexOf</span><span class="token punctuation">(</span><span class="token string">'source'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>sourcePos <span class="token operator">></span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -261,7 +262,7 @@ parentNode<span class="token punctuation">.</span><span class="token function">r
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><strong><u>关于IE的event对象支持的方法：</u></strong></p>
 <p>IE的所有事件对象都支持的方法和属性：</p>
 <ul>
@@ -311,7 +312,7 @@ parentNode<span class="token punctuation">.</span><span class="token function">r
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/Web前端错题模糊题记录.html" data-id="cjn31e93o001agsaghms4kbmq" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/Web前端错题模糊题记录.html" data-id="cjn363wwv001ac4agfp3fxi5g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>

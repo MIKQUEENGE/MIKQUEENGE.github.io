@@ -25,7 +25,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -101,11 +102,11 @@
 <p>弄好自定义域名之后就悲催地发现评论板块无法登陆…磕磕绊绊<a href="http://blog.zmj97.top/2018/04/16/关于hexo博客自定义域名后gitment评论系统登陆出现redirect-error返回主页的解决办法" target="_blank" rel="noopener">改好配置</a>后，终于开始重新进行百度收录了！</p>
 <h2 id="谷歌收录"><a href="#谷歌收录" class="headerlink" title="谷歌收录"></a>谷歌收录</h2><p>由于白天的阴影先弄了谷歌收录，没有遇到什么大坑，一切都非常顺利，直到上sitemap时出现了两个问题：</p>
 <h3 id="sitmap-xml不存在"><a href="#sitmap-xml不存在" class="headerlink" title="sitmap.xml不存在"></a>sitmap.xml不存在</h3><p>安装sitemap插件时一定要加上<code>--save</code>！！：</p>
-<pre class=" language-shell"><code class="language-shell">npm install hexo-generator-sitemap --save
-</code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">npm install hexo-generator-sitemap --save
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>而不是</p>
-<pre class=" language-shell"><code class="language-shell">npm install hexo-generator-sitemap
-</code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">npm install hexo-generator-sitemap
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="测试sitmap-xml出现错误：此位置的-Sitemap-不允许此网址"><a href="#测试sitmap-xml出现错误：此位置的-Sitemap-不允许此网址" class="headerlink" title="测试sitmap.xml出现错误：此位置的 Sitemap 不允许此网址"></a>测试sitmap.xml出现错误：此位置的 Sitemap 不允许此网址</h3><p>搜了一下，各家有各家的错误原因，我的是因为我在谷歌收录的网址是原网址<code>https://mikqueenge.github.io</code>，而上传的sitemap.xml的地址自动被解析为自定义域名<code>http://blog.zmj97.top/sitemap.xml</code>才出现了错误，再添加收录网站<code>http://blog.zmj97.top</code>然后在这个地址下添加sitemap即可。</p>
 <h2 id="百度收录"><a href="#百度收录" class="headerlink" title="百度收录"></a>百度收录</h2><h3 id="token"><a href="#token" class="headerlink" title="token"></a><code>token</code></h3><p>数据引入-&gt;链接提交-&gt;自动提交-&gt;主动推送（实时）-&gt;推送接口 中的接口调用地址中有token的值。</p>
 <h3 id="自动抓取sitemap失败"><a href="#自动抓取sitemap失败" class="headerlink" title="自动抓取sitemap失败"></a>自动抓取sitemap失败</h3><p>直接访问提交的数据文件地址<code>http://blog.zmj97.top/baidu_sitemap.txt</code>是可以看到的，但是因为 GitHub 屏蔽了百度的爬虫所以百度无法抓取…</p>
@@ -116,7 +117,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/hexo博客谷歌百度收录踩坑日记.html" data-id="cjn31e93v001ogsagrmljravv" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/hexo博客谷歌百度收录踩坑日记.html" data-id="cjn363wx0001kc4ag8ye8piim" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/网站收录/">网站收录</a></li></ul>

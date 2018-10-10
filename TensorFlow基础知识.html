@@ -27,7 +27,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -109,7 +110,7 @@
 <li>使用 feed 和 fetch 可以为任意的操作(arbitrary operation) 赋值或者从其中获取数据.</li>
 <li>图中的节点被称之为 <em>op</em> (operation 的缩写). 一个 op 获得 0 个或多个 <code>Tensor</code>, 执行计算,<br>产生 0 个或多个 <code>Tensor</code>. 每个 Tensor 是一个类型化的多维数组.</li>
 </ul>
-<h2 id="构建图（创造节点）"><a href="#构建图（创造节点）" class="headerlink" title="构建图（创造节点）"></a>构建图（创造节点）</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+<h2 id="构建图（创造节点）"><a href="#构建图（创造节点）" class="headerlink" title="构建图（创造节点）"></a>构建图（创造节点）</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
 
 <span class="token comment" spellcheck="true"># 创建一个常量 op, 产生一个 1x2 矩阵. 这个 op 被作为一个节点</span>
 <span class="token comment" spellcheck="true"># 加到默认图中.</span>
@@ -123,8 +124,8 @@ matrix2 <span class="token operator">=</span> tf<span class="token punctuation">
 <span class="token comment" spellcheck="true"># 创建一个矩阵乘法 matmul op , 把 'matrix1' 和 'matrix2' 作为输入.</span>
 <span class="token comment" spellcheck="true"># 返回值 'product' 代表矩阵乘法的结果.</span>
 product <span class="token operator">=</span> tf<span class="token punctuation">.</span>matmul<span class="token punctuation">(</span>matrix1<span class="token punctuation">,</span> matrix2<span class="token punctuation">)</span>
-</code></pre>
-<h2 id="启动图"><a href="#启动图" class="headerlink" title="启动图"></a>启动图</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 启动默认图.</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="启动图"><a href="#启动图" class="headerlink" title="启动图"></a>启动图</h2><pre class="line-numbers language-python"><code class="language-python"><span class="token comment" spellcheck="true"># 启动默认图.</span>
 sess <span class="token operator">=</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
 <span class="token comment" spellcheck="true"># 调用 sess 的 'run()' 方法来执行矩阵乘法 op, 传入 'product' 作为该方法的参数. </span>
@@ -142,12 +143,12 @@ result <span class="token operator">=</span> sess<span class="token punctuation"
 
 <span class="token comment" spellcheck="true"># 任务完成, 关闭会话.</span>
 sess<span class="token punctuation">.</span>close<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>也可以：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">with</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sess<span class="token punctuation">:</span>
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">with</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sess<span class="token punctuation">:</span>
   result <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>product<span class="token punctuation">]</span><span class="token punctuation">)</span>
   <span class="token keyword">print</span> result
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="Tensor"><a href="#Tensor" class="headerlink" title="Tensor"></a>Tensor</h2><p>TensorFlow 程序使用 tensor 数据结构来代表所有的数据, 计算图中, 操作间传递的数据都是 tensor.<br>可以把 TensorFlow tensor 看作是一个 n 维的数组或列表. 一个 tensor 包含一个静态类型 rank, 和<br>一个 shape. </p>
 <h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>变量维护图执行过程中的状态信息。</p>
 <p>启动图后, 变量必须先经过<code>初始化</code> (init) op 初始化,</p>
@@ -156,19 +157,19 @@ sess<span class="token punctuation">.</span>close<span class="token punctuation"
 <h2 id="Fetch"><a href="#Fetch" class="headerlink" title="Fetch"></a>Fetch</h2><p>为了取回操作的输出内容, 可以在使用 <code>Session</code> 对象的 <code>run()</code> 调用 执行图时, 传入一些 tensor来取回结果。</p>
 <h2 id="Feed"><a href="#Feed" class="headerlink" title="Feed"></a>Feed</h2><p>TensorFlow 还提供了 feed 机制, 该机制可以临时替代图中的任意操作中的 tensor,可以对图中任何操作提交补丁, 直接插入一个 tensor。</p>
 <p>最常见的用例是将某些特殊的操作指定为 “feed” 操作,标记的方法是使用 tf.placeholder() 为这些操作创建占位符. </p>
-<pre class=" language-python"><code class="language-python">input1 <span class="token operator">=</span> tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>types<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python">input1 <span class="token operator">=</span> tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>types<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
 input2 <span class="token operator">=</span> tf<span class="token punctuation">.</span>placeholder<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>types<span class="token punctuation">.</span>float32<span class="token punctuation">)</span>
 output <span class="token operator">=</span> tf<span class="token punctuation">.</span>mul<span class="token punctuation">(</span>input1<span class="token punctuation">,</span> input2<span class="token punctuation">)</span>
 
 <span class="token keyword">with</span> tf<span class="token punctuation">.</span>Session<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">as</span> sess<span class="token punctuation">:</span>
   <span class="token keyword">print</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">[</span>output<span class="token punctuation">]</span><span class="token punctuation">,</span> feed_dict<span class="token operator">=</span><span class="token punctuation">{</span>input1<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">7</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">,</span> input2<span class="token punctuation">:</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">.</span><span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/TensorFlow基础知识.html" data-id="cjn31e93i000wgsaggg91sxs4" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/TensorFlow基础知识.html" data-id="cjn363wwn000tc4agrccou8dv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li></ul>

@@ -25,7 +25,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -132,7 +133,7 @@
 <p>weak_ptr可以使用一个非常重要的成员函数lock()从被观测的shared_ptr获得一个可用的shared_ptr对象，从而操作资源。但当expired()==true的时候，lock()函数将返回一个存储空指针的shared_ptr。</p>
 </blockquote>
 <h2 id="循环引用问题"><a href="#循环引用问题" class="headerlink" title="循环引用问题"></a>循环引用问题</h2><p>首先看下面的代码理解什么是循环引用：</p>
-<pre class=" language-c++"><code class="language-c++">class B;
+<pre class="line-numbers language-c++"><code class="language-c++">class B;
 class A
 {
 public:
@@ -155,9 +156,9 @@ void test()
 　　//b先出作用域，B的引用计数减少为1，不为0，所以堆上的B空间没有被释放
 　　//a后出作用域，同理A的引用计数减少为1，不为0，所以堆上A的空间也没有被释放
 }
-</b></a></a></b></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></b></a></a></b></code></pre>
 <p>因为weak_ptr的构造和析构不会引起引用计数的增加或减少，所以可以用weak_ptr解决这个问题（weak_ptr必须与shared_ptr配合使用,不能单独使用）：</p>
-<pre class=" language-c++"><code class="language-c++">class B;
+<pre class="line-numbers language-c++"><code class="language-c++">class B;
 class A
 {
 public:
@@ -177,7 +178,7 @@ void test()
 　　a->m_b = b;
 　　b->m_a = a;
 }
-</b></a></a></b></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></b></a></a></b></code></pre>
 <h3 id="auto-ptr"><a href="#auto-ptr" class="headerlink" title="auto_ptr"></a>auto_ptr</h3><p>缺陷：（<a href="https://www.zhihu.com/question/37351146/answer/83379043" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a>，来源：知乎，作者：Sen Zhang）</p>
 <blockquote>
 <p>auto_ptr采用可以采用copy语义来转移指针资源的所有权的同时将原指针置为NULL，这跟通常理解的copy行为是不一致的，而这样的行为要有些场合下不是我们希望看到的。</p>
@@ -186,10 +187,10 @@ void test()
 <p>这也就是用unique_ptr代替auto_ptr的原因，</p>
 <p>本质上来说，就是unique_ptr禁用了copy，而用move替代。</p>
 </blockquote>
-<pre class=" language-c++"><code class="language-c++">std::unique_ptr<bar> b0(new bar());
+<pre class="line-numbers language-c++"><code class="language-c++">std::unique_ptr<bar> b0(new bar());
 std::unique_ptr<bar> b1(std::move(b0));
-</bar></bar></code></pre>
-<h2 id="智能指针的实现"><a href="#智能指针的实现" class="headerlink" title="智能指针的实现"></a>智能指针的实现</h2><pre class=" language-c++"><code class="language-c++">template <typename t="">
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></bar></bar></code></pre>
+<h2 id="智能指针的实现"><a href="#智能指针的实现" class="headerlink" title="智能指针的实现"></a>智能指针的实现</h2><pre class="line-numbers language-c++"><code class="language-c++">template <typename t="">
 class SmartPointer {
 public:
     //构造函数
@@ -265,13 +266,13 @@ int main()
     SmartPointer<char> cp4(new char('b'));
     cp3 = cp4;
 }
-</char></char></char></char></typename></code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></char></char></char></char></typename></code></pre>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/智能指针.html" data-id="cjn31e94v003igsag3pb6a8da" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/智能指针.html" data-id="cjn363wy20039c4ag8wfadlju" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/指针/">指针</a></li></ul>

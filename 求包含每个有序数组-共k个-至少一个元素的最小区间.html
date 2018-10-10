@@ -25,7 +25,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -113,7 +114,7 @@
 <p>若不是b1，则丢弃b1;</p>
 <p>这样不断循环地考虑最小值，直到丢弃完了某一个数组的所有值，这样我们的当前最小区间长度就是所求结果。</p>
 <p>下边是代码：</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <limits.h>
 #include <vector>
 using namespace std;
@@ -154,14 +155,14 @@ int main() {
         }
         if (++pos[arrayOfLeastNum] >= n) break;
     }
-    cout<<realmin<<' '<<realmax;="" return="" 0;="" }="" <="" code=""></realmin<<'></int></int></=></vector></limits.h></iostream></code></pre>
+    cout<<realmin<<' '<<realmax;="" return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></realmin<<'></int></int></=></vector></limits.h></iostream></code></pre>
 <p>但是，这个只能过90%:</p>
 <blockquote>
 <p>运行超时:您的程序未能在规定时间内运行结束，请检查是否循环有错或算法复杂度过大。<br>case通过率为90.00%</p>
 </blockquote>
 <p>看了一下题下的讨论，可以用一个优先队列（priority_queue，一个STL）或自己实现一个最小堆来维护“当前最小区间队列”，这样查找当前的最大值和最小值就是O(logn)而不是O(n)</p>
 <p>下边帖一下别人的代码：</p>
-<pre class=" language-c++"><code class="language-c++">链接：https://www.nowcoder.com/questionTerminal/0399d363fb594970bae7ad8a3978f86a
+<pre class="line-numbers language-c++"><code class="language-c++">链接：https://www.nowcoder.com/questionTerminal/0399d363fb594970bae7ad8a3978f86a
 来源：牛客网
 
 //思路2，用优先队列去实现多路归并
@@ -194,13 +195,13 @@ int main(){
         vector<pt> sort;
         priority_queue<pt,vector<pt>,cmp> qu; //优先队列
         for(int i = 0;i<k;i++) qu.push(all[i][0]);="" while(!qu.empty()){="" pt="" temp="qu.top();" qu.pop();="" sort.push_back(temp);="" vec[temp.pos]++;="" if(vec[temp.pos]<="n-1){" qu.push(all[temp.pos][vec[temp.pos]]);="" }="" for(int="" i="0;i<vec.size();i++)" vec[i]="0;" int="" begin="0;" end="0;" start="0;" final="0;" length="INT_MAX;" bool="" flg="false;" vec[sort[0].pos]++;="" while(begin<sort.size()-1||end<sort.size()-1){="" flgg="true;">=1);
-            if(!flgg&&end<sort.size()){ if(end<sort.size()-1)="" end++;="" vec[sort[end].pos]++;="" }="" if(!flgg&&end="=sort.size()-1)" break;="" if(flgg&&begin<sort.size()){="" int="" x="sort[end].x-sort[begin].x;" if(x<length){="" start="sort[begin].x;" final="sort[end].x;" length="x;" vec[sort[begin].pos]--;="" if(begin<sort.size()-1)="" begin++;="" a="1;" cout<<start<<"="" "<<final<<endl;="" system("pause");="" return="" 0;="" <="" code=""></sort.size()){></k;i++)></pt,vector<pt></pt></n;j++){></k;i++){></int></vector<pt></bits></code></pre>
+            if(!flgg&&end<sort.size()){ if(end<sort.size()-1)="" end++;="" vec[sort[end].pos]++;="" }="" if(!flgg&&end="=sort.size()-1)" break;="" if(flgg&&begin<sort.size()){="" int="" x="sort[end].x-sort[begin].x;" if(x<length){="" start="sort[begin].x;" final="sort[end].x;" length="x;" vec[sort[begin].pos]--;="" if(begin<sort.size()-1)="" begin++;="" a="1;" cout<<start<<"="" "<<final<<endl;="" system("pause");="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></sort.size()){></k;i++)></pt,vector<pt></pt></n;j++){></k;i++){></int></vector<pt></bits></code></pre>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/求包含每个有序数组-共k个-至少一个元素的最小区间.html" data-id="cjn31e94x003lgsagl6n9pz81" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/求包含每个有序数组-共k个-至少一个元素的最小区间.html" data-id="cjn363wy3003cc4ag5wxvd09r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/归并/">归并</a></li></ul>

@@ -25,7 +25,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -92,11 +93,11 @@
         <!-- Table of Contents --> 
         
         <p>在最后测试的一步报错：</p>
-<pre class=" language-shell"><code class="language-shell">ResourceExhaustedError (see above for traceback): OOM when allocating tensor
-</code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">ResourceExhaustedError (see above for traceback): OOM when allocating tensor
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>搜索了一下才知道是GPU显存不足（emmmm….）造成的，可以把最后测试的那行代码改为将测试集分成几个小部分分别测试最后再求精度的平均值：</p>
 <a id="more"></a>
-<pre class=" language-python"><code class="language-python">accuracy_sum <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_sum<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>correct_prediction<span class="token punctuation">,</span> tf<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python">accuracy_sum <span class="token operator">=</span> tf<span class="token punctuation">.</span>reduce_sum<span class="token punctuation">(</span>tf<span class="token punctuation">.</span>cast<span class="token punctuation">(</span>correct_prediction<span class="token punctuation">,</span> tf<span class="token punctuation">.</span>float32<span class="token punctuation">)</span><span class="token punctuation">)</span>
 good <span class="token operator">=</span> <span class="token number">0</span>
 total <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -104,13 +105,13 @@ total <span class="token operator">=</span> <span class="token number">0</span>
     good <span class="token operator">+=</span> accuracy_sum<span class="token punctuation">.</span>eval<span class="token punctuation">(</span>feed_dict<span class="token operator">=</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> testSet<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> y_<span class="token punctuation">:</span> testSet<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> keep_prob<span class="token punctuation">:</span> <span class="token number">1.0</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
     total <span class="token operator">+=</span> testSet<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
 <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"test accuracy %g"</span><span class="token operator">%</span><span class="token punctuation">(</span>good<span class="token operator">/</span>total<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/TensorFlow训练MNIST报错ResourceExhaustedError.html" data-id="cjn31e93j0010gsag0tfsj5k4" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/TensorFlow训练MNIST报错ResourceExhaustedError.html" data-id="cjn363wwq0011c4ags9p22ovv" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li></ul>

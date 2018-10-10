@@ -36,7 +36,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -123,8 +124,8 @@
 <p><u>因为搜索引擎是根据标签的语义和id属性来识别的，因此id属性的使用和命名都需要谨慎。</u></p>
 <p>一般来说，定义多个class的目的在于：一个class抽取公共样式，一个class定义单独样式。</p>
 <h2 id="标题栏小图标"><a href="#标题栏小图标" class="headerlink" title="标题栏小图标"></a>标题栏小图标</h2><p>在<code>head</code>标签内加入：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>shortcut icon<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/x-icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>图标路径.ico<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
-</code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>shortcut icon<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>image/x-icon<span class="token punctuation">"</span></span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>图标路径.ico<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>其中<code>rel</code>和<code>type</code>是固定属性不用更改，只需要修改图片路径即可。</p>
 <h1 id="语义化"><a href="#语义化" class="headerlink" title="语义化"></a>语义化</h1><p>HTML的精髓在于标签的语义。搜索引擎根据HTML代码识别页面结构。</p>
 <p>编写语意结构良好的页面的好处：</p>
@@ -148,11 +149,11 @@
 <p>因此<strong>img标签必须添加alt属性。</strong></p>
 <h3 id="figure元素和figcaption元素"><a href="#figure元素和figcaption元素" class="headerlink" title="figure元素和figcaption元素"></a>figure元素和figcaption元素</h3><p>对于图片+图注的效果，使用figure和figcaption来增强图片语义化。</p>
 <p>例：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figure</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>xxx<span class="token punctuation">"</span></span> <span class="token attr-name">alt</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>xxx<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>figcaption</span><span class="token punctuation">></span></span>这是一个图注<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figcaption</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>figure</span><span class="token punctuation">></span></span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>更详细的介绍可以看<a href="https://www.w3cplus.com/html5/quick-tip-the-right-way-to-use-figure-and-figcaption-elements.html" rel="external nofollow noopener noreferrer" target="_blank">这一篇博客</a>。</p>
 <h2 id="表格语义化"><a href="#表格语义化" class="headerlink" title="表格语义化"></a>表格语义化</h2><table>
 <thead>
@@ -202,11 +203,11 @@
 <li>当我们点击label中的文本时，其关联的表单元素也会获得焦点。</li>
 </ul>
 <p>例：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rdo<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rdo<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rdo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
-</code></pre>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rdo<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rdo<span class="token punctuation">"</span></span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>radio<span class="token punctuation">"</span></span> <span class="token punctuation">/></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>label</span> <span class="token attr-name">for</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>rdo<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>单选框<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>label</span><span class="token punctuation">></span></span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h3 id="fieldset标签和legend标签"><a href="#fieldset标签和legend标签" class="headerlink" title="fieldset标签和legend标签"></a>fieldset标签和legend标签</h3><p>fieldset标签用于给表单元素进行分组并绘制一个边框，legend标签用于定义某一组表单的标题。</p>
 <p>例如这个<a href="http://www.runoob.com/tags/tag-fieldset.html" rel="external nofollow noopener noreferrer" target="_blank">例子</a>：</p>
-<pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span>
+<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>fieldset</span><span class="token punctuation">></span></span>
     <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>legend</span><span class="token punctuation">></span></span>Personalia:<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>legend</span><span class="token punctuation">></span></span>
     Name: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>br</span><span class="token punctuation">></span></span>
@@ -214,7 +215,7 @@
     Date of birth: <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
   <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>fieldset</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">></span></span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>作用：</p>
 <ul>
 <li>增强表单语义。</li>
@@ -652,7 +653,7 @@
 <li>其他属性——cursor，content，list-style，quotes等</li>
 </ol>
 <p>例如：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token id">#main</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token id">#main</span> </span><span class="token punctuation">{</span>
   <span class="token comment" spellcheck="true">/* 影响文档流属性 */</span>
   <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
   <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
@@ -672,26 +673,26 @@
   <span class="token comment" spellcheck="true">/* 其他属性 */</span>
   <span class="token property">cursor</span><span class="token punctuation">:</span> pointer<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="注释规范"><a href="#注释规范" class="headerlink" title="注释规范"></a>注释规范</h2><p>由于压缩工具会删除所有的注释，因此有时为了保留版权声明等注释信息，需要在注释内容前加一个叹号，如<code>/*! 注释内容 */</code>，这样压缩工具就不会删除这条注释信息。</p>
-<h3 id="顶部注释"><a href="#顶部注释" class="headerlink" title="顶部注释"></a>顶部注释</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*
+<h3 id="顶部注释"><a href="#顶部注释" class="headerlink" title="顶部注释"></a>顶部注释</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*
  *@description:说明
  *@author:作者
  *@update:更新时间，如2018-09-10 17:42
  */</span>
-</code></pre>
-<h3 id="模块注释"><a href="#模块注释" class="headerlink" title="模块注释"></a>模块注释</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 导航部分，开始 */</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="模块注释"><a href="#模块注释" class="headerlink" title="模块注释"></a>模块注释</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 导航部分，开始 */</span>
 <span class="token number">......</span>
 <span class="token comment" spellcheck="true">/* 导航部分，结束 */</span>
-</code></pre>
-<h3 id="简单注释"><a href="#简单注释" class="headerlink" title="简单注释"></a>简单注释</h3><pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 单行注释 */</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<h3 id="简单注释"><a href="#简单注释" class="headerlink" title="简单注释"></a>简单注释</h3><pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* 单行注释 */</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>或者</p>
-<pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*多行注释
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/*多行注释
  *多行注释
  *多行注释
  */</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="CSS-reset"><a href="#CSS-reset" class="headerlink" title="CSS reset"></a>CSS reset</h2><p>重置样式，去除元素在浏览器中的默认样式。</p>
 <p>是否使用CSS reset根据实际开发需求而定。</p>
 <h1 id="盒子模型"><a href="#盒子模型" class="headerlink" title="盒子模型"></a>盒子模型</h1><p><img src="https://gss0.baidu.com/-4o3dSag_xI4khGko9WTAnF6hhy/zhidao/wh%3D600%2C800/sign=5ad0ba6a0c7b02080c9c37e752e9deeb/0824ab18972bd407012c41327d899e510eb30911.jpg" alt="标准盒子模型"></p>
@@ -1162,7 +1163,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/HTML与CSS学习记录.html" data-id="cjn31e92v0007gsago02t5k4q" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/HTML与CSS学习记录.html" data-id="cjn363ww00006c4agr5il3nvq" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML/">HTML</a></li></ul>

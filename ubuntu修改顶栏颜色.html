@@ -25,7 +25,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -92,11 +93,11 @@
         <!-- Table of Contents --> 
         
         <p>编辑shell主题的css文件，比如我的shell主题是<code>Vimix-Beryl</code>：</p>
-<pre class=" language-shell"><code class="language-shell">sudo gedit /usr/share/themes/Vimix-Beryl/gnome-shell/gnome-shell.css
-</code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo gedit /usr/share/themes/Vimix-Beryl/gnome-shell/gnome-shell.css
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <a id="more"></a>
 <p>打开之后搜索<code>top bar</code>，会看到这样一段：</p>
-<pre class=" language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* TOP BAR */</span>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token comment" spellcheck="true">/* TOP BAR */</span>
 <span class="token selector"><span class="token id">#panel</span> </span><span class="token punctuation">{</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.6</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">/* transition from solid to transparent */</span>
@@ -104,24 +105,24 @@
   <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
   <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">32</span>px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>按照自己的喜好修改<code>background-color</code>即可^_^</p>
 <p>补充：修改完可能并不能直接看到效果，可以在tweaks里先切换成别的主题再换成修改了的主题。</p>
 <p>再补充：因为我是把透明度调到了大概0.2左右，导致使用hide top bar扩展时使用鼠标触发top bar后几乎看不清，可以往下找一下<code>#panel.solid</code>，把<code>background-color</code>改成这样：</p>
-<pre class=" language-css"><code class="language-css"><span class="token selector"><span class="token id">#panel</span><span class="token class">.solid</span> </span><span class="token punctuation">{</span>
+<pre class="line-numbers language-css"><code class="language-css"><span class="token selector"><span class="token id">#panel</span><span class="token class">.solid</span> </span><span class="token punctuation">{</span>
   <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0</span>, <span class="token number">0.5</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token punctuation">;</span>
   <span class="token comment" spellcheck="true">/* transition from transparent to solid */</span>
   <span class="token property">transition-duration</span><span class="token punctuation">:</span> <span class="token number">250</span>ms<span class="token punctuation">;</span>
   <span class="token property">background-gradient-direction</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
   <span class="token property">text-shadow</span><span class="token punctuation">:</span> none<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/ubuntu修改顶栏颜色.html" data-id="cjn31e94a002fgsagm2jxi5g4" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/ubuntu修改顶栏颜色.html" data-id="cjn363wxi002cc4agdjivjcck" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>

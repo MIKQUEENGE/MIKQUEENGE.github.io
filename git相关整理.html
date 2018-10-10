@@ -29,7 +29,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -125,20 +126,20 @@
 <p><strong>reset回退不会保留回退到的版本之后的所有commit</strong>，因此在push时会因为落后于远程commit而报错，若想强制覆盖，可以为push命令加上<code>--force</code>或<code>-f</code>来进行强制操作。</p>
 <h3 id="revert"><a href="#revert" class="headerlink" title="revert"></a>revert</h3><p>revert用一个新提交来消除一个历史提交所做的所有修改，即</p>
 <p><strong>revert不影响以前的所有commit</strong></p>
-<pre class=" language-shell"><code class="language-shell">git revert HEAD // 撤销最近一次提交
+<pre class="line-numbers language-shell"><code class="language-shell">git revert HEAD // 撤销最近一次提交
 git revert HEAD^ // 撤销上上次提交
 git revert commitID // 撤销指定id的提交
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h2 id="回退暂存区的修改"><a href="#回退暂存区的修改" class="headerlink" title="回退暂存区的修改"></a>回退暂存区的修改</h2><p><code>git reset HEAD</code>，命令具体含义看上边的版本回退。</p>
 <h2 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h2><p><code>git branch -d BranchName</code>——删除本地分支</p>
 <p><code>git push origin --delete BranchName</code>/<code>git push origin :BranchName</code>——删除远程分支</p>
 <h2 id="git-pull-与-git-fetch-区别"><a href="#git-pull-与-git-fetch-区别" class="headerlink" title="git pull 与 git fetch 区别"></a>git pull 与 git fetch 区别</h2><p><code>git fetch</code>——拉取远程分支并更新到<code>origin/BranchName</code>分支中</p>
 <p><code>git pull</code>——拉取远程分支后与本地当前分支合并</p>
-<pre class=" language-shell"><code class="language-shell">git fetch origin master // 保存在本地'origin/master'分支中
+<pre class="line-numbers language-shell"><code class="language-shell">git fetch origin master // 保存在本地'origin/master'分支中
 git merge origin/master // 将fetch到的分支合并到本地的当前分支中
 
 git pull origin master // 以上两句命令相当于这一句命令
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <h2 id="合并时出现冲突的解决办法"><a href="#合并时出现冲突的解决办法" class="headerlink" title="合并时出现冲突的解决办法"></a>合并时出现冲突的解决办法</h2><p><code>git merge</code>显示冲突时，</p>
 <p>使用<code>git status</code>查看冲突的文件，</p>
 <p>冲突部分用<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; =======  &gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>标示，</p>
@@ -158,7 +159,7 @@ git pull origin master // 以上两句命令相当于这一句命令
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/git相关整理.html" data-id="cjn31e93s001hgsagjtqt8xj2" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/git相关整理.html" data-id="cjn363wwz001hc4agwvrq0ud1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>

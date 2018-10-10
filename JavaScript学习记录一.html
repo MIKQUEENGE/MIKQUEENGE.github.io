@@ -25,7 +25,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -162,9 +163,9 @@
 <p>因此建议在声明时就进行初始化，以此来分别a和b。</p>
 <h3 id="Null类型"><a href="#Null类型" class="headerlink" title="Null类型"></a>Null类型</h3><p>只有一个值——null。</p>
 <p>从逻辑角度来看，null值表示一个空对象指针，因此：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> a <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
 <span class="token function">alert</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> a<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// "object"</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>因为undefined派生自null，因此ECMA-262规定<code>undefined == null</code>为true。</p>
 <p>只要意在保存对象的变量还没有真正的保存对象，都应该让它保存为null。</p>
 <h3 id="Boolean类型"><a href="#Boolean类型" class="headerlink" title="Boolean类型"></a>Boolean类型</h3><p>只有两个值——true和false。</p>
@@ -420,7 +421,7 @@
 <li>如果两个操作数都是对象，则比较它们是不是同一个对象。如果两个操作数都指向同一个对象，则<code>==</code>返回true，<code>!=</code>返回false</li>
 </ul>
 <p>特殊情况结果：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">null</span> <span class="token operator">==</span> undefined <span class="token comment" spellcheck="true">// true</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">null</span> <span class="token operator">==</span> undefined <span class="token comment" spellcheck="true">// true</span>
 <span class="token string">"NaN"</span> <span class="token operator">==</span> <span class="token number">NaN</span> <span class="token comment" spellcheck="true">// false</span>
 <span class="token number">5</span> <span class="token operator">==</span> <span class="token number">NaN</span> <span class="token comment" spellcheck="true">// fale</span>
 <span class="token number">NaN</span> <span class="token operator">==</span> <span class="token number">NaN</span> <span class="token comment" spellcheck="true">// false</span>
@@ -431,57 +432,57 @@
 undefined <span class="token operator">==</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">// false</span>
 <span class="token keyword">null</span> <span class="token operator">==</span> <span class="token number">0</span> <span class="token comment" spellcheck="true">// false</span>
 <span class="token string">"5"</span> <span class="token operator">==</span> <span class="token number">5</span> <span class="token comment" spellcheck="true">// true</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="全等和不全等"><a href="#全等和不全等" class="headerlink" title="全等和不全等"></a>全等和不全等</h4><p><code>===</code>、<code>!==</code>，仅比较不转换，首先类型相同然后值相同</p>
 <h3 id="条件操作符"><a href="#条件操作符" class="headerlink" title="条件操作符"></a>条件操作符</h3><p><code>variable = boolean_expression ? true_value : false_value</code></p>
 <h3 id="赋值操作符"><a href="#赋值操作符" class="headerlink" title="赋值操作符"></a>赋值操作符</h3><p><code>=</code></p>
 <p>复合操作符： <code>*=</code>,<code>/=</code>,<code>%=</code>,<code>+=</code>,<code>-=</code>,<code>&lt;&lt;=</code>,<code>&gt;&gt;=</code>,<code>&gt;&gt;&gt;=</code></p>
 <p>例如复合操作符加等于<code>+=</code>：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 num <span class="token operator">+</span><span class="token operator">=</span> <span class="token number">5</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>相当于：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token number">10</span><span class="token punctuation">;</span>
 num <span class="token operator">=</span> num <span class="token operator">+</span> <span class="token number">5</span><span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <h3 id="逗号操作符"><a href="#逗号操作符" class="headerlink" title="逗号操作符"></a>逗号操作符</h3><p>声明多个变量、一条语句中执行多个操作用逗号隔开；</p>
 <p>在赋值时，逗号操作符总会返回表达式中的最后一项：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// num的值为0</span>
-</code></pre>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> num <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// num的值为0</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h2 id="语句"><a href="#语句" class="headerlink" title="语句"></a>语句</h2><h3 id="if、while、for语句"><a href="#if、while、for语句" class="headerlink" title="if、while、for语句"></a>if、while、for语句</h3><p>即使要执行的只有一句代码也要用<code>{}</code>括起来；</p>
 <p>关于循环的块作用域后边的章节会有讲解。</p>
 <h3 id="do-while语句"><a href="#do-while语句" class="headerlink" title="do-while语句"></a>do-while语句</h3><p>在对条件表达式求值之前，循环体内的代码至少会执行一次，这种后测试语句最常用语循环体内的代码至少要执行一次的情形。</p>
 <h3 id="for-in语句"><a href="#for-in语句" class="headerlink" title="for-in语句"></a>for-in语句</h3><p><code>for (property in expression) statement</code></p>
 <p>例如：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> propName <span class="token keyword">in</span> window<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> propName <span class="token keyword">in</span> window<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>propName<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <h3 id="label、break、continue语句"><a href="#label、break、continue语句" class="headerlink" title="label、break、continue语句"></a>label、break、continue语句</h3><p>label语句的语法为<code>label: statement</code>，可以由<code>break</code>和<code>continue</code>语句引用，常用与和循环语句配合使用。</p>
 <p>例子可以看<a href="https://blog.csdn.net/x386277405/article/details/78673757" rel="external nofollow noopener noreferrer" target="_blank">这里</a></p>
 <h3 id="with语句"><a href="#with语句" class="headerlink" title="with语句"></a>with语句</h3><p><strong>由于大量使用with语句会导致性能下降，还会给调试代码造成困难，因此开发大型应用程序时不建议使用with语句。</strong></p>
 <p><code>with (expression) statement</code>，将代码的作用于设置到一个特定的对象中。</p>
 <p>例如</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">var</span> qs <span class="token operator">=</span> location<span class="token punctuation">.</span>search<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">var</span> qs <span class="token operator">=</span> location<span class="token punctuation">.</span>search<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">var</span> hostName <span class="token operator">=</span> location<span class="token punctuation">.</span>hostname<span class="token punctuation">;</span>
 <span class="token keyword">var</span> url <span class="token operator">=</span> location<span class="token punctuation">.</span>href<span class="token punctuation">;</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>等价于</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">with</span> <span class="token punctuation">(</span>location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre class="line-numbers language-javascript"><code class="language-javascript"><span class="token keyword">with</span> <span class="token punctuation">(</span>location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
   <span class="token keyword">var</span> qs <span class="token operator">=</span> search<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
   <span class="token keyword">var</span> hostName <span class="token operator">=</span> hostname<span class="token punctuation">;</span>
   <span class="token keyword">var</span> url <span class="token operator">=</span> href<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="switch语句"><a href="#switch语句" class="headerlink" title="switch语句"></a>switch语句</h3><ul>
 <li>switch语句中可以使用任何数据类型</li>
 <li>每个case的值不一定是常量，可以是变量甚至是表达式</li>
 <li>switch在比较值时使用的是全等操作符，因此不会发生类型转换（例如“10”不等于10）</li>
 </ul>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><pre class=" language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">functionName</span><span class="token punctuation">(</span>arg0<span class="token punctuation">,</span> arg1<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> argN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><pre class="line-numbers language-js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">functionName</span><span class="token punctuation">(</span>arg0<span class="token punctuation">,</span> arg1<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token punctuation">,</span> argN<span class="token punctuation">)</span> <span class="token punctuation">{</span>
     statements
 <span class="token punctuation">}</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>返回值不是必需的。</p>
 <p>关于参数可以看<a href="https://www.cnblogs.com/hanhanhan/p/5765920.html" rel="external nofollow noopener noreferrer" target="_blank">这篇文章</a>中的例子来理解。需要注意的是：没有传递值的命名参数自动赋予undefined值，关于引用传递可以看<a href="https://www.cnblogs.com/refe/p/5101744.html" rel="external nofollow noopener noreferrer" target="_blank">这里</a>。</p>
 <p>因为ECMAScript函数没有签名（因为其参数是由包含零或多个值的数组来表示的），因此不能像传统意义上那样实现重载。但可以通过检查传入函数的参数类型和数量进行不同的操作来模拟重载。</p>
@@ -490,7 +491,7 @@ num <span class="token operator">=</span> num <span class="token operator">+</sp
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/JavaScript学习记录一.html" data-id="cjn31e92z000cgsagt22kh109" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/JavaScript学习记录一.html" data-id="cjn363ww5000cc4aghlzpw2er" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>

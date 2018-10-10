@@ -30,7 +30,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -129,24 +130,24 @@
 <p><img src="/images/Capture1.PNG" alt="web"></p>
 <h3 id="调试模式"><a href="#调试模式" class="headerlink" title="调试模式"></a>调试模式</h3><p>在代码修改的时候服务器能够自动加载，<br>并且如果发生错误，它会提供一个有用的调试器。</p>
 <p>使用</p>
-<pre class=" language-python"><code class="language-python">app<span class="token punctuation">.</span>debug <span class="token operator">=</span> <span class="token boolean">True</span>
+<pre class="line-numbers language-python"><code class="language-python">app<span class="token punctuation">.</span>debug <span class="token operator">=</span> <span class="token boolean">True</span>
 app<span class="token punctuation">.</span>run<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>或者</p>
-<pre class=" language-python"><code class="language-python">app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-python"><code class="language-python">app<span class="token punctuation">.</span>run<span class="token punctuation">(</span>debug<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>开启调试模式。</p>
 <h3 id="路由"><a href="#路由" class="headerlink" title="路由"></a>路由</h3><p><a href="http://www.pythondoc.com/flask/api.html#flask.Flask.route" rel="external nofollow noopener noreferrer" target="_blank"><code>route()</code></a> 装饰器用于把一个函数绑定到一个 URL 上。</p>
-<h4 id="静态绑定"><a href="#静态绑定" class="headerlink" title="静态绑定"></a>静态绑定</h4><pre class=" language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
+<h4 id="静态绑定"><a href="#静态绑定" class="headerlink" title="静态绑定"></a>静态绑定</h4><pre class="line-numbers language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token string">'Index Page'</span>
 
 @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/hello'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> <span class="token string">'Hello World'</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="动态绑定"><a href="#动态绑定" class="headerlink" title="动态绑定"></a>动态绑定</h4><p>把一些特定的字段标记成 <code>&lt;variable_name&gt;</code>来进行动态绑定，还可以用 <code>&lt;converter:variable_name&gt;</code>限制格式：</p>
-<pre class=" language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/user/&lt;username>'</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/user/&lt;username>'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">show_user_profile</span><span class="token punctuation">(</span>username<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># show the user profile for that user</span>
     <span class="token keyword">return</span> <span class="token string">'User %s'</span> <span class="token operator">%</span> username
@@ -155,7 +156,7 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
 <span class="token keyword">def</span> <span class="token function">show_post</span><span class="token punctuation">(</span>post_id<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token comment" spellcheck="true"># show the post with the given id, the id is an integer</span>
     <span class="token keyword">return</span> <span class="token string">'Post %d'</span> <span class="token operator">%</span> post_id
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>有如下三种转换器：</p>
 <table>
 <thead>
@@ -176,13 +177,13 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
 </tbody>
 </table>
 <h3 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h3><p>默认情况下，路由只会响应 GET 请求，但是能够通过给 <a href="http://www.pythondoc.com/flask/api.html#flask.Flask.route" rel="external nofollow noopener noreferrer" target="_blank"><code>route()</code></a> 装饰器提供 methods 参数来改变：</p>
-<pre class=" language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<pre class="line-numbers language-python"><code class="language-python">@app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/login'</span><span class="token punctuation">,</span> methods<span class="token operator">=</span><span class="token punctuation">[</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'POST'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">login</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">if</span> request<span class="token punctuation">.</span>method <span class="token operator">==</span> <span class="token string">'POST'</span><span class="token punctuation">:</span>
         do_the_login<span class="token punctuation">(</span><span class="token punctuation">)</span>
     <span class="token keyword">else</span><span class="token punctuation">:</span>
         show_the_login_form<span class="token punctuation">(</span><span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h4 id="常见HTTP方法"><a href="#常见HTTP方法" class="headerlink" title="常见HTTP方法"></a>常见HTTP方法</h4><ul>
 <li><p>GET</p>
 <p>浏览器通知服务器只 <em>获取</em> 页面上的信息并且发送回来。这可能是最常用的方法。</p>
@@ -205,7 +206,7 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
 </ul>
 <h3 id="构建url"><a href="#构建url" class="headerlink" title="构建url"></a>构建url</h3><p>可以使用函数<a href="http://www.pythondoc.com/flask/api.html#flask.url_for" rel="external nofollow noopener noreferrer" target="_blank"><code>url_for()</code></a> 来针对一个特定的函数构建一个 URL。</p>
 <p>它能够接受函数名作为第一参数，以及一些关键字参数，<br>每一个关键字参数对应于 URL 规则的变量部分。未知变量部分被插入到 URL 中作为查询参数：</p>
-<pre class=" language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> url_for
+<pre class="line-numbers language-python"><code class="language-python"><span class="token operator">>></span><span class="token operator">></span> <span class="token keyword">from</span> flask <span class="token keyword">import</span> Flask<span class="token punctuation">,</span> url_for
 <span class="token operator">>></span><span class="token operator">></span> app <span class="token operator">=</span> Flask<span class="token punctuation">(</span>__name__<span class="token punctuation">)</span>
 <span class="token operator">>></span><span class="token operator">></span> @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token keyword">def</span> <span class="token function">index</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span> <span class="token keyword">pass</span>
@@ -226,29 +227,29 @@ app<span class="token punctuation">.</span>run<span class="token punctuation">(<
 <span class="token operator">/</span>login
 <span class="token operator">/</span>login?next<span class="token operator">=</span><span class="token operator">/</span>
 <span class="token operator">/</span>user<span class="token operator">/</span>John<span class="token operator">%</span>20Doe
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="渲染静态文件"><a href="#渲染静态文件" class="headerlink" title="渲染静态文件"></a>渲染静态文件</h3><p>只要在你的包中或模块旁边创建一个名为 static 的文件夹，在应用中使用 /static 即可访问。</p>
 <p>给静态文件生成 URL：</p>
-<pre class=" language-python"><code class="language-python">url_for<span class="token punctuation">(</span><span class="token string">'static'</span><span class="token punctuation">,</span> filename<span class="token operator">=</span><span class="token string">'style.css'</span><span class="token punctuation">)</span>
-</code></pre>
+<pre class="line-numbers language-python"><code class="language-python">url_for<span class="token punctuation">(</span><span class="token string">'static'</span><span class="token punctuation">,</span> filename<span class="token operator">=</span><span class="token string">'style.css'</span><span class="token punctuation">)</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>这个文件应该存储在 <code>static/style.css</code>，而使用PyCharm创建Flask项目时已经为你创建好了static目录：</p>
 <p><img src="/images/Capture2.PNG" alt="目录"></p>
 <h3 id="渲染模板"><a href="#渲染模板" class="headerlink" title="渲染模板"></a>渲染模板</h3><p>由于必须自行做好 HTML 转义以保持应用程序的安全，Flask 自动配置好了 <a href="http://jinja.pocoo.org/2/" rel="external nofollow noopener noreferrer" target="_blank">Jinja2</a> 模版。</p>
 <p>可以使用方法 <a href="http://www.pythondoc.com/flask/api.html#flask.render_template" rel="external nofollow noopener noreferrer" target="_blank"><code>render_template()</code></a> 来渲染模版：</p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> render_template
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">from</span> flask <span class="token keyword">import</span> render_template
 
 @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/hello/'</span><span class="token punctuation">)</span>
 @app<span class="token punctuation">.</span>route<span class="token punctuation">(</span><span class="token string">'/hello/&lt;name>'</span><span class="token punctuation">)</span>
 <span class="token keyword">def</span> <span class="token function">hello</span><span class="token punctuation">(</span>name<span class="token operator">=</span>None<span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">return</span> render_template<span class="token punctuation">(</span><span class="token string">'hello.html'</span><span class="token punctuation">,</span> name<span class="token operator">=</span>name<span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>Flask 将会在 templates 文件夹中寻找模版。</p>
 <h1 id="后续链接"><a href="#后续链接" class="headerlink" title="后续链接"></a><a href="">后续链接</a></h1>
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/系统分析与设计作业五.html" data-id="cjn31e95n004ngsagyxsgde4a" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/系统分析与设计作业五.html" data-id="cjn363wyu004dc4agu341txqm" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Flask/">Flask</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mongoDB/">mongoDB</a></li></ul>

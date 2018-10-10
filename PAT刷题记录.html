@@ -27,7 +27,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -122,7 +123,7 @@
 <p>-999,991</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 using namespace std;
 
 int main() {
@@ -133,7 +134,7 @@ int main() {
     re = a + b;
     if (re < 0) {
         cout<<'-'; re="-re;" }="" int="" i="0;" while(re)="" {="" digit[i]="(re%10);" =10;="" i++;="" for="" (int="" k="i-1;">=0; k--) {
-        cout<<digit[k]; 0="" if="" (k%3="=" &&="" k="">0) cout<<','; }="" return="" 0;="" <="" code=""></',';></digit[k];></'-';></iostream></code></pre>
+        cout<<digit[k]; 0="" if="" (k%3="=" &&="" k="">0) cout<<','; }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></',';></digit[k];></'-';></iostream></code></pre>
 <h2 id="1002-A-B-for-Polynomials-25"><a href="#1002-A-B-for-Polynomials-25" class="headerlink" title="1002 A+B for Polynomials (25)"></a>1002 A+B for Polynomials (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>This time, you are supposed to find A+B where A and B are two polynomials.</p>
@@ -156,7 +157,7 @@ int main() {
 </blockquote>
 <p><strong>实现代码</strong></p>
 <p>注意保留小数。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <vector>
 using namespace std;
@@ -206,7 +207,7 @@ int main() {
         }
     }
 
-    cout<<polynomials.size(); for="" (int="" i="0;" <="" polynomials.size();="" i++)="" printf("="" %d="" %.1f",="" polynomials[i].n,="" polynomials[i].value);="" return="" 0;="" }="" code=""></polynomials.size();></item></vector></stdlib.h></iostream></code></pre>
+    cout<<polynomials.size(); for="" (int="" i="0;" <="" polynomials.size();="" i++)="" printf("="" %d="" %.1f",="" polynomials[i].n,="" polynomials[i].value);="" return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></polynomials.size();></item></vector></stdlib.h></iostream></code></pre>
 <h2 id="1003-Emergency-25"><a href="#1003-Emergency-25" class="headerlink" title="1003 Emergency (25)"></a>1003 Emergency (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>As an emergency rescue team leader of a city, you are given a special map of your country.  The map shows several scattered cities connected by some roads.  Amount of rescue teams in each city and the length of each road between any pair of cities are marked on the map.  When there is an emergency call to you from some other city, your job is to lead your men to the place as quickly as possible, and at the mean time, call up as many hands on the way as possible.</p>
@@ -230,7 +231,7 @@ int main() {
 </blockquote>
 <p><strong>实现代码</strong></p>
 <p>dijkstra最短路</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <vector>
 #include <climits>
 using namespace std;
@@ -304,7 +305,7 @@ int main() {
         visited[currentCity] = true;
     }
 
-    cout<<minlenroadcount[c2]<<' '<<maxteams[c2];="" return="" 0;="" }="" <="" code=""></minlenroadcount[c2]<<'></bool></int></int></int></vector<road></int></climits></vector></iostream></code></pre>
+    cout<<minlenroadcount[c2]<<' '<<maxteams[c2];="" return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></minlenroadcount[c2]<<'></bool></int></int></int></vector<road></int></climits></vector></iostream></code></pre>
 <h2 id="1004-Counting-Leaves-30"><a href="#1004-Counting-Leaves-30" class="headerlink" title="1004 Counting Leaves (30)"></a>1004 Counting Leaves (30)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>A family hierarchy is usually presented by a pedigree tree.  Your job is to count those family members who have no child.</p>
@@ -328,7 +329,7 @@ int main() {
 <p>0 1</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <vector>
 using namespace std;
@@ -366,7 +367,7 @@ int main() {
             if (nodes[this_level[i]].childs_count == 0) count_output++;
             else next_level.insert(next_level.begin(),nodes[this_level[i]].childs.begin(),nodes[this_level[i]].childs.end());
         }
-        cout<<count_output; if="" (next_level.empty())="" break;="" cout<<'="" ';="" this_level="next_level;" next_level.clear();="" }="" return="" 0;="" <="" code=""></count_output;></int></int></vector></stdlib.h></iostream></code></pre>
+        cout<<count_output; if="" (next_level.empty())="" break;="" cout<<'="" ';="" this_level="next_level;" next_level.clear();="" }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></count_output;></int></int></vector></stdlib.h></iostream></code></pre>
 <h2 id="1005-Spell-It-Right-20"><a href="#1005-Spell-It-Right-20" class="headerlink" title="1005 Spell It Right (20)"></a>1005 Spell It Right (20)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Given a non-negative integer N, your task is to compute the sum of all the digits of N, and output every digit of the sum in English.</p>
@@ -388,7 +389,7 @@ int main() {
 <p>one five</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <string>
 using namespace std;
 
@@ -406,7 +407,7 @@ int main() {
         re_len++;
     }
     for (int i = re_len-1; i >= 0; i--) {
-        cout<<english[digit[i]]; if="" (i="" !="0)" cout<<'="" ';="" }="" return="" 0;="" <="" code=""></english[digit[i]];></string></iostream></code></pre>
+        cout<<english[digit[i]]; if="" (i="" !="0)" cout<<'="" ';="" }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></english[digit[i]];></string></iostream></code></pre>
 <h2 id="1006-Sign-In-and-Sign-Out-25"><a href="#1006-Sign-In-and-Sign-Out-25" class="headerlink" title="1006 Sign In and Sign Out (25)"></a>1006 Sign In and Sign Out (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>At the beginning of every day, the first person who signs in the computer room will unlock the door, and the last one who signs out will lock the door.  Given the records of signing in’s and out’s, you are supposed to find the ones who have unlocked and locked the door on that day.</p>
@@ -430,7 +431,7 @@ int main() {
 <p>SC3021234 CS301133</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <string>
 using namespace std;
 
@@ -463,7 +464,7 @@ int main() {
             result_out_time = out;
         }
     }
-    cout<<result_in_id<<' '<<result_out_id;="" return="" 0;="" }="" <="" code=""></result_in_id<<'></string></iostream></code></pre>
+    cout<<result_in_id<<' '<<result_out_id;="" return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></result_in_id<<'></string></iostream></code></pre>
 <h2 id="1007-Maximum-Subsequence-Sum-25"><a href="#1007-Maximum-Subsequence-Sum-25" class="headerlink" title="1007 Maximum Subsequence Sum (25)"></a>1007 Maximum Subsequence Sum (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Given a sequence of K integers { N1<br>, N2<br>, …, NK<br> }.  A continuous subsequence is defined to be { Ni<br>, Ni+1<br>, …, Nj<br> } where 1 &lt;= i &lt;= j &lt;= K.  The <em>Maximum Subsequence</em><br> is the continuous subsequence which has the largest sum of its<br>elements.  For example, given sequence { -2, 11, -4, 13, -5, -2 }, its<br>maximum subsequence is { 11, -4, 13 } with the largest sum being 20.</p>
@@ -489,7 +490,7 @@ int main() {
 <p><u>和为负的子序列一定不会是最大和子序列的开头。</u></p>
 <p>当当前和小于0时，使用临时”first number”记录下一个数，</p>
 <p>更新最大和时，当前数为“last number”， 临时“first number”中存储的值为“first number”的值。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <queue>
 using namespace std;
@@ -513,7 +514,7 @@ int main() {
                 lastNum = nums[i];
             }
         }
-        cout<<maxsum<<' '<<firstnum<<'="" '<<lastnum;="" }="" delete="" nums;="" return="" 0;="" <="" code=""></maxsum<<'></0<<'></queue></stdlib.h></iostream></code></pre>
+        cout<<maxsum<<' '<<firstnum<<'="" '<<lastnum;="" }="" delete="" nums;="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></maxsum<<'></0<<'></queue></stdlib.h></iostream></code></pre>
 <h2 id="1008-Elevator-20"><a href="#1008-Elevator-20" class="headerlink" title="1008 Elevator (20)"></a>1008 Elevator (20)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>The highest building in our city has only one elevator. A request list is made up with N positive numbers. The numbers denote at which floors the elevator will stop, in specified order. It costs 6 seconds to move the elevator up one floor, and 4 seconds to move down one floor. The elevator will stay for 5 seconds at each stop.<br>For a given request list, you are to compute the total time spent to fulfill the requests on the list. The elevator is on the 0th floor at the beginning and does not have to return to the ground floor when the requests are fulfilled.</p>
@@ -535,7 +536,7 @@ int main() {
 <p>41</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 using namespace std;
 
 int main() {
@@ -551,7 +552,7 @@ int main() {
         re+=5;
         a = b;
     }
-    cout<<re; return="" 0;="" }="" <="" code=""></re;></iostream></code></pre>
+    cout<<re; return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></re;></iostream></code></pre>
 <h2 id="1009-Product-of-Polynomials-25"><a href="#1009-Product-of-Polynomials-25" class="headerlink" title="1009 Product of Polynomials (25)"></a>1009 Product of Polynomials (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>This time, you are supposed to find A*B where A and B are two polynomials.</p>
@@ -575,7 +576,7 @@ int main() {
 <p><strong>实现代码</strong></p>
 <p>把<a href="#1002-A-B-for-Polynomials-25">1002 A+B for Polynomials (25)</a>稍微改一下就好。</p>
 <p>使用<code>float</code>虽然算出来明明是对的但是过不了牛客的测试，全部换成<code>double</code>就好了，不知道是什么问题。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <vector>
 using namespace std;
@@ -627,7 +628,7 @@ int main() {
         }
     }
 
-    cout<<result.size(); for="" (int="" i="0;" <="" result.size();="" i++)="" printf("="" %d="" %.1f",="" result[i].n,="" result[i].value);="" return="" 0;="" }="" code=""></result.size();></item></vector></stdlib.h></iostream></code></pre>
+    cout<<result.size(); for="" (int="" i="0;" <="" result.size();="" i++)="" printf("="" %d="" %.1f",="" result[i].n,="" result[i].value);="" return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></result.size();></item></vector></stdlib.h></iostream></code></pre>
 <h2 id="1015-Reversible-Primes-20"><a href="#1015-Reversible-Primes-20" class="headerlink" title="1015 Reversible Primes (20)"></a>1015 Reversible Primes (20)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>A <em>reversible prime</em><br> in any number system is a prime whose “reverse” in that<br>number system is also a prime. For example in the decimal system 73 is a<br>reversible prime because its reverse 37 is also a prime.</p>
@@ -651,7 +652,7 @@ int main() {
 </blockquote>
 <p><strong>实现代码</strong></p>
 <p>求N以及N在D进制下反转后是否均为质数。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <math.h>
 #include <vector>
@@ -678,7 +679,7 @@ bool isPrime(int n) {
     for (int i = 3; i <= sqrt_n;="" i+="2)" {="" if="" (n="" %="" i="=" 0)="" return="" false;="" }="" true;="" int="" main()="" n,d;="" while="" (1)="" cin="">>n;
         if (n < 0) break;
         cin>>d;
-        if (isPrime(n) && isPrime(reverseWithRadix(n,d))) cout<<"yes"<<endl; else="" cout<<"no"<<endl;="" }="" return="" 0;="" <="" code=""></"yes"<<endl;></=></int></vector></math.h></stdlib.h></iostream></code></pre>
+        if (isPrime(n) && isPrime(reverseWithRadix(n,d))) cout<<"yes"<<endl; else="" cout<<"no"<<endl;="" }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></"yes"<<endl;></=></int></vector></math.h></stdlib.h></iostream></code></pre>
 <h2 id="1020-Tree-Traversals-25"><a href="#1020-Tree-Traversals-25" class="headerlink" title="1020 Tree Traversals (25)"></a>1020 Tree Traversals (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Suppose that all the keys in a binary tree are distinct positive integers.  Given the postorder and inorder traversal sequences, you are supposed to output the level order traversal sequence of the corresponding binary tree.</p>
@@ -703,7 +704,7 @@ bool isPrime(int n) {
 <p>inorder: 中序遍历</p>
 <p>level order: 层序遍历（从根开始,依次向下,对于每一层从左向右遍历）</p>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <queue>
 using namespace std;
@@ -757,7 +758,7 @@ int main() {
         if (tmp->right) levelNodes.push(tmp->right);
         cout<<tmp->value;
         levelNodes.pop();
-        if (!levelNodes.empty()) cout<<' ';="" else="" break;="" }="" deletenodes(root);="" delete="" postordernodes;="" inordernodes;="" return="" 0;="" <="" code=""></'></tmp-></node*></=></queue></stdlib.h></iostream></code></pre>
+        if (!levelNodes.empty()) cout<<' ';="" else="" break;="" }="" deletenodes(root);="" delete="" postordernodes;="" inordernodes;="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></'></tmp-></node*></=></queue></stdlib.h></iostream></code></pre>
 <h2 id="1023-Have-Fun-with-Numbers-20"><a href="#1023-Have-Fun-with-Numbers-20" class="headerlink" title="1023 Have Fun with Numbers (20)"></a>1023 Have Fun with Numbers (20)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Notice that the number 123456789 is a 9-digit number consisting exactly the numbers from 1 to 9, with no duplication.  Double it we will obtain 246913578, which happens to be another 9-digit number consisting exactly the numbers from 1 to 9, only in a different permutation.  Check to see the result if we double it again!</p>
@@ -783,7 +784,7 @@ int main() {
 <p>若双倍后多一位则为No;</p>
 <p>使用<code>digit_count[i]</code>保存数字<code>i</code>（0-9）的个数，</p>
 <p>再减去双倍后各个数字的个数，若每一个<code>digit_count[i]</code>均为0则为Yes,否则为No。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <vector>
 #include <stack>
@@ -812,7 +813,7 @@ int main() {
         digit_count[digits[i]]--;
     }
     if (carry) {
-        cout<<"no\n"<<carry; for="" (int="" i="0;" <="" k;="" i++)="" cout<<digits[i];="" return="" 0;="" }="" bool="" result="true;" 10;="" if="" (digit_count[i]="" !="0)" {="" break;="" (result)="" cout<<"yes\n";="" else="" cout<<"no\n";="" code=""></"no\n"<<carry;></int></climits></stack></vector></stdlib.h></iostream></code></pre>
+        cout<<"no\n"<<carry; for="" (int="" i="0;" <="" k;="" i++)="" cout<<digits[i];="" return="" 0;="" }="" bool="" result="true;" 10;="" if="" (digit_count[i]="" !="0)" {="" break;="" (result)="" cout<<"yes\n";="" else="" cout<<"no\n";="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></"no\n"<<carry;></int></climits></stack></vector></stdlib.h></iostream></code></pre>
 <h2 id="1027-Colors-in-Mars-20"><a href="#1027-Colors-in-Mars-20" class="headerlink" title="1027 Colors in Mars (20)"></a>1027 Colors in Mars (20)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>People in Mars represent the colors in their computers in a similar way as the Earth people.  That is, a color is represented by a 6-digit number, where the first 2 digits are for Red, the middle 2 digits for Green, and the last 2 digits  for Blue.  The only difference is that they use radix 13 (0-9 and A-C) instead of 16.  Now given a color in three decimal numbers (each between 0 and 168), you are supposed to output their Mars RGB values.</p>
@@ -834,13 +835,13 @@ int main() {
 <p>#123456</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 using namespace std;
 
 int main() {
     cout<<'#'; int="" n;="" for="" (int="" i="0;" <="" 3;="" i++)="" {="" cin="">>n;
         int tmp = n/13;
-        if (tmp > 9) cout<<char((tmp-10)+'a'); else="" cout<<tmp;="" tmp="n%13;" if="" (tmp=""> 9) cout<<char((tmp-10)+'a'); else="" cout<<tmp;="" }="" return="" 0;="" <="" code=""></char((tmp-10)+'a');></char((tmp-10)+'a');></'#';></iostream></code></pre>
+        if (tmp > 9) cout<<char((tmp-10)+'a'); else="" cout<<tmp;="" tmp="n%13;" if="" (tmp=""> 9) cout<<char((tmp-10)+'a'); else="" cout<<tmp;="" }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></char((tmp-10)+'a');></char((tmp-10)+'a');></'#';></iostream></code></pre>
 <h2 id="1028-List-Sorting-25"><a href="#1028-List-Sorting-25" class="headerlink" title="1028 List Sorting (25)"></a>1028 List Sorting (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Excel can sort records according to any column.  Now you are supposed to imitate this function.</p>
@@ -863,7 +864,7 @@ int main() {
 </blockquote>
 <p><strong>实现代码</strong></p>
 <p>利用结构体，使用sort函数排序。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <vector>
 #include <string>
 #include <climits>
@@ -906,7 +907,7 @@ int main() {
     else if (c == 2) sort(students.begin(),students.end(),cmp2);
     else sort(students.begin(),students.end(),cmp3);
 
-    if (n > 0) cout<<students[0].id<<' '<<students[0].name<<'="" '<<students[0].grade;="" for="" (int="" i="1;" <="" n;="" i++)="" {="" cout<<"\n"<<students[i].id<<'="" '<<students[i].name<<'="" '<<students[i].grade;="" }="" return="" 0;="" code=""></students[0].id<<'></student></algorithm></climits></string></vector></iostream></code></pre>
+    if (n > 0) cout<<students[0].id<<' '<<students[0].name<<'="" '<<students[0].grade;="" for="" (int="" i="1;" <="" n;="" i++)="" {="" cout<<"\n"<<students[i].id<<'="" '<<students[i].name<<'="" '<<students[i].grade;="" }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></students[0].id<<'></student></algorithm></climits></string></vector></iostream></code></pre>
 <h2 id="1029-Median-25"><a href="#1029-Median-25" class="headerlink" title="1029 Median (25)"></a>1029 Median (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Given an increasing sequence S of N integers, the <em>median</em> is the number at the middle position.  For example, the median of S1={11, 12, 13, 14} is 12, and the median of S2={9, 10, 15, 16, 17} is 15.  The median of two sequences is defined to be the median of the nondecreasing sequence which contains all the elements of both sequences.  For example, the median of S1 and S2 is 13.<br>Given two increasing sequences of integers, you are asked to find their median.</p>
@@ -929,7 +930,7 @@ int main() {
 </blockquote>
 <p><strong>实现代码</strong></p>
 <p>用两个数组存储两组数据，每组数据一个pos，比较两个pos出的数值大小，较小值的pos向后移，直到找到中位数。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <queue>
 using namespace std;
@@ -947,7 +948,7 @@ int main() {
     int firstPos = 0, secondPos = 0;
     for (int i = int((m+n+1)/2); i > 0; i--) {
         if (i == 1) {
-            if (firstPos == m) cout<<secondsequence[secondpos]; else="" if="" (secondpos="=" n)="" cout<<firstsequence[firstpos];="" (firstsequence[firstpos]="" <="" secondsequence[secondpos])="" cout<<secondsequence[secondpos];="" }="" {="" (firstpos="=" m)="" secondpos++;="" firstpos++;="" delete="" firstsequence;="" secondsequence;="" return="" 0;="" code=""></secondsequence[secondpos];></queue></stdlib.h></iostream></code></pre>
+            if (firstPos == m) cout<<secondsequence[secondpos]; else="" if="" (secondpos="=" n)="" cout<<firstsequence[firstpos];="" (firstsequence[firstpos]="" <="" secondsequence[secondpos])="" cout<<secondsequence[secondpos];="" }="" {="" (firstpos="=" m)="" secondpos++;="" firstpos++;="" delete="" firstsequence;="" secondsequence;="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></secondsequence[secondpos];></queue></stdlib.h></iostream></code></pre>
 <h2 id="1030-Travel-Plan-30"><a href="#1030-Travel-Plan-30" class="headerlink" title="1030 Travel Plan (30)"></a>1030 Travel Plan (30)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>A traveler’s map gives the distances between cities along the highways, together with the cost of each highway.<br> Now you are supposed to write a program to help a traveler to decide the shortest path between his/her starting city and the destination.<br> If such a shortest path is not unique, you are supposed to output the one with the minimum cost, which is guaranteed to be unique.</p>
@@ -977,7 +978,7 @@ int main() {
 </blockquote>
 <p><strong>实现代码</strong></p>
 <p>最短路问题，用Dijkstra（迪杰斯特拉）算法解即可。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <vector>
 #include <stack>
@@ -1051,7 +1052,7 @@ int main() {
     }
 
     while (!pathStack.empty()) {
-        cout<<pathstack.top()<<' ';="" pathstack.pop();="" }="" cout<<distance[d]<<'="" '<<cost[d];="" delete="" visited,distance,cost,lastcity;="" return="" 0;="" <="" code=""></pathstack.top()<<'></int></vector<highway></climits></stack></vector></stdlib.h></iostream></code></pre>
+        cout<<pathstack.top()<<' ';="" pathstack.pop();="" }="" cout<<distance[d]<<'="" '<<cost[d];="" delete="" visited,distance,cost,lastcity;="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></pathstack.top()<<'></int></vector<highway></climits></stack></vector></stdlib.h></iostream></code></pre>
 <h2 id="1035-Password-20"><a href="#1035-Password-20" class="headerlink" title="1035 Password (20)"></a>1035 Password (20)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>To prepare for PAT, the judge sometimes has to generate random passwords for the users.  The problem is that there are always some confusing passwords since it is hard to distinguish 1 (one) from l (L in lowercase), or 0 (zero) from O (o in uppercase).  One solution is to replace 1 (one) by @, 0 (zero) by %, l by L, and O by o.  Now it is your job to write a program to check the accounts generated by the judge, and to help the juge modify the confusing passwords.</p>
@@ -1073,7 +1074,7 @@ int main() {
 <p>2<br>Team000002 RLsp%dfa<br>Team000001 R@spodfa</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <vector>
 #include <string>
 #include <climits>
@@ -1111,7 +1112,7 @@ int main() {
 
     int result_len = result.size();
     if (n == 1 && result_len == 0) {
-        cout<<"there 1="" is="" account="" and="" no="" modified";="" }="" else="" if="" (result_len="=" 0)="" {="" cout<<"there="" are="" "<<n<<"="" accounts="" cout<<result_len;="" for="" (int="" i="0;" <="" result_len;="" i++)="" cout<<"\n"<<result[i].id<<'="" '<<result[i].password;="" return="" 0;="" code=""></"there></account></algorithm></climits></string></vector></iostream></code></pre>
+        cout<<"there 1="" is="" account="" and="" no="" modified";="" }="" else="" if="" (result_len="=" 0)="" {="" cout<<"there="" are="" "<<n<<"="" accounts="" cout<<result_len;="" for="" (int="" i="0;" <="" result_len;="" i++)="" cout<<"\n"<<result[i].id<<'="" '<<result[i].password;="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></"there></account></algorithm></climits></string></vector></iostream></code></pre>
 <h2 id="1036-Boys-vs-Girls-25"><a href="#1036-Boys-vs-Girls-25" class="headerlink" title="1036 Boys vs Girls (25)"></a>1036 Boys vs Girls (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>This time you are asked to tell the difference between the lowest grade of all the male students and the highest grade of all the female students.</p>
@@ -1133,7 +1134,7 @@ int main() {
 <p>Mary EE990830<br>Joe Math990112<br>6</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 using namespace std;
 
@@ -1163,7 +1164,7 @@ int main() {
         }
     }
 
-    if (re_female_name=="") cout<<"absent"<<endl; else="" cout<<re_female_name<<'="" '<<re_female_id<<endl;="" if="" (re_male_name="=" ")"="" cout<<"absent"<<endl;="" cout<<re_male_name<<'="" '<<re_male_id<<endl;="" (re_female_name="=" ""="" ||="" re_male_name="=" cout<<"na";="" cout<<re_female_grade="" -="" re_male_grade;="" return="" 0;="" }="" <="" code=""></"absent"<<endl;></stdlib.h></iostream></code></pre>
+    if (re_female_name=="") cout<<"absent"<<endl; else="" cout<<re_female_name<<'="" '<<re_female_id<<endl;="" if="" (re_male_name="=" ")"="" cout<<"absent"<<endl;="" cout<<re_male_name<<'="" '<<re_male_id<<endl;="" (re_female_name="=" ""="" ||="" re_male_name="=" cout<<"na";="" cout<<re_female_grade="" -="" re_male_grade;="" return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></"absent"<<endl;></stdlib.h></iostream></code></pre>
 <h2 id="1037-Magic-Coupon-25"><a href="#1037-Magic-Coupon-25" class="headerlink" title="1037 Magic Coupon (25)"></a>1037 Magic Coupon (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>The magic shop in Mars is offering some magic coupons.  Each coupon has an integer N printed on it, meaning that when you use this coupon with a product, you may get N times the value of that product back!  What is more, the shop also offers some bonus product for free.  However, if you apply a coupon with a positive N to this bonus product, you will have to pay the shop N times the value of the bonus product… but hey, magically, they have some coupons with negative N’s!<br>For example, given a set of coupons {1 2 4 -1}, and a set of product values {7 6 -2 -3} (in Mars dollars M\$) where a negative value corresponds to a bonus product.  You can apply coupon 3 (with N being 4) to product 1 (with value M$7) to get M$28 back; coupon 2 to product 2 to get M$12 back; and coupon 4 to product 4 to get M$3 back.  On the other hand, if you apply coupon 3 to product 4, you will have to pay M\$12 to the shop.<br>Each coupon and each product may be selected at most once.  Your task is to get as much money back as possible.</p>
@@ -1207,7 +1208,7 @@ int main() {
 </blockquote>
 <p>首先要注意到dominant color是超过半数的，刚开始只想到了排序后最中间的数一定为结果，但是要存储的数据太多，后来看了<a href="https://blog.csdn.net/zhu_liangwei/article/details/9734671" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a>，学会了下边这个方法。</p>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 using namespace std;
 
 int main() {
@@ -1220,7 +1221,7 @@ int main() {
         if (re == tmp) count++;
         else count--;
     }
-    cout<<re; return="" 0;="" }="" <="" code=""></re;></iostream></code></pre>
+    cout<<re; return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></re;></iostream></code></pre>
 <h2 id="1081-Rational-Sum-20"><a href="#1081-Rational-Sum-20" class="headerlink" title="1081 Rational Sum (20)"></a>1081 Rational Sum (20)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Given N rational numbers in the form “numerator/denominator”, you are supposed to calculate their sum.</p>
@@ -1242,7 +1243,7 @@ int main() {
 <p>3 1/3</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 using namespace std;
 
@@ -1271,7 +1272,7 @@ int main() {
         re_numerator = tmp_nu_re % tmp_de_re;
         re_denominator = tmp_de_re;
     }
-    if (re_integer == 0 && re_numerator == 0) cout<<0; else="" if="" (re_integer="=" 0)="" {="" cout<<re_numerator<<'="" '<<re_denominator;="" }="" (re_numerator="=" cout<<re_integer;="" cout<<re_integer<<'="" '<<re_numerator<<'="" return="" 0;="" <="" code=""></0;></stdlib.h></iostream></code></pre>
+    if (re_integer == 0 && re_numerator == 0) cout<<0; else="" if="" (re_integer="=" 0)="" {="" cout<<re_numerator<<'="" '<<re_denominator;="" }="" (re_numerator="=" cout<<re_integer;="" cout<<re_integer<<'="" '<<re_numerator<<'="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></0;></stdlib.h></iostream></code></pre>
 <h2 id="1082-Read-Number-in-Chinese-25"><a href="#1082-Read-Number-in-Chinese-25" class="headerlink" title="1082 Read Number in Chinese (25)"></a>1082 Read Number in Chinese (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Given an integer with no more than 9 digits, you are supposed to read it in the traditional Chinese way.  Output “Fu” first if it is negative.  For example, -123456789 is read as “Fu yi Yi er Qian san Bai si Shi wu Wan liu Qian qi Bai ba Shi jiu”.  Note: zero (“ling”) must be handled correctly according to the Chinese tradition.  For example, 100800 is “yi Shi Wan ling ba Bai”.</p>
@@ -1294,7 +1295,7 @@ int main() {
 </blockquote>
 <p><strong>实现代码</strong></p>
 <p>首先按照数字单位的顺序添加到结果容器中，然后遍历结果容器，如果有连续重复的”ling”只留一个，如果”Wan”前有“ling”去掉0，如果”Wan”直接跟在“Yi”后边将“Wan”换成“ling”。</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <math.h>
 #include <vector>
@@ -1334,7 +1335,7 @@ int main() {
             iter++;
     }
     if (re.size()>1 && re[re.size()-1]=="ling") re.erase(re.end()-1);
-    cout<<re[0]; for="" (int="" i="1;" <="" re.size();="" i++)="" cout<<'="" '<<re[i];="" return="" 0;="" }="" code=""></re[0];></string></"ling";></string></string></vector></math.h></stdlib.h></iostream></code></pre>
+    cout<<re[0]; for="" (int="" i="1;" <="" re.size();="" i++)="" cout<<'="" '<<re[i];="" return="" 0;="" }="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></re[0];></string></"ling";></string></string></vector></math.h></stdlib.h></iostream></code></pre>
 <h2 id="1083-List-Grades-25"><a href="#1083-List-Grades-25" class="headerlink" title="1083 List Grades (25)"></a>1083 List Grades (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>Given a list of N student records with name, ID and grade.  You are supposed to sort the records with respect to the grade in non-increasing order, and output those student records of which the grades are in a given interval.</p>
@@ -1357,7 +1358,7 @@ int main() {
 <p>Mike CS991301<br>Mary EE990830<br>Joe Math990112</p>
 </blockquote>
 <p><strong>实现代码</strong></p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <vector>
 using namespace std;
@@ -1408,7 +1409,7 @@ int main() {
         }
     }
 
-    if (re.empty()) cout<<"none"; else="" {="" cout<<re[0].name<<'="" '<<re[0].id;="" for="" (int="" i="1;" <="" re.size();="" i++)="" cout<<"\n"<<re[i].name<<'="" '<<re[i].id;="" }="" return="" 0;="" code=""></"none";></student></student></vector></stdlib.h></iostream></code></pre>
+    if (re.empty()) cout<<"none"; else="" {="" cout<<re[0].name<<'="" '<<re[0].id;="" for="" (int="" i="1;" <="" re.size();="" i++)="" cout<<"\n"<<re[i].name<<'="" '<<re[i].id;="" }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></"none";></student></student></vector></stdlib.h></iostream></code></pre>
 <h2 id="1086-Tree-Traversals-Again-25"><a href="#1086-Tree-Traversals-Again-25" class="headerlink" title="1086 Tree Traversals Again (25)"></a>1086 Tree Traversals Again (25)</h2><p><strong>题目描述</strong></p>
 <blockquote>
 <p>An inorder binary tree traversal can be implemented in a non-recursive way with a stack.  For example, suppose that when a 6-node binary tree (with the keys numbered from 1 to 6) is traversed, the stack operations are: push(1); push(2); push(3); pop(); pop(); push(4); pop(); pop(); push(5); push(6); pop(); pop().  Then a unique binary tree (shown in Figure 1) can be generated from this sequence of operations.  Your task is to give the postorder traversal sequence of this tree.</p>
@@ -1441,7 +1442,7 @@ int main() {
 <p>12 7 17 8 18 4 6 14 11 2 12 11 4 12 7 16 11 11 4 </p>
 </blockquote>
 <p>我的代码如下：</p>
-<pre class=" language-c++"><code class="language-c++">#include <iostream>
+<pre class="line-numbers language-c++"><code class="language-c++">#include <iostream>
 #include <stdlib.h>
 #include <math.h>
 #include <vector>
@@ -1481,7 +1482,7 @@ int main() {
         }
     }
     generatePostOrder(pre,in,n);
-    if (n > 0) cout<<value[post[0]]; for="" (int="" i="1;" <="" n;="" i++)="" {="" cout<<"="" "<<value[post[i]];="" }="" return="" 0;="" code=""></value[post[0]];></int></int></=></int></int></int></stack></string></vector></math.h></stdlib.h></iostream></code></pre>
+    if (n > 0) cout<<value[post[0]]; for="" (int="" i="1;" <="" n;="" i++)="" {="" cout<<"="" "<<value[post[i]];="" }="" return="" 0;="" <span="" aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></value[post[0]];></int></int></=></int></int></int></stack></string></vector></math.h></stdlib.h></iostream></code></pre>
 <h2 id="10xx"><a href="#10xx" class="headerlink" title="10xx"></a>10xx</h2><p><strong>题目描述</strong></p>
 <blockquote>
 </blockquote>
@@ -1503,7 +1504,7 @@ int main() {
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/PAT刷题记录.html" data-id="cjn31e93g000ugsagjzgezqmy" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/PAT刷题记录.html" data-id="cjn363wwo000wc4ag43dburx3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/PAT/">PAT</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/刷题/">刷题</a></li></ul>

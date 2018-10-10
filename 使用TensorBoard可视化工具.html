@@ -38,7 +38,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -106,8 +107,8 @@
         
         <p>图表可视化在理解和调试时显得非常有帮助。</p>
 <a id="more"></a>
-<h1 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h1><pre class=" language-shell"><code class="language-shell">pip3 install --upgrade tensorboard
-</code></pre>
+<h1 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h1><pre class="line-numbers language-shell"><code class="language-shell">pip3 install --upgrade tensorboard
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <h1 id="名称域（Name-scoping）和节点（Node）"><a href="#名称域（Name-scoping）和节点（Node）" class="headerlink" title="名称域（Name scoping）和节点（Node）"></a>名称域（Name scoping）和节点（Node）</h1><p>典型的TensorFlow有数以千计的节点，为了简单起见，我们可以为变量名（节点）划分范围。</p>
 <p>这个范围称为名称域，即<code>tf.name_scope(&#39;xxx&#39;)</code>，其中xxx是这个名称域的名字。</p>
 <p>在定义好名称域后，TensorBoard的显示界面里这个名称域内的变量并不会显示，而是只显示一个xxx节点，这个点是可展开的，展开后才会显示这个名称域内的节点。</p>
@@ -160,12 +161,12 @@
 </tbody>
 </table>
 <h1 id="Scalar"><a href="#Scalar" class="headerlink" title="Scalar"></a>Scalar</h1><p>使用summary scalar（标量统计）:</p>
-<pre class=" language-python"><code class="language-python">xentropy <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment" spellcheck="true"># xentropy的定义</span>
+<pre class="line-numbers language-python"><code class="language-python">xentropy <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment" spellcheck="true"># xentropy的定义</span>
 tf<span class="token punctuation">.</span>summary<span class="token punctuation">.</span>scalar<span class="token punctuation">(</span><span class="token string">'xentropy_mean'</span><span class="token punctuation">,</span> xentropy<span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># xentropy_mean为定义的xentropy的标签名</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p><img src="http://www.tensorfly.cn/tfdoc/images/mnist_tensorboard.png" alt="MNIST TensorBoard"></p>
 <h1 id="Histogram"><a href="#Histogram" class="headerlink" title="Histogram"></a>Histogram</h1><p>使用summary histogram统计某个Tensor的取值分布:</p>
-<pre class=" language-python"><code class="language-python"> <span class="token keyword">with</span> tf<span class="token punctuation">.</span>name_scope<span class="token punctuation">(</span><span class="token string">'layer1'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+<pre class="line-numbers language-python"><code class="language-python"> <span class="token keyword">with</span> tf<span class="token punctuation">.</span>name_scope<span class="token punctuation">(</span><span class="token string">'layer1'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
           <span class="token keyword">with</span> tf<span class="token punctuation">.</span>name_scope<span class="token punctuation">(</span><span class="token string">'biases'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
               biases <span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> <span class="token comment" spellcheck="true"># 具体声明这里不再给出</span>
               tf<span class="token punctuation">.</span>summary<span class="token punctuation">.</span>histogram<span class="token punctuation">(</span><span class="token string">'layer1'</span> <span class="token operator">+</span> <span class="token string">'/biases'</span><span class="token punctuation">,</span> biases<span class="token punctuation">)</span>
@@ -177,9 +178,9 @@ tf<span class="token punctuation">.</span>summary<span class="token punctuation"
           <span class="token keyword">with</span> tf<span class="token punctuation">.</span>name_scope<span class="token punctuation">(</span><span class="token string">'outputs'</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
               outputs<span class="token operator">=</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
               tf<span class="token punctuation">.</span>summary<span class="token punctuation">.</span>histogram<span class="token punctuation">(</span><span class="token string">'layer1'</span> <span class="token operator">+</span> <span class="token string">'/weights'</span><span class="token punctuation">,</span> outputs<span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><a href="https://morvanzhou.github.io/static/results/tensorflow/4_2_2.png" rel="external nofollow noopener noreferrer" target="_blank"><img src="https://morvanzhou.github.io/static/results/tensorflow/4_2_2.png" alt="Tensorboard 可视化好帮手 2"></a></p>
-<h1 id="合并Summary"><a href="#合并Summary" class="headerlink" title="合并Summary"></a>合并Summary</h1><pre class=" language-python"><code class="language-python">
+<h1 id="合并Summary"><a href="#合并Summary" class="headerlink" title="合并Summary"></a>合并Summary</h1><pre class="line-numbers language-python"><code class="language-python">
 <span class="token comment" spellcheck="true"># 将各个summary操作合并为一个操作merged_summary_op</span>
 merged_summary_op <span class="token operator">=</span> tf<span class="token punctuation">.</span>summary<span class="token punctuation">.</span>merge_all<span class="token punctuation">(</span><span class="token punctuation">)</span>
 <span class="token comment" spellcheck="true"># 数据写入器，'/logs'为训练日志的存储路径</span>
@@ -193,16 +194,16 @@ total_step <span class="token operator">=</span> <span class="token number">0</s
     <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
     summary_str <span class="token operator">=</span> sess<span class="token punctuation">.</span>run<span class="token punctuation">(</span>merged_summary_op<span class="token punctuation">,</span> feed_dict<span class="token punctuation">{</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 注意这里必须加feed_dict否则会报错</span>
     summary_writer<span class="token punctuation">.</span>add_summary<span class="token punctuation">(</span>summary_str<span class="token punctuation">,</span> total_step<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># 使用summary_writer将数据写入磁盘</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h1 id="生成TensorBoard界面"><a href="#生成TensorBoard界面" class="headerlink" title="生成TensorBoard界面"></a>生成TensorBoard界面</h1><p>运行添加了各种summary的操作的代码后，打开cmd，进入代码所在文件夹，输入：</p>
-<pre class=" language-shell"><code class="language-shell">tensorboard --logdir=logs
-</code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">tensorboard --logdir=logs
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>按照运行后的提示：</p>
-<pre class=" language-shell"><code class="language-shell">TensorBoard 1.7.0 at http://MengjieZhang:6006 (Press CTRL+C to quit)
-</code></pre>
+<pre class="line-numbers language-shell"><code class="language-shell">TensorBoard 1.7.0 at http://MengjieZhang:6006 (Press CTRL+C to quit)
+<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>打开浏览器，输入地址 <code>http://MengjieZhang:6006</code> 即可以看到TensorBoard界面。</p>
 <h1 id="具体代码："><a href="#具体代码：" class="headerlink" title="具体代码："></a>具体代码：</h1><p><a href="https://github.com/tensorflow/tensorflow/blob/master/tensorflow/examples/tutorials/mnist/input_data.py" rel="external nofollow noopener noreferrer" target="_blank">input_data下载链接</a></p>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> input_data
+<pre class="line-numbers language-python"><code class="language-python"><span class="token keyword">import</span> input_data
 <span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
 
 <span class="token keyword">def</span> <span class="token function">weight_variable</span><span class="token punctuation">(</span>shape<span class="token punctuation">)</span><span class="token punctuation">:</span>
@@ -294,7 +295,7 @@ mnistGraph <span class="token operator">=</span> tf<span class="token punctuatio
         good <span class="token operator">+=</span> accuracy_sum<span class="token punctuation">.</span>eval<span class="token punctuation">(</span>feed_dict<span class="token operator">=</span><span class="token punctuation">{</span> x<span class="token punctuation">:</span> testSet<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> y_<span class="token punctuation">:</span> testSet<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> keep_prob<span class="token punctuation">:</span> <span class="token number">1.0</span><span class="token punctuation">}</span><span class="token punctuation">)</span>
         total <span class="token operator">+=</span> testSet<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>shape<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
     <span class="token keyword">print</span> <span class="token punctuation">(</span><span class="token string">"test accuracy %g"</span><span class="token operator">%</span><span class="token punctuation">(</span>good<span class="token operator">/</span>total<span class="token punctuation">)</span><span class="token punctuation">)</span>
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>运行后的TensorBoard界面：</p>
 <p><img src="http://chuantu.biz/t6/270/1522570657x1822611335.png" alt="运行后的TensorBoard界面"></p>
 
@@ -302,7 +303,7 @@ mnistGraph <span class="token operator">=</span> tf<span class="token punctuatio
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/使用TensorBoard可视化工具.html" data-id="cjn31e94b002hgsagkgyiizpb" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/使用TensorBoard可视化工具.html" data-id="cjn363wxk002fc4agny9z0t71" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li></ul>

@@ -25,7 +25,8 @@
   
   
   <link rel="stylesheet" href="/css/style.css">
-<link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
+<link rel="stylesheet" href="/css/prism-pojoaque.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 </html>
 <body>
   <div id="container">
@@ -94,22 +95,22 @@
         <p>由于官方下载页面打不开，因此找了一个网盘下载的，<a href="https://pan.baidu.com/s/1vC974ES6Y4UPdyRNTAJpZg" rel="external nofollow noopener noreferrer" target="_blank">网盘下载点击这里</a>。</p>
 <a id="more"></a>
 <p>安装相关依赖：</p>
-<pre class=" language-powershell"><code class="language-powershell">sudo apt<span class="token operator">-</span>get install libcurl3
+<pre class="line-numbers language-powershell"><code class="language-powershell">sudo apt<span class="token operator">-</span>get install libcurl3
 sudo apt<span class="token operator">-</span>get install libappindicator1
 sudo apt<span class="token operator">-</span>get install libpango1<span class="token punctuation">.</span>0<span class="token operator">-</span>0
 sudo apt<span class="token operator">-</span>get install libgooglepinyin0
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 <p>进入下载目录，运行下列命令即可：</p>
-<pre class=" language-powershell"><code class="language-powershell">sudo <span class="token function">mv</span> google<span class="token operator">-</span>chrome<span class="token operator">-</span>stable_current_amd64<span class="token punctuation">.</span>deb <span class="token operator">/</span>usr<span class="token operator">/</span>local
+<pre class="line-numbers language-powershell"><code class="language-powershell">sudo <span class="token function">mv</span> google<span class="token operator">-</span>chrome<span class="token operator">-</span>stable_current_amd64<span class="token punctuation">.</span>deb <span class="token operator">/</span>usr<span class="token operator">/</span>local
 cd <span class="token operator">/</span>usr<span class="token operator">/</span>local
 sudo dpkg <span class="token operator">-</span>i google<span class="token operator">-</span>chrome<span class="token operator">-</span>stable_current_amd64<span class="token punctuation">.</span>deb
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>进行更新：</p>
-<pre class=" language-powershell"><code class="language-powershell">sudo apt<span class="token operator">-</span>get update
+<pre class="line-numbers language-powershell"><code class="language-powershell">sudo apt<span class="token operator">-</span>get update
 sudo apt<span class="token operator">-</span>get upgrade
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <p>显示如下提示即安装成功：</p>
-<pre class=" language-powershell"><code class="language-powershell">zmj@zmj:<span class="token operator">/</span>usr<span class="token operator">/</span>local$ sudo dpkg <span class="token operator">-</span>i google<span class="token operator">-</span>chrome<span class="token operator">-</span>stable_current_amd64<span class="token punctuation">.</span>deb
+<pre class="line-numbers language-powershell"><code class="language-powershell">zmj@zmj:<span class="token operator">/</span>usr<span class="token operator">/</span>local$ sudo dpkg <span class="token operator">-</span>i google<span class="token operator">-</span>chrome<span class="token operator">-</span>stable_current_amd64<span class="token punctuation">.</span>deb
 Selecting previously unselected package google<span class="token operator">-</span>chrome<span class="token operator">-</span>stable<span class="token punctuation">.</span>
 <span class="token punctuation">(</span>Reading database <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span> 217976 files and directories currently installed<span class="token punctuation">.</span><span class="token punctuation">)</span>
 Preparing to unpack google<span class="token operator">-</span>chrome<span class="token operator">-</span>stable_current_amd64<span class="token punctuation">.</span>deb <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
@@ -123,13 +124,13 @@ Processing triggers <span class="token keyword">for</span> desktop<span class="t
 Processing triggers <span class="token keyword">for</span> mime<span class="token operator">-</span>support <span class="token punctuation">(</span>3<span class="token punctuation">.</span>60ubuntu1<span class="token punctuation">)</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 Processing triggers <span class="token keyword">for</span> man<span class="token operator">-</span>db <span class="token punctuation">(</span>2<span class="token punctuation">.</span>8<span class="token punctuation">.</span>3<span class="token operator">-</span>2ubuntu0<span class="token punctuation">.</span>1<span class="token punctuation">)</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
 
-</code></pre>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/ubuntu-18-04下安装稳定版Chrome谷歌浏览器.html" data-id="cjn31e93z001vgsagdvvknl3h" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/ubuntu-18-04下安装稳定版Chrome谷歌浏览器.html" data-id="cjn363wx4001rc4agmvn1uuv2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
