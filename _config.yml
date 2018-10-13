@@ -39,7 +39,7 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: false
+  enable: true
   line_number: true
   auto_detect: false
   tab_replace:
@@ -86,20 +86,11 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: landscape
 
-prism_plugin:
-  mode: 'preprocess'    # realtime/preprocess
-  theme: 'default'
-  line_number: false    # default false
-
 nofollow:
   enable: true
   exclude:
   - blog.zmj97.top
   - zmj97.coding.me
-
-auto_excerpt:
-  enable: true
-  length: 100
 
 baidu_url_submit:
   count: 5 ## 提交最新的五个链接

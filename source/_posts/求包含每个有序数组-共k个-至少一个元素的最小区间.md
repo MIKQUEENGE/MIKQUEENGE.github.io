@@ -18,6 +18,8 @@ tags:
 >
 > 如果 b-a == d-c，且a < c，则认为[a, b]是更小的区间。
 
+<!-- more -->
+
 不妨设k为3，分别为a,b,c数组且a1<=b1<=c1，当前最小区间长度为INT_MAX
 
 假设三个数组所有元素排序后为：
@@ -48,7 +50,7 @@ b1,..,c1,..a2...
 
 下边是代码：
 
-```c++
+```cpp
 #include <iostream>
 #include <limits.h>
 #include <vector>
@@ -105,7 +107,7 @@ int main() {
 
 下边帖一下别人的代码：
 
-```c++
+```cpp
 链接：https://www.nowcoder.com/questionTerminal/0399d363fb594970bae7ad8a3978f86a
 来源：牛客网
 

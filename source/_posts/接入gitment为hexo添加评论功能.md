@@ -41,7 +41,7 @@ Authorization callback URL 为回调URL，可不填；
 
 在`themes/landscape/layout/_partial/post`文件夹中创建文件`git.ejs`，写入下面的代码：
 
-```ejs
+```js
 <!-- Gitment评论插件通用代码 -->
 <div id="git"></div>
 <!-- 汉化版 -->
@@ -66,7 +66,7 @@ gitment.render('git')
 
 在`themes/landscape/layout/_partial/article.ejs`文件的结尾添加：
 
-```ejs
+```js
 <% if (!index){ %>
   <% if (post.comments){ %>
   <%- partial('post/git') %>
