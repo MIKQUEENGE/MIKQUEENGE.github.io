@@ -5,20 +5,18 @@
   
 
   
-  <title>ubuntu18.04中安装iNode | zmj&#39;s blog</title>
+  <title>Tag: ffmpeg | zmj&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="首先在学校官网下载32位版本的iNode包（64位一直无法安装成功因此选择安装32位版本的）。">
-<meta name="keywords" content="ubuntu,iNode">
-<meta property="og:type" content="article">
-<meta property="og:title" content="ubuntu18.04中安装iNode">
-<meta property="og:url" content="https://zmj97.coding.me/ubuntu18-04中安装iNode.html">
+  <meta name="description" content="代码升级之路">
+<meta property="og:type" content="website">
+<meta property="og:title" content="zmj&#39;s blog">
+<meta property="og:url" content="https://zmj97.coding.me/tags/ffmpeg/index.html">
 <meta property="og:site_name" content="zmj&#39;s blog">
-<meta property="og:description" content="首先在学校官网下载32位版本的iNode包（64位一直无法安装成功因此选择安装32位版本的）。">
+<meta property="og:description" content="代码升级之路">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-10T08:39:45.324Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ubuntu18.04中安装iNode">
-<meta name="twitter:description" content="首先在学校官网下载32位版本的iNode包（64位一直无法安装成功因此选择安装32位版本的）。">
+<meta name="twitter:title" content="zmj&#39;s blog">
+<meta name="twitter:description" content="代码升级之路">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -65,100 +63,38 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-ubuntu18-04中安装iNode" class="article article-type-post" itemscope="" itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/ubuntu18-04中安装iNode.html" class="article-date">
-  <time datetime="2018-09-01T09:52:20.000Z" itemprop="datePublished">2018-09-01</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/methods/">methods</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      ubuntu18.04中安装iNode
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2018" class="archive-year">2018</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/使用ffmpeg批量合并flv文件.html" class="archive-article-date">
+  <time datetime="2018-10-14T08:08:19.000Z" itemprop="datePublished">10月 14</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/使用ffmpeg批量合并flv文件.html">使用ffmpeg批量合并flv文件</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <!-- Table of Contents --> 
-        
-        <p>首先在学校官网下载32位版本的iNode包（64位一直无法安装成功因此选择安装32位版本的）。</p>
-<a id="more"></a>
-<p>解压。</p>
-<p>安装各种依赖库（如果某个命令无法运行可以在安装目录下运行<code>./iNodeClient.sh</code>查看当前需要安装的依赖）：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install lib32ncurses5</span><br><span class="line">sudo apt-get install lib32z1</span><br><span class="line">sudo aptitude install libgtk-x11-<span class="number">2.0</span></span><br><span class="line">sudo apt-get install libgtk2.<span class="number">0</span>-<span class="number">0</span>:i386 libnss3:i386 libcurl3-gnutls:i386 libidn11:i386 libpango1.<span class="number">0</span>-<span class="number">0</span>:i386 libpangox-<span class="number">1.0</span>-<span class="number">0</span>:i386 libpangoxft-<span class="number">1.0</span>-<span class="number">0</span>:i386</span><br><span class="line">sudo apt-get install libgtk2.<span class="number">0</span>-<span class="number">0</span>:i386 libxxf86vm1:i386 libsm6:i386 lib32stdc++<span class="number">6</span></span><br><span class="line">sudo apt-get dist-upgrade</span><br><span class="line">sudo ln -s /usr/lib/i386-linux-gnu/libjpeg.so.<span class="number">8</span> /usr/lib/i386-linux-gnu/libjpeg.so.<span class="number">62</span></span><br><span class="line">sudo ln -s /usr/lib/i386-linux-gnu/libtiff.so.<span class="number">5</span> /usr/lib/i386-linux-gnu/libtiff.so.<span class="number">3</span></span><br><span class="line">sudo apt-get install murrine-themes</span><br><span class="line">sudo apt-get install gtk2-engines-murrine</span><br><span class="line">sudo apt-get install libgtkmm-<span class="number">2.4</span>-dev</span><br><span class="line">sudo apt-get install libcanberra-gtk-module:i386</span><br></pre></td></tr></table></figure>
-<p>在解压后的目录中运行：</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./install.sh</span><br></pre></td></tr></table></figure>
-<p>这个时候<code>iNodeClient.destop</code>就可以点击运行了。</p>
-<p>添加用户名和密码后将<code>NIC</code>修改为<code>enp7s0</code>即可成功连接。</p>
-<p><a href="https://blog.csdn.net/a845717607/article/details/52563005" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a></p>
-
-      
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/ubuntu18-04中安装iNode.html" data-id="cjn91wvhg002chvag015bsp13" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iNode/">iNode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ubuntu/">ubuntu</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/ubuntu-18-04下安装稳定版Chrome谷歌浏览器.html" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          ubuntu 18.04下安装稳定版Chrome谷歌浏览器
-        
-      </div>
-    </a>
-  
-  
-    <a href="/在ubuntu中安装Markdown神器Typora.html" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">在ubuntu中安装Markdown神器Typora</div>
-    </a>
-  
-</nav>
-
-  
 </article>
-
-
-
-
-
   
-    <div id="vcomments"></div>
-    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-    <script>
-        new Valine({
-            el: '#vcomments',
-            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
-            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
-            notify:true, 
-            verify:true, 
-            visitor:true,
-            avatar:'monsterid', 
-            placeholder: '快来评论鸭～' 
-        })
-    </script>
+  
+    </div></section>
   
 
 

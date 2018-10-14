@@ -15,10 +15,13 @@
 <meta property="og:site_name" content="zmj&#39;s blog">
 <meta property="og:description" content="学习资料——《HTML5与CSS3权威指南》（第3版） 官方网站： 华章图书 书中所有代码下载链接： 链接：http://pan.baidu.com/s/1c0oGMn2 密码：f7zt">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-13T16:07:50.560Z">
+<meta property="og:image" content="https://css-tricks.com/wp-content/uploads/2016/01/AT-box-model.png">
+<meta property="og:image" content="https://i.stack.imgur.com/By5Qx.png">
+<meta property="og:updated_time" content="2018-10-14T05:18:09.458Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="HTML5与CSS3权威指南之CSS3学习记录">
 <meta name="twitter:description" content="学习资料——《HTML5与CSS3权威指南》（第3版） 官方网站： 华章图书 书中所有代码下载链接： 链接：http://pan.baidu.com/s/1c0oGMn2 密码：f7zt">
+<meta name="twitter:image" content="https://css-tricks.com/wp-content/uploads/2016/01/AT-box-model.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -95,7 +98,7 @@
          
           <div id="toc" class="toc-article"> 
           	<strong class="toc-title">文章目录</strong> 
-          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-number">1.</span> <span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性选择器"><span class="toc-number">1.1.</span> <span class="toc-text">属性选择器</span></a></li></ol></li></ol> 
+          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#选择器"><span class="toc-number">1.</span> <span class="toc-text">选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性选择器"><span class="toc-number">1.1.</span> <span class="toc-text">属性选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结构性伪类选择器"><span class="toc-number">1.2.</span> <span class="toc-text">结构性伪类选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UI元素状态伪类选择器"><span class="toc-number">1.3.</span> <span class="toc-text">UI元素状态伪类选择器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#before与-after"><span class="toc-number">1.4.</span> <span class="toc-text">:before与:after</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#文字与字体相关样式"><span class="toc-number">2.</span> <span class="toc-text">文字与字体相关样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#text-shadow"><span class="toc-number">2.1.</span> <span class="toc-text">text-shadow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#word-break"><span class="toc-number">2.2.</span> <span class="toc-text">word-break</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#word-wrap"><span class="toc-number">2.3.</span> <span class="toc-text">word-wrap</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#font-face"><span class="toc-number">2.4.</span> <span class="toc-text">@font-face</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#盒相关样式"><span class="toc-number">3.</span> <span class="toc-text">盒相关样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#text-overflow"><span class="toc-number">3.1.</span> <span class="toc-text">text-overflow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#box-shadow"><span class="toc-number">3.2.</span> <span class="toc-text">box-shadow</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#box-sizing"><span class="toc-number">3.3.</span> <span class="toc-text">box-sizing</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#背景与边框相关样式"><span class="toc-number">4.</span> <span class="toc-text">背景与边框相关样式</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#background-clip"><span class="toc-number">4.1.</span> <span class="toc-text">background-clip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-origin"><span class="toc-number">4.2.</span> <span class="toc-text">background-origin</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-size"><span class="toc-number">4.3.</span> <span class="toc-text">background-size</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#background-repeat"><span class="toc-number">4.4.</span> <span class="toc-text">background-repeat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#渐变色背景"><span class="toc-number">4.5.</span> <span class="toc-text">渐变色背景</span></a></li></ol></li></ol> 
           </div> 
         
         <p>学习资料——《HTML5与CSS3权威指南》（第3版）</p>
@@ -105,14 +108,420 @@
 <p>链接：<a href="http://pan.baidu.com/s/1c0oGMn2" rel="external nofollow noopener noreferrer" target="_blank">http://pan.baidu.com/s/1c0oGMn2</a> 密码：f7zt</p>
 <a id="more"></a>
 <h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><ul>
-<li><code>[att=val]</code>选择器</li>
+<li><code>[att=val]</code>选择器——选择属性att值为val的元素</li>
+<li><code>[att*=val]</code>选择器——选择属性att值包含val的元素</li>
+<li><code>[att^=val]</code>选择器——选择属性att值以val开头的元素</li>
+<li><code>[att$=val]</code>选择器——选择属性att值以val结尾的元素</li>
 </ul>
+<h3 id="结构性伪类选择器"><a href="#结构性伪类选择器" class="headerlink" title="结构性伪类选择器"></a>结构性伪类选择器</h3><ul>
+<li><code>root</code>选择器——文档的根元素，HTML中即为html元素</li>
+<li><code>not</code>选择器——对除了:not()内的其他元素使用样式</li>
+<li><code>empty</code>选择器——当元素内内容为空白时使用样式</li>
+<li><code>target</code>选择器——当一个元素的id被其他元素用来跳转时，跳转后对跳转到的那个元素使用样式</li>
+</ul>
+<ul>
+<li><code>first-child</code>选择器</li>
+<li><code>last-child</code>选择器</li>
+<li><code>nth-child</code>选择器——<code>nth-child(odd)</code>、<code>nth-child(even)</code>、<code>nth-child(3)</code></li>
+<li><code>nth-last-child</code>选择器</li>
+</ul>
+<p><code>nth-child</code>的问题：<code>h2:nth-child(add)</code>指的是如果一个元素是其父元素的第奇数个子元素，且这个元素是h2，则应用样式。</p>
+<p>因此需要一个对第奇数个h2子元素应用样式的选择器：</p>
+<ul>
+<li><code>nth-of-type</code>——例如<code>h2:nth-of-type(odd)</code>，参数还可以设置为可循环的<code>an+b</code>的形式：<code>h2:nth-of-type(4n+1)</code></li>
+<li><code>nth-last-of-type</code></li>
+</ul>
+<ul>
+<li><code>only-child</code>——当父元素只有一个子元素时，对子元素使用样式，等价于<code>:nth-child(1):nth-last-child(1)</code></li>
+<li><code>only-of-type</code>——等价于<code>:nth-of-type(1):nth-last-of-type(1)</code></li>
+</ul>
+<h3 id="UI元素状态伪类选择器"><a href="#UI元素状态伪类选择器" class="headerlink" title="UI元素状态伪类选择器"></a>UI元素状态伪类选择器</h3><table>
+<thead>
+<tr>
+<th>选择器</th>
+<th>Firefox</th>
+<th>Safari</th>
+<th>Opera</th>
+<th>IE</th>
+<th>Chrome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E:hover</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:active</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:focus</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:enable</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:disable</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:read-only</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:read-write</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:checked</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:selection</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:default</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>E:indeterminate</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr>
+<td>E:invalid</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:valid</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:required</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:optional</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:in-range</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+<tr>
+<td>E:out-of-range</td>
+<td>√</td>
+<td>√</td>
+<td>√</td>
+<td>x</td>
+<td>√</td>
+</tr>
+</tbody>
+</table>
+<p><code>E:hover</code></p>
+<p><code>E:active</code>——被激活（鼠标按下还未松开）时使用样式</p>
+<p><code>E:focus</code>——获得光标焦点时</p>
+<p><code>E:enabled</code></p>
+<p><code>E:disabled</code></p>
+<p><code>E:read-only——处于只读状态是应用样式</code></p>
+<p><code>E:read-write</code>——处于非只读状态是应用样式</p>
+<p><code>E:checked</code>——<code>radio</code>或<code>checkbox</code>处于选取状态时应用样式</p>
+<p><code>E:default</code>——对页面打开时默认处于选取状态的单选框或复选框应用样式，<u>需要注意的是，即使用户将其设置为非选取状态，<code>E:default</code>样式对其仍然有效</u></p>
+<p><code>E:indeterminate</code>——当页面打开时，一组单选框中没有一个单选框时整组单选框的样式，<u>当有任意一个单选框被选中时，该样式被取消</u></p>
+<p><code>E::selection</code>——处于选中状态时的样式</p>
+<p>在HTML5中<code>input</code>元素新增了两个属性：<code>required</code>和<code>pattern</code>，其中</p>
+<p><code>required</code>属性是一个布尔属性，规定必需在提交表单之前填写输入字段</p>
+<p><code>pattern</code> 属性规定一个用于验证 <code>input</code> 元素的值的正则表达式。</p>
+<p><code>E:required</code>——当一个<code>input</code>/<code>select</code>/<code>textarea</code>元素允许使用<code>required</code>属性且指定了<code>required</code>属性时应用样式</p>
+<p><code>E:optional</code>——当一个<code>input</code>/<code>select</code>/<code>textarea</code>元素允许使用<code>required</code>属性且未指定<code>required</code>属性时应用样式</p>
+<p><code>E:invalid</code>——当一个元素设置了<code>required</code>和<code>pattern</code>且其内容不符合这两个属性的要求时应用样式</p>
+<p><code>E:valid</code>——当一个元素设置了<code>required</code>和<code>pattern</code>且其内容符合这两个属性的要求时应用样式</p>
+<p><code>input</code>元素可以设置<code>max</code>和<code>min</code></p>
+<p><code>E:in-range</code>——元素的值在<code>max</code>和<code>min</code>之间</p>
+<p><code>E:out-of-rang</code>——元素的值不在<code>max</code>和<code>min</code>之间</p>
+<p>例如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 其他代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  input[type="number"]:in-range&#123;</span></span><br><span class="line"><span class="undefined">    background-color: white;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  input[type="number"]:out-of-range&#123;</span></span><br><span class="line"><span class="undefined">    background-color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 其他代码 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">form</span>&gt;</span></span><br><span class="line">  请输入1到100之间的数值：<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">number</span> <span class="attr">min</span>=<span class="string">1</span> <span class="attr">max</span>=<span class="string">100</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 其他代码 --&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="before与-after"><a href="#before与-after" class="headerlink" title=":before与:after"></a>:before与:after</h3><p>使用<code>content</code>指定内容：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h2</span><span class="selector-pseudo">:before</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">'COLUMN'</span>;</span><br><span class="line">  <span class="attribute">color</span>: white;</span><br><span class="line">  <span class="attribute">background-color</span>: orange;</span><br><span class="line">  <span class="comment">/* 其他代码 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>其中<code>content</code>还可以设置为：</p>
+<ul>
+<li><code>none</code></li>
+<li><code>url(xxx.png)</code>——图片</li>
+<li><code>attr(alt)</code>——设置图片的<code>alt</code>样式</li>
+<li><code>counter(计数器名, 编号种类)</code>，同时在原元素中使用<code>counter-increment: 计数器名</code>来增加计数，其中编号种类是可选项</li>
+<li><code>open-quote</code>和<code>close-quote</code>——设置开头和结尾文字符号，并在原元素中设置<code>quotes</code>来设置具体是什么符号。</li>
+</ul>
+<h2 id="文字与字体相关样式"><a href="#文字与字体相关样式" class="headerlink" title="文字与字体相关样式"></a>文字与字体相关样式</h2><h3 id="text-shadow"><a href="#text-shadow" class="headerlink" title="text-shadow"></a>text-shadow</h3><p><code>text-shadow: length length length color</code></p>
+<p>四个属性值分别为：</p>
+<ol>
+<li><strong>阴影离开文字的横方向距离</strong>，必须设定，可以为负值</li>
+<li><strong>阴影离开文字的纵方向距离</strong>，必须设定，可以为负值</li>
+<li><strong>阴影的模糊半径</strong>，可省略</li>
+<li><strong>阴影的颜色</strong>，可省略，可以放在最前面，也可以放在最后面</li>
+</ol>
+<p>可以指定多个阴影，用逗号隔开：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">text-shadow</span>: <span class="number">10px</span> <span class="number">10px</span> black,</span><br><span class="line">    					 <span class="number">20px</span> <span class="number">25px</span> red,</span><br><span class="line">               <span class="number">30px</span> <span class="number">40px</span> blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="word-break"><a href="#word-break" class="headerlink" title="word-break"></a>word-break</h3><p>设置文字自动换行</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>使用浏览器默认的换行规则。</td>
+</tr>
+<tr>
+<td>break-all</td>
+<td>允许在单词内换行。</td>
+</tr>
+<tr>
+<td>keep-all</td>
+<td>只能在半角空格或连字符处换行。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="word-wrap"><a href="#word-wrap" class="headerlink" title="word-wrap"></a>word-wrap</h3><p>word-wrap属性允许长的内容可以自动换行。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>normal</td>
+<td>只在允许的断字点换行（浏览器保持默认处理）。</td>
+</tr>
+<tr>
+<td>break-word</td>
+<td>在长单词或 URL 地址内部进行换行。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="font-face"><a href="#font-face" class="headerlink" title="@font-face"></a>@font-face</h3><p>CSS3新增了Web Fonts功能，使得网页可以使用服务器端字体。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: myFont;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Sansation_Light.ttf'</span>),</span><br><span class="line">       <span class="built_in">url</span>(<span class="string">'Sansation_Light.eot'</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: myFont;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>同时可以设置斜体或粗体字体：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: myFont;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Fontin_Sans_R_45b.otf'</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: myFont;</span><br><span class="line">  <span class="attribute">font-style</span>: italic;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Fontin_Sans_I_45b.otf'</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: myFirstFont;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Fontin_Sans_B_45b.otf'</span>); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@<span class="keyword">font-face</span> &#123;</span><br><span class="line">  <span class="attribute">font-family</span>: myFirstFont;</span><br><span class="line">  <span class="attribute">font-weight</span>: bold;</span><br><span class="line">  <span class="attribute">font-style</span>: italic;</span><br><span class="line">  <span class="attribute">src</span>: <span class="built_in">url</span>(<span class="string">'Fontin_Sans_BI_45b.otf'</span>); </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>还可以使用<code>src: local(&#39;Arial&#39;)</code>来设置客户端本地字体。</p>
+<p>可以元素中设置<code>font-size-adjust</code>来使得修改字体种类时保持文字大小不变。</p>
+<p>当然也可以使用<code>font-size</code>。</p>
+<h2 id="盒相关样式"><a href="#盒相关样式" class="headerlink" title="盒相关样式"></a>盒相关样式</h2><h3 id="text-overflow"><a href="#text-overflow" class="headerlink" title="text-overflow"></a>text-overflow</h3><p>当文本溢出包含它的元素，应该发生什么。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>clip</td>
+<td>修剪文本。</td>
+</tr>
+<tr>
+<td>ellipsis</td>
+<td>显示省略符号来代表被修剪的文本。</td>
+</tr>
+<tr>
+<td><em>string</em></td>
+<td>使用给定的字符串来代表被修剪的文本。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="box-shadow"><a href="#box-shadow" class="headerlink" title="box-shadow"></a>box-shadow</h3><p><code>box-shadow: length length length color</code></p>
+<p>四个属性值分别为：</p>
+<ol>
+<li><strong>阴影离开盒的横方向距离</strong>，可以为负值</li>
+<li><strong>阴影离开盒的纵方向距离</strong>，可以为负值</li>
+<li><strong>阴影的模糊半径</strong></li>
+<li><strong>阴影的颜色</strong>，可以放在最前面，也可以放在最后面</li>
+</ol>
+<p>还可以创建盒内阴影，例如：</p>
+<p><code>box-shadow: inset 0 0 5px 5px #888</code></p>
+<p>其中第二个5px为展开半径。</p>
+<h3 id="box-sizing"><a href="#box-sizing" class="headerlink" title="box-sizing"></a>box-sizing</h3><table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>content-box</td>
+<td>标准盒模型</td>
+</tr>
+<tr>
+<td>border-box</td>
+<td>IE盒模型</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>指定box-sizing属性的值，应该从父元素继承</td>
+</tr>
+</tbody>
+</table>
+<h2 id="背景与边框相关样式"><a href="#背景与边框相关样式" class="headerlink" title="背景与边框相关样式"></a>背景与边框相关样式</h2><h3 id="background-clip"><a href="#background-clip" class="headerlink" title="background-clip"></a>background-clip</h3><p>background-clip属性指定背景绘制区域。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>border-box</td>
+<td>默认值。背景绘制在边框方框内（剪切成边框方框）。</td>
+</tr>
+<tr>
+<td>padding-box</td>
+<td>背景绘制在衬距方框内（剪切成衬距方框）。</td>
+</tr>
+<tr>
+<td>content-box</td>
+<td>背景绘制在内容方框内（剪切成内容方框）。</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://css-tricks.com/wp-content/uploads/2016/01/AT-box-model.png" alt="Image result for background-clip"></p>
+<h3 id="background-origin"><a href="#background-origin" class="headerlink" title="background-origin"></a>background-origin</h3><p>背景图片的绘制起点，默认为padding的左上角。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>padding-box</td>
+<td>背景图像填充框的相对位置</td>
+</tr>
+<tr>
+<td>border-box</td>
+<td>背景图像边界框的相对位置</td>
+</tr>
+<tr>
+<td>content-box</td>
+<td>背景图像的相对位置的内容框</td>
+</tr>
+</tbody>
+</table>
+<h3 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h3><p>指定背景图片大小。</p>
+<p><code>background-size: length|percentage|cover|contain;</code></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>length</td>
+<td>设置背景图片高度和宽度。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为 auto(自动)</td>
+</tr>
+<tr>
+<td>percentage</td>
+<td>将计算相对于背景定位区域的百分比。第一个值设置宽度，第二个值设置的高度。如果只给出一个值，第二个是设置为”auto(自动)”</td>
+</tr>
+<tr>
+<td>cover</td>
+<td>此时会保持图像的纵横比并将图像缩放成将完全覆盖背景定位区域的最小大小。</td>
+</tr>
+<tr>
+<td>contain</td>
+<td>此时会保持图像的纵横比并将图像缩放成将适合背景定位区域的最大大小。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="background-repeat"><a href="#background-repeat" class="headerlink" title="background-repeat"></a>background-repeat</h3><p><strong>repeat-x</strong>：背景图像在横向上平铺</p>
+<p><strong>repeat-y</strong>：背景图像在纵向上平铺</p>
+<p><strong>repeat</strong>：背景图像在横向和纵向平铺</p>
+<p><strong>no-repeat</strong>：背景图像不平铺</p>
+<p><strong>round</strong>：背景图像自动缩放直到适应且填充满整个容器。（CSS3）</p>
+<p><strong>space</strong>：背景图像以相同的间距平铺且填充满整个容器或某个方向。（CSS3）</p>
+<p><img src="https://i.stack.imgur.com/By5Qx.png" alt="Image result for background repeat round space"></p>
+<h3 id="渐变色背景"><a href="#渐变色背景" class="headerlink" title="渐变色背景"></a>渐变色背景</h3><p><a href="http://www.runoob.com/css3/css3-gradients.html" rel="external nofollow noopener noreferrer" target="_blank">http://www.runoob.com/css3/css3-gradients.html</a></p>
 
       
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://zmj97.coding.me/HTML5与CSS3权威指南之CSS3学习记录.html" data-id="cjn7mxhgm0003dyagiehhdu6c" class="article-share-link">Share</a>
+      <a data-url="https://zmj97.coding.me/HTML5与CSS3权威指南之CSS3学习记录.html" data-id="cjn91wvf20001hvagx5yu4ez2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/CSS/">CSS</a></li></ul>
@@ -122,6 +531,15 @@
   
     
 <nav id="article-nav">
+  
+    <a href="/使用ffmpeg批量合并flv文件.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          使用ffmpeg批量合并flv文件
+        
+      </div>
+    </a>
   
   
     <a href="/JavaScript中Array方法总览.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -178,7 +596,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ffmpeg/">ffmpeg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flv/">flv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
     </div>
   </div>
 
@@ -188,7 +606,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">标签云</h3>
     <div class="widget tagcloud">
-      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 14.29px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 14.29px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 11.43px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flv/" style="font-size: 10px;">flv</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
     </div>
   </div>
 
@@ -210,6 +628,10 @@
       <ul>
         
           <li>
+            <a href="/使用ffmpeg批量合并flv文件.html">使用ffmpeg批量合并flv文件</a>
+          </li>
+        
+          <li>
             <a href="/HTML5与CSS3权威指南之CSS3学习记录.html">HTML5与CSS3权威指南之CSS3学习记录</a>
           </li>
         
@@ -223,10 +645,6 @@
         
           <li>
             <a href="/JavaScript中Math常用方法.html">JavaScript中Math常用方法</a>
-          </li>
-        
-          <li>
-            <a href="/AJAX学习笔记.html">AJAX学习笔记</a>
           </li>
         
       </ul>
