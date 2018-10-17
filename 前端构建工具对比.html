@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>前端构建工具对比 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="前端技术发展之快，各种可以提高开发效率的新思想和框架层出不穷。但是它们都有一个共同点： 源代码无法直接运行，必须通过转换后才可以正常运行。 构建就是做这件事情，将源代码转换成可执行的JavaScript、CSS、HTML代码，包括如下内容：">
+<meta name="keywords" content="前端构建工具,grunt,gulp,webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端构建工具对比">
+<meta property="og:url" content="https://zmj97.coding.me/前端构建工具对比.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="前端技术发展之快，各种可以提高开发效率的新思想和框架层出不穷。但是它们都有一个共同点： 源代码无法直接运行，必须通过转换后才可以正常运行。 构建就是做这件事情，将源代码转换成可执行的JavaScript、CSS、HTML代码，包括如下内容：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://download.broadview.com.cn/Original/1801a097babb14589244">
+<meta property="og:updated_time" content="2018-10-17T12:27:35.532Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端构建工具对比">
+<meta name="twitter:description" content="前端技术发展之快，各种可以提高开发效率的新思想和框架层出不穷。但是它们都有一个共同点： 源代码无法直接运行，必须通过转换后才可以正常运行。 构建就是做这件事情，将源代码转换成可执行的JavaScript、CSS、HTML代码，包括如下内容：">
+<meta name="twitter:image" content="http://download.broadview.com.cn/Original/1801a097babb14589244">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-前端构建工具对比" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/前端构建工具对比.html" class="article-date">
+  <time datetime="2018-10-17T11:41:31.000Z" itemprop="datePublished">2018-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端构建工具对比
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Npm-Scripts"><span class="toc-number">1.</span> <span class="toc-text">Npm Scripts</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Grunt"><span class="toc-number">2.</span> <span class="toc-text">Grunt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Gulp"><span class="toc-number">3.</span> <span class="toc-text">Gulp</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Fis3"><span class="toc-number">4.</span> <span class="toc-text">Fis3</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Webpack"><span class="toc-number">5.</span> <span class="toc-text">Webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Rollup"><span class="toc-number">6.</span> <span class="toc-text">Rollup</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#为什么选择Webpack"><span class="toc-number">7.</span> <span class="toc-text">为什么选择Webpack</span></a></li></ol> 
+          </div> 
+        
+        <p>前端技术发展之快，各种可以提高开发效率的新思想和框架层出不穷。但是它们都有一个共同点：</p>
+<p>源代码无法直接运行，<strong>必须通过转换后</strong>才可以正常运行。</p>
+<p><strong>构建</strong>就是做这件事情，将源代码<strong>转换成可执行的</strong>JavaScript、CSS、HTML代码，包括如下内容：</p>
+<a id="more"></a>
+<p><strong>代码转换</strong>：将TypeScript编译成JavaScript、将SCSS编译成CSS等。</p>
+<p><strong>文件优化</strong>：压缩JavaScript、CSS、HTML代码，压缩合并图片等。</p>
+<p><strong>代码分割</strong>：提取多个页面的公共代码，提取首屏不需要执行部分的代码让其异步加载。</p>
+<p><strong>模块合并</strong>：在采用模块化的项目里会有很多个模块和文件，需要通过构建功能将模块分类合并成一个文件。</p>
+<p><strong>自动刷新</strong>：监听本地源代码的变化，自动重新构建、刷新浏览器。</p>
+<p><strong>代码校验</strong>：在代码被提交到仓库前需要校验代码是否符合规范，以及单元测试是否通过。</p>
+<p><strong>自动发布</strong>：更新代码后，自动构建出线上发布代码并传输给发布系统。</p>
+<p>构建其实是工程化、自动化思想在前端开发中的体现，将一系列流程用代码去实现，让代码自动化地执行这一系列复杂的流程。构建为前端开发注入了更大的活力，解放了我们的生产力。</p>
+<h2 id="Npm-Scripts"><a href="#Npm-Scripts" class="headerlink" title="Npm Scripts"></a>Npm Scripts</h2><p>Npm是在安装Node. js时附带的包管理器，</p>
+<p>Npm Script则是Npm内置的一个功能，允许在package.json文件里面使用scripts字段定义脚本命令：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  // ...</span><br><span class="line">  "scripts": &#123;</span><br><span class="line">    "build": "node build.js",</span><br><span class="line">    "dev": "node dev.js",</span><br><span class="line">    "pub": "node build.js"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>优点</strong>：内置，无须安装其他依赖。</p>
+<p><strong>缺点</strong>：功能太简单，虽然提供了pre和post两个钩子，但不能方便地管理多个任务之间的依赖。</p>
+<h2 id="Grunt"><a href="#Grunt" class="headerlink" title="Grunt"></a>Grunt</h2><p>Grunt相当于进化版的Npm Script，它的诞生其实是为了弥补Npm Script的不足。</p>
+<p>Grunt有大量现成的<strong>插件</strong>封装了常见的任务，</p>
+<p>也能管理任务之间的依赖关系，自动化地<strong>执行依赖的任务</strong>，</p>
+<p>每个任务的具体执行代码和依赖关系写在配置文件<code>Gruntfile.js</code>里，</p>
+<p>例如：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">grunt</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 所有插件的配置信息</span></span><br><span class="line">  grunt.initConfig(&#123;</span><br><span class="line">    <span class="comment">// uglify插件的配置信息</span></span><br><span class="line">    uglify: &#123;</span><br><span class="line">      app_task: &#123;</span><br><span class="line">        files: &#123;</span><br><span class="line">          <span class="string">'build/app.min.js'</span>: [<span class="string">'lib/index.js'</span>, <span class="string">'lib/test.js'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// watch插件的配置信息</span></span><br><span class="line">    watch: &#123;</span><br><span class="line">      another: &#123;</span><br><span class="line">        files: [<span class="string">'lib/*.js'</span>],</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="comment">// 告诉Grunt我们将使用这些插件</span></span><br><span class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-uglify'</span>);</span><br><span class="line">  grunt.loadNpmTasks(<span class="string">'grunt-contrib-watch'</span>);</span><br><span class="line">  <span class="comment">// 告诉Grunt我们在终端中启动Grunt时需要执行哪些任务</span></span><br><span class="line">  grunt.registerTask(<span class="string">'dev'</span>, [<span class="string">'uglify'</span>,<span class="string">'watch'</span>]);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>在项目根目录下执行命令<code>grunt dev</code>，就会启动JavaScript文件压缩和自动刷新功能。</p>
+<p><strong>优点</strong>：</p>
+<p>灵活，它只负责执行我们定义的任务；</p>
+<p>大量的可复用插件封装好了常见的构建任务。</p>
+<p><strong>缺点</strong>：</p>
+<p>集成度不高，要写很多配置后才可以用，无法做到开箱即用。</p>
+<h2 id="Gulp"><a href="#Gulp" class="headerlink" title="Gulp"></a>Gulp</h2><p>Gulp 是一个基于流的自动化构建工具。</p>
+<p>除了可以管理和执行任务，还支持监听文件、读写文件。</p>
+<p>Gulp被设计得非常简单，</p>
+<p>只通过下面5种方法就可以支持几乎所有构建场景：</p>
+<ul>
+<li>通过gulp.task注册一个任务</li>
+<li>通过gulp.run执行任务</li>
+<li>通过gulp.watch监听文件的变化</li>
+<li>通过gulp.src读取文件</li>
+<li>通过gulp.dest写文件</li>
+</ul>
+<p>Gulp的最大特点是引入了流的概念，</p>
+<p>同时提供了一系列常用的插件去处理流，</p>
+<p>流可以在插件之间传递，大致使用如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入 Gulp</span></span><br><span class="line"><span class="keyword">var</span> gulp = <span class="built_in">require</span>(<span class="string">'gulp'</span>); </span><br><span class="line"><span class="comment">// 引入插件</span></span><br><span class="line"><span class="keyword">var</span> jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>);</span><br><span class="line"><span class="keyword">var</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>);</span><br><span class="line"><span class="keyword">var</span> concat = <span class="built_in">require</span>(<span class="string">'gulp-concat'</span>);</span><br><span class="line"><span class="keyword">var</span> uglify = <span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>);</span><br><span class="line"><span class="comment">// 编译SCSS任务</span></span><br><span class="line">gulp.task(<span class="string">'sass'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 读取文件，通过管道喂给插件</span></span><br><span class="line">  gulp.src(<span class="string">'./scss/*.scss'</span>)</span><br><span class="line">    <span class="comment">// SCSS 插件将 scss 文件编译成 CSS 文件</span></span><br><span class="line">    .pipe(sass())</span><br><span class="line">    <span class="comment">// 输出文件</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./css'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 合并压缩JavaScript文件</span></span><br><span class="line">gulp.task(<span class="string">'scripts'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'./js/*.js'</span>)</span><br><span class="line">    .pipe(concat(<span class="string">'all.js'</span>))</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist'</span>));</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 监听文件的变化</span></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">// 当 scss 文件被编辑时执行 SCSS 任务</span></span><br><span class="line">  gulp.watch(<span class="string">'./scss/*.scss'</span>, [<span class="string">'sass'</span>]);</span><br><span class="line">  gulp.watch(<span class="string">'./js/*.js'</span>, [<span class="string">'scripts'</span>]);    </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>优点</strong>：好用又不失灵活，既可以单独完成构建，也可以和其他工具搭配使用。</p>
+<p><strong>缺点</strong>：集成度不高，要写很多配置后才可以用，无法做到开箱即用。</p>
+<p>可以将Gulp看作Grunt的加强版。</p>
+<p>相对于Grunt，Gulp增加了监听文件、读写文件、流式处理的功能。</p>
+<h2 id="Fis3"><a href="#Fis3" class="headerlink" title="Fis3"></a>Fis3</h2><p>Fis3 是一个来自百度的优秀国产构建工具。</p>
+<p>相对于Grunt、Gulp这些只提供了基本功能的工具，</p>
+<p>Fis3集成了Web开发中的常用构建功能。</p>
+<p><strong>读写文件</strong>：通过fis.match读文件，release配置文件的输出路径。</p>
+<p><strong>资源定位</strong>：解析文件之间的依赖关系和文件位置。</p>
+<p><strong>文件指纹</strong>：在通过useHash配置输出文件时为文件URL加上md5戳，来优化浏览器的缓存。</p>
+<p><strong>文件编译</strong>：通过parser配置文件解析器做文件转换，例如将ES6编译成ES5。</p>
+<p><strong>压缩资源</strong>：通过optimizer配置代码压缩方法。</p>
+<p><strong>图片合并</strong>：通过spriter配置合并CSS里导入的图片到一个文件中，来减少HTTP请求数。</p>
+<p>大致使用如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 加md5</span></span><br><span class="line">fis.match(<span class="string">'*.&#123;js,css,png&#125;'</span>, &#123;</span><br><span class="line">  useHash: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 通过fis3-parser-typescript插件可将TypeScript文件转换成JavaScript文件</span></span><br><span class="line">fis.match(<span class="string">'*.ts'</span>, &#123;</span><br><span class="line">  parser: fis.plugin(<span class="string">'typescript'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 对CSS进行雪碧图合并</span></span><br><span class="line">fis.match(<span class="string">'*.css'</span>, &#123;</span><br><span class="line">  <span class="comment">// 为匹配到的文件分配属性useSprite</span></span><br><span class="line">  useSprite: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩JavaScript</span></span><br><span class="line">fis.match(<span class="string">'*.js'</span>, &#123;</span><br><span class="line">  optimizer: fis.plugin(<span class="string">'uglify-js'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩CSS</span></span><br><span class="line">fis.match(<span class="string">'*.css'</span>, &#123;</span><br><span class="line">  optimizer: fis.plugin(<span class="string">'clean-css'</span>)</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 压缩图片</span></span><br><span class="line">fis.match(<span class="string">'*.png'</span>, &#123;</span><br><span class="line">  optimizer: fis.plugin(<span class="string">'png-compressor'</span>)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><strong>优点</strong>：集成了各种Web开发所需的构建功能，配置简单、开箱即用。</p>
+<p><strong>缺点</strong>：目前官方已经不再更新和维护，不支持最新版本的Node.js。</p>
+<p>Fis3是一种专注于Web开发的完整解决方案，如果将Grunt、Gulp比作汽车的发动机，则可以将Fis3比作一辆完整的汽车。</p>
+<h2 id="Webpack"><a href="#Webpack" class="headerlink" title="Webpack"></a>Webpack</h2><p>Webpack 是一个打包模块化JavaScript的工具，</p>
+<p>在Webpack里一切文件皆模块，</p>
+<p>通过<code>Loader</code>转换文件，</p>
+<p>通过<code>Plugin</code>注入钩子，</p>
+<p>最后输出由多个模块组合成的文件。</p>
+<p>Webpack专注于构建模块化项目。</p>
+<p><img src="http://download.broadview.com.cn/Original/1801a097babb14589244" alt="Webpack"></p>
+<p>一切文件，如JavaScript、CSS、SCSS、图片、模板，</p>
+<p>对于Webpack来说都是一个个模块，</p>
+<p>这样的好处是能清晰地描述各个模块之间的依赖关系，以方便Webpack对模块进行组合和打包。</p>
+<p>经过Webpack的处理，最终会输出浏览器能使用的静态资源。</p>
+<p>Webpack具有很大的灵活性，能配置处理文件的方式，使用方法大致如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// 所有模块的入口，Webpack从入口开始递归解析出所有依赖的模块</span></span><br><span class="line">  entry: <span class="string">'./app.js'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// 将入口所依赖的所有模块打包成一个文件bundle.js输出 </span></span><br><span class="line">    filename: <span class="string">'bundle.js'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>优点</strong>：</p>
+<ul>
+<li>专注于处理模块化的项目，能做到开箱即用、一步到位</li>
+<li>可通过Plugin扩展，完整好用又不失灵活</li>
+<li>使用场景不局限于Web开发</li>
+<li>社区庞大活跃，经常引入紧跟时代发展的新特性，能为大多数场景找到已有的开源扩展</li>
+<li>良好的开发体验。</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li>只能用于采用模块化开发的项目。</li>
+</ul>
+<h2 id="Rollup"><a href="#Rollup" class="headerlink" title="Rollup"></a>Rollup</h2><p>Rollup是一个和Webpack很类似但专注于ES6的模块打包工具。</p>
+<p>它的亮点在于，能针对ES6源码进行Tree Shaking（摇树优化），以去除那些已被定义但没被使用的代码并进行Scope Hoisting（作用域提升），以减小输出文件的大小和提升运行性能。</p>
+<p>然而Rollup的这些亮点随后就被Webpack模仿和实现。</p>
+<p>由于Rollup的使用方法和Webpack差不多，所以这里就不详细介绍如何使用Rollup了。</p>
+<p>它们的差别：</p>
+<ul>
+<li>Rollup是在Webpack流行后出现的替代品</li>
+<li>Rollup生态链还不完善，体验不如Webpack</li>
+<li>Rollup的功能不如Webpack完善，但其配置和使用更简单</li>
+<li>Rollup不支持Code Spliting，但好处是在打包出来的代码中没有Webpack那段模块的加载、执行和缓存的代码</li>
+<li>Rollup在用于打包JavaScript库时比Webpack更有优势，因为其打包出来的代码更小、更快。但它的功能不够完善，在很多场景下都找不到现成的解决方案。</li>
+</ul>
+<h2 id="为什么选择Webpack"><a href="#为什么选择Webpack" class="headerlink" title="为什么选择Webpack"></a>为什么选择Webpack</h2><p>上面介绍的构建工具是按照它们诞生的时间排序的，</p>
+<p>它们是时代的产物，侧面反映出Web开发的发展趋势，如下所述：</p>
+<ul>
+<li>在Npm Script和Grunt时代，Web开发要做的事情变多，流程复杂，自动化思想被引入，用于简化流程</li>
+<li>在Gulp时代，开始出现一些新语言用于提高开发效率，流式处理思想的出现是为了简化文件转换的流程，例如将ES5转换成ES6</li>
+<li>在Webpack时代，由于单页应用的流行，网页的功能和实现代码变得复杂、庞大，Web开发向模块化改进</li>
+<li>这些构建工具都有各自的定位和专注点，它们之间既可以单独完成任务，也可以相互搭配来弥补各自的不足。在了解这些常见的构建工具后，我们需要根据自己的需求去判断应该如何选择和搭配它们才能更好地满足自己的需求。</li>
+</ul>
+<p>经过多年的发展，Webpack已经成为构建工具中的首选，这是有原因的：</p>
+<ul>
+<li>大多数团队在开发新项目时会采用紧跟时代的技术，这些技术几乎都会采用“模块化+新语言+新框架”，Webpack可以为这些新项目提供一站式的解决方案</li>
+<li>Webpack有良好的生态链和维护团队，能提供良好的开发体验并保证质量</li>
+<li>Webpack被全世界大量的Web开发者使用和验证，能找到各个层面所需的教程和经验分享。</li>
+</ul>
+<hr>
+<p>参考链接：<a href="https://blog.csdn.net/broadview2006/article/details/79091719" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/broadview2006/article/details/79091719</a></p>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/前端构建工具对比.html" data-id="cjnd5vtzr003gsgag6c9zfjkt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/grunt/">grunt</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/前端构建工具/">前端构建工具</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/Vue生命周期.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Vue生命周期
+        
+      </div>
+    </a>
+  
+  
+    <a href="/使用ffmpeg批量合并flv文件.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">使用ffmpeg批量合并flv文件</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ffmpeg/">ffmpeg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flv/">flv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grunt/">grunt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件处理/">事件处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端构建工具/">前端构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 14.29px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 11.43px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 12.86px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flv/" style="font-size: 10px;">flv</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/事件处理/" style="font-size: 10px;">事件处理</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/JavaScript笔记之事件处理.html">JavaScript笔记之事件处理</a>
+          </li>
+        
+          <li>
+            <a href="/Vue生命周期.html">Vue生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/前端构建工具对比.html">前端构建工具对比</a>
+          </li>
+        
+          <li>
+            <a href="/使用ffmpeg批量合并flv文件.html">使用ffmpeg批量合并flv文件</a>
+          </li>
+        
+          <li>
+            <a href="/HTML5与CSS3权威指南之CSS3学习记录.html">HTML5与CSS3权威指南之CSS3学习记录</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>
