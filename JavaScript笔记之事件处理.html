@@ -7,15 +7,18 @@
   
   <title>JavaScript笔记之事件处理 | zmj&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="JavaScript,事件处理">
+  <meta name="description" content="——《JavaScript权威指南》第十七章 事件处理 读书笔记。 简单来说， 事件（event）就是Web浏览器通知应用程序发生了什么。 事件类型（event type）则是用来说明发生了什么类型事件的 字符串。 事件目标 事件处理程序/事件监听程序 事件对象 事件传播 事件捕获">
+<meta name="keywords" content="JavaScript,事件处理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript笔记之事件处理">
 <meta property="og:url" content="https://zmj97.coding.me/JavaScript笔记之事件处理.html">
 <meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="——《JavaScript权威指南》第十七章 事件处理 读书笔记。 简单来说， 事件（event）就是Web浏览器通知应用程序发生了什么。 事件类型（event type）则是用来说明发生了什么类型事件的 字符串。 事件目标 事件处理程序/事件监听程序 事件对象 事件传播 事件捕获">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-17T12:57:04.189Z">
+<meta property="og:updated_time" content="2018-10-17T15:23:24.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript笔记之事件处理">
+<meta name="twitter:description" content="——《JavaScript权威指南》第十七章 事件处理 读书笔记。 简单来说， 事件（event）就是Web浏览器通知应用程序发生了什么。 事件类型（event type）则是用来说明发生了什么类型事件的 字符串。 事件目标 事件处理程序/事件监听程序 事件对象 事件传播 事件捕获">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -92,10 +95,34 @@
          
           <div id="toc" class="toc-article"> 
           	<strong class="toc-title">文章目录</strong> 
-          	 
+          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#注册事件处理程序"><span class="toc-number">1.</span> <span class="toc-text">注册事件处理程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#设置JavaScript对象属性为事件处理程序"><span class="toc-number">1.1.</span> <span class="toc-text">设置JavaScript对象属性为事件处理程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设置HTML标签属性为事件处理程序"><span class="toc-number">1.2.</span> <span class="toc-text">设置HTML标签属性为事件处理程序</span></a></li></ol></li></ol> 
           </div> 
         
-        <a id="more"></a>
+        <p>——《JavaScript权威指南》<strong>第十七章 事件处理</strong> 读书笔记。</p>
+<p>简单来说，</p>
+<p><strong>事件（event）</strong>就是Web浏览器通知应用程序发生了什么。</p>
+<p><strong>事件类型（event type）</strong>则是用来说明发生了什么类型事件的 <strong>字符串</strong>。</p>
+<p><strong>事件目标</strong></p>
+<p><strong>事件处理程序/事件监听程序</strong></p>
+<p><strong>事件对象</strong></p>
+<p><strong>事件传播</strong></p>
+<p><strong>事件捕获</strong></p>
+<a id="more"></a>
+<h2 id="注册事件处理程序"><a href="#注册事件处理程序" class="headerlink" title="注册事件处理程序"></a>注册事件处理程序</h2><ul>
+<li>给目标元素设置属性</li>
+<li>将事件处理程序传递给对象或元素的一个方法<ul>
+<li>IE8及以前版本——<code>attachEvent()</code></li>
+<li>其他——<code>addEventListener()</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="设置JavaScript对象属性为事件处理程序"><a href="#设置JavaScript对象属性为事件处理程序" class="headerlink" title="设置JavaScript对象属性为事件处理程序"></a>设置JavaScript对象属性为事件处理程序</h3><p>事件处理程序属性的名字由<code>on</code>+事件名组成（且均为小写）：</p>
+<p><code>onclick</code>、<code>onchange</code>、<code>onload</code>、<code>onmouseover</code>等等。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>缺点</strong>：每个目标对于同一个事件类型最多只能有一个处理程序。</p>
+<h3 id="设置HTML标签属性为事件处理程序"><a href="#设置HTML标签属性为事件处理程序" class="headerlink" title="设置HTML标签属性为事件处理程序"></a>设置HTML标签属性为事件处理程序</h3><p>属性值为事件处理函数的主体。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">onclick</span>=<span class="string">"alert('Thank you');"</span>&gt;</span></span><br><span class="line">  点击这里</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
       
       
     </div>

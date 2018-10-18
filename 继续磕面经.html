@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="zmj&#39;s blog">
 <meta property="og:description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-10-15T16:13:48.948Z">
+<meta property="og:updated_time" content="2018-10-18T05:44:55.465Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="继续磕面经">
 <meta name="twitter:description" content="js的基本数据类型Undefined、Null、Boolean、Number、String五种基本数据类型">
@@ -109,7 +109,7 @@
 <p><code>instanceof</code>实现原理，沿着原型链寻找：</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myInstanceof</span>(<span class="params">left, right</span>) </span>&#123;</span><br><span class="line">  left = left.__proto__;</span><br><span class="line">  right = right.prototype;</span><br><span class="line">  <span class="keyword">while</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">if</span> (left === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (left === right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    left = left.__proto__;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><code>constructor</code>，一个类的prototype会指向自己的引用。</p>
+<li><p><code>constructor</code>，一个类的constructor会指向自己的引用。</p>
 <p>需要注意的是：</p>
 <ul>
 <li><code>null</code>和<code>undefined</code>是无效的对象，因此没有constructor，需要通过typeof来判断。</li>
