@@ -20,7 +20,7 @@ tags:
 
 然后编辑`/themes/landscape/layout/_partial/`目录下的`article.ejs`，将原本配置gitment时添加在最后的那段代码删掉，添加：
 
-```js
+```ejs
 <% if (!index){ %>
   <% if (post.comments){ %>
     <div id="vcomments"></div>

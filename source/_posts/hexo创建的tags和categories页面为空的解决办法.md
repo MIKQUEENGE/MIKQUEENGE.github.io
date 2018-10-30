@@ -18,7 +18,7 @@ tags:
 
 <!-- more -->
 
-```js
+```ejs
 <% if (page.type === "tags") { %>
   <div class="tag-cloud">
     <div class="tag-cloud-title">

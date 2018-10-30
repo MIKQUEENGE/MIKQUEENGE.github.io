@@ -403,7 +403,7 @@ function Person(name, age, job) {
 
 ### 原型链
 
-除了[这一篇](https://blog.zmj97.top/2018/09/04/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto/)讲到的，还应注意：
+除了[这一篇](https://blog.zmj97.top/JavaScript%E5%8E%9F%E5%9E%8B%E9%93%BE-prototype%E4%B8%8E-proto.html)讲到的，还应注意：
 
 - 别忘记默认的原型：Object.prototype
 - 确认原型和实例的关系：利用`instanceof`和`isPrototypeOf()`

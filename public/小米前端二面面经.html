@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>小米前端二面面经 | zmj&#39;s blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="正好都是不会的。。。所以完整地记录一下。 简单来说就是JS和网络掌握地并不是很全面。">
+<meta name="keywords" content="HTTP,JavaScript,TCP,UDP,Cookie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小米前端二面面经">
+<meta property="og:url" content="https://zmj97.coding.me/小米前端二面面经.html">
+<meta property="og:site_name" content="zmj&#39;s blog">
+<meta property="og:description" content="正好都是不会的。。。所以完整地记录一下。 简单来说就是JS和网络掌握地并不是很全面。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-10-22T00:52:08.136Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小米前端二面面经">
+<meta name="twitter:description" content="正好都是不会的。。。所以完整地记录一下。 简单来说就是JS和网络掌握地并不是很全面。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  
+    <link href="//fonts.lug.ustc.edu.cn/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zmj&#39;s blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">主页</a>
+        
+          <a class="main-nav-link" href="/archives">归档</a>
+        
+          <a class="main-nav-link" href="/tags">标签</a>
+        
+          <a class="main-nav-link" href="/categories">分类</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//www.google.co.uk/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://zmj97.coding.me"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-小米前端二面面经" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/小米前端二面面经.html" class="article-date">
+  <time datetime="2018-10-20T05:04:04.000Z" itemprop="datePublished">2018-10-20</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Web/">Web</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      小米前端二面面经
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <!-- Table of Contents --> 
+         
+          <div id="toc" class="toc-article"> 
+          	<strong class="toc-title">文章目录</strong> 
+          	<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript严格模式"><span class="toc-number">1.</span> <span class="toc-text">JavaScript严格模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#作用域、上下文"><span class="toc-number">2.</span> <span class="toc-text">作用域、上下文</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JavaScript中this指向问题-以及不同模式下"><span class="toc-number">3.</span> <span class="toc-text">JavaScript中this指向问题(以及不同模式下)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TCP和UDP的区别"><span class="toc-number">4.</span> <span class="toc-text">TCP和UDP的区别</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie是否可以跨域"><span class="toc-number">5.</span> <span class="toc-text">Cookie是否可以跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#需要认证、跨域时、GATEWAY等HTTP状态码"><span class="toc-number">6.</span> <span class="toc-text">需要认证、跨域时、GATEWAY等HTTP状态码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#闭包的优缺点"><span class="toc-number">7.</span> <span class="toc-text">闭包的优缺点</span></a></li></ol> 
+          </div> 
+        
+        <p>正好都是不会的。。。所以完整地记录一下。</p>
+<p>简单来说就是JS和网络掌握地并不是很全面。</p>
+<a id="more"></a>
+<h2 id="JavaScript严格模式"><a href="#JavaScript严格模式" class="headerlink" title="JavaScript严格模式"></a>JavaScript严格模式</h2><p>ES5中新增<code>use strict</code></p>
+<p><strong>不允许使用未声明的变量：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line">x = <span class="number">3.14</span>;                <span class="comment">// 报错 (x 未定义)</span></span><br><span class="line"></span><br><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="comment">// 	对象也是一个变量。</span></span><br><span class="line">x = &#123;<span class="attr">p1</span>:<span class="number">10</span>, <span class="attr">p2</span>:<span class="number">20</span>&#125;;      <span class="comment">// 报错 (x 未定义)</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许删除变量或对象：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">3.14</span>;</span><br><span class="line"><span class="keyword">delete</span> x;                <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许删除函数:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">p1, p2</span>) </span>&#123;&#125;; </span><br><span class="line"><span class="keyword">delete</span> x;                <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许变量重名:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params">p1, p1</span>) </span>&#123;&#125;;   <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许使用八进制:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> x = <span class="number">010</span>;             <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许使用转义字符:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> x = \<span class="number">010</span>;            <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许对只读属性赋值:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;;</span><br><span class="line"><span class="built_in">Object</span>.defineProperty(obj, <span class="string">"x"</span>, &#123;<span class="attr">value</span>:<span class="number">0</span>, <span class="attr">writable</span>:<span class="literal">false</span>&#125;);</span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">3.14</span>;            <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许对一个使用getter方法读取的属性进行赋值</strong>:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;get x() &#123;<span class="keyword">return</span> <span class="number">0</span>&#125; &#125;;</span><br><span class="line"></span><br><span class="line">obj.x = <span class="number">3.14</span>;            <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许删除一个不允许删除的属性：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">delete</span> <span class="built_in">Object</span>.prototype; <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>变量名不能使用 “eval” 字符串:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">eval</span> = <span class="number">3.14</span>;         <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>变量名不能使用 “arguments” 字符串:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">var</span> <span class="built_in">arguments</span> = <span class="number">3.14</span>;    <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>不允许使用以下这种语句:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="keyword">with</span> (<span class="built_in">Math</span>)&#123;x = cos(<span class="number">2</span>)&#125;; <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>由于一些安全原因，在作用域 eval() 创建的变量不能被调用：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">"use strict"</span>;</span><br><span class="line"><span class="built_in">eval</span> (<span class="string">"var x = 2"</span>);</span><br><span class="line">alert (x);               <span class="comment">// 报错</span></span><br></pre></td></tr></table></figure>
+<p><strong>禁止this关键字指向全局对象:</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> !<span class="keyword">this</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 返回false，因为"this"指向全局对象，"!this"就是false</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123; </span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line">    <span class="keyword">return</span> !<span class="keyword">this</span>;</span><br><span class="line">&#125; </span><br><span class="line"><span class="comment">// 返回true，因为严格模式下，this的值为undefined，所以"!this"为true。</span></span><br></pre></td></tr></table></figure>
+<p>因此，使用构造函数时，如果忘了加new，this不再指向全局对象，而是报错。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line">    <span class="keyword">this</span>.a = <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line">f();<span class="comment">// 报错，this未定义</span></span><br></pre></td></tr></table></figure>
+<h2 id="作用域、上下文"><a href="#作用域、上下文" class="headerlink" title="作用域、上下文"></a>作用域、上下文</h2><p><strong>scope</strong>指的是 函数被调用的时候, 各个<strong>变量的作用区域</strong>:</p>
+<ul>
+<li>全局作用域</li>
+<li>局部作用域</li>
+</ul>
+<p><strong>content</strong>指的是 函数被调用的时候, 查看<strong>this指向</strong>哪个object, 那么那个<code>object</code> 就是当前的 “上下文”。</p>
+<h2 id="JavaScript中this指向问题-以及不同模式下"><a href="#JavaScript中this指向问题-以及不同模式下" class="headerlink" title="JavaScript中this指向问题(以及不同模式下)"></a>JavaScript中this指向问题(以及不同模式下)</h2><ol>
+<li>元素绑定事件，方法中的this是当前操作的元素</li>
+<li>方法名前有点则点前面是谁this就是谁，没有点则this是window（严格模式下是undefined）</li>
+<li>构造函数执行，方法体中的this是当前类的一个实例</li>
+<li>匿名函数具有全局性，因此this对象通常指向window</li>
+</ol>
+<p>第二条也可以理解为：</p>
+<ul>
+<li>方法调用中谁调用this指向谁</li>
+<li>全局作用域或者普通函数中this指向全局对象window（严格模式下不能指向window所以是undefined）</li>
+</ul>
+<h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><p><a href="https://www.cnblogs.com/-wang-cheng/p/5421988.html" rel="external nofollow noopener noreferrer" target="_blank">参考链接</a></p>
+<p><code>TCP(Transmission Control Protocol)：传输控制协议</code></p>
+<p><code>UDP(User Datagram Protocol)：用户数据报协议</code></p>
+<p>主要从连接性(Connectivity)、可靠性(Reliability)、有序性(Ordering)、有界性(Boundary)、拥塞控制(Congestion or Flow control)、传输速度(Speed)、量级(Heavy/Light weight)、头部大小(Header size)等8个方面来讲：</p>
+<ol>
+<li><p><u>TCP是面向连接(Connection oriented)的协议，UDP是无连接(Connection less)协议；</u></p>
+<p>TCP用三次握手建立连接：1) Client向server发送SYN；2) Server接收到SYN，回复Client一个SYN-ACK；3) Client接收到SYN_ACK，回复Server一个ACK。到此，连接建成。</p>
+<p>UDP发送数据前不需要建立连接。</p>
+</li>
+</ol>
+<ol start="2">
+<li><p><u>TCP可靠，UDP不可靠；</u></p>
+<p>TCP丢包会自动重传，UDP不会。</p>
+</li>
+</ol>
+<ol start="3">
+<li><p><u>TCP有序，UDP无序；</u></p>
+<p>消息在传输过程中可能会乱序，后发送的消息可能会先到达，TCP会对其进行重排序，UDP不会。</p>
+</li>
+</ol>
+<ol start="4">
+<li><p><u>TCP无界，UDP有界；</u></p>
+<p>TCP通过字节流传输，UDP中每一个包都是单独的。</p>
+<p>有界与无界之分是根据接收报文来划分的，对于TCP协议，客户端连续发送数据，只要服务端的这个函数的缓冲区足够大，会一次性接收过来，即客户端是分好几次发过来，是有边界的，而服务端却一次性接收过来，所以证明是无边界的； </p>
+<p>而对于UDP协议，客户端连续发送数据，即使服务端的这个函数的缓冲区足够大，也只会一次一次的接收，发送多少次接收多少次，即客户端分几次发送过来，服务端就必须按几次接收，从而证明，这种UDP的通讯模式是有边界的。</p>
+</li>
+</ol>
+<ol start="5">
+<li><p><u>TCP有流量控制（拥塞控制），UDP没有；</u></p>
+<p>主要靠三次握手实现。以及慢开始、拥塞避免、快重传、快恢复</p>
+</li>
+</ol>
+<ol start="6">
+<li><p><u>TCP传输慢，UDP传输快；</u></p>
+<p>因为TCP需要建立连接、保证可靠性和有序性，所以比较耗时。这就是为什么视频流、广播电视、在线多媒体游戏等选择使用UDP。</p>
+</li>
+</ol>
+<ol start="7">
+<li><p><u>TCP是重量级的，UDP是轻量级的；</u></p>
+<p>TCP要建立连接、保证可靠性和有序性，就会传输更多的信息，如TCP的包头比较大。TCP首部开销20字节;UDP的首部开销小，只有8个字节</p>
+</li>
+</ol>
+<ol start="8">
+<li><u>TCP对系统资源要求较多，UDP对系统资源要求较少</u></li>
+</ol>
+<ol start="9">
+<li><p><u>应用场合不同：</u></p>
+<p>TCP一般应用在对可靠性要求比较高的场合，例如http,ftp等等</p>
+<p>而UDP一般应用在对实时性要求较高场合，例如视频直播，大文件传输等等</p>
+</li>
+</ol>
+<p>小结：</p>
+<p>TCP是面向连接的、可靠的、有序的、速度慢的协议；UDP是无连接的、不可靠的、无序的、速度快的协议。</p>
+<p>TCP开销比UDP大，TCP头部需要20字节，UDP头部只要8个字节。</p>
+<p>TCP无界有拥塞控制，UDP有界无拥塞控制。</p>
+<p>补充：</p>
+<p>基于TCP的协议有：HTTP/HTTPS，Telnet，FTP，SMTP。</p>
+<p>基于UDP的协议有：DHCP，DNS，SNMP，TFTP，BOOTP，IGMP，RIP。</p>
+<h2 id="Cookie是否可以跨域"><a href="#Cookie是否可以跨域" class="headerlink" title="Cookie是否可以跨域"></a>Cookie是否可以跨域</h2><p>只可以跨二级域名进行访问</p>
+<p><a href="https://blog.csdn.net/u012572955/article/details/61198654" rel="external nofollow noopener noreferrer" target="_blank">https://blog.csdn.net/u012572955/article/details/61198654</a></p>
+<p><a href="https://www.cnblogs.com/waters/articles/2869855.html" rel="external nofollow noopener noreferrer" target="_blank">https://www.cnblogs.com/waters/articles/2869855.html</a></p>
+<h2 id="需要认证、跨域时、GATEWAY等HTTP状态码"><a href="#需要认证、跨域时、GATEWAY等HTTP状态码" class="headerlink" title="需要认证、跨域时、GATEWAY等HTTP状态码"></a>需要认证、跨域时、GATEWAY等HTTP状态码</h2><p>401 Unauthorized —— 请求要求用户的身份认证</p>
+<p>403 Forbidden —— 服务器理解请求客户端的请求，但是拒绝执行此请求</p>
+<p>502 Bad GateWay —— 充当网关或代理的服务器，从远端服务器接收到了一个无效的请求</p>
+<h2 id="闭包的优缺点"><a href="#闭包的优缺点" class="headerlink" title="闭包的优缺点"></a>闭包的优缺点</h2><p>闭包的作用：保存、保护</p>
+<p>第一个就是可以读取自身函数外部的变量（沿着作用域链寻找）<br>第二个就是让这些外部变量始终保存在内存中 </p>
+<p><strong>优点</strong>： </p>
+<ol>
+<li>保护函数内的变量安全,加强了封装性 </li>
+<li>在内存中维持一个变量(用的太多就变成了缺点，占内存) </li>
+</ol>
+<p><strong>缺点：</strong></p>
+<ol>
+<li><p>由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用闭包，否则会造成网页的性能问题，在IE中可能导致内存泄露。解决方法是，在退出函数之前，将不使用的局部变量全部删除。</p>
+</li>
+<li><p>闭包会在父函数外部，改变父函数内部变量的值。所以，如果你把父函数当作对象（object）使用，把闭包当作它的公用方法（Public Method），把内部变量当作它的私有属性（private value），这时一定要小心，不要随便改变父函数内部变量的值。</p>
+</li>
+</ol>
+
+      
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://zmj97.coding.me/小米前端二面面经.html" data-id="cjnhmfqc2003n1fag6vxhtsmw" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TCP/">TCP</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/UDP/">UDP</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/JavaScript笔记之事件处理.html" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">JavaScript笔记之事件处理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+
+
+
+  
+    <div id="vcomments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'IOqpXAqlN1gwWoXFPwjhCEUo-gzGzoHsz',
+            appKey: 'tIDpxK3F6tVo5V3nAOr3AJ3r',
+            notify:true, 
+            verify:true, 
+            visitor:true,
+            avatar:'monsterid', 
+            placeholder: '快来评论鸭～' 
+        })
+    </script>
+  
+
+
+</section>
+        
+      </div>
+      <footer id="footer">
+  
+    <aside id="sidebar" class="outer">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C-C/">C/C++</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OJ/">OJ</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Web/">Web</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/deep-learning/">deep learning</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/methods/">methods</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/系统分析与设计/">系统分析与设计</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AJAX/">AJAX</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/BN/">BN</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/">CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Chrome/">Chrome</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Cookie/">Cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ES6/">ES6</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flask/">Flask</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Flux/">Flux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTML/">HTML</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/HTTP/">HTTP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/MNIST/">MNIST</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Markdown/">Markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OAuth/">OAuth</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PAT/">PAT</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SCRUM/">SCRUM</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/">SQL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TCP/">TCP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorBoard/">TensorBoard</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/TensorFlow/">TensorFlow</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Tmux/">Tmux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Typora/">Typora</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UDP/">UDP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/UMLet/">UMLet</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/VUE/">VUE</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Valine/">Valine</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vuex/">Vuex</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ajax/">ajax</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cookie/">cookie</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ffmpeg/">ffmpeg</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/flv/">flv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/form/">form</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github-pages/">github pages</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gitment/">gitment</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/grunt/">grunt</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iNode/">iNode</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/markdown/">markdown</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/mongoDB/">mongoDB</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/numpy/">numpy</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/prototype/">prototype</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ubuntu/">ubuntu</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webstorage/">webstorage</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/youtube/">youtube</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/三层架构/">三层架构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件处理/">事件处理</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/内存/">内存</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/刷题/">刷题</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端构建工具/">前端构建工具</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/双向链表/">双向链表</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/同步/">同步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/图片显示/">图片显示</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/建模/">建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/异步/">异步</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/归并/">归并</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快捷方式/">快捷方式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/指针/">指针</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/操作系统/">操作系统</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库/">数据库</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据库建模/">数据库建模</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/爬虫/">爬虫</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/用例图/">用例图</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/网站收录/">网站收录</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/遇见逆水寒/">遇见逆水寒</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/阿里云/">阿里云</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/AJAX/" style="font-size: 10px;">AJAX</a> <a href="/tags/BN/" style="font-size: 10px;">BN</a> <a href="/tags/CSS/" style="font-size: 14.29px;">CSS</a> <a href="/tags/Chrome/" style="font-size: 11.43px;">Chrome</a> <a href="/tags/Cookie/" style="font-size: 10px;">Cookie</a> <a href="/tags/ES6/" style="font-size: 11.43px;">ES6</a> <a href="/tags/Flask/" style="font-size: 10px;">Flask</a> <a href="/tags/Flux/" style="font-size: 10px;">Flux</a> <a href="/tags/HTML/" style="font-size: 15.71px;">HTML</a> <a href="/tags/HTTP/" style="font-size: 12.86px;">HTTP</a> <a href="/tags/JavaScript/" style="font-size: 20px;">JavaScript</a> <a href="/tags/MNIST/" style="font-size: 10px;">MNIST</a> <a href="/tags/Markdown/" style="font-size: 10px;">Markdown</a> <a href="/tags/OAuth/" style="font-size: 10px;">OAuth</a> <a href="/tags/PAT/" style="font-size: 10px;">PAT</a> <a href="/tags/Python/" style="font-size: 10px;">Python</a> <a href="/tags/SCRUM/" style="font-size: 10px;">SCRUM</a> <a href="/tags/SQL/" style="font-size: 10px;">SQL</a> <a href="/tags/TCP/" style="font-size: 10px;">TCP</a> <a href="/tags/TensorBoard/" style="font-size: 10px;">TensorBoard</a> <a href="/tags/TensorFlow/" style="font-size: 14.29px;">TensorFlow</a> <a href="/tags/Tmux/" style="font-size: 10px;">Tmux</a> <a href="/tags/Typora/" style="font-size: 10px;">Typora</a> <a href="/tags/UDP/" style="font-size: 10px;">UDP</a> <a href="/tags/UMLet/" style="font-size: 15.71px;">UMLet</a> <a href="/tags/Ubuntu/" style="font-size: 10px;">Ubuntu</a> <a href="/tags/VUE/" style="font-size: 10px;">VUE</a> <a href="/tags/Valine/" style="font-size: 10px;">Valine</a> <a href="/tags/Vue/" style="font-size: 12.86px;">Vue</a> <a href="/tags/Vuex/" style="font-size: 10px;">Vuex</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/cookie/" style="font-size: 10px;">cookie</a> <a href="/tags/ffmpeg/" style="font-size: 10px;">ffmpeg</a> <a href="/tags/flv/" style="font-size: 10px;">flv</a> <a href="/tags/form/" style="font-size: 10px;">form</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github-pages/" style="font-size: 10px;">github pages</a> <a href="/tags/gitment/" style="font-size: 12.86px;">gitment</a> <a href="/tags/grunt/" style="font-size: 10px;">grunt</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/hexo/" style="font-size: 17.14px;">hexo</a> <a href="/tags/iNode/" style="font-size: 11.43px;">iNode</a> <a href="/tags/markdown/" style="font-size: 10px;">markdown</a> <a href="/tags/mongoDB/" style="font-size: 10px;">mongoDB</a> <a href="/tags/numpy/" style="font-size: 10px;">numpy</a> <a href="/tags/prototype/" style="font-size: 10px;">prototype</a> <a href="/tags/ubuntu/" style="font-size: 18.57px;">ubuntu</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/webstorage/" style="font-size: 10px;">webstorage</a> <a href="/tags/youtube/" style="font-size: 10px;">youtube</a> <a href="/tags/三层架构/" style="font-size: 10px;">三层架构</a> <a href="/tags/事件处理/" style="font-size: 10px;">事件处理</a> <a href="/tags/内存/" style="font-size: 10px;">内存</a> <a href="/tags/刷题/" style="font-size: 10px;">刷题</a> <a href="/tags/前端构建工具/" style="font-size: 10px;">前端构建工具</a> <a href="/tags/双向链表/" style="font-size: 10px;">双向链表</a> <a href="/tags/同步/" style="font-size: 10px;">同步</a> <a href="/tags/图片显示/" style="font-size: 10px;">图片显示</a> <a href="/tags/建模/" style="font-size: 11.43px;">建模</a> <a href="/tags/异步/" style="font-size: 10px;">异步</a> <a href="/tags/归并/" style="font-size: 10px;">归并</a> <a href="/tags/快捷方式/" style="font-size: 10px;">快捷方式</a> <a href="/tags/指针/" style="font-size: 10px;">指针</a> <a href="/tags/操作系统/" style="font-size: 10px;">操作系统</a> <a href="/tags/数据库/" style="font-size: 11.43px;">数据库</a> <a href="/tags/数据库建模/" style="font-size: 10px;">数据库建模</a> <a href="/tags/爬虫/" style="font-size: 10px;">爬虫</a> <a href="/tags/用例图/" style="font-size: 14.29px;">用例图</a> <a href="/tags/网站收录/" style="font-size: 10px;">网站收录</a> <a href="/tags/设计模式/" style="font-size: 10px;">设计模式</a> <a href="/tags/遇见逆水寒/" style="font-size: 10px;">遇见逆水寒</a> <a href="/tags/阿里云/" style="font-size: 10px;">阿里云</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/03/">三月 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/小米前端二面面经.html">小米前端二面面经</a>
+          </li>
+        
+          <li>
+            <a href="/JavaScript笔记之事件处理.html">JavaScript笔记之事件处理</a>
+          </li>
+        
+          <li>
+            <a href="/Vue生命周期.html">Vue生命周期</a>
+          </li>
+        
+          <li>
+            <a href="/前端构建工具对比.html">前端构建工具对比</a>
+          </li>
+        
+          <li>
+            <a href="/使用ffmpeg批量合并flv文件.html">使用ffmpeg批量合并flv文件</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 Mengjie Zhang<br>
+      Powered by <a href="http://hexo.io/" target="_blank" rel="external nofollow noopener noreferrer">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">主页</a>
+  
+    <a href="/archives" class="mobile-nav-link">归档</a>
+  
+    <a href="/tags" class="mobile-nav-link">标签</a>
+  
+    <a href="/categories" class="mobile-nav-link">分类</a>
+  
+</nav>
+    
+
+<script src="https://libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+<div id="totop" style="position:fixed;bottom:100px;right:50px;cursor: pointer;z-index: 99999;">
+<a title="返回顶部"><img src="/img/scrollup.png"></a>
+</div>
+<script src="/js/totop.js"></script>
+
+  </div>
+</body>

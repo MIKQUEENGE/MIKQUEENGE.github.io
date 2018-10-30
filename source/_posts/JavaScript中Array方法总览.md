@@ -18,6 +18,10 @@ arr.push(4); // 返回4， arr变为[1, 2, 3, 4]
 arr.push(5,6); // 返回6， arr变为[1, 2, 3, 4, 5, 6]
 ```
 
+<!-- more -->
+
+
+
 ## unshift(x)
 
 将x添加到数组开头，可添加多个值，返回数组长度。<u>改变原数组</u>
@@ -46,7 +50,7 @@ arr.push(1,2); // 返回6， arr变为[1, 2, 3, 4, 5, 6]
 
 ## slice(start,end)
 
-返回索引start到索引end（不包含end）的新数组。<u>改变原数组</u>
+返回索引start到索引end（不包含end）的新数组。<u>不改变原数组</u>
 
 ## splice(index, count, value)
 
